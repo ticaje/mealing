@@ -1,0 +1,20 @@
+magento-check.php
+cleanAllCache.php
+app/etc/local.xml
+includes
+var
+tests
+*.sh
+pool
+.idea
+*~
+shell
+mage
+
+
+# Ignore Debug module
+app/code/community/Magneto/
+app/etc/modules/Magneto_Debug.xml
+app/design/frontend/base/default/template/debug/
+skin/frontend/base/default/debug/
+app/design/frontend/base/default/layout/debug.xml
