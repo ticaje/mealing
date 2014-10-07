@@ -18,10 +18,6 @@ HEADER SECTION
          padding-top: 5px;
         }
       }
-      .col-divider:after{
-        content: '.';
-        visibility: hidden;
-      }
       background: transparent;
       max-width: 100%;
       .top-bar-section{
@@ -40,19 +36,59 @@ HEADER SECTION
         ul{
          li{
            border-left: 1px solid white;
+           a{
+             font-weight: bolder;
+           }
          }
         }
       }
     }
     -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
-    position: fixed;
     z-index: 999;
     min-width: 100%;
   }
 
+  /* Home specific header */
+  #zip-bar.header-footer{
+    position: relative;
+    top: 465px;
+    height: 90px;
+    z-index: 1000;
+    @include transparency(0.70);
+    color: $white-color;
+    .zb-inner-container{
+      padding-top: 25px;
+      input#zip-code{
+        width: 90px;
+        @include full-rounded-borders(3);
+      }
+      button#go{
+        width: 190px;
+        @include full-rounded-borders(3);
+        background: transparent;
+        border: 2px solid $white-color;
+        font-weight: bold;
+      }
+      span, img, input, button{
+        position: relative;
+      }
+      span{ font-weight: bold; top: 20px; font-size: 12px; }
+      img{ top: 6px; padding-left: 10px;}
+      input{ top: 10px; }
+      button{ font-size: 14px; top: 1px; }
+      button:hover{
+        border: 2px solid $red-button-color !important;
+        @include transparency(1.0, $red-button-color);
+      }
+      .zc-info{ text-align: right; }
+    }
+  }
+  #zip-bar.header-footer:hover{
+    @include transparency(0.50);
+  }
   .contain-to-grid {
-    background-color: transparent; /*rgba(255, 255, 255, 0.97);*/
+    background-color: transparent;
   }
 
   // FILL USED FOR HEADER
@@ -79,12 +115,6 @@ HEADER SECTION
   p {
     line-height: 3rem;
     padding-bottom: 30px;
-  }
-  .header-footer{
-    position: relative;
-    top: 550px;
-    height: 50px;
-    border: 1px solid blue;
   }
 }
 /*

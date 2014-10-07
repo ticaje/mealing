@@ -35,3 +35,8 @@ li {
   padding-left: 0rem;
   padding-right: 0rem;
 }
+.col-divider:after{
+  content: '.';
+  visibility: hidden;
+  border: 1px solid transparent;
+}

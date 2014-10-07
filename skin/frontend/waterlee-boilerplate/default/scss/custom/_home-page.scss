@@ -23,3 +23,17 @@
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
+
+.main-container{
+  .how-do-we-work{
+    .steps, .summary{
+      div{
+        min-height: 160px;
+        img{
+         position: relative;
+         z-index: -999;
+        }
+      }
+    }
+  }
+}
