@@ -11,13 +11,10 @@
 
 
 <layout>
+
   <!-- Global Operations -->
   <default>
     <reference name="root">
-      <action method="setTemplate">
-        <template>page/2columns-left.phtml</template>
-        <remove name="global_messages"/>
-      </action>
       <reference name="after_body_start">
         <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml"
           before="-"/>
@@ -29,7 +26,11 @@
       <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
       <!--block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/-->
     </reference>
+    <reference name="home_post_header">
+      <block type="page/html_custom" name="inchoo_home_header" template="page/html/custom/zip_code_bar.phtml" />
+    </reference>
     <remove name="currency"/>
+
     <!-- Remove callouts and rarely used stuff globally -->
     <remove name="right.poll"/>
     <remove name="right.permanent.callout"/>
@@ -46,14 +47,13 @@
     <!--<remove name="catalogsearch.leftnav"/>-->
     <remove name="right.reports.product.viewed"/>
     <remove name="left.reports.product.viewed"/>
-
-
     <!-- //Remove callouts and rarely used stuff globally -->
 
     <!-- Add js/css globally -->
     <reference name="head">
       <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
       <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
+      <action method="addItem"><type>skin_js</type><name>src_js/misc.js</name><params/></action>
 
       <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
       <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
@@ -85,10 +85,6 @@
       <!--<action method="addItem"><type>skin_js</type><name>js/easyResponsiveTabs.js</name><params/></action>-->
 
       <!--<action method="addItem"><type>skin_js</type><name>js/elevatezoom/jquery.elevatezoom.js</name><params/></action>-->
-
-
-
-
     </reference>
 
     <reference name="footer">
@@ -99,7 +95,6 @@
 
     <!-- Add/Remove Top Links -->
     <reference name="root">
-
       <remove name="global_messages"/>
       <!-- Remove Global Messages in favor of "inchoo_global_messages" -->
       <reference name="top.links">
@@ -256,6 +251,7 @@ Category layered navigation layout
     </catalog_product_view>
     <!-- ... -->
     <!-- //Module Specific Operations -->
+
     <catalog_product_view translate="label">
       <remove name="catalog.product.related"></remove>
       <label>Catalog Product View (Any)</label>

@@ -1,57 +1,34 @@
-<!-- HEADER SECTION -->
-<div class="header-container">
-  <div class="contain-to-grid header-section">
-    <!-- TOPBAR SECTION -->
-    <nav class="top-bar important-class" data-topbar>
+<div id="header-section" class="contain-to-grid header-section">
+  <!-- TOPBAR SECTION -->
+  <nav class="top-bar important-class" data-topbar>
     <!-- TITLE AREA & LOGO -->
     <div class="columns large-2 logo-area">
       <ul class="title-area">
         <li class="name">
-          <a class="logo" href="/"><img src="<?php echo $this->getSkinUrl('images/basic-logo.png') ?>" alt="" id="logo-image"></a>
+          <a class="logo" href="/"><img src="<?php echo $this->getSkinUrl('images/basic-logo.png') ?>" alt="" id="logo-image"/></a>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
       </ul>
     </div>
     <!-- END TITLE AREA & LOGO -->
 
-      <div class="columns large-2 col-divider"></div>
-      <section class="top-bar-section first-menu">
-        <ul class="left">
-          <li class="active"><a href="index.php">!Hola</a></li>
-          <li><a href="blog.php">Cestas</a></li>
-          <li><a href="#">Recetas</a></li>
-          <li><a href="#">¿Cómo funciona?</a></li>
-        </ul>
-      </section>
-      <section class="top-bar-section second-menu">
-        <ul class="right">
-            <li><a href="index.php">Cuenta</a></li>
-            <li><a href="blog.php">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Siguenos</a></li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-  <div class="header-footer sticky">
-    <div class="large-12 column text-center">
-      <form action="/newsletter/subscriber/new/" method="post" id="home-service-checker-validate-detail">
-      <div class="row">
-        <div class="columns large-6">
-        <span>Introduce tu codigo postal</span>
-        <img src="img/home-service-image.png" alt="" id="home-service-image">
-        </div>
-        <div class="columns large-1">
-        <input type="text" name="cp" id="cp" title="Dinos tu CP" class="input-text required-entry validate-cp">
-        </div>
-        <div class="columns large-3">
-        <button type="submit" title="Tu CP" class="button tiny"><span><span>Dinos tu CP</span></span></button>
-        </div>
-      </div>
-      </form>
-    </div>
-  </div>
+    <div class="columns large-2 col-divider"></div>
+    <section class="top-bar-section first-menu">
+      <ul class="left">
+        <li class="active"><a href="index.php">!Hola</a></li>
+        <li><a href="blog.php">Cestas</a></li>
+        <li><a href="#">Recetas</a></li>
+        <li><a href="#">¿Cómo funciona?</a></li>
+      </ul>
+    </section>
+    <section class="top-bar-section second-menu">
+      <ul class="right">
+        <li><a href="index.php"><img src="<?php echo $this->getSkinUrl('images/man.png') ?>" alt=""/></a></li>
+        <li><a href="blog.php">Blog</a></li>
+        <li><a href="index.php"><img src="<?php echo $this->getSkinUrl('images/phone.png') ?>" alt=""/></a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Siguenos</a></li>
+      </ul>
+    </section>
+  </nav>
 </div>
-<!-- END HEADER SECTION-->
-<div class="header-fill"></div>
