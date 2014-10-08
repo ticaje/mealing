@@ -29,6 +29,10 @@
     <reference name="home_post_header">
       <block type="page/html_custom" name="inchoo_home_header" template="page/html/custom/zip_code_bar.phtml" />
     </reference>
+    <reference name="home_content">
+      <block type="page/html_custom" name="inchoo_home_how_it_works" template="page/html/custom/how_it_works.phtml" />
+      <block type="page/html_custom" name="inchoo_carts_and_recipes" template="page/html/custom/carts_and_recipes.phtml" />
+    </reference>
     <remove name="currency"/>
 
     <!-- Remove callouts and rarely used stuff globally -->
