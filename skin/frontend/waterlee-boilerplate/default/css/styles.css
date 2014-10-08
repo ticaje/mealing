@@ -18400,12 +18400,123 @@ select, select:hover {
   margin-bottom: 1rem;
 }
 
-.main-container .how-do-we-work .steps div, .main-container .how-do-we-work .summary div {
+.main-content .how-do-we-work .steps div, .main-content .how-do-we-work .summary div {
   min-height: 160px;
 }
-.main-container .how-do-we-work .steps div img, .main-container .how-do-we-work .summary div img {
+.main-content .how-do-we-work .steps div img, .main-content .how-do-we-work .summary div img {
   position: relative;
   z-index: -999;
+}
+
+.carts-recipes-container {
+  background: url("../images/carts_recipes_bg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+}
+.carts-recipes-container .carts-recipes {
+  padding-top: 80px;
+}
+.carts-recipes-container .carts-recipes .r-cell {
+  padding: 0;
+}
+.carts-recipes-container .carts-recipes .r-cell .cell-container {
+  width: 317px;
+  height: 317px;
+  text-align: center;
+}
+.carts-recipes-container .carts-recipes .r-cell .cell-container img.r-img {
+  width: 100%;
+  height: 100%;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-center-header {
+  color: #fff;
+  line-height: 2.7em;
+  padding: 30px;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-center-header span {
+  font-size: 60px;
+  font-weight: 900;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-center-header h4 {
+  color: #fff;
+}
+.carts-recipes-container .carts-recipes .r-cell .clock {
+  background: #000 !important;
+  -khtml-opacity: 0.6 !important;
+  -moz-opacity: 0.6 !important;
+  -ms-filter: ”alpha(opacity=60) ” !important;
+  filter: alpha(opacity=60) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.6 !important;
+}
+.carts-recipes-container .carts-recipes .r-cell .clock #circle {
+  position: relative;
+  top: 10%;
+  left: 35%;
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+}
+.carts-recipes-container .carts-recipes .r-cell .clock #circle span {
+  position: relative;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 100;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-text {
+  position: relative;
+  top: 50px;
+  padding: 0 30px;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-text span {
+  display: block;
+  color: #fff;
+}
+.carts-recipes-container .carts-recipes .r-cell .r-text span:nth-of-type(1) {
+  font-size: 20px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+.carts-recipes-container .carts-recipes .r-cell .cell-container.delivery .r-text img {
+  width: 25%;
+  position: relative;
+  top: -20px;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose {
+  color: #fff;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose span {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  top: 30px;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose .form-container {
+  position: relative;
+  top: 30px;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose .form-container select, .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container button {
+  width: 250px;
+  height: 40px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 14px;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose .form-container select {
+  border: 2px solid #fff;
+  background: transparent;
+  overflow: hidden;
+  background: url("../images/c-arrow.png") no-repeat 225px 10px;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose .form-container option {
+  background: transparent;
+  color: #000;
+}
+.carts-recipes-container .carts-recipes .r-cell .form-choose .form-container button {
+  background-color: #ea3700;
 }
 
 .breadcrumbs {
