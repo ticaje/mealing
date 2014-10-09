@@ -18411,6 +18411,7 @@ select, select:hover {
 .carts-recipes-container {
   background: url("../images/carts_recipes_bg.jpg") no-repeat 0 0;
   background-size: 100% 100%;
+  background-color: #000;
 }
 .carts-recipes-container .carts-recipes {
   padding-top: 80px;
@@ -18517,6 +18518,276 @@ select, select:hover {
 }
 .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container button {
   background-color: #ea3700;
+}
+
+.who-are-we-container .who-are-we .w-cell {
+  padding: 0;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container {
+  width: 317px;
+  height: 317px;
+  text-align: center;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container img.w-img {
+  width: 100%;
+  height: 100%;
+}
+.who-are-we-container .who-are-we .w-cell .r-center-header {
+  color: #fff;
+  line-height: 2.7em;
+  padding: 30px;
+}
+.who-are-we-container .who-are-we .w-cell .r-center-header span {
+  font-size: 60px;
+  font-weight: 900;
+}
+.who-are-we-container .who-are-we .w-cell .r-center-header h4 {
+  color: #fff;
+}
+.who-are-we-container .who-are-we .w-cell .w-text {
+  position: relative;
+}
+.who-are-we-container .who-are-we .w-cell .w-text span {
+  display: block;
+  color: #fff;
+}
+.who-are-we-container .who-are-we .w-cell .w-text span:nth-of-type(1) {
+  font-size: 20px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container.view-recipes {
+  background: url("../images/contact-sub-bg.png") no-repeat 0 0;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container.view-recipes .inner-container {
+  background: #000 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+  height: 317px;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container.view-recipes .inner-container .w-text img {
+  width: 50%;
+  position: relative;
+  top: 10px;
+  padding-bottom: 20px;
+}
+.who-are-we-container .who-are-we .w-cell .cell-container.view-recipes .inner-container:hover {
+  background: #000 !important;
+  -khtml-opacity: 0.5 !important;
+  -moz-opacity: 0.5 !important;
+  -ms-filter: ”alpha(opacity=50) ” !important;
+  filter: alpha(opacity=50) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.5 !important;
+}
+.who-are-we-container .who-are-we .info-container {
+  padding: 70px 30px 30px 30px;
+}
+.who-are-we-container .who-are-we .info-container p, .who-are-we-container .who-are-we .info-container h2 {
+  text-align: center;
+}
+.who-are-we-container .who-are-we .info-container .title {
+  font-weight: 300;
+  font-size: 36px;
+}
+.who-are-we-container .who-are-we .info-container p {
+  padding: 20px 40px;
+}
+.who-are-we-container .who-are-we .info-container p.paragraph-1 .enticed {
+  font-size: 25px;
+  padding: 0 20px;
+  font-weight: 400;
+}
+.who-are-we-container .who-are-we .info-container p.paragraph-2 .enjoying {
+  font-size: 24px;
+  font-weight: 300;
+}
+.who-are-we-container .who-are-we .info-container .try-button {
+  text-align: center;
+  padding-top: 60px;
+}
+.who-are-we-container .who-are-we .info-container .try-button button {
+  width: 200px;
+  background: transparent;
+  border: 2px solid #ea3700;
+  color: #ea3700;
+  font-size: 14px;
+}
+.who-are-we-container .who-are-we .info-container .try-button button:hover {
+  background: #ea3700;
+  color: #fff;
+}
+
+.contact-container {
+  background: url("../images/contact-bg.jpg") no-repeat -152px -317px;
+  height: 750px;
+  /*background-size: 100% 100%;*/
+  /* Box that shares the boundaries with the next up section */
+  /* //Box that shares the boundaries with the next up section */
+}
+.contact-container .contact-merging .c-cell-1 {
+  height: 100px;
+}
+.contact-container .contact-merging .c-cell-2 {
+  background: #fff;
+  height: 317px;
+}
+.contact-container .contact-merging .c-cell-cell-2 {
+  height: 317px;
+  background: #fff;
+}
+.contact-container .contact-merging .c-cell-cell-1 {
+  height: 317px;
+  background: transparent;
+}
+.contact-container .contact .blog-box .inner-container {
+  background: #000 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+  color: #fff;
+  text-align: center;
+  overflow: auto;
+}
+.contact-container .contact .blog-box .inner-container span {
+  display: block;
+}
+.contact-container .contact .blog-box .inner-container:hover {
+  background: #000 !important;
+  -khtml-opacity: 0.5 !important;
+  -moz-opacity: 0.5 !important;
+  -ms-filter: ”alpha(opacity=50) ” !important;
+  filter: alpha(opacity=50) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.5 !important;
+}
+.contact-container .contact .blog-box .blog-header, .contact-container .contact .blog-box .blog-entry, .contact-container .contact .blog-box .blog-footer {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.contact-container .contact .blog-box .blog-header, .contact-container .contact .blog-box .blog-footer {
+  border-top: 2px solid transparent;
+}
+.contact-container .contact .blog-box .blog-header .inner-container, .contact-container .contact .blog-box .blog-footer .inner-container {
+  padding: 20px 0;
+}
+.contact-container .contact .blog-box .blog-header .inner-container .title, .contact-container .contact .blog-box .blog-footer .inner-container .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.contact-container .contact .blog-box .blog-footer .inner-container {
+  padding: 5px;
+}
+.contact-container .contact .blog-box .blog-footer .inner-container .title {
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 35px;
+  overflow: hidden;
+}
+.contact-container .contact .blog-box .blog-footer .inner-container .title:hover {
+  cursor: pointer;
+}
+.contact-container .contact .blog-box .blog-entry .inner-container {
+  padding: 10px 0;
+  min-height: 100px;
+  text-align: left;
+}
+.contact-container .contact .blog-box .blog-entry .inner-container .entry-excerpt {
+  padding: 5px 5px 0 0;
+  line-height: 1.1em;
+  font-size: 15px;
+}
+.contact-container .contact .blog-box .blog-entry .inner-container .entry-excerpt .enticed {
+  font-weight: bold;
+}
+.contact-container .contact .blog-box .blog-entry .inner-container .date {
+  font-weight: 700;
+}
+.contact-container .contact .contact-form-container {
+  position: relative;
+  z-index: 90;
+  padding: 30px 0 0 45px;
+}
+.contact-container .contact .contact-form-container .contact-form {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.contact-container .contact .contact-form-container .contact-form .container {
+  overflow: auto;
+  background: #000 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+  padding: 30px;
+}
+.contact-container .contact .contact-form-container .contact-form .container .contact-header {
+  padding-bottom: 30px;
+  text-align: center;
+  color: #fff;
+}
+.contact-container .contact .contact-form-container .contact-form .container .contact-header .title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.contact-container .contact .contact-form-container .contact-form .container .contact-header .slogan-1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.contact-container .contact .contact-form-container .contact-form .container .contact-header .slogan-2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.contact-container .contact .contact-form-container .contact-form .container .message-button {
+  text-align: center;
+  padding-top: 25px;
+}
+.contact-container .contact .contact-form-container .contact-form .container .message-button button {
+  width: 200px;
+  background: #ea3700;
+  color: #fff;
+  font-size: 14px;
+}
+.contact-container .contact .contact-form-container .contact-form .container .message-button button:hover {
+  font-weight: bold;
+}
+.contact-container .contact .contact-form-container .contact-form .container:hover {
+  background: #000 !important;
+  -khtml-opacity: 0.5 !important;
+  -moz-opacity: 0.5 !important;
+  -ms-filter: ”alpha(opacity=50) ” !important;
+  filter: alpha(opacity=50) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.5 !important;
+}
+.contact-container .contact .contact-form-container .contact-form-footer {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.contact-container .contact .contact-form-container .contact-form-footer .container {
+  overflow: auto;
+  background: #000 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+.contact-container .contact .contact-form-container .contact-form-footer .container .contact-footer-info {
+  font-weight: bold;
 }
 
 .breadcrumbs {
