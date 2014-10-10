@@ -18371,6 +18371,48 @@ select, select:hover {
     padding-right: 1rem;
   }
 }
+.footer .footer-container {
+  padding: 30px 0 50px 0;
+}
+.footer .footer-container .footer-content {
+  /*border: 1px solid red;*/
+  margin: 0 auto;
+}
+.footer .footer-container .footer-content .first-section .facebook-container {
+  border-bottom: 2px solid #ccc;
+}
+.footer .footer-container .footer-content .first-section .facebook-container .fcb-image {
+  padding: 0;
+}
+.footer .footer-container .footer-content .first-section .facebook-container .fcb-image img {
+  padding-top: 5px;
+  border: 1px solid #ccc;
+}
+.footer .footer-container .footer-content .first-section .facebook-container .fcb-like {
+  padding: 0 !important;
+  color: #807F7F;
+}
+.footer .footer-container .footer-content .first-section .facebook-container .fcb-like span {
+  padding-left: 10px;
+}
+.footer .footer-container .footer-content .first-section .likes-container {
+  color: #807F7F;
+  padding: 10px 0;
+}
+.footer .footer-container .footer-content .second-section ul, .footer .footer-container .footer-content .third-section ul, .footer .footer-container .footer-content .fourth-section ul {
+  text-align: left;
+  margin: 0 !important;
+}
+.footer .footer-container .footer-content .second-section .header, .footer .footer-container .footer-content .third-section .header, .footer .footer-container .footer-content .fourth-section .header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #807F7F;
+  margin-bottom: 10px;
+}
+.footer .footer-container .footer-content .fourth-section .header {
+  font-weight: 300;
+}
+
 .panel {
   border-style: solid;
   border-width: 1px;

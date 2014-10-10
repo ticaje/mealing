@@ -1,51 +1,49 @@
-<?php
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     base_default
- * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
-?>
-
-<footer class="site-footer">
-    <div class="site-footer-content row">
-        <?php echo $this->getChildHtml("mobile.menu.footer") ?>
-            <div class="columns large-12 footer-content">
-                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_demo_links')->toHtml(); ?>
-
-                <div class="line-separator"></div>
-
-                    <div class="newsletter columns large-12"><?php echo $this->getChildHtml("footer.newsletter") ?></div>
-
+<footer class="footer">
+  <div class="row footer-container">
+    <div class="small-12 large-10 columns large-centered footer-content">
+      <div class="">
+        <div class="small-4 large-4 columns first-section">
+          <div class="row facebook-container">
+            <div class="small-4 large-4 columns fcb-image">
+              <img class="" src="<?php echo $this->getSkinUrl('images/mini-logo.png') ?>">
             </div>
-
-    </div>
-    <div class="site-footer-info"
-        <div class="columns large-12 footer-info">
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_info')->toHtml(); ?>
-            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social_icons')->toHtml(); ?>
-            <address class="columns large-12 address-padd text-right"><?php echo $this->getCopyright() ?></address>
+            <div class="small-8 large-8 columns fcb-like">
+              <div><strong>Recomiendo</strong> on Facebook</div>
+              <button type="button" class="button tiny radius">Like</button>
+              <span>You like this</span>
+            </div>
+          </div>
+          <div class="row likes-container">
+            <div>4 people like<strong> Recomiendo</strong></div>
+          </div>
         </div>
+        <div class="small-2 large-2 columns second-section">
+          <h4 class="hide-for-small header">Nuestros Menus</h4>
+          <ul>
+            <li><a href="">Adelgazar</a></li>
+            <li><a href="">Mantenerse</a></li>
+          </ul>
+        </div>
+        <div class="small-2 large-3 columns third-section">
+          <h4 class="hide-for-small header">Nuestras Recetas</h4>
+          <ul>
+            <li><a href="">Proxima Semana</a></li>
+            <li><a href="">Que estamos comiendo</a></li>
+            <li><a href="">Semana pasada</a></li>
+          </ul>
+        </div>
+        <div class="small-2 large-3 columns fourth-section">
+          <h4 class="hide-for-small header">Club R</h4>
+          <ul>
+            <li><a href="">Preguntas Frecuentes</a></li>
+            <li><a href="">Trabaja con nosotros</a></li>
+            <li><a href="">Proovedores</a></li>
+            <li><a href="">Terminos y condiciones</a></li>
+            <li><a href="">Politica de Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-        <?php echo $this->getChildHtml('js_files'); ?>
-
+  </div>
 </footer>
+<?php echo $this->getChildHtml('js_files'); ?>
