@@ -6,13 +6,15 @@ HEADER SECTION
  */
 .header-container{
   height: 600px;
-  background: url('../images/slider-2.png') no-repeat 0 0 ;
-  background-size: 100%;
+  /*background: url('../images/slider-2.png') no-repeat 0 0 ;
+  background-size: 100%;*/
   .header-section {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid $white-color;
+    position: relative;
+    z-index: 1;
     nav.top-bar{
       .logo-area {
-        border-right: 1px solid white;
+        border-right: 1px solid $white-color;
         padding-left: 30px;
         li.name{
          padding-top: 5px;
@@ -26,7 +28,7 @@ HEADER SECTION
           li {
             background: transparent ;
             a{
-              color: white;
+              color: $white-color;
               background: transparent ;
             }
           }
@@ -35,7 +37,7 @@ HEADER SECTION
       .top-bar-section.second-menu{
         ul{
          li{
-           border-left: 1px solid white;
+           border-left: 1px solid $white-color;
            a{
              font-weight: bolder;
            }
@@ -43,22 +45,101 @@ HEADER SECTION
         }
       }
     }
-    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
+    /*-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
     z-index: 999;
-    min-width: 100%;
+    min-width: 100%;*/
   }
-
   /* Home specific header */
+  .orbit-container{
+    height: 100%;
+    top: -50px;
+    z-index: 0;
+    ul.orbit-slides-container{
+      height: 100% !important;
+      img{ width: 100%; }
+      .orbit-caption{
+        top:  8%;
+        left: 19%;
+        width: 62%;
+        background: transparent;
+        padding: 10px 0;
+        span{ display:block; }
+        color: $white-color;
+        font-weight: bold;
+        .first-section{
+          @include transparency(0.70);
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+          .header{
+            color: $white-color;
+            font-size: 60px;
+            font-weight: bold;
+          }
+          .content{
+            font-size: 20px;
+          }
+          hr{
+            width: 10%;
+            position: relative;
+            left: 45%;
+            background-color: $white-color;
+            height: 3px;
+          }
+          .footer{
+            font-size: 20px;
+          }
+        }
+        .first-section:hover, .second-section:hover{
+          @include transparency(0.50);
+        }
+        .second-section{
+          @include transparency(0.70);
+          margin-top: 3px;
+          width: 100%;
+          text-align: center;
+          padding: 20px 0 0;
+          button{
+            @include transparency(1.0, $red-button-color);
+            width: 20%;
+          }
+        }
+      }
+    }
+    .orbit-bullets-container{
+      position: relative;
+      top: -140px;
+      background: url('../images/scroll.png') no-repeat 50% -5% ;
+      height: 15%;
+      ol.orbit-bullets{
+        top:35px;
+        li{
+          background: transparent;
+          border: 3px solid $white-color;
+          padding: 5px;
+        }
+        li.active{
+          background: $white-color;
+        }
+      }
+    }
+    .orbit-timer, .orbit-slide-number, .orbit-prev, .orbit-next{
+      display: none;
+    }
+  }
+  /* Slideshow section */
+
+  /* Slideshow section */
   #zip-bar.header-footer{
     position: relative;
-    top: 465px;
-    height: 90px;
+    top: -120px;
+    height: 70px;
     z-index: 1000;
     @include transparency(0.70);
     color: $white-color;
     .zb-inner-container{
-      padding-top: 25px;
+      padding-top: 10px;
       input#zip-code{
         width: 90px;
         @include full-rounded-borders(3);
@@ -76,7 +157,7 @@ HEADER SECTION
       span{ font-weight: bold; top: 20px; font-size: 12px; }
       img{ top: 6px; padding-left: 10px;}
       input{ top: 10px; }
-      button{ font-size: 14px; top: 1px; }
+      button{ font-size: 14px; top: 10px; padding: 5px; }
       button:hover{
         border: 2px solid $red-button-color !important;
         @include transparency(1.0, $red-button-color);

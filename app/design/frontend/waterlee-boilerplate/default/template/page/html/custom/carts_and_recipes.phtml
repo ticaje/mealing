@@ -3,7 +3,7 @@
     <div class="small-12 large-12 columns large-centered">
       <div class="row">
         <div class="small-4 large-4 r-cell columns">
-          <div class="cell-container">
+          <div id="first-basket-cell" class="cell-container">
             <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/1.png" ?>" alt="" id="">
           </div>
         </div>
@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="small-4 large-4 r-cell columns">
-          <div class="cell-container clock">
+          <div class="cell-container clock resizable">
             <div id="circle"><span>L</span></div>
             <div class="r-text">
               <span>Recomiendo planifica</span>
@@ -36,18 +36,16 @@
           </div>
         </div>
         <div class="small-4 large-4 r-cell columns">
-          <div class="cell-container form-choose">
+          <div class="cell-container resizable form-choose">
             <span>Elige uno de nuestros menus</span>
             <div class="form-container">
               <form id="select-menu-form"  method="post" action="">
-                <label>
                 <select name="menus-list">
                   <?php $menus = array("Nuestros menus", "Menu 1", "Menu 2", "Menu 3"); ?>
                   <?php foreach ($menus as $i => $menu): ?>
                   <option value="menu-<?php echo $i ?>"><?php echo $menu ?></option>
                   <?php endforeach ?>
                 </select>
-                </label>
                 <select name="quantity-list">
                   <?php $quan = array("¿Cuantos sois?", "1 persona", "2 personas", "3 personas"); ?>
                   <?php foreach ($quan as $j => $q): ?>
@@ -71,7 +69,7 @@
     <div class="small-12 large-12 columns large-centered">
       <div class="row">
         <div class="small-4 large-4 r-cell columns">
-          <div class="cell-container delivery">
+          <div class="cell-container resizable delivery">
             <div class="r-text">
               <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/delivery.png" ?>" alt="" id="">
               <span>Recomiendo reparte</span>
@@ -106,7 +104,7 @@
           </div>
         </div>
         <div class="small-4 large-4 r-cell columns">
-          <div class="cell-container delivery">
+          <div class="cell-container resizable delivery">
             <div class="r-text">
               <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/cook.png" ?>" alt="" id="">
               <span>Tu disfrutas</span>

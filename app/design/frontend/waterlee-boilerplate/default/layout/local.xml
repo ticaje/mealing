@@ -64,7 +64,7 @@
 
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action>-->
+      <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action>
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery-placeholder/jquery.placeholder.js</name><params/></action>-->
@@ -79,7 +79,7 @@
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.magellan.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.offcanvas.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>-->
+      <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.reveal.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.slider.js</name><params/></action>-->
       <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>-->
