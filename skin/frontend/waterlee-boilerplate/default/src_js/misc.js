@@ -36,4 +36,50 @@ jQuery(document).ready( function(){
 
   });
 
+  // Home page "How it works section"'s logic
+  callAnimations(wrapAnimators(5));
+
 });
+
+
+function animatorMouseOver(elem){
+  elem.mouseover(function(){
+    var pos = elem.css("top");
+    if (pos == "0px") {
+      jQuery(this).stop().animate({
+        top: "-=160",
+        background: "transparent",
+      }, 550, function() {
+        // Animation complete.
+        jQuery(this).css("top", "-160px");
+      });
+    }
+  });
+}
+function animatorMouseOut(elem){
+  elem.mouseout(function(){
+    var pos = elem.css("top");
+    if (pos == "-160px") {
+      jQuery(this).stop().animate({
+        top: "+=160",
+      }, 550, function() {
+        // Animation complete.
+        jQuery(this).css("top", "0px");
+      });
+    }
+  });
+}
+function callAnimations(elems){
+  for(i=0;i<elems.length;i++){
+    el = jQuery(elems[i]);
+    animatorMouseOver(el);
+    animatorMouseOut(el);
+  }
+}
+function wrapAnimators(counter){
+  var arr = [];
+  for(i=1;i<=counter;i++){
+    arr.push("#animator-"+i);
+  }
+  return arr;
+}

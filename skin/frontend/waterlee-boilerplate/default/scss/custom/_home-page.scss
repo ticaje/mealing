@@ -27,14 +27,53 @@
 .main-content{
   .how-do-we-work{
     overflow: hidden;
-    .steps, .summary{
-      div{
-        min-height: 160px;
-        img{
+    .title{
+      background-color: $white-color;
+      position: relative;
+      z-index: 4;
+    }
+    .steps .animator, .summary .restricted{
+      min-height: 160px;
+    }
+    .summary{
+      background-color: $white-color;
+      position: relative;
+      z-index: 3;
+    }
+    .steps{
+      .text-center{
+        .animator{
           position: relative;
-          z-index: -999;
+          top: 0;
+          height: 100px;
+          z-index: 1;
+          .img{
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            pointer-events: none;
+          }
+          .info{
+            padding-top: 20px;
+          }
+        }
+        .bottom-neighbor{
+          height: 0;
+          position: relative;
+          z-index: 4;
+          background-color: $white-color;
+          padding-top: 22px;
         }
       }
+      .restricted{
+        padding: 0;
+      }
+    }
+    .steps-bottom{
+      background: $white-color;
+      top: 25px;
+      position: relative;
+      z-index: 20;
     }
   }
   .carts-recipes-container{
