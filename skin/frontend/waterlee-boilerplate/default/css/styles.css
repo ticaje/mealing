@@ -16850,8 +16850,6 @@ HEADER SECTION
  */
 .header-container {
   height: 600px;
-  /*background: url('../images/slider-2.png') no-repeat 0 0 ;
-  background-size: 100%;*/
   /* Home specific header */
   /* Slideshow section */
   /* Slideshow section */
@@ -16982,13 +16980,14 @@ HEADER SECTION
   top: -140px;
   background: url("../images/scroll.png") no-repeat 50% -5%;
   height: 15%;
+  z-index: 5;
 }
 .header-container .orbit-container .orbit-bullets-container ol.orbit-bullets {
   top: 35px;
 }
 .header-container .orbit-container .orbit-bullets-container ol.orbit-bullets li {
   background: transparent;
-  border: 3px solid #fff;
+  border: 2px solid #fff;
   padding: 5px;
 }
 .header-container .orbit-container .orbit-bullets-container ol.orbit-bullets li.active {
@@ -18555,12 +18554,49 @@ select, select:hover {
 .main-content .how-do-we-work {
   overflow: hidden;
 }
-.main-content .how-do-we-work .steps div, .main-content .how-do-we-work .summary div {
+.main-content .how-do-we-work .title {
+  background-color: #fff;
+  position: relative;
+  z-index: 4;
+}
+.main-content .how-do-we-work .steps .animator, .main-content .how-do-we-work .summary .restricted {
   min-height: 160px;
 }
-.main-content .how-do-we-work .steps div img, .main-content .how-do-we-work .summary div img {
+.main-content .how-do-we-work .summary {
+  background-color: #fff;
   position: relative;
-  z-index: -999;
+  z-index: 3;
+}
+.main-content .how-do-we-work .steps .text-center .animator {
+  position: relative;
+  top: 0;
+  height: 100px;
+  z-index: 1;
+}
+.main-content .how-do-we-work .steps .text-center .animator .img {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  pointer-events: none;
+}
+.main-content .how-do-we-work .steps .text-center .animator .info {
+  padding-top: 20px;
+}
+.main-content .how-do-we-work .steps .text-center .bottom-neighbor {
+  height: 0;
+  position: relative;
+  z-index: 4;
+  background-color: #fff;
+  padding-top: 22px;
+}
+.main-content .how-do-we-work .steps .restricted {
+  padding: 0;
+}
+.main-content .how-do-we-work .steps-bottom {
+  background: #fff;
+  top: 25px;
+  position: relative;
+  z-index: 20;
 }
 .main-content .carts-recipes-container {
   background: url("../images/carts_recipes_bg.jpg") no-repeat 0 0;
