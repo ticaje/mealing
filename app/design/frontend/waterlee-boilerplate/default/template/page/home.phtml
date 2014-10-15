@@ -52,20 +52,30 @@
         <!-- END HEADER SECTION-->
         <div id="header-fill"></div>
         <?php echo $this->getChildHtml('breadcrumbs') ?>
-        <div class="row">
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/how_it_works.phtml')->toHtml(); ?>
+        <div class="how-does-it-work">
+          <div class="row parent">
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/how_it_works.phtml')->toHtml(); ?>
+          </div>
         </div>
-        <div class="row carts-recipes-container">
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/carts_and_recipes.phtml')->toHtml(); ?>
+        <div class="carts-recipes-container">
+          <div class="row parent">
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/carts_and_recipes.phtml')->toHtml(); ?>
+          </div>
         </div>
-        <div class="row who-are-we-container">
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/who_are_we.phtml')->toHtml(); ?>
+        <div class="who-are-we-container">
+          <div class="row parent">
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/who_are_we.phtml')->toHtml(); ?>
+          </div>
         </div>
-        <div class="row contact-container">
+        <div class="contact-container">
+        <div class="row parent">
           <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/contact.phtml')->toHtml(); ?>
         </div>
+        </div>
       </div>
+        <div class="row parent">
       <?php echo $this->getChildHtml('footer') ?>
+        </div>
       <?php echo $this->getChildHtml('before_body_end') ?>
       <?php echo $this->getAbsoluteFooter() ?>
     </div>

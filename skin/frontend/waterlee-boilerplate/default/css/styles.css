@@ -16902,6 +16902,7 @@ HEADER SECTION
   width: 100%;
 }
 .header-container .orbit-container ul.orbit-slides-container .orbit-caption {
+  max-width: 960px !important;
   top: 8%;
   left: 19%;
   width: 62%;
@@ -18551,6 +18552,9 @@ select, select:hover {
   margin-bottom: 1rem;
 }
 
+.main-content .row.parent {
+  width: 960px;
+}
 .main-content .how-do-we-work {
   overflow: hidden;
 }
