@@ -13,7 +13,9 @@ $grey-color: #efefef;
 $author-color: #0C6654;
 $category-color: #C53737;
 $red-button-color: #ea3700;
-
+$red-color: $red-button-color;
+$top-bar-height: 60px;
+$menu-color: #8a8a8a;
 
 @mixin rounded-borders($size){
   -webkit-border-top-left-radius: $size+px;
