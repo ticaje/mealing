@@ -15,10 +15,10 @@
     <div class="columns large-2 col-divider"></div>
     <section class="top-bar-section first-menu">
       <ul class="left">
-        <li class="active"><a href="index.php">!Hola</a></li>
-        <li><a href="blog.php">Cestas</a></li>
-        <li><a href="#">Recetas</a></li>
-        <li><a href="#">¿Cómo funciona?</a></li>
+        <li <?php if ($this->getIsHomePage()) :?> class="active"<?php endif;?>><a href="/">Hola!</a></li>
+        <li <?php if (strpos(Mage::helper('core/url')->getCurrentUrl(),'cestas.html') != false ) :?> class="active"<?php endif;?>><a href="cestas.html">Cestas</a></li>
+        <li><a href="recetas.html">Recetas</a></li>
+        <li><a href="como-funciona.html">¿Cómo funciona?</a></li>
       </ul>
     </section>
     <section class="top-bar-section second-menu">
@@ -32,47 +32,3 @@
     </section>
   </nav>
 </div>
-<ul data-orbit>
-  <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-1.png') ?>" alt="1" />
-    <div class="orbit-caption">
-      <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
-        <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
-      </div>
-      <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
-      </div>
-    </div>
-  </li>
-  <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-2.jpg') ?>" alt="2" />
-    <div class="orbit-caption">
-      <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
-        <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
-      </div>
-      <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
-      </div>
-    </div>
-  </li>
-  <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-3.jpg') ?>" alt="3" />
-    <div class="orbit-caption">
-      <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
-        <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
-      </div>
-      <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
-      </div>
-    </div>
-  </li>
-</ul>

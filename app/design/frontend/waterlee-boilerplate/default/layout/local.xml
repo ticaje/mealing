@@ -26,6 +26,9 @@
       <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
       <!--block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/-->
     </reference>
+    <reference name="carousel">
+      <block type="page/html" as="carousel" template="page/html/custom/header-home.phtml"/>
+    </reference>
     <reference name="home_post_header">
       <block type="page/html_custom" name="inchoo_home_header" template="page/html/custom/zip_code_bar.phtml" />
     </reference>
