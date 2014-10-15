@@ -1,47 +1,49 @@
-var tempScrollTop, currentScrollTop = 0;
+var tt = 0;
 jQuery(document).ready( function(){
-  var zip_bar = jQuery("#zip-bar");
-  var scroll_limit = 465;
 
-  //jQuery("#pepe-2").html("Zip bar position:" + zip_bar.css("top"));
+  // Home page scroll logic
   jQuery(window).scroll(function(){
-    doc_scroll = jQuery(document).scrollTop()
+    var a = jQuery("#header-container");
+    var zb = jQuery("#zip-bar");
+    var sl = jQuery(window).height() - 130; //a.css("height");
+    ds = jQuery(document).scrollTop();
     // Scroll up
-    if (tempScrollTop > doc_scroll ) {
-      if (doc_scroll < (scroll_limit + 61) ){
-        var up = scroll_limit - doc_scroll + 61;
-        zip_bar.css( {"top" : up+"px", "position" : "fixed", "width":"100%"} );
+    if (tt > ds ) {
+      if (ds < (sl + 56) ){
+        var u = sl - ds + 56;
+        zb.css( {"top" : u+"px", "position" : "fixed", "width":"100%"} );
       }
     }
     // Scroll down
-    else if (tempScrollTop < doc_scroll ){
-      if (doc_scroll > (scroll_limit + 55) ){
-        zip_bar.css( {"top" : "0", "position" : "fixed", "width":"100%"} );
+    else if (tt < ds ){
+      if (ds > (sl + 55) ){
+        zb.css( {"top" : "0", "position" : "fixed", "width":"100%"} );
       }else{
-        var up = -120; // Set to zip bar's initial position
-        zip_bar.css( {"top" : up+"px", "position" : "relative", "width":"100%"} );
+        var u = -120; // Set to zip bar's initial position
+        zb.css( {"top" : u+"px", "position" : "relative", "width":"100%"} );
       }
     }
-  tempScrollTop = doc_scroll;
+    tt = ds;
 
-  var cell = jQuery("#first-basket-cell").css("height");
-  jQuery(".resizable").css("height", cell);
-
-  /* For testing zip bar scrolling when height changes */
-  //var spec = jQuery('<span id="pepe-1"></span></br><span id="pepe-2"></span>');
-  //jQuery("#header-fill").append(spec);
-  //jQuery("#pepe-1").html("Document scroll:" + doc_scroll);
-  //jQuery("#pepe-2").html("Zip bar position:" + zip_bar.css("top"));
-  /* //For testing zip bar scrolling when height changes */
+    var cell = jQuery("#first-basket-cell").css("height");
+    jQuery(".resizable").css("height", cell);
+    /* For testing zip bar scrolling when height changes */
+    //var spec = jQuery('<span id="pepe-1"></span></br><span id="pepe-2"></span>');
+    //jQuery("#header-fill").append(spec);
+    //jQuery("#pepe-1").html("Document scroll:" + doc_scroll);
+    //jQuery("#pepe-2").html("Zip bar position:" + zip_bar.css("top"));
+    /* //For testing zip bar scrolling when height changes */
 
   });
 
-  // Home page "How it works section"'s logic
-  callAnimations(wrapAnimators(5));
 
+  /* Calling triggers on init */
+  callAnimations(wrapAnimators(5));
+  jQuery(document).on("ready", fixHeight);
+  jQuery(window).on("resize", fixHeight);
 });
 
-
+/* Home page "How it works section"'s logic */
 function animatorMouseOver(elem){
   elem.mouseover(function(){
     var pos = elem.css("top");
@@ -83,3 +85,30 @@ function wrapAnimators(counter){
   }
   return arr;
 }
+
+/* Home page header resizer function */
+
+function fixHeight() {
+  var a = jQuery("#header-container"), k = jQuery(".orbit-bullets-container"),
+      b = (jQuery(window).width(), jQuery(window).height());
+  a.css({
+    "min-height": b + "px",
+    "height": b + "px"
+  });
+
+  var v = -140;
+  if (b <= 600){
+    v =  v + (600 - b);
+  }
+  k.css({
+    "top": v + "px"
+  });
+  var c, d, e, f = jQuery("#header-container .header-content"),
+      g = jQuery("#header-container .header-content");
+  c = f.height(), d = a.height(), e = (d - c) / 2, f.css({
+    "margin-top": e + "px"
+  }), c = g.height(), d = a.height(), e = (d - c) / 2, g.css({
+    "margin-top": e + "px"
+  })
+}
+
