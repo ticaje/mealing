@@ -1,0 +1,118 @@
+<div class="small-12 large-12 columns large-centered carts-recipes" style="border: 0px solid blue;" >
+  <div class="row">
+    <div class="small-12 large-12 columns large-centered">
+      <div class="row">
+        <div class="small-4 large-4 r-cell columns">
+          <div id="first-basket-cell" class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/1.png" ?>" alt="" id="">
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container r-center-header">
+            <span>Cesta</span></br>
+            <span>&</span></br>
+            <span>Recetas</span>
+            <h4>¿Qué haremos de cena la próxima semana?</h4>
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container clock resizable">
+            <div id="circle"><span>L</span></div>
+            <div class="r-text">
+              <span>Recomiendo planifica</span>
+              <span>Nuestra nutricionista te propone menus propuestos por recetas faciles de hacer y muy ricas, para todas las semana.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12 columns large-centered">
+      <div class="row">
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img "src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/2.png" ?>" alt="" id="">
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container resizable form-choose">
+            <span>Elige uno de nuestros menus</span>
+            <div class="form-container">
+              <form id="select-menu-form"  method="post" action="">
+                <select name="menus-list">
+                  <?php $menus = array("Nuestros menus", "Menu 1", "Menu 2", "Menu 3"); ?>
+                  <?php foreach ($menus as $i => $menu): ?>
+                  <option value="menu-<?php echo $i ?>"><?php echo $menu ?></option>
+                  <?php endforeach ?>
+                </select>
+                <select name="quantity-list">
+                  <?php $quan = array("¿Cuantos sois?", "1 persona", "2 personas", "3 personas"); ?>
+                  <?php foreach ($quan as $j => $q): ?>
+                  <option value="q-<?php echo $j ?>"><?php echo $q ?></option>
+                  <?php endforeach ?>
+                </select>
+                <button type="submit" id="go" title="Quiero probar" class="button tiny radius">Quiero probar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/4.png" ?>" alt="" id="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12 columns large-centered">
+      <div class="row">
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container resizable delivery">
+            <div class="r-text">
+              <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/delivery.png" ?>" alt="" id="">
+              <span>Recomiendo reparte</span>
+              <span>Nosotros hacemos la compra de los ingredientes frescos y de proximidad y los llevamos hasta tu casa, junto con las recetas.</span>
+            </div>
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/5.png" ?>" alt="" id="">
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/4.png" ?>" alt="" id="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-12 columns large-centered">
+      <div class="row">
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/6.png" ?>" alt="" id="">
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/7.png" ?>" alt="" id="">
+          </div>
+        </div>
+        <div class="small-4 large-4 r-cell columns">
+          <div class="cell-container resizable delivery">
+            <div class="r-text">
+              <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/cook.png" ?>" alt="" id="">
+              <span>Tu disfrutas</span>
+              <span>Y tu disfrutaras cada noche cenando deliciosos platos hechos por ti.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

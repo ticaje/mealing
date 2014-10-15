@@ -1,0 +1,69 @@
+<div class="small-12 large-12 columns large-centered contact">
+  <div class="row">
+    <div class="small-4 large-4 columns blog-box">
+      <div class="row blog-header">
+        <div class="inner-container">
+          <span class="title">Blog</span>
+          <span class="slogan">Descubre todo lo que necesitas</span>
+        </div>
+      </div>
+      <?php $number = array(1,2,3); ?>
+      <?php foreach ($number as $i): ?>
+      <div class="row blog-entry" id="blog-entry-<?php echo $i ?>">
+        <div class="inner-container">
+          <div class="large-4 columns entry-image">
+            <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."recipes/4.png" ?>" alt="" id="">
+          </div>
+          <div class="large-8 columns entry-excerpt">
+            <div class="excerpt enticed">
+              Receta estrella de la semana:
+            </div>
+            <div class="excerpt">
+              Fish and ships. Porque hace calor y porque es cuando el tomate...
+              Fish and ships. Porque hace calor y porque es cuando el tomate...
+            </div>
+            <div class="date">18.05.2014</div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach ?>
+      <div class="row blog-footer">
+        <div class="inner-container">
+          <span class="title" onclick="/blog">+</span>
+        </div>
+      </div>
+    </div>
+    <div class="small-8 large-8 columns">
+      <div class="row">
+        <div class="small-8 large-12 columns contact-form-container">
+          <div class="contact-form">
+            <div class="container">
+              <div class="contact-header">
+                <div class="title"><span>Contacto</span></div>
+                <div class="slogan-1"><span>No dude en contactar con nosotros.</span></div>
+                <div class="slogan-2"><span>Queremos ayudarte en cualquier momento!</span></div>
+              </div>
+              <form method="post" action="">
+                <input type="text" id="name" class="radius" name="name" value="" placeholder="Nombre:" required="required" />
+                <input type="email" id="email" class="radius" name="email" value="" placeholder="Correo:" required="required" />
+                <textarea id="message" class="radius" name="message" rows="5" placeholder="Mensaje:" required="required"></textarea>
+                <div class="message-button">
+                  <button type="submit" value="Enviar" class="button tiny radius" id="submit">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="contact-form-footer">
+            <div class="container">
+              <div class="contact-footer-info">
+                <div class="title"><span>Contacta con nosotros a traves del telefono</span></div>
+                <div class="phone"><span>+34 9797956685</span></div>
+                <div class="schedule"><span>Lunes - Viernes: 10:00 - 17:00</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

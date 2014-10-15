@@ -1,0 +1,24 @@
+<div id="zip-bar" class="header-footer sticky">
+  <div class="text-center">
+    <form action="/newsletter/subscriber/new/" method="post" id="home-service-checker-validate-detail">
+      <div class="row">
+        <div class="columns large-12 column-centered">
+          <div class="row zb-inner-container">
+            <div class="columns large-1 col-divider"></div>
+            <div class="columns large-6 zc-info">
+              <span>Introduce tu codigo postal para comenzar a ver nuestros menus</span>
+              <img src="<?php echo $this->getSkinUrl('images/zc-car.png') ?>" alt="" id="home-service-image">
+            </div>
+            <div class="columns large-1">
+              <input type="text" name="cp" id="zip-code" placeholder="CP" class="input-text required-entry validate-cp">
+            </div>
+            <div class="columns large-2">
+              <button type="submit" id="go" title="Tu CP" class="button tiny radius">Dinos tu Codigo Postal</button>
+            </div>
+            <div class="columns large-2 col-divider"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+//Colors definition
+$white-color: #fff;
+$black-color: #000;
+$body-bg-color: #C6D6DB;
+$basic-color: #C6D6DB;
+$basic-blue: #008cba;
+$basic-green: #89BC21;
+$default-color: #58585A;
+$basic-orange: #F06B48;
+$funny-border-color: #B4B0B0;
+$title-color: #616161;
+$grey-color: #efefef;
+$author-color: #0C6654;
+$category-color: #C53737;
+$red-button-color: #ea3700;
+
+
+@mixin rounded-borders($size){
+  -webkit-border-top-left-radius: $size+px;
+  -webkit-border-bottom-left-radius: $size+px;
+  -moz-border-radius-topleft: $size+px;
+  -moz-border-radius-bottomleft: $size+px;
+  border-top-left-radius: $size+px;
+  border-bottom-left-radius: $size+px;
+}
+@mixin full-rounded-borders($size){
+  -webkit-border-top-left-radius: $size+px;
+  -webkit-border-bottom-left-radius: $size+px;
+  -webkit-border-top-right-radius: $size+px;
+  -webkit-border-bottom-right-radius: $size+px;
+  -moz-border-radius-topleft: $size+px;
+  -moz-border-radius-bottomleft: $size+px;
+  -moz-border-radius-topright: $size+px;
+  -moz-border-radius-bottomright: $size+px;
+  border-top-left-radius: $size+px;
+  border-bottom-left-radius: $size+px;
+  border-top-right-radius: $size+px;
+  border-bottom-right-radius: $size+px;
+}
+@mixin menu-transition($duration){
+  -webkit-transition-duration: $duration+s;
+  transition-duration: $duration+s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+@mixin menu-transforming($width){
+  -webkit-transform: translateX($width+px);
+  transform: translateX($width+px);
+}
+@mixin li-menu-styles(){
+  height: 20px; list-style: none; background-color: #fff; margin: 4px 0;
+  padding: 0 15px;
+  a{
+    color: #58585A;
+  }
+}
+@mixin funny-border-bottom(){
+  border-bottom:1px solid $funny-border-color;
+}
+@mixin link-like-button($pu:10, $ps:20, $bg-color:$basic-orange, $color:$white-color){
+  background: $bg-color; color: $color; padding: $pu+px $ps+px; font-family: 'Museo Sans';
+}
+@mixin funny-content-border($x:0, $y:0, $z:20, $color:#bbb){
+  -webkit-box-shadow: $x+px $y+px $z+px $color;
+  -moz-box-shadow: $x+px $y+px $z+px #bbb;
+}
+@mixin transparency($trans : 0.50, $color : $black-color){
+  background: $color !important;
+  -khtml-opacity:$trans  !important;
+  -moz-opacity:$trans !important;
+  -ms-filter:”alpha(opacity=$trans*100)” !important;
+  filter:alpha(opacity=$trans*100) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity:$trans !important;
+}
+
+

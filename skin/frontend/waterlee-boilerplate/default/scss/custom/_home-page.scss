@@ -1,0 +1,400 @@
+.panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9d9d9;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #f2f2f2;
+}
+.body-img {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 40em) {
+  .body-img {
+    margin-top: 2rem;
+  }
+}
+.subtitle {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.category-img {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.main-content{
+  .row.parent{
+    width: 960px;
+  }
+  .how-do-we-work{
+    overflow: hidden;
+    .title{
+      background-color: $white-color;
+      position: relative;
+      z-index: 4;
+    }
+    .steps .animator, .summary .restricted{
+      min-height: 160px;
+    }
+    .summary{
+      background-color: $white-color;
+      position: relative;
+      z-index: 3;
+    }
+    .steps{
+      .text-center{
+        .animator{
+          position: relative;
+          top: 0;
+          height: 100px;
+          z-index: 1;
+          .img{
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            pointer-events: none;
+          }
+          .info{
+            padding-top: 20px;
+          }
+        }
+        .bottom-neighbor{
+          height: 0;
+          position: relative;
+          z-index: 4;
+          background-color: $white-color;
+          padding-top: 22px;
+        }
+      }
+      .restricted{
+        padding: 0;
+      }
+    }
+    .steps-bottom{
+      background: $white-color;
+      top: 25px;
+      position: relative;
+      z-index: 20;
+    }
+  }
+  .carts-recipes-container{
+    background: url('../images/carts_recipes_bg.jpg') no-repeat 0 0 ;
+    background-size: 100%;
+    background-color: $black-color;
+    .carts-recipes{
+      padding-top: 80px ;
+      .r-cell{
+        padding: 0;
+        .cell-container{
+          img.r-img{ width: 100%; }
+          width: 100%;
+          text-align: center;
+        }
+        .r-center-header{
+          color: $white-color;
+          line-height: 2.7em;
+          padding: 30px;
+          span{ font-size: 60px; font-weight: 900; }
+          h4{ color: $white-color; }
+        }
+        .clock{
+          @include transparency(0.60);
+          #circle {
+            position: relative;
+            top: 10%;
+            left: 35%;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+            border: 2px solid $white-color;
+            span{
+              position: relative;
+              color: $white-color;
+              font-size: 50px;
+              font-weight: 100;
+            }
+          }
+        }
+        .resizable{
+          @include transparency(0.60);
+        }
+        .r-text{
+          position: relative;
+          top: 50px;
+          padding: 0 30px;
+          span{
+            display: block;
+            color: $white-color;
+          }
+          span:nth-of-type(1){
+            font-size: 20px;
+            padding: 5px 0;
+            font-weight: bold;
+          }
+        }
+        .cell-container.delivery .r-text{
+          img{
+            width: 25%;
+            position: relative;
+            top: -20px;
+          }
+        }
+        .form-choose{
+          color: $white-color;
+          span{ font-size: 18px; font-weight: bold; position:relative; top:30px; }
+          .form-container{
+            position: relative;
+            top: 30px;
+            select, button{
+              width: 250px;
+              height: 40px;
+              margin: 15px 0;
+              color: $white-color;
+              font-size: 14px;
+              display: block;
+              margin: 10px auto;
+            }
+            select{
+              border: 2px solid $white-color;
+              background: transparent;
+              overflow: hidden;
+              background: url('../images/c-arrow.png') no-repeat 96% 10px;
+            }
+            option{
+              background: transparent;
+              color: $black-color;
+            }
+            button{
+              background-color: $red-button-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .who-are-we-container{
+    .who-are-we{
+      .w-cell{
+        padding: 0;
+        .cell-container{
+          img.w-img{ width: 100%; }
+          width: 100%;
+          text-align: center;
+        }
+        .r-center-header{
+          color: $white-color;
+          line-height: 2.7em;
+          padding: 30px;
+          span{ font-size: 60px; font-weight: 900; }
+          h4{ color: $white-color; }
+        }
+        .w-text{
+          position: relative;
+          span{
+            display: block;
+            color: $white-color;
+          }
+          span:nth-of-type(1){
+            font-size: 20px;
+            padding: 5px 0;
+            font-weight: bold;
+          }
+        }
+      }
+      .w-cell.view-recipes{
+        background: url('../images/contact-sub-bg.png') no-repeat 0 0;
+        background-size: 100%;
+        .cell-container{
+          .inner-container{
+            @include transparency(0.70);
+            //height: 317px;
+            .w-text{
+              img{
+                width: 50%;
+                position: relative;
+                top: 10px;
+                padding-bottom: 20px;
+              }
+            }
+          }
+          .inner-container:hover{
+            @include transparency(0.50);
+          }
+        }
+      }
+      .info-container{
+        padding: 70px 30px 30px 30px;
+        p, h2{
+          text-align: center;
+        }
+        .title{
+          font-weight: 300;
+          font-size: 36px;
+        }
+        p{
+          padding: 20px 40px;
+        }
+        p.paragraph-1{
+          .enticed{
+            font-size: 25px;
+            padding: 0 20px;
+            font-weight: 400;
+
+          }
+        }
+        p.paragraph-2{
+          .enjoying{
+            font-size: 24px;
+            font-weight: 300;
+          }
+        }
+        .try-button{
+          text-align: center;
+          padding-top: 60px;
+          button{
+            width: 200px;
+            background: transparent;
+            border: 2px solid $red-button-color;
+            color: $red-button-color;
+            font-size: 14px;
+          }
+          button:hover{
+            background: $red-button-color;
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+  .contact-container{
+    background: url('../images/contact-bg.jpg') no-repeat 0 -317px;
+    height: 750px;
+    background-size: auto;
+    .contact{
+      .blog-box{
+        .inner-container{
+          @include transparency(0.70);
+          color: $white-color;
+          text-align: center;
+          span{ display: block; }
+          overflow: auto;
+        }
+        .inner-container:hover{
+          @include transparency(0.50);
+        }
+        .blog-header, .blog-entry, .blog-footer{
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+        }
+        .blog-header, .blog-footer{
+          border-top: 2px solid transparent;
+          .inner-container{
+            padding: 20px 0;
+            .title{
+              font-size: 24px;
+              font-weight: bold;
+            }
+          }
+        }
+        .blog-footer{
+          .inner-container{
+            padding: 5px;
+            .title{
+              font-size: 60px;
+              font-weight: 100;
+              line-height: 35px;
+              overflow: hidden;
+            }
+            .title:hover{
+              cursor: pointer;
+            }
+          }
+        }
+        .blog-entry {
+          .inner-container{
+            padding: 10px 0;
+            min-height: 100px;
+            text-align: left;
+            .entry-excerpt{
+              padding: 5px 5px 0 0;
+              line-height: 1.1em;
+              font-size: 15px;
+              .enticed{
+                font-weight: bold;
+              }
+            }
+            .date{
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .contact-form-container{
+        position: relative;
+        z-index: 90;
+        padding: 30px 0 0 45px;
+        .contact-form{
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          .container{
+            overflow: auto;
+            @include transparency(0.70);
+            padding: 30px;
+            .contact-header{
+              padding-bottom: 30px;
+              text-align: center;
+              color: $white-color;
+              .title{
+                font-size: 28px;
+                font-weight: bold;
+              }
+              .slogan-1{
+                font-size: 20px;
+                font-weight: bold;
+              }
+              .slogan-2{
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+            .message-button{
+              text-align: center;
+              padding-top: 25px;
+              button{
+                width: 200px;
+                background: $red-button-color;
+                color: $white-color;
+                font-size: 14px;
+              }
+              button:hover{
+                font-weight: bold;
+              }
+            }
+          }
+          .container:hover{
+            @include transparency(0.50);
+          }
+        }
+        .contact-form-footer{
+          border-top: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          .container{
+            overflow: auto;
+            @include transparency(0.70);
+            text-align: center;
+            padding: 20px;
+            color: $white-color;
+            .contact-footer-info{
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
