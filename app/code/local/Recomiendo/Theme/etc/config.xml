@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Recomiendo_Theme>
+      <version>0.1.0</version>
+    </Recomiendo_Theme>
+  </modules>
+  <global>
+    <page>
+      <layouts>
+        <custom_home module="page" translate="label">
+          <label>Custom Home</label>
+          <template>page/home.phtml</template>
+          <layout_handle>page_custom_layout</layout_handle>
+        </custom_home>
+      </layouts>
+    </page>
+  </global>
+</config>

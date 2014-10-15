@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Recomiendo_Theme>
+      <active>true</active>
+      <codePool>local</codePool>
+      <depends>
+        <Mage_Page/>
+      </depends>
+    </Recomiendo_Theme>
+  </modules>
+</config>
