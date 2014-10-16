@@ -1,0 +1,80 @@
+.basket{
+  .row.header{
+    h3.title{
+      color: $red-color;
+    }
+  }
+  .row.countdown{
+    background-image: url('../images/basket/autum.png');
+    background-size: 100% 100%;
+    span.title{
+      position: relative;
+      top: 10px;
+      color: $white-color;
+      font-weight: 500;
+      padding: 10px;
+    }
+    /* Include countdown block styles */
+    @import "custom/countdown";
+  }
+  .row.menu-bar{
+    @include funny-border-bottom($grey-color);
+    .zip-code, .menu-type, .persons-amount{
+      @include funny-border-right($grey-color);
+    }
+    .zip-code{
+      width: 20.66667%;
+      .centered{
+        position: relative;
+        left: 20%;
+        input{
+          display:inline;
+          width:50%;
+          border: none;
+        }
+      }
+    }
+    .menu-type{
+      height: 60px;
+      width: 58.66667%;
+      nav.top-bar-section{
+        position:relative;
+        top:5px;
+        ul {
+          display: table;
+          margin: 0 auto;
+          li {
+            display: table-cell;
+            a{
+              background: $white-color;
+              font-size: 16px;
+            }
+            a:hover{
+              background: none;
+              color: $red-color;
+            }
+            a.active{
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+    .persons-amount{
+      width: 20.66667%;
+      .ok-button{
+        background: $red-color;
+        color: $white-color;
+        font-weight: bold;
+        font-size: 28px;
+        height: 60px;
+        span{
+          position: relative;
+          top: 15%;
+        }
+      }
+    }
+  }
+  .row.logic-container-lunch{
+  }
+}

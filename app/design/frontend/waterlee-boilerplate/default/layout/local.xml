@@ -61,6 +61,8 @@
       <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
       <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
       <action method="addItem"><type>skin_js</type><name>src_js/misc.js</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>src_js/counter.js</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>src_js/main.js</name><params/></action>
 
       <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
       <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>

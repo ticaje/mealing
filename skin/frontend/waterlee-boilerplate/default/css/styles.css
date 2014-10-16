@@ -19486,6 +19486,549 @@ table {
   z-index: 1 !important;
 }
 
+.basket .row.header h3.title {
+  color: #ea3700;
+}
+.basket .row.countdown {
+  background-image: url("../images/basket/autum.png");
+  background-size: 100% 100%;
+  /* Include countdown block styles */
+}
+.basket .row.countdown span.title {
+  position: relative;
+  top: 10px;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px;
+}
+.basket .row.countdown .counter-container .countdown .unit-wrap {
+  float: left;
+  margin-left: 1.25em;
+}
+.basket .row.countdown .counter-container .countdown .unit-wrap:first-child {
+  margin-left: 0;
+}
+.basket .row.countdown .counter-container .countdown .unit-wrap > div:before {
+  content: " ";
+  display: table;
+}
+.basket .row.countdown .counter-container .countdown .unit-wrap > div:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.basket .row.countdown .counter-container .countdown .unit-wrap > span {
+  color: #fff;
+  display: block;
+  font-weight: 500;
+}
+.basket .row.countdown .counter-container .countdown div.effect-wrap {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.basket .row.countdown .counter-container .countdown div.effect-wrap:hover {
+  color: #fff;
+}
+.basket .row.countdown .counter-container .countdown div.digits {
+  list-style: none;
+}
+.basket .row.countdown .counter-container .countdown.clearfix:before, .basket .row.countdown .counter-container .countdown.wrap:before {
+  content: " ";
+  display: table;
+}
+.basket .row.countdown .counter-container .countdown.clearfix:after, .basket .row.countdown .counter-container .countdown.wrap:after {
+  content: " ";
+  display: table;
+}
+.basket .row.countdown .counter-container .countdown.clearfix:after, .basket .row.countdown .counter-container .countdown.wrap:after {
+  clear: both;
+}
+.basket .row.countdown .counter-container .countdown.clearfix, .basket .row.countdown .counter-container .countdown.wrap {
+  *zoom: 1;
+}
+.basket .row.countdown .counter-container .countdown {
+  display: inline-block;
+  margin: 1em;
+  position: relative;
+  text-align: center;
+}
+.basket .row.countdown .counter-container .countdown:before {
+  content: " ";
+  display: table;
+}
+.basket .row.countdown .counter-container .countdown:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.basket .row.countdown .counter-container .countdown div.digits {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 40px;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner {
+  left: 0;
+  height: 85%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner:first-child {
+  z-index: 2;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap {
+  cursor: default !important;
+  display: block;
+  height: 100%;
+  margin: 0 !important;
+  overflow: visible !important;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div {
+  font-size: 120px;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  outline: 1px solid transparent;
+  width: 100%;
+  z-index: 1;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div .shadow {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  border-top: 2px solid #000;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up {
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  top: 0;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up:after {
+  background-color: #fff;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.down {
+  bottom: 0;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div div.inn {
+  background-color: #fff;
+  color: #000;
+  font-size: 40px;
+  height: 200%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up div.inn {
+  background: #fff;
+  top: 0;
+}
+.basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.down div.inn {
+  bottom: 0;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.before {
+  z-index: 3;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.active {
+  -webkit-animation: asd 0.5s 0.5s linear both;
+  -moz-animation: asd 0.5s 0.5s linear both;
+  animation: asd 0.5s 0.5s linear both;
+  z-index: 5;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.active .down {
+  -webkit-animation: turn 0.5s 0.5s linear both;
+  -moz-animation: turn 0.5s 0.5s linear both;
+  animation: turn 0.5s 0.5s linear both;
+  z-index: 2;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.before .up {
+  -webkit-animation: turn2 0.5s linear both;
+  -moz-animation: turn2 0.5s linear both;
+  animation: turn2 0.5s linear both;
+  z-index: 2;
+}
+.basket .row.countdown .counter-container .countdown div div.digits-inner.active {
+  z-index: 3;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.before .up .shadow {
+  -webkit-animation: show 0.5s linear both;
+  -moz-animation: show 0.5s linear both;
+  animation: show 0.5s linear both;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  border-top: 1px solid #000;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.active .up .shadow {
+  -webkit-animation: hide 0.5s 0.3s linear both;
+  -moz-animation: hide 0.5s 0.3s linear both;
+  animation: hide 0.5s 0.3s linear both;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
+  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.before .down .shadow {
+  -webkit-animation: show 0.5s linear both;
+  -moz-animation: show 0.5s linear both;
+  animation: show 0.5s linear both;
+  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  border-top: 1px solid #000;
+}
+.basket .row.countdown .counter-container .countdown div.play div.digits-inner.active .down .shadow {
+  -webkit-animation: hide 0.5s 0.3s linear both;
+  -moz-animation: hide 0.5s 0.3s linear both;
+  animation: hide 0.5s 0.2s linear both;
+  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  border-top: 1px solid #000;
+}
+@-webkit-keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20%, 100% {
+    z-index: 4;
+  }
+}
+@-moz-keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20%, 100% {
+    z-index: 4;
+  }
+}
+@-o-keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20%, 100% {
+    z-index: 4;
+  }
+}
+@keyframes asd {
+  0% {
+    z-index: 2;
+  }
+  20%, 100% {
+    z-index: 4;
+  }
+}
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+@-moz-keyframes turn {
+  0% {
+    -moz-transform: rotateX(90deg);
+  }
+  100% {
+    -moz-transform: rotateX(0deg);
+  }
+}
+@-o-keyframes turn {
+  0% {
+    -o-transform: rotateX(90deg);
+  }
+  100% {
+    -o-transform: rotateX(0deg);
+  }
+}
+@keyframes turn {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@-webkit-keyframes turn2 {
+  0% {
+    -webkit-transform: rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg);
+  }
+}
+@-moz-keyframes turn2 {
+  0% {
+    -moz-transform: rotateX(0deg);
+  }
+  100% {
+    -moz-transform: rotateX(-90deg);
+  }
+}
+@-o-keyframes turn2 {
+  0% {
+    -o-transform: rotateX(0deg);
+  }
+  100% {
+    -o-transform: rotateX(-90deg);
+  }
+}
+@keyframes turn2 {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media all and (max-width: 900px) {
+  .basket .row.countdown .counter-container .countdown {
+    margin: .75em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap {
+    margin-left: 0.75em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap > span {
+    font-size: 1em;
+    margin: .66666666666667em 0 0;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits {
+    font-size: 70px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 2px;
+    width: 40px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div {
+    font-size: 70px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up:after {
+    height: 2px;
+    top: 48px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div div.inn {
+    font-size: 70px;
+    left: 0;
+  }
+}
+@media all and (max-width: 650px) {
+  .basket .row.countdown .counter-container .countdown {
+    margin: .75em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap {
+    margin-left: 0.5em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap > span {
+    font-size: 1em;
+    margin: .5em 0 0;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits {
+    font-size: 40px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 2px;
+    width: 40px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div {
+    font-size: 40px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up:after {
+    height: 2px;
+    top: 33px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div div.inn {
+    font-size: 40px;
+    left: 0;
+  }
+}
+@media all and (max-width: 500px) {
+  .basket .row.countdown .counter-container .countdown {
+    margin: .75em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap {
+    margin-left: 0.3em;
+  }
+  .basket .row.countdown .counter-container .countdown .unit-wrap > span {
+    font-size: .75em;
+    margin: .5em 0 0;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits {
+    font-size: 30px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 1px;
+    width: 26px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div {
+    font-size: 30px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div.up:after {
+    height: 2px;
+    top: 24px;
+  }
+  .basket .row.countdown .counter-container .countdown div.digits div.digits-inner div.effect-wrap div div.inn {
+    font-size: 30px;
+    left: 0;
+  }
+}
+.basket .row.menu-bar {
+  border-bottom: 1px solid #efefef;
+}
+.basket .row.menu-bar .zip-code, .basket .row.menu-bar .menu-type, .basket .row.menu-bar .persons-amount {
+  border-right: 1px solid #efefef;
+}
+.basket .row.menu-bar .zip-code {
+  width: 20.66667%;
+}
+.basket .row.menu-bar .zip-code .centered {
+  position: relative;
+  left: 20%;
+}
+.basket .row.menu-bar .zip-code .centered input {
+  display: inline;
+  width: 50%;
+  border: none;
+}
+.basket .row.menu-bar .menu-type {
+  height: 60px;
+  width: 58.66667%;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section {
+  position: relative;
+  top: 5px;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section ul {
+  display: table;
+  margin: 0 auto;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section ul li {
+  display: table-cell;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section ul li a {
+  background: #fff;
+  font-size: 16px;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section ul li a:hover {
+  background: none;
+  color: #ea3700;
+}
+.basket .row.menu-bar .menu-type nav.top-bar-section ul li a.active {
+  color: #ea3700;
+}
+.basket .row.menu-bar .persons-amount {
+  width: 20.66667%;
+}
+.basket .row.menu-bar .persons-amount .ok-button {
+  background: #ea3700;
+  color: #fff;
+  font-weight: bold;
+  font-size: 28px;
+  height: 60px;
+}
+.basket .row.menu-bar .persons-amount .ok-button span {
+  position: relative;
+  top: 15%;
+}
+
 .catalog-category-view .grid-mode .product-name {
   font-size: 1.125rem;
   font-weight: 500;
