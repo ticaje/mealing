@@ -1,0 +1,41 @@
+<div class="form-container">
+  <form id="select-menu-form"  method="post" action="">
+    <div class="small-2 medium-2 columns zip-code">
+      <div class="centered">
+        <img src="<?php echo $this->getSkinUrl('images/basket/cp-red.png') ?>" alt="">
+        <input type="text" name="cp" placeholder="CP" class="input-text required-entry validate-cp">
+      </div>
+    </div>
+    <div class="small-8 medium-8 columns menu-type">
+      <div class="centered">
+        <nav class="top-bar-section">
+          <ul class="center">
+            <li><a class="active" href="#">Adelgazar</a></li>
+            <li><a href="#">Mantenerse</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="small-2 medium-2 columns persons-amount">
+      <div class="row">
+        <div class="small-8 medium-9 columns" style="padding: 0;">
+          <div id="selectPersons">
+            <select id="demo-htmlselect">
+              <option value="0" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/1.png') ?>"
+              data-description=""></option>
+              <option value="1" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/2.png') ?>"
+              data-description=""></option>
+              <option value="2" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/3.png') ?>"
+              data-description=""></option>
+              <option value="3" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/4.png') ?>"
+              data-description=""></option>
+            </select>
+          </div>
+        </div>
+        <div class="small-3 medium-3 columns ok-button">
+          <span>&#x2713;</span>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

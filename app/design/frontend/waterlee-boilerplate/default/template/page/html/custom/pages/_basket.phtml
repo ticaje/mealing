@@ -10,103 +10,66 @@
 <div class="row countdown">
   <div class="small-12 medium-12 columns large-centered" style="text-align:center;">
     <span class="title">El año finaliza en...</span>
-    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/pages/_counter.phtml')->toHtml(); ?>
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_counter.phtml')->toHtml(); ?>
   </div>
 </div>
 <div class="row menu-bar">
-  <div class="form-container">
-    <form id="select-menu-form"  method="post" action="">
-      <div class="small-2 medium-2 columns zip-code">
-        <div class="centered">
-          <img src="<?php echo $this->getSkinUrl('images/basket/cp-red.png') ?>" alt="" id="home-service-image">
-          <input type="text" name="cp" placeholder="CP" class="input-text required-entry validate-cp">
-        </div>
-      </div>
-      <div class="small-8 medium-8 columns menu-type">
-        <div class="centered">
-          <nav class="top-bar-section">
-            <ul class="center">
-              <li><a class="active" href="#">Adelgazar</a></li>
-              <li><a href="#">Mantenerse</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="small-2 medium-2 columns persons-amount">
-        <div class="row">
-          <div class="small-8 medium-9 columns" style="padding: 0;">
-            <div id="myDropdown">
-              <select id="demo-htmlselect">
-                <option value="0" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/1.png') ?>"
-                data-description=""></option>
-                <option value="1" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/2.png') ?>"
-                data-description=""></option>
-                <option value="2" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/3.png') ?>"
-                data-description=""></option>
-                <option value="3" data-imagesrc="<?php echo $this->getSkinUrl('images/basket/4.png') ?>"
-                data-description=""></option>
-              </select>
-            </div>
-          </div>
-          <div class="small-3 medium-3 columns ok-button">
-            <span>&#x2713;</span>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_menu-bar.phtml')->toHtml(); ?>
 </div>
 <div class="row logic-container-lunch">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_lunch.phtml')->toHtml(); ?>
 </div>
-<div class="row logic-container-lunch">
-  <div class="small-12 medium-12 columns large-centered" style="text-align:center;" >
+<div class="row logic-container-dinner">
+  <div class="small-12 medium-12 columns large-centered">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_dinner.phtml')->toHtml(); ?>
   </div>
 </div>
-<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/40036711/Scripts/jquery.ddslick.min.js"></script>
+<div class="row summary-box">
+  <div class="small-6 medium-6 columns added-products">
+    <div class="row columns-wrapper">
+      <div class="small-4 medium-4 column image-cont">
+        <img src="<?php echo $this->getSkinUrl('images/basket/fruits.png') ?>" alt="">
+      </div>
+      <div class="small-8 medium-8 column">
+        <h3 class="title">Frutas y yogurt</h3>
+        <span class="slogan">Para que completes tu menu te recomendamos que disfrutesen en el postre de nuestras Frutas y Yogurt.</span>
+        <div class="form-container">
+          <span>Frutas</span>
+          <select name="menus-list">
+            <?php $menus = array("Para cuantas personas?", "Menu 1", "Menu 2", "Menu 3"); ?>
+            <?php foreach ($menus as $i => $menu): ?>
+            <option value="menu-<?php echo $i ?>"><?php echo $menu ?></option>
+            <?php endforeach ?>
+          </select>
+          <span>Yogurt</span>
+          <select name="quantity-list">
+            <?php $menus = array("Para cuantas personas?", "Menu 1", "Menu 2", "Menu 3"); ?>
+            <?php foreach ($menus as $j => $q): ?>
+            <option value="q-<?php echo $j ?>"><?php echo $q ?></option>
+            <?php endforeach ?>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="small-6 medium-6 columns basket-summary">
+    <div class="row columns-wrapper">
+      <h5 class="title">Resumen de la cesta</h5>
+      <img src="<?php echo $this->getSkinUrl('images/basket/basket.png') ?>" alt="">
+      <h5 class="slogan">Selecciona tu cesta sobre la foto del menú</h5>
+    </div>
+  </div>
+</div>
+
 <script>
-  jQuery('#myDropdown').ddslick({
+  jQuery('#selectPersons').ddslick({
     selectText: "Cuantos sois",
-    width: "100%",
-    onSelected: function(selectedData){
-      //callback function: do something with selectedData;
-    }
+      width: "100%",
+      onSelected: function(selectedData){
+        //callback function: do something with selectedData;
+      }
   });
-  jQuery("#myDropdown").mouseenter(function(){
-    jQuery("#myDropdown").ddslick("open");
+  jQuery("#selectPersons").mouseenter(function(){
+    jQuery("#selectPersons").ddslick("open");
   });
 </script>
-<style>
-  .myDropDown{
-  }
-  .dd-select{
-    width: 100% !important;
-    height: 60px !important;
-    background: white !important;
-    border: none !important;
-  }
-  .dd-selected{
-    position: relative;
-    top: 5px;
-  }
-  .dd-option-selected{
-    background: white !important;
-  }
-  .dd-option{
-    background: white !important;
-    border: none;
-  }
-  .dd-option:hover{
-    background: white !important;
-  }
-  ul.dd-options{
-    width: 101% !important;
-    border: 1px solid #efefef !important;
-  }
-  .dd-pointer-down{
-    border-top: solid 5px #ea3700;
-  }
-  .dd-pointer-up{
-    border-bottom: solid 5px #ea3700 !important;
-  }
-</style>
-

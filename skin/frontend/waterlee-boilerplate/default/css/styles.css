@@ -18534,45 +18534,48 @@ select, select:hover {
     padding-right: 1rem;
   }
 }
-.footer .footer-container {
+.footer-super-container {
+  border-top: 2px solid #efefef;
+}
+.footer-super-container .footer .footer-container {
   padding: 30px 0 50px 0;
 }
-.footer .footer-container .footer-content {
+.footer-super-container .footer .footer-container .footer-content {
   /*border: 1px solid red;*/
   margin: 0 auto;
 }
-.footer .footer-container .footer-content .first-section .facebook-container {
+.footer-super-container .footer .footer-container .footer-content .first-section .facebook-container {
   border-bottom: 2px solid #ccc;
 }
-.footer .footer-container .footer-content .first-section .facebook-container .fcb-image {
+.footer-super-container .footer .footer-container .footer-content .first-section .facebook-container .fcb-image {
   padding: 0;
 }
-.footer .footer-container .footer-content .first-section .facebook-container .fcb-image img {
+.footer-super-container .footer .footer-container .footer-content .first-section .facebook-container .fcb-image img {
   padding-top: 5px;
   border: 1px solid #ccc;
 }
-.footer .footer-container .footer-content .first-section .facebook-container .fcb-like {
+.footer-super-container .footer .footer-container .footer-content .first-section .facebook-container .fcb-like {
   padding: 0 !important;
   color: #807F7F;
 }
-.footer .footer-container .footer-content .first-section .facebook-container .fcb-like span {
+.footer-super-container .footer .footer-container .footer-content .first-section .facebook-container .fcb-like span {
   padding-left: 10px;
 }
-.footer .footer-container .footer-content .first-section .likes-container {
+.footer-super-container .footer .footer-container .footer-content .first-section .likes-container {
   color: #807F7F;
   padding: 10px 0;
 }
-.footer .footer-container .footer-content .second-section ul, .footer .footer-container .footer-content .third-section ul, .footer .footer-container .footer-content .fourth-section ul {
+.footer-super-container .footer .footer-container .footer-content .second-section ul, .footer-super-container .footer .footer-container .footer-content .third-section ul, .footer-super-container .footer .footer-container .footer-content .fourth-section ul {
   text-align: left;
   margin: 0 !important;
 }
-.footer .footer-container .footer-content .second-section .header, .footer .footer-container .footer-content .third-section .header, .footer .footer-container .footer-content .fourth-section .header {
+.footer-super-container .footer .footer-container .footer-content .second-section .header, .footer-super-container .footer .footer-container .footer-content .third-section .header, .footer-super-container .footer .footer-container .footer-content .fourth-section .header {
   font-size: 14px;
   font-weight: bold;
   color: #807F7F;
   margin-bottom: 10px;
 }
-.footer .footer-container .footer-content .fourth-section .header {
+.footer-super-container .footer .footer-container .footer-content .fourth-section .header {
   font-weight: 300;
 }
 
@@ -19486,6 +19489,9 @@ table {
   z-index: 1 !important;
 }
 
+.basket {
+  margin-bottom: 80px;
+}
 .basket .row.header h3.title {
   color: #ea3700;
 }
@@ -19970,9 +19976,6 @@ table {
     left: 0;
   }
 }
-.basket .row.menu-bar {
-  border-bottom: 1px solid #efefef;
-}
 .basket .row.menu-bar .zip-code, .basket .row.menu-bar .menu-type, .basket .row.menu-bar .persons-amount {
   border-right: 1px solid #efefef;
 }
@@ -20027,6 +20030,243 @@ table {
 .basket .row.menu-bar .persons-amount .ok-button span {
   position: relative;
   top: 15%;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-select {
+  width: 100% !important;
+  height: 60px !important;
+  background: white !important;
+  border: none !important;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-selected {
+  position: relative;
+  top: 5px;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-option-selected {
+  background: white !important;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-option {
+  background: white !important;
+  border: none;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-option:hover {
+  background: white !important;
+}
+.basket .row.menu-bar .persons-amount #selectPersons ul.dd-options {
+  width: 101% !important;
+  border: 1px solid #efefef !important;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-pointer-down {
+  border-top: solid 5px #ea3700;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-pointer-up {
+  border-bottom: solid 5px #ea3700 !important;
+}
+.basket .row.menu-bar .persons-amount #selectPersons ul.dd-options li {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 2.5s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0.6;
+}
+.basket .row.menu-bar .persons-amount #selectPersons ul.dd-options li:hover {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.basket .row.menu-bar .persons-amount #selectPersons .dd-option-image, .basket .row.menu-bar .persons-amount #selectPersons .dd-selected-image {
+  max-width: none !important;
+}
+.basket .row.logic-container-lunch {
+  background-image: url("../images/basket/day-bg.jpg");
+  background-size: 100% 100%;
+}
+.basket .row.logic-container-dinner {
+  background-image: url("../images/basket/night-bg.jpg");
+  background-size: 100% 100%;
+}
+.basket .row.logic-container-lunch .header, .basket .row.logic-container-dinner .header {
+  padding: 40px 0 5px 0;
+  color: #fff;
+}
+.basket .row.logic-container-lunch .header .title, .basket .row.logic-container-dinner .header .title {
+  color: #fff;
+}
+.basket .row.logic-container-lunch .header .slogan, .basket .row.logic-container-dinner .header .slogan {
+  color: #fff;
+  font-weight: bold;
+}
+.basket .row.logic-container-lunch .menus, .basket .row.logic-container-dinner .menus {
+  margin: 0 auto;
+}
+.basket .row.logic-container-lunch .menus .col-group-men, .basket .row.logic-container-dinner .menus .col-group-men {
+  padding: 0;
+  float: left;
+}
+.basket .row.logic-container-lunch .menus .col-group-men .head-bar, .basket .row.logic-container-dinner .menus .col-group-men .head-bar {
+  overflow: hidden;
+  color: #fff;
+  font-weight: 700;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.three-dishes, .basket .row.logic-container-dinner .menus .col-group-men.three-dishes {
+  padding: 0;
+  width: 42.7%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.three-dishes img.orange-bar, .basket .row.logic-container-dinner .menus .col-group-men.three-dishes img.orange-bar {
+  width: 99.7%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.three-dishes .head-bar, .basket .row.logic-container-dinner .menus .col-group-men.three-dishes .head-bar {
+  background: url("../images/basket/orange-bar.png") no-repeat 0 0;
+  background-size: 100% 100%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.five-dishes, .basket .row.logic-container-lunch .menus .col-group-men.seven-dishes, .basket .row.logic-container-dinner .menus .col-group-men.five-dishes, .basket .row.logic-container-dinner .menus .col-group-men.seven-dishes {
+  width: 28.5%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.five-dishes img.green-bar, .basket .row.logic-container-dinner .menus .col-group-men.five-dishes img.green-bar {
+  width: 99.7%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.five-dishes .head-bar, .basket .row.logic-container-dinner .menus .col-group-men.five-dishes .head-bar {
+  background: url("../images/basket/green-bar.png") no-repeat 0 0;
+  background-size: 100% 100%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.seven-dishes img.blue-bar, .basket .row.logic-container-dinner .menus .col-group-men.seven-dishes img.blue-bar {
+  width: 99.7%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men.seven-dishes .head-bar, .basket .row.logic-container-dinner .menus .col-group-men.seven-dishes .head-bar {
+  background: url("../images/basket/blue-bar.png") no-repeat 0 0;
+  background-size: 100% 100%;
+}
+.basket .row.logic-container-lunch .menus .col-group-men .col-men, .basket .row.logic-container-dinner .menus .col-group-men .col-men {
+  /*width: 14.28%;*/
+  float: left;
+  padding: 0;
+}
+.basket .row.logic-container-lunch .menus .col-group-men .col-men img, .basket .row.logic-container-dinner .menus .col-group-men .col-men img {
+  width: 100%;
+  display: block;
+}
+.basket .row.logic-container-lunch .menus .col-group-men img, .basket .row.logic-container-dinner .menus .col-group-men img {
+  display: block;
+}
+.basket .row.logic-container-lunch .dishes-footer, .basket .row.logic-container-dinner .dishes-footer {
+  overflow: hidden;
+  margin: 0 auto;
+}
+.basket .row.logic-container-lunch .dishes-footer .three-dishes-footer, .basket .row.logic-container-dinner .dishes-footer .three-dishes-footer {
+  background: #ff6600;
+  width: 42.7%;
+  color: #fff;
+}
+.basket .row.logic-container-lunch .dishes-footer .three-dishes-footer span, .basket .row.logic-container-dinner .dishes-footer .three-dishes-footer span {
+  position: relative;
+  top: 10px;
+  font-weight: 700;
+}
+.basket .row.logic-container-lunch .dishes-footer .five-dishes-footer, .basket .row.logic-container-dinner .dishes-footer .five-dishes-footer {
+  background: #627908;
+  width: 28.5%;
+  color: #fff;
+}
+.basket .row.logic-container-lunch .dishes-footer .five-dishes-footer span, .basket .row.logic-container-dinner .dishes-footer .five-dishes-footer span {
+  position: relative;
+  top: 10px;
+  font-weight: 700;
+}
+.basket .row.logic-container-lunch .dishes-footer .seven-dishes-footer, .basket .row.logic-container-dinner .dishes-footer .seven-dishes-footer {
+  background: #0063ce;
+  width: 28.5%;
+  color: #fff;
+}
+.basket .row.logic-container-lunch .dishes-footer .seven-dishes-footer span, .basket .row.logic-container-dinner .dishes-footer .seven-dishes-footer span {
+  position: relative;
+  top: 10px;
+  font-weight: 700;
+}
+.basket .row.logic-container-lunch .dishes-info .informizer, .basket .row.logic-container-dinner .dishes-info .informizer {
+  position: relative;
+  left: 10px;
+  color: #665E5E;
+  font-size: 14px;
+  padding: 10px 0 20px 0;
+}
+.basket .row.logic-container-lunch .dishes-info .informizer span, .basket .row.logic-container-dinner .dishes-info .informizer span {
+  position: relative;
+}
+.basket .row.logic-container-lunch .dishes-info .informizer .images-row, .basket .row.logic-container-dinner .dishes-info .informizer .images-row {
+  background: url("../images/basket/recipe-info.png") no-repeat 5px 0;
+  background-size: 80%;
+  height: 30px;
+}
+.basket .row.logic-container-lunch .dishes-info .informizer .images-row span, .basket .row.logic-container-dinner .dishes-info .informizer .images-row span {
+  top: 5px;
+  right: 12px;
+}
+.basket .row.logic-container-lunch .dishes-info .informizer .recipe-row, .basket .row.logic-container-dinner .dishes-info .informizer .recipe-row {
+  text-align: left;
+  padding-left: 5px;
+}
+.basket .row.logic-container-lunch .dishes-info .three-dishes-info, .basket .row.logic-container-dinner .dishes-info .three-dishes-info {
+  width: 42.7%;
+}
+.basket .row.logic-container-lunch .dishes-info .five-dishes-info, .basket .row.logic-container-lunch .dishes-info .seven-dishes-info, .basket .row.logic-container-dinner .dishes-info .five-dishes-info, .basket .row.logic-container-dinner .dishes-info .seven-dishes-info {
+  width: 28.5%;
+}
+.basket .summary-box {
+  width: 95%;
+  margin: 0 auto;
+}
+.basket .summary-box .added-products {
+  border: 1px solid #efefef;
+  width: 49%;
+}
+.basket .summary-box .added-products .columns-wrapper {
+  padding: 10px 10px 0 10px;
+}
+.basket .summary-box .added-products .columns-wrapper .title {
+  color: #ea3700;
+}
+.basket .summary-box .added-products .columns-wrapper .slogan {
+  font-weight: 500;
+}
+.basket .summary-box .added-products .columns-wrapper .form-container {
+  padding-top: 10px;
+}
+.basket .summary-box .added-products .columns-wrapper .form-container span {
+  display: block;
+  font-weight: 700;
+}
+.basket .summary-box .added-products .columns-wrapper .form-container select {
+  width: 55%;
+  height: 40px;
+  background: #fff url("../images/arrow.png") no-repeat scroll 95% center;
+  color: #8a8a8a;
+  font-family: Arial;
+}
+.basket .summary-box .added-products .columns-wrapper .image-cont {
+  height: 200px;
+}
+.basket .summary-box .added-products .columns-wrapper .image-cont img {
+  position: relative;
+  top: 20%;
+}
+.basket .summary-box .basket-summary {
+  border: 1px solid #efefef;
+  width: 49%;
+}
+.basket .summary-box .basket-summary .columns-wrapper {
+  text-align: center;
+}
+.basket .summary-box .basket-summary .columns-wrapper h5 {
+  color: #ea3700;
+}
+.basket .summary-box .basket-summary .columns-wrapper h5.title {
+  border-bottom: 1px solid #efefef;
+  padding: 10px;
+}
+.basket .summary-box .basket-summary .columns-wrapper h5.slogan {
+  padding: 15px;
+}
+.basket .summary-box .basket-summary .columns-wrapper img {
+  padding: 8px;
 }
 
 .catalog-category-view .grid-mode .product-name {

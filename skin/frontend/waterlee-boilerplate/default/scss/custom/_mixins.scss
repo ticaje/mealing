@@ -3,7 +3,6 @@ $white-color: #fff;
 $black-color: #000;
 $body-bg-color: #C6D6DB;
 $basic-color: #C6D6DB;
-$basic-blue: #008cba;
 $basic-green: #89BC21;
 $default-color: #58585A;
 $basic-orange: #F06B48;
@@ -15,8 +14,11 @@ $category-color: #C53737;
 $red-button-color: #ea3700;
 $red-color: $red-button-color;
 $orange-color: #ff6600;
+$blue-color: #0063ce;
+$green-color: #627908;
 $top-bar-height: 60px;
 $menu-color: #8a8a8a;
+$recipe-color: #665E5E;
 
 @mixin rounded-borders($size){
   -webkit-border-top-left-radius: $size+px;
