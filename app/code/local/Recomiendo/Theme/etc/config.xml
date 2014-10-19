@@ -20,5 +20,10 @@
         </baskets>
       </layouts>
     </page>
+    <helpers>
+      <ceo_frontend_helper>
+        <class>Recomiendo_Theme_Helper</class>
+      </ceo_frontend_helper>
+    </helpers>
   </global>
 </config>
