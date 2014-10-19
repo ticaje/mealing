@@ -1,3 +1,5 @@
+<!-- Defining helper which will be useful all along the page -->
+<?php $helper = Mage::Helper('ceo_frontend_helper'); ?>
 <div class="small-12 large-12 columns large-centered">
   <div class="row header">
     <div class="small-8 medium-8 columns large-centered" style="text-align:center; padding:30px 0;" >
@@ -17,11 +19,13 @@
     <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_menu-bar.phtml')->toHtml(); ?>
 </div>
 <div class="row logic-container-lunch">
-    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_lunch.phtml')->toHtml(); ?>
+  <div class="small-12 medium-12 columns large-centered">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setData('helper', $helper)->setTemplate('partials/basket/_lunch.phtml')->toHtml(); ?>
+  </div>
 </div>
 <div class="row logic-container-dinner">
   <div class="small-12 medium-12 columns large-centered">
-    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_dinner.phtml')->toHtml(); ?>
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setData('helper', $helper)->setTemplate('partials/basket/_dinner.phtml')->toHtml(); ?>
   </div>
 </div>
 <div class="row summary-box">

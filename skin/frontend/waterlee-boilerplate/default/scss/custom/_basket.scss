@@ -241,21 +241,19 @@
           color: $recipe-color;
           font-size: 14px;
           padding: 10px 0 20px 0;
+          div:nth-of-type(1){
+            padding: 0;
+          }
           span{
             position: relative;
           }
           .images-row{
-            background: url('../images/basket/recipe-info.png') no-repeat 5px 0;
-            background-size: 80%;
-            height: 30px;
-            span{
-              top: 5px;
-              right: 12px;
-            }
+            padding: 0;
+            text-align: left;
           }
           .recipe-row{
             text-align: left;
-            padding-left: 5px;
+            padding: 0 10px 0 15px;
           }
         }
         .three-dishes-info{
@@ -274,7 +272,7 @@
     width: 95%;
     margin: 0 auto;
     .added-products{
-      border: 1px solid $grey-color;
+      border: 1px solid $grey-strong-color;
       width: 49%;
       .columns-wrapper{
         padding: 10px 10px 0 10px;
@@ -308,7 +306,7 @@
       }
     }
     .basket-summary{
-      border: 1px solid $grey-color;
+      border: 1px solid $grey-strong-color;
       width: 49%;
       .columns-wrapper{
         text-align: center;
@@ -316,7 +314,7 @@
           color: $red-color;
         }
         h5.title{
-          border-bottom: 1px solid $grey-color;
+          border-bottom: 1px solid $grey-strong-color;
           padding: 10px;
         }
         h5.slogan{

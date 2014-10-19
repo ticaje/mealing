@@ -80,46 +80,40 @@
       </div>
       <div class="row dishes-info" style="margin: 0 auto">
         <div class="three-dishes-info small-6 medium-6 columns informizer">
-          <div class="">
-            <?php for ($i = 1; $i <= 3; $i++) { ?>
-            <div class="small-4 medium-4 columns">
-              <div class="row images-row">
-                <span>25 min</span>
-              </div>
-              <div class="row recipe-row">
-                <span>Arroz con verduras. Escalopes al limón</span>
-              </div>
+          <?php for ($i = 1; $i <= 3; $i++) { ?>
+          <div class="small-4 medium-4 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
             </div>
-            <?php } ?>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
           </div>
+          <?php } ?>
         </div>
         <div class="five-dishes-info small-3 medium-3 columns informizer">
-          <div class="">
-            <?php for ($i = 1; $i <= 2; $i++) { ?>
-            <div class="small-6 medium-6 columns">
-              <div class="row images-row">
-                <span>25 min</span>
-              </div>
-              <div class="row recipe-row">
-                <span>Arroz con verduras. Escalopes al limón</span>
-              </div>
+          <?php for ($i = 1; $i <= 2; $i++) { ?>
+          <div class="small-6 medium-6 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
             </div>
-            <?php } ?>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
           </div>
+          <?php } ?>
         </div>
         <div class="seven-dishes-info small-3 medium-3 columns informizer">
-          <div class="">
-            <?php for ($i = 1; $i <= 2; $i++) { ?>
-            <div class="small-6 medium-6 columns">
-              <div class="row images-row">
-                <span>25 min</span>
-              </div>
-              <div class="row recipe-row">
-                <span>Arroz con verduras. Escalopes al limón</span>
-              </div>
+          <?php for ($i = 1; $i <= 2; $i++) { ?>
+          <div class="small-6 medium-6 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
             </div>
-            <?php } ?>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
           </div>
+          <?php } ?>
         </div>
       </div>
     </div>

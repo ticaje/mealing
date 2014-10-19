@@ -20188,21 +20188,19 @@ table {
   font-size: 14px;
   padding: 10px 0 20px 0;
 }
+.basket .row.logic-container-lunch .dishes-info .informizer div:nth-of-type(1), .basket .row.logic-container-dinner .dishes-info .informizer div:nth-of-type(1) {
+  padding: 0;
+}
 .basket .row.logic-container-lunch .dishes-info .informizer span, .basket .row.logic-container-dinner .dishes-info .informizer span {
   position: relative;
 }
 .basket .row.logic-container-lunch .dishes-info .informizer .images-row, .basket .row.logic-container-dinner .dishes-info .informizer .images-row {
-  background: url("../images/basket/recipe-info.png") no-repeat 5px 0;
-  background-size: 80%;
-  height: 30px;
-}
-.basket .row.logic-container-lunch .dishes-info .informizer .images-row span, .basket .row.logic-container-dinner .dishes-info .informizer .images-row span {
-  top: 5px;
-  right: 12px;
+  padding: 0;
+  text-align: left;
 }
 .basket .row.logic-container-lunch .dishes-info .informizer .recipe-row, .basket .row.logic-container-dinner .dishes-info .informizer .recipe-row {
   text-align: left;
-  padding-left: 5px;
+  padding: 0 10px 0 15px;
 }
 .basket .row.logic-container-lunch .dishes-info .three-dishes-info, .basket .row.logic-container-dinner .dishes-info .three-dishes-info {
   width: 42.7%;
@@ -20215,7 +20213,7 @@ table {
   margin: 0 auto;
 }
 .basket .summary-box .added-products {
-  border: 1px solid #efefef;
+  border: 1px solid #bbbbbb;
   width: 49%;
 }
 .basket .summary-box .added-products .columns-wrapper {
@@ -20249,7 +20247,7 @@ table {
   top: 20%;
 }
 .basket .summary-box .basket-summary {
-  border: 1px solid #efefef;
+  border: 1px solid #bbbbbb;
   width: 49%;
 }
 .basket .summary-box .basket-summary .columns-wrapper {
@@ -20259,7 +20257,7 @@ table {
   color: #ea3700;
 }
 .basket .summary-box .basket-summary .columns-wrapper h5.title {
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid #bbbbbb;
   padding: 10px;
 }
 .basket .summary-box .basket-summary .columns-wrapper h5.slogan {
