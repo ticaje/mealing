@@ -1,0 +1,41 @@
+<?php
+/**
+* Template for Mage_Page_Block_Html
+*/
+?>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+  <head>
+    <?php echo $this->getChildHtml('head') ?>
+  </head>
+  <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+    <div class="off-canvas-wrap main-content" data-offcanvas>
+      <div class="inner-wrap site">
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <?php echo $this->getChildHtml('global_notices') ?>
+        <!-- HEADER SECTION -->
+        <div id="header-container" class="header-container">
+          <?php echo $this->getChildHtml('header') ?>
+        </div>
+        <div class="basket">
+          <div class="row">
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/pages/_basket.phtml')->toHtml(); ?>
+          </div>
+        </div>
+      </div>
+      <div class="footer-super-container">
+        <div class="row parent">
+          <?php echo $this->getChildHtml('footer') ?>
+        </div>
+      </div>
+      <?php echo $this->getChildHtml('before_body_end') ?>
+      <?php echo $this->getAbsoluteFooter() ?>
+    </div>
+</body>
+</html>
+

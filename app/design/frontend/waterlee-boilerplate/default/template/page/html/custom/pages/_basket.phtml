@@ -1,0 +1,76 @@
+<!-- Defining helper which will be useful all along the page -->
+<?php $helper = Mage::Helper('ceo_frontend_helper'); ?>
+<div class="small-12 large-12 columns large-centered">
+  <div class="row header">
+    <div class="small-8 medium-8 columns large-centered" style="text-align:center; padding:30px 0;" >
+      <h3 class="title">¿Qué te apetece concinar?</h3>
+      <h5 class="description">Elige uno de nuestros menús y la cantidad de personas que sois, combina tu cesta entre comidas y cenas y te llevaremos a casa ingredientes de calidad y cercanía listos para cocinar</h5>
+      <span class="slogan">¡Eres un gran chef!</span>
+    </div>
+  </div>
+</div>
+<div class="row countdown">
+  <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_counter.phtml')->toHtml(); ?>
+</div>
+<div class="row menu-bar">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_menu-bar.phtml')->toHtml(); ?>
+</div>
+<div class="row logic-container-lunch">
+  <div class="small-12 medium-12 columns large-centered">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setData('helper', $helper)->setTemplate('partials/basket/_lunch.phtml')->toHtml(); ?>
+  </div>
+</div>
+<div class="row logic-container-dinner">
+  <div class="small-12 medium-12 columns large-centered">
+    <?php echo $this->getLayout()->createBlock('page/html/custom')->setData('helper', $helper)->setTemplate('partials/basket/_dinner.phtml')->toHtml(); ?>
+  </div>
+</div>
+<div class="row summary-box">
+  <div class="small-6 medium-6 columns added-products">
+    <div class="row columns-wrapper">
+      <div class="small-4 medium-4 column image-cont">
+        <img src="<?php echo $this->getSkinUrl('images/basket/fruits.png') ?>" alt="">
+      </div>
+      <div class="small-8 medium-8 column">
+        <h3 class="title">Frutas y yogurt</h3>
+        <span class="slogan">Para que completes tu menu te recomendamos que disfrutesen en el postre de nuestras Frutas y Yogurt.</span>
+        <div class="form-container">
+          <span>Frutas</span>
+          <select name="menus-list">
+            <?php $menus = array("Para cuantas personas?", "Menu 1", "Menu 2", "Menu 3"); ?>
+            <?php foreach ($menus as $i => $menu): ?>
+            <option value="menu-<?php echo $i ?>"><?php echo $menu ?></option>
+            <?php endforeach ?>
+          </select>
+          <span>Yogurt</span>
+          <select name="quantity-list">
+            <?php $menus = array("Para cuantas personas?", "Menu 1", "Menu 2", "Menu 3"); ?>
+            <?php foreach ($menus as $j => $q): ?>
+            <option value="q-<?php echo $j ?>"><?php echo $q ?></option>
+            <?php endforeach ?>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="small-6 medium-6 columns basket-summary">
+    <div class="row columns-wrapper">
+      <h5 class="title">Resumen de la cesta</h5>
+      <img src="<?php echo $this->getSkinUrl('images/basket/basket.png') ?>" alt="">
+      <h5 class="slogan">Selecciona tu cesta sobre la foto del menú</h5>
+    </div>
+  </div>
+</div>
+
+<script>
+  jQuery('#selectPersons').ddslick({
+    selectText: "Cuantos sois",
+      width: "100%",
+      onSelected: function(selectedData){
+        //callback function: do something with selectedData;
+      }
+  });
+  jQuery("#selectPersons").mouseenter(function(){
+    jQuery("#selectPersons").ddslick("open");
+  });
+</script>

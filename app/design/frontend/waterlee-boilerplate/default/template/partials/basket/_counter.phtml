@@ -1,0 +1,22 @@
+<div class="small-12 medium-12 columns medium-centered">
+  <span class="title">Finaliza en...</span>
+  <div class="clock">
+  </div>
+</div>
+
+<?php $days = 6; ?>
+<script type="text/javascript">
+  var clock = jQuery('.clock').FlipClock(3600 * 24 * <?php echo $days ?>, {
+    clockFace: 'DailyCounter',
+      countdown: true,
+      autoStart: true,
+      callbacks: {
+        start: function() {
+          jQuery(".days .flip-clock-label").html("Días");
+          jQuery(".hours .flip-clock-label").html("Horas");
+          jQuery(".minutes .flip-clock-label").html("Min.");
+          jQuery(".seconds .flip-clock-label").html("Seg.");
+        }
+      }
+  });
+</script>

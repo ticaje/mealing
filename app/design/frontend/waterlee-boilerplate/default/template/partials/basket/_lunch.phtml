@@ -1,0 +1,121 @@
+<div class="small-12 medium-12 columns text-center" >
+  <div class="row header">
+    <h3 class="title">Comidas</h3>
+    <h5 class="slogan">Combina tu cesta entre comidas y cenas</h5>
+  </div>
+  <div class="row menus text-center">
+    <div class="small-12 medium-12 columns medium-centered" >
+      <div class="row" style="margin: 0 auto">
+        <div class="three-dishes small-6 medium-6 columns col-group-men">
+          <div class="head-bar">
+            <div class="small-4 medium-4 columns col-men">
+              1
+            </div>
+            <div class="small-4 medium-4 columns col-men">
+              2
+            </div>
+            <div class="small-4 medium-4 columns col-men">
+              3
+            </div>
+          </div>
+          <div class="">
+            <div class="small-4 medium-4 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+            <div class="small-4 medium-4 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+            <div class="small-4 medium-4 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="five-dishes small-3 medium-3 columns col-group-men">
+          <div class="head-bar">
+            <div class="small-6 medium-6 columns col-men">
+              4
+            </div>
+            <div class="small-6 medium-6 columns col-men">
+              5
+            </div>
+          </div>
+          <div class="">
+            <div class="small-6 medium-6 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+            <div class="small-6 medium-6 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="seven-dishes small-3 medium-3 columns col-group-men">
+          <div class="head-bar">
+            <div class="small-6 medium-6 columns col-men">
+              6
+            </div>
+            <div class="small-6 medium-6 columns col-men">
+              7
+            </div>
+          </div>
+          <div class="">
+            <div class="small-6 medium-6 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+            <div class="small-6 medium-6 columns col-men">
+              <img src="<?php echo $this->getSkinUrl('images/basket/recipe-1.jpg') ?>" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row dishes-footer">
+        <div class="three-dishes-footer small-6 medium-6 columns col-group-men">
+          <span>^</span>
+        </div>
+        <div class="five-dishes-footer small-3 medium-3 columns col-group-men">
+          <span>^</span>
+        </div>
+        <div class="seven-dishes-footer small-3 medium-3 columns col-group-men">
+          <span>^</span>
+        </div>
+      </div>
+      <div class="row dishes-info" style="margin: 0 auto">
+        <div class="three-dishes-info small-6 medium-6 columns informizer">
+          <?php for ($i = 1; $i <= 3; $i++) { ?>
+          <div class="small-4 medium-4 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
+            </div>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+        <div class="five-dishes-info small-3 medium-3 columns informizer">
+          <?php for ($i = 1; $i <= 2; $i++) { ?>
+          <div class="small-6 medium-6 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
+            </div>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+        <div class="seven-dishes-info small-3 medium-3 columns informizer">
+          <?php for ($i = 1; $i <= 2; $i++) { ?>
+          <div class="small-6 medium-6 columns">
+            <div class="small-12 medium-12 images-row">
+              <?php echo $this->helper->recipeInfoRow("25 min"); ?>
+            </div>
+            <div class="row recipe-row">
+              <span>Arroz con verduras. Escalopes al limón</span>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

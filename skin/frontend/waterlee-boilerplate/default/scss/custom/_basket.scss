@@ -1,0 +1,329 @@
+.basket{
+  margin-bottom: 80px;
+  .row.header{
+    h3.title{
+      color: $red-color;
+    }
+  }
+  .row.countdown{
+    background-image: url('../images/basket/autum.png');
+    background-size: 100% 100%;
+    span.title{
+      position: relative;
+      top: 10px;
+      color: $white-color;
+      font-weight: 500;
+      padding: 10px;
+    }
+    /* Include countdown block styles */
+    @import "custom/countdown";
+  }
+  .row.menu-bar{
+    .zip-code, .menu-type, .persons-amount{
+      @include funny-border-right($grey-color);
+    }
+    .zip-code{
+      width: 20.66667%;
+      .centered{
+        position: relative;
+        left: 20%;
+        input{
+          display:inline;
+          width:50%;
+          border: none;
+        }
+      }
+    }
+    .menu-type{
+      height: 60px;
+      width: 58.66667%;
+      nav.top-bar-section{
+        position:relative;
+        top:5px;
+        ul {
+          display: table;
+          margin: 0 auto;
+          li {
+            display: table-cell;
+            a{
+              background: $white-color;
+              font-size: 16px;
+            }
+            a:hover{
+              background: none;
+              color: $red-color;
+            }
+            a.active{
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+    .persons-amount{
+      width: 20.66667%;
+      .ok-button{
+        background: $red-color;
+        color: $white-color;
+        font-weight: bold;
+        font-size: 28px;
+        height: 60px;
+        span{
+          position: relative;
+          top: 15%;
+        }
+      }
+      #selectPersons{
+        .dd-select{
+          width: 100% !important;
+          height: 60px !important;
+          background: white !important;
+          border: none !important;
+        }
+        .dd-selected{
+          position: relative;
+          top: 5px;
+        }
+        .dd-option-selected{
+          background: white !important;
+        }
+        .dd-option{
+          background: white !important;
+          border: none;
+        }
+        .dd-option:hover{
+          background: white !important;
+        }
+        ul.dd-options{
+          width: 101% !important;
+          border: 1px solid #efefef !important;
+        }
+        .dd-pointer-down{
+          border-top: solid 5px #ea3700;
+        }
+        .dd-pointer-up{
+          border-bottom: solid 5px #ea3700 !important;
+        }
+        ul.dd-options li{
+          -webkit-transition: opacity 0.2s ease-in-out;
+          -moz-transition: opacity 0.2s ease-in-out;
+          -ms-transition: opacity 0.2s ease-in-out;
+          -o-transition: opacity 2.5s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
+          opacity: 0.6
+        }
+        ul.dd-options li:hover{
+          filter: alpha(opacity=100);
+          opacity: 1;
+        }
+        .dd-option-image, .dd-selected-image{
+          max-width: none !important;
+        }
+      }
+    }
+  }
+  .row.logic-container-lunch{
+    background-image: url('../images/basket/day-bg.jpg');
+    background-size: 100% 100%;
+  }
+  .row.logic-container-dinner{
+    background-image: url('../images/basket/night-bg.jpg');
+    background-size: 100% 100%;
+  }
+  .row.logic-container-lunch, .row.logic-container-dinner{
+    .header{
+      padding: 40px 0 5px 0;
+      color: $white-color;
+      .title{
+        color: $white-color;
+      }
+      .slogan{
+        color: $white-color;
+        font-weight: bold;
+      }
+    }
+    .menus{
+      margin: 0 auto;
+      .col-group-men{
+        padding:0;
+        float:left;
+        .head-bar{
+          overflow: hidden;
+          color: $white-color;
+          font-weight: 700;
+        }
+        &.three-dishes{
+          padding:0;
+          width: 42.7%;
+          img.orange-bar{
+            width: 99.7%;
+          }
+          .head-bar{
+            background: url('../images/basket/orange-bar.png') no-repeat 0 0;
+            background-size: 100% 100%;
+          }
+        }
+        &.five-dishes, &.seven-dishes{
+          width: 28.5%;
+        }
+        &.five-dishes{
+          img.green-bar{
+            width: 99.7%;
+          }
+          .head-bar{
+            background: url('../images/basket/green-bar.png') no-repeat 0 0;
+            background-size: 100% 100%;
+          }
+        }
+        &.seven-dishes{
+          img.blue-bar{
+            width: 99.7%;
+          }
+          .head-bar{
+            background: url('../images/basket/blue-bar.png') no-repeat 0 0;
+            background-size: 100% 100%;
+          }
+        }
+
+        //padding: 0;
+        .col-men{
+          /*width: 14.28%;*/
+          float: left;
+          padding: 0;
+          img{
+            width: 100%;
+            display: block;
+          }
+        }
+        img{
+          display: block;
+        }
+      }
+    }
+    .dishes-footer{
+      overflow: hidden;
+      margin: 0 auto;
+      .three-dishes-footer{
+        background: $orange-color;
+        width: 42.7%;
+        color: $white-color;
+        span{
+          position: relative;
+          top:10px;
+          font-weight: 700;
+        }
+      }
+      .five-dishes-footer{
+        background: $green-color;
+        width: 28.5%;
+        color: $white-color;
+        span{
+          position: relative;
+          top:10px;
+          font-weight: 700;
+        }
+      }
+      .seven-dishes-footer{
+        background: $blue-color;
+        width: 28.5%;
+        color: $white-color;
+        span{
+          position: relative;
+          top:10px;
+          font-weight: 700;
+        }
+      }
+    }
+    .dishes-info{
+        .informizer{
+          position: relative;
+          left: 10px;
+          color: $recipe-color;
+          font-size: 14px;
+          padding: 10px 0 20px 0;
+          div:nth-of-type(1){
+            padding: 0;
+          }
+          span{
+            position: relative;
+          }
+          .images-row{
+            padding: 0;
+            text-align: left;
+          }
+          .recipe-row{
+            text-align: left;
+            padding: 0 10px 0 15px;
+          }
+        }
+        .three-dishes-info{
+          width: 42.7%;
+        }
+        .five-dishes-info, .seven-dishes-info{
+          width: 28.5%;
+        }
+        .five-dishes-info{
+        }
+        .seven-dishes-info{
+        }
+    }
+  }
+  .summary-box{
+    width: 95%;
+    margin: 0 auto;
+    .added-products{
+      border: 1px solid $grey-strong-color;
+      width: 49%;
+      .columns-wrapper{
+        padding: 10px 10px 0 10px;
+        .title{
+          color: $red-color;
+        }
+        .slogan{
+          font-weight: 500;
+        }
+        .form-container{
+          padding-top: 10px;
+          span{
+            display: block;
+            font-weight: 700;
+          }
+          select{
+            width: 55%;
+            height: 40px;
+            background: #fff url("../images/arrow.png") no-repeat scroll 95% center;
+            color: $menu-color;
+            font-family: Arial;
+          }
+        }
+        .image-cont{
+          height: 200px;
+          img{
+            position: relative;
+            top: 20%;
+          }
+        }
+      }
+    }
+    .basket-summary{
+      border: 1px solid $grey-strong-color;
+      width: 49%;
+      .columns-wrapper{
+        text-align: center;
+        h5{
+          color: $red-color;
+        }
+        h5.title{
+          border-bottom: 1px solid $grey-strong-color;
+          padding: 10px;
+        }
+        h5.slogan{
+          padding: 15px;
+        }
+        img{
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

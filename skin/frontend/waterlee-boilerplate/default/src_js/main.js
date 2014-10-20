@@ -89,7 +89,7 @@ function wrapAnimators(counter){
 /* Home page header resizer function */
 
 function fixHeight() {
-  var a = jQuery("#header-container"), k = jQuery(".orbit-bullets-container"),
+  var a = jQuery("#home #header-container"), k = jQuery(".orbit-bullets-container"),
       b = (jQuery(window).width(), jQuery(window).height());
   a.css({
     "min-height": b + "px",
@@ -103,8 +103,8 @@ function fixHeight() {
   k.css({
     "top": v + "px"
   });
-  var c, d, e, f = jQuery("#header-container .header-content"),
-      g = jQuery("#header-container .header-content");
+  var c, d, e, f = jQuery("#home #header-container .header-content"),
+      g = jQuery("#home #header-container .header-content");
   c = f.height(), d = a.height(), e = (d - c) / 2, f.css({
     "margin-top": e + "px"
   }), c = g.height(), d = a.height(), e = (d - c) / 2, g.css({

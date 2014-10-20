@@ -4,18 +4,18 @@ $primary-color: #ef4523;
 HEADER SECTION
 ==========================================================================
  */
-.header-container{
-  height: 600px;
+#home .header-container{
   .header-section {
     border-bottom: 1px solid $white-color;
     position: relative;
     z-index: 1;
     nav.top-bar{
+      height: $top-bar-height;
       .logo-area {
+        height: 100%;
         border-right: 1px solid $white-color;
         padding-left: 30px;
         li.name{
-         padding-top: 5px;
         }
       }
       background: transparent;
@@ -23,6 +23,7 @@ HEADER SECTION
       .top-bar-section{
         ul {
           li.active a{ color: orange; }
+          li a:hover{ color: orange; background: transparent; }
           li {
             background: transparent ;
             a{
@@ -42,16 +43,25 @@ HEADER SECTION
          }
         }
       }
+      ul{
+        li{
+          height:$top-bar-height;
+          a{
+            position: relative;
+            top: 10px;
+          }
+        }
+      }
     }
     /*-webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
     z-index: 999;
     min-width: 100%;*/
   }
-  /* Home specific header */
+
   .orbit-container{
     height: 100%;
-    top: -50px;
+    top: -$top-bar-height;
     z-index: 0;
     ul.orbit-slides-container{
       height: 100% !important;
@@ -171,31 +181,63 @@ HEADER SECTION
   .contain-to-grid {
     background-color: transparent;
   }
-
-  // FILL USED FOR HEADER
-  .header-fill {
-    background: #fff;
-    height: 135px;
-    .tablet-mobile-logo img {
-      padding-top: 30px;
+}
+.site .header-container{
+  .header-section {
+    border-bottom: 1px solid $grey-color;
+    position: relative;
+    z-index: 1;
+    nav.top-bar{
+      height: $top-bar-height;
+      .logo-area {
+        height: 100%;
+        border-right: 1px solid $grey-color;
+        padding-left: 30px;
+        li.name{
+        }
+      }
+      background: transparent;
+      max-width: 100%;
+      .top-bar-section{
+        ul {
+          li.active a{ color: $red-color; }
+          li a:hover{ color: $red-color; background: transparent; }
+          li {
+            background: transparent ;
+            a{
+              color: $menu-color;
+              background: transparent ;
+            }
+          }
+        }
+      }
+      .top-bar-section.second-menu{
+        ul{
+          @include transparency(0.7, "transparent");
+         li{
+           border-left: 1px solid $grey-color;
+           a{
+             font-weight: bolder;
+             color: $red-color;
+           }
+           a:hover{ color: $menu-color; background: transparent; }
+         }
+         li.active a{ color: $red-color; }
+        }
+      }
+      ul{
+        li{
+          height:$top-bar-height;
+          a{
+            position: relative;
+            top: 10px;
+          }
+        }
+      }
     }
   }
-
-  // USED FOR JQUERY ACTION
-  .padding-on-my-header {
-    padding: 17px 0.9375rem 62px 0.9375rem;
-    ul.title-area img {
-      margin: -5px 0 0 0;
-    }
-  }
-
-  .full-width {
-    min-width: 100%;
-  }
-
-  p {
-    line-height: 3rem;
-    padding-bottom: 30px;
+  .contain-to-grid {
+    background-color: transparent;
   }
 }
 /*
@@ -204,6 +246,7 @@ HEADER SECTION
  */
 
 
+/* Misc sections */
 .site-logo{
   margin-top: 0rem;
   padding:0;
@@ -257,6 +300,12 @@ HEADER SECTION
   background: #fff;
   border-color: #ccc;
 }
+
+
+
+
+
+/* Media queries*/
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .top-cart {
     margin-top: 0rem;

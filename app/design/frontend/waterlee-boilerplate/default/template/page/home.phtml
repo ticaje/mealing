@@ -41,12 +41,13 @@
   </head>
   <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
     <div class="off-canvas-wrap main-content" data-offcanvas>
-      <div class="inner-wrap">
+      <div id="home" class="inner-wrap">
         <?php echo $this->getChildHtml('after_body_start') ?>
         <?php echo $this->getChildHtml('global_notices') ?>
         <!-- HEADER SECTION -->
         <div id="header-container" class="header-container">
           <?php echo $this->getChildHtml('header') ?>
+          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/carousel.phtml')->toHtml(); ?>
           <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/zip_code_bar.phtml')->toHtml(); ?>
         </div>
         <!-- END HEADER SECTION-->
@@ -68,14 +69,16 @@
           </div>
         </div>
         <div class="contact-container">
-        <div class="row parent">
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/contact.phtml')->toHtml(); ?>
-        </div>
+          <div class="row parent">
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('page/html/custom/contact.phtml')->toHtml(); ?>
+          </div>
         </div>
       </div>
+      <div class="footer-super-container">
         <div class="row parent">
-      <?php echo $this->getChildHtml('footer') ?>
+          <?php echo $this->getChildHtml('footer') ?>
         </div>
+      </div>
       <?php echo $this->getChildHtml('before_body_end') ?>
       <?php echo $this->getAbsoluteFooter() ?>
     </div>
