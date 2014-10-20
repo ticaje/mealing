@@ -18622,41 +18622,52 @@ select, select:hover {
 .main-content .how-do-we-work .steps .animator, .main-content .how-do-we-work .summary .restricted {
   min-height: 160px;
 }
-.main-content .how-do-we-work .summary {
-  background-color: #fff;
-  position: relative;
-  z-index: 3;
+.main-content .how-do-we-work .steps {
+  height: 225px;
+  overflow: hidden;
 }
-.main-content .how-do-we-work .steps .text-center .animator {
+.main-content .how-do-we-work .steps .step-col {
+  width: 20%;
+}
+.main-content .how-do-we-work .steps .step-col span {
+  display: block;
+}
+.main-content .how-do-we-work .steps .step-col .animator {
   position: relative;
   top: 0;
-  height: 100px;
+  /*height: 100px;*/
   z-index: 1;
+  background: url("../images/three-dots.png") no-repeat 79px 165px;
+  -webkit-transition: top 1s ease-in-out;
+  -moz-transition: top 1s ease-in-out;
+  -o-transition: top 1s ease-in-out;
+  -ms-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
 }
-.main-content .how-do-we-work .steps .text-center .animator .img {
+.main-content .how-do-we-work .steps .step-col .animator .img {
   position: relative;
   z-index: 1;
   height: 100%;
   pointer-events: none;
 }
-.main-content .how-do-we-work .steps .text-center .animator .info {
+.main-content .how-do-we-work .steps .step-col .animator .info {
   padding-top: 20px;
 }
-.main-content .how-do-we-work .steps .text-center .bottom-neighbor {
-  height: 0;
-  position: relative;
-  z-index: 4;
+.main-content .how-do-we-work .steps .step-col .animator .info span:nth-of-type(1) {
+  min-height: 45px;
+}
+.main-content .how-do-we-work .steps .step-col .animator:hover {
+  top: -160px;
+  background: url("../images/three-dots-h.png") no-repeat 79px 165px;
+}
+.main-content .how-do-we-work .summary {
   background-color: #fff;
-  padding-top: 22px;
-}
-.main-content .how-do-we-work .steps .restricted {
-  padding: 0;
-}
-.main-content .how-do-we-work .steps-bottom {
-  background: #fff;
-  top: 25px;
   position: relative;
-  z-index: 20;
+  padding: 50px 0;
+  z-index: 3;
+}
+.main-content .how-do-we-work .summary img {
+  width: 85%;
 }
 .main-content .carts-recipes-container {
   background: url("../images/carts_recipes_bg.jpg") no-repeat 0 0;

@@ -38,17 +38,18 @@
     .steps .animator, .summary .restricted{
       min-height: 160px;
     }
-    .summary{
-      background-color: $white-color;
-      position: relative;
-      z-index: 3;
-    }
     .steps{
-      .text-center{
+      height: 225px;
+      overflow: hidden;
+      .step-col{
+        width: 20%;
+        span{
+          display: block;
+        }
         .animator{
           position: relative;
           top: 0;
-          height: 100px;
+          /*height: 100px;*/
           z-index: 1;
           .img{
             position: relative;
@@ -58,25 +59,31 @@
           }
           .info{
             padding-top: 20px;
+            span:nth-of-type(1){
+              min-height: 45px;
+            }
           }
+          &:hover{
+            top: -160px;
+            background: url('../images/three-dots-h.png') no-repeat 79px 165px;
+          }
+          background: url('../images/three-dots.png') no-repeat 79px 165px;
+          -webkit-transition: top 1s ease-in-out;
+          -moz-transition: top 1s ease-in-out;
+          -o-transition: top 1s ease-in-out;
+          -ms-transition: top 1s ease-in-out;
+          transition: top 1s ease-in-out;
         }
-        .bottom-neighbor{
-          height: 0;
-          position: relative;
-          z-index: 4;
-          background-color: $white-color;
-          padding-top: 22px;
-        }
-      }
-      .restricted{
-        padding: 0;
       }
     }
-    .steps-bottom{
-      background: $white-color;
-      top: 25px;
+    .summary{
+      background-color: $white-color;
       position: relative;
-      z-index: 20;
+      padding: 50px 0;
+      z-index: 3;
+      img{
+        width: 85%;
+      }
     }
   }
   .carts-recipes-container{
