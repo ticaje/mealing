@@ -10,10 +10,7 @@
   </div>
 </div>
 <div class="row countdown">
-  <div class="small-12 medium-12 columns large-centered" style="text-align:center;">
-    <span class="title">El año finaliza en...</span>
-    <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_counter.phtml')->toHtml(); ?>
-  </div>
+  <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_counter.phtml')->toHtml(); ?>
 </div>
 <div class="row menu-bar">
     <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/basket/_menu-bar.phtml')->toHtml(); ?>
