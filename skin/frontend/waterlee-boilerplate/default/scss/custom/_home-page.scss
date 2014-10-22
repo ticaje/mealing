@@ -167,13 +167,33 @@
               margin: 10px auto;
             }
             select{
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -webkit-padding-end: 20px;
+              -moz-padding-end: 20px;
+              -webkit-padding-start: 2px;
+              -moz-padding-start: 2px;
+              background-color: transparent; /* fallback color if gradients are not supported */
+              background-image: url(../images/c-arrow.png); /* For Chrome and Safari */
+              background-image: url(../images/c-arrow.png); /* For old Fx (3.6 to 15) */
+              background-image: url(../images/c-arrow.png); /* For pre-releases of IE 10*/
+              background-image: url(../images/c-arrow.png); /* For old Opera (11.1 to 12.0) */
+              background-image: url(../images/c-arrow.png); /* Standard syntax; must be last */
+              background-position: center right;
+              background-repeat: no-repeat;
               border: 2px solid $white-color;
-              background: transparent;
+              font-size: inherit;
               overflow: hidden;
-              background: url('../images/c-arrow.png') no-repeat 96% 10px;
+              padding-top: 2px;
+              padding-bottom: 2px;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+
             }
-            option{
-              background: transparent;
+            select > option{
+              background: $white-color;
               color: $black-color;
             }
             button{
