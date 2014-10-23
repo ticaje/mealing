@@ -940,17 +940,17 @@ window.Modernizr = (function( window, document, undefined ) {
 
     // Run through all tests and detect their support in the current UA.
     // todo: hypothetically we could be doing an array of tests and use a basic loop here.
-    for ( var feature in tests ) {
-        if ( hasOwnProp(tests, feature) ) {
-            // run the test, throw the return value into the Modernizr,
-            //   then based on that boolean, define an appropriate className
-            //   and push it into an array of classes we'll join later.
-            featureName  = feature.toLowerCase();
-            Modernizr[featureName] = tests[feature]();
+    //for ( var feature in tests ) {
+    //    if ( hasOwnProp(tests, feature) ) {
+    //        // run the test, throw the return value into the Modernizr,
+    //        //   then based on that boolean, define an appropriate className
+    //        //   and push it into an array of classes we'll join later.
+    //        featureName  = feature.toLowerCase();
+    //        Modernizr[featureName] = tests[feature]();
 
-            classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
-        }
-    }
+    //        classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
+    //    }
+    //}
 
     /*>>webforms*/
     // input tests need to run.
@@ -1395,10 +1395,10 @@ window.Modernizr = (function( window, document, undefined ) {
 
     /*>>cssclasses*/
     // Remove "no-js" class from <html> element, if it exists:
-    docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
+    //docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
 
-                            // Add the new classes to the <html> element.
-                            (enableClasses ? ' js ' + classes.join(' ') : '');
+    //                        // Add the new classes to the <html> element.
+    //                        (enableClasses ? ' js ' + classes.join(' ') : '');
     /*>>cssclasses*/
 
     return Modernizr;
@@ -2082,11 +2082,11 @@ window.Modernizr = (function( window, document, undefined ) {
           }
 
           var settings = target.data(self.attr_name(true) + '-init') || self.settings;
-          
+
           if(S(e.target).data(self.data_attr()) && settings.is_hover) {
             self.closeall.call(self);
           }
-          
+
           if (settings.is_hover) self.open.apply(self, [dropdown, target]);
         })
         .on('mouseleave.fndtn.dropdown', '[' + this.attr_name() + '], [' + this.attr_name() + '-content]', function (e) {
@@ -2108,8 +2108,8 @@ window.Modernizr = (function( window, document, undefined ) {
           if (S(e.target).closest('[' + self.attr_name() + ']').length > 0) {
             return;
           }
-          if (!(S(e.target).data('revealId')) && 
-            (parent.length > 0 && (S(e.target).is('[' + self.attr_name() + '-content]') || 
+          if (!(S(e.target).data('revealId')) &&
+            (parent.length > 0 && (S(e.target).is('[' + self.attr_name() + '-content]') ||
               $.contains(parent.first()[0], e.target)))) {
             e.stopPropagation();
             return;
@@ -2201,7 +2201,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
     css : function (dropdown, target) {
       var left_offset = Math.max((target.width() - dropdown.width()) / 2, 8);
-      
+
       this.clear_idx();
 
       if (this.small()) {
@@ -2225,7 +2225,7 @@ window.Modernizr = (function( window, document, undefined ) {
     },
 
     style : function (dropdown, target, settings) {
-      var css = $.extend({position: 'absolute'}, 
+      var css = $.extend({position: 'absolute'},
         this.dirs[settings.align].call(dropdown, target, settings));
 
       dropdown.attr('style', '').css(css);
@@ -2257,7 +2257,7 @@ window.Modernizr = (function( window, document, undefined ) {
         }
 
         if (Foundation.rtl) {
-          return {left: p.left - this.outerWidth() + t.outerWidth(), 
+          return {left: p.left - this.outerWidth() + t.outerWidth(),
             top: p.top - this.outerHeight()};
         }
 
@@ -2456,7 +2456,7 @@ window.Modernizr = (function( window, document, undefined ) {
         .on('click.fndtn.offcanvas', '.left-off-canvas-menu a', function (e) {
           var settings = self.get_settings(e);
           var parent = S(this).parent();
-          
+
           if(settings.close_on_click && !parent.hasClass("has-submenu") && !parent.hasClass("back")){
             self.hide.call(self, move_class + right_postfix, self.get_wrapper(e));
             parent.parent().removeClass(move_class + right_postfix);
@@ -2466,7 +2466,7 @@ window.Modernizr = (function( window, document, undefined ) {
           }else if(parent.hasClass("back")){
             e.preventDefault();
             parent.parent().removeClass(move_class + right_postfix);
-          }     
+          }
         })
         .on('click.fndtn.offcanvas', '.right-off-canvas-toggle', function (e) {
           self.click_toggle_class(e, move_class + left_postfix);
@@ -2477,7 +2477,7 @@ window.Modernizr = (function( window, document, undefined ) {
         .on('click.fndtn.offcanvas', '.right-off-canvas-menu a', function (e) {
           var settings = self.get_settings(e);
           var parent = S(this).parent();
-          
+
           if(settings.close_on_click && !parent.hasClass("has-submenu") && !parent.hasClass("back")){
             self.hide.call(self, move_class + left_postfix, self.get_wrapper(e));
             parent.parent().removeClass(move_class + left_postfix);
@@ -2487,7 +2487,7 @@ window.Modernizr = (function( window, document, undefined ) {
           }else if(parent.hasClass("back")){
             e.preventDefault();
             parent.parent().removeClass(move_class + left_postfix);
-          }          
+          }
         })
         .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
           self.click_remove_class(e, move_class + left_postfix);
@@ -3474,11 +3474,11 @@ window.Modernizr = (function( window, document, undefined ) {
                 activate: function(){}
             }
             //Variables
-            var options = $.extend(defaults, options);            
+            var options = $.extend(defaults, options);
             var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
             var hash = window.location.hash;
             var historyApi = !!(window.history && history.replaceState);
-            
+
             //Events
             $(this).bind('tabactivate', function(e, currentTab) {
                 if(typeof options.activate === 'function') {
@@ -3545,7 +3545,7 @@ window.Modernizr = (function( window, document, undefined ) {
                     });
                     count++;
                 });
-                
+
                 // Show correct content area
                 var tabNum = 0;
                 if(hash!='') {
@@ -3562,7 +3562,7 @@ window.Modernizr = (function( window, document, undefined ) {
                 $($respTabs.find('.resp-tab-item')[tabNum]).addClass('resp-tab-active');
 
                 //keep closed if option = 'closed' or option is 'accordion' and the element is in accordion mode
-                if(options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {                  
+                if(options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {
                     $($respTabs.find('.resp-accordion')[tabNum]).addClass('resp-tab-active');
                     $($respTabs.find('.resp-tab-content')[tabNum]).addClass('resp-tab-content-active').attr('style', 'display:block');
                 }
@@ -3573,10 +3573,10 @@ window.Modernizr = (function( window, document, undefined ) {
 
                 //Tab Click action function
                 $respTabs.find("[role=tab]").each(function () {
-                   
+
                     var $currentTab = $(this);
                     $currentTab.click(function () {
-                        
+
                         var $currentTab = $(this);
                         var $tabAria = $currentTab.attr('aria-controls');
 
@@ -3599,14 +3599,14 @@ window.Modernizr = (function( window, document, undefined ) {
                         }
                         //Trigger tab activation event
                         $currentTab.trigger('tabactivate', $currentTab);
-                        
+
                         //Update Browser History
                         if(historyApi) {
                             var currentHash = window.location.hash;
                             var newHash = respTabsId+(parseInt($tabAria.substring(9),10)+1).toString();
                             if (currentHash!="") {
                                 var re = new RegExp(respTabsId+"[0-9]+");
-                                if (currentHash.match(re)!=null) {                                    
+                                if (currentHash.match(re)!=null) {
                                     newHash = currentHash.replace(re,newHash);
                                 }
                                 else {
@@ -3616,14 +3616,14 @@ window.Modernizr = (function( window, document, undefined ) {
                             else {
                                 newHash = '#'+newHash;
                             }
-                            
+
                             history.replaceState(null,null,newHash);
                         }
                     });
-                    
+
                 });
-                
-                //Window resize function                   
+
+                //Window resize function
                 $(window).resize(function () {
                     $respTabs.find('.resp-accordion-closed').removeAttr('style');
                 });
@@ -6134,7 +6134,7 @@ if ( typeof Object.create !== 'function' ) {
               slider.animating = false;
               slider.currentSlide = slider.animatingTo;
             }
-            
+
             // Unbind previous transitionEnd events and re-bind new transitionEnd event
             slider.container.unbind("webkitTransitionEnd transitionend");
             slider.container.bind("webkitTransitionEnd transitionend", function() {

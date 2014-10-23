@@ -18622,41 +18622,52 @@ select, select:hover {
 .main-content .how-do-we-work .steps .animator, .main-content .how-do-we-work .summary .restricted {
   min-height: 160px;
 }
-.main-content .how-do-we-work .summary {
-  background-color: #fff;
-  position: relative;
-  z-index: 3;
+.main-content .how-do-we-work .steps {
+  height: 225px;
+  overflow: hidden;
 }
-.main-content .how-do-we-work .steps .text-center .animator {
+.main-content .how-do-we-work .steps .step-col {
+  width: 20%;
+}
+.main-content .how-do-we-work .steps .step-col span {
+  display: block;
+}
+.main-content .how-do-we-work .steps .step-col .animator {
   position: relative;
   top: 0;
-  height: 100px;
+  /*height: 100px;*/
   z-index: 1;
+  background: url("../images/three-dots.png") no-repeat 79px 165px;
+  -webkit-transition: top 1s ease-in-out;
+  -moz-transition: top 1s ease-in-out;
+  -o-transition: top 1s ease-in-out;
+  -ms-transition: top 1s ease-in-out;
+  transition: top 1s ease-in-out;
 }
-.main-content .how-do-we-work .steps .text-center .animator .img {
+.main-content .how-do-we-work .steps .step-col .animator .img {
   position: relative;
   z-index: 1;
   height: 100%;
   pointer-events: none;
 }
-.main-content .how-do-we-work .steps .text-center .animator .info {
+.main-content .how-do-we-work .steps .step-col .animator .info {
   padding-top: 20px;
 }
-.main-content .how-do-we-work .steps .text-center .bottom-neighbor {
-  height: 0;
-  position: relative;
-  z-index: 4;
+.main-content .how-do-we-work .steps .step-col .animator .info span:nth-of-type(1) {
+  min-height: 45px;
+}
+.main-content .how-do-we-work .steps .step-col .animator:hover {
+  top: -160px;
+  background: url("../images/three-dots-h.png") no-repeat 79px 165px;
+}
+.main-content .how-do-we-work .summary {
   background-color: #fff;
-  padding-top: 22px;
-}
-.main-content .how-do-we-work .steps .restricted {
-  padding: 0;
-}
-.main-content .how-do-we-work .steps-bottom {
-  background: #fff;
-  top: 25px;
   position: relative;
-  z-index: 20;
+  padding: 50px 0;
+  z-index: 3;
+}
+.main-content .how-do-we-work .summary img {
+  width: 85%;
 }
 .main-content .carts-recipes-container {
   background: url("../images/carts_recipes_bg.jpg") no-repeat 0 0;
@@ -18766,13 +18777,38 @@ select, select:hover {
   margin: 10px auto;
 }
 .main-content .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: transparent;
+  /* fallback color if gradients are not supported */
+  background-image: url(../images/c-arrow.png);
+  /* For Chrome and Safari */
+  background-image: url(../images/c-arrow.png);
+  /* For old Fx (3.6 to 15) */
+  background-image: url(../images/c-arrow.png);
+  /* For pre-releases of IE 10*/
+  background-image: url(../images/c-arrow.png);
+  /* For old Opera (11.1 to 12.0) */
+  background-image: url(../images/c-arrow.png);
+  /* Standard syntax; must be last */
+  background-position: center right;
+  background-repeat: no-repeat;
   border: 2px solid #fff;
-  background: transparent;
+  font-size: inherit;
   overflow: hidden;
-  background: url("../images/c-arrow.png") no-repeat 96% 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.main-content .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container option {
-  background: transparent;
+.main-content .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container select > option {
+  background: #fff;
   color: #000;
 }
 .main-content .carts-recipes-container .carts-recipes .r-cell .form-choose .form-container button {
