@@ -18,6 +18,11 @@
           <template>page/html/custom/pages/basket.phtml</template>
           <layout_handle>page_custom_layout</layout_handle>
         </baskets>
+        <recipes module="page" translate="label">
+          <label>Recetas</label>
+          <template>page/html/custom/pages/recipes.phtml</template>
+          <layout_handle>page_custom_layout</layout_handle>
+        </recipes>
       </layouts>
     </page>
     <helpers>

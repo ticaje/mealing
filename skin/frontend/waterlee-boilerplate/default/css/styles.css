@@ -17130,6 +17130,12 @@ HEADER SECTION
   color: #8a8a8a;
   background: transparent;
 }
+.site .header-container .header-section nav.top-bar .top-bar-section.first-menu ul {
+  width: 85%;
+}
+.site .header-container .header-section nav.top-bar .top-bar-section.first-menu ul li {
+  float: right;
+}
 .site .header-container .header-section nav.top-bar .top-bar-section.second-menu ul {
   background: "transparent" !important;
   -khtml-opacity: 0.7 !important;
@@ -20743,6 +20749,164 @@ table {
     opacity: 0;
   }
 }
+.recipes .row.content {
+  margin: 0 auto;
+}
+.recipes .row.content .left-column {
+  border: 1px solid #efefef;
+  /* Accordion */
+  /* Accordion */
+}
+.recipes .row.content .left-column .search div {
+  padding: 0;
+  text-align: center;
+  height: 50px;
+  color: #fff;
+}
+.recipes .row.content .left-column .search div i {
+  padding: 17px 0;
+}
+.recipes .row.content .left-column .search div i.fa-search {
+  cursor: pointer;
+}
+.recipes .row.content .left-column .search div h5 {
+  padding: 10px 0;
+  font-weight: 500;
+  color: #fff;
+}
+.recipes .row.content .left-column .search div.text {
+  text-align: left;
+}
+.recipes .row.content .left-column .search div:nth-of-type(1), .recipes .row.content .left-column .search div:nth-of-type(2) {
+  background: #ea3700;
+}
+.recipes .row.content .left-column .ui-accordion .ui-accordion-content {
+  display: block;
+  padding: 0;
+  height: auto;
+  border: none;
+}
+.recipes .row.content .left-column .ui-accordion .ui-accordion-content::-webkit-scrollbar {
+  display: none;
+}
+.recipes .row.content .left-column .ui-accordion .ui-accordion-content::-moz-scrollbar {
+  display: none;
+}
+.recipes .row.content .left-column .ui-accordion .ui-accordion-contentscrollbar {
+  display: none;
+}
+.recipes .row.content .left-column .ui-helper-reset {
+  line-height: inherit;
+}
+.recipes .row.content .left-column .ui-state-default, .recipes .row.content .left-column .ui-widget-content .ui-state-default, .recipes .row.content .left-column .ui-widget-header .ui-state-default {
+  border: none;
+}
+.recipes .row.content .left-column .ui-corner-all, .recipes .row.content .left-column .ui-corner-bottom, .recipes .row.content .left-column .ui-corner-right, .recipes .row.content .left-column .ui-corner-br {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.recipes .row.content .left-column .ui-corner-all, .recipes .row.content .left-column .ui-corner-top, .recipes .row.content .left-column .ui-corner-right, .recipes .row.content .left-column .ui-corner-tr {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.recipes .row.content .left-column .ui-accordion-header {
+  background: #0063ce !important;
+  -khtml-opacity: 0.6 !important;
+  -moz-opacity: 0.6 !important;
+  -ms-filter: ”alpha(opacity=60) ” !important;
+  filter: alpha(opacity=60) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.6 !important;
+}
+.recipes .row.content .left-column .ui-accordion-header-active {
+  background: #0063ce !important;
+  -khtml-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  -ms-filter: ”alpha(opacity=100) ” !important;
+  filter: alpha(opacity=100) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 1 !important;
+}
+.recipes .row.content .left-column .collapse.in {
+  height: 100% !important;
+}
+.recipes .row.content .left-column .search-results {
+  padding: 10px 0;
+  text-align: center;
+}
+.recipes .row.content .left-column .search-results .header {
+  color: #fff;
+  padding: 3px 0;
+  font-weight: 500;
+}
+.recipes .row.content .left-column .search-results .header i {
+  float: right;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 1.4em;
+}
+.recipes .row.content .left-column .search-results.active .header {
+  background: #0063ce !important;
+  -khtml-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  -ms-filter: ”alpha(opacity=100) ” !important;
+  filter: alpha(opacity=100) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 1 !important;
+}
+.recipes .row.content .left-column .search-results .first-row .switcher ul.tabs li.tab-title {
+  width: 50%;
+}
+.recipes .row.content .left-column .search-results .first-row .switcher ul.tabs li.tab-title a {
+  background: #fff;
+  background: #fff !important;
+  -khtml-opacity: 0.6 !important;
+  -moz-opacity: 0.6 !important;
+  -ms-filter: ”alpha(opacity=60) ” !important;
+  filter: alpha(opacity=60) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.6 !important;
+}
+.recipes .row.content .left-column .search-results .first-row .switcher ul.tabs li.tab-title.active a {
+  background: #fff !important;
+  -khtml-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  -ms-filter: ”alpha(opacity=100) ” !important;
+  filter: alpha(opacity=100) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 1 !important;
+  border-bottom: 4px solid #ea3700;
+}
+.recipes .row.content .left-column .search-results .first-row .results {
+  padding: 0;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe {
+  padding: 5px;
+  margin: 0;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe .img-container {
+  padding: 0;
+  margin: 0;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe .img-container img {
+  width: 100%;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe .content-container {
+  text-align: left;
+  padding-left: 10px;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe .content-container .name {
+  display: block;
+  font-size: 12px;
+  min-height: 70px;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe.active {
+  border-right: 3px solid #ea3700;
+}
+.recipes .row.content .left-column .search-results .first-row .results section .recipe.active .name {
+  color: #ea3700;
+}
+
 .catalog-category-view .grid-mode .product-name {
   font-size: 1.125rem;
   font-weight: 500;

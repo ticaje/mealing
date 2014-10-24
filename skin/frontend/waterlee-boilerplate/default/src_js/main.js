@@ -37,12 +37,30 @@ $(document).ready( function(){
   });
 
   /* Calling triggers on init */
-  $(document).on("ready", fixHeight);
-  $(window).on("resize", fixHeight);
+  $(document).on("ready",
+      fixHeight,
+      initAccordion
+  );
+  $(window).on("resize",
+      fixHeight,
+      resizeAccordion
+  );
+
 });
 
 /* Home page header resizer function */
 
+function initAccordion(){
+  $("#accordion").accordion({
+    icons : false,
+    fillSpace: true,
+    heightStyle: "fill"
+  });
+  resizeAccordion();
+}
+function resizeAccordion(){
+  $(".acc-container.ui-accordion-content").css("height", ($(window).innerHeight() - 215)+"px");
+}
 function fixHeight() {
   var a = $("#home #header-container"), k = $(".orbit-bullets-container"),
       b = ($(window).width(), $(window).height());
