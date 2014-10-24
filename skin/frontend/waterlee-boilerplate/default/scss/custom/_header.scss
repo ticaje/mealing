@@ -210,19 +210,27 @@ HEADER SECTION
             }
           }
         }
-      }
-      .top-bar-section.second-menu{
-        ul{
-          @include transparency(0.7, "transparent");
-         li{
-           border-left: 1px solid $grey-color;
-           a{
-             font-weight: bolder;
-             color: $red-color;
-           }
-           a:hover{ color: $menu-color; background: transparent; }
-         }
-         li.active a{ color: $red-color; }
+        &.first-menu{
+          ul{
+            width: 85%;
+            li{
+              float: right;
+            }
+          }
+        }
+        &.second-menu{
+          ul{
+            @include transparency(0.7, "transparent");
+            li{
+              border-left: 1px solid $grey-color;
+              a{
+                font-weight: bolder;
+                color: $red-color;
+              }
+              a:hover{ color: $menu-color; background: transparent; }
+            }
+            li.active a{ color: $red-color; }
+          }
         }
       }
       ul{
