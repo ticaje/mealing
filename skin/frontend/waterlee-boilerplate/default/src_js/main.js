@@ -37,20 +37,20 @@ $(document).ready( function(){
   });
 
   /* Calling triggers on init */
-  $(document).on("ready",
-      fixHeight,
-      initAccordion
-  );
-  $(window).on("resize",
-      fixHeight,
-      resizeAccordion
-  );
+  $(document).on("ready", function(){
+      fixHeight();
+      initAccordion();
+  });
+  $(window).on("resize", function(){
+      fixHeight();
+      resizeAccordion();
+  });
 
 });
 
 /* Home page header resizer function */
 
-function initAccordion(){
+var initAccordion = function (){
   $("#accordion").accordion({
     icons : false,
     fillSpace: true,
@@ -58,10 +58,10 @@ function initAccordion(){
   });
   resizeAccordion();
 }
-function resizeAccordion(){
+var resizeAccordion = function (){
   $(".acc-container.ui-accordion-content").css("height", ($(window).innerHeight() - 215)+"px");
 }
-function fixHeight() {
+var fixHeight = function() {
   var a = $("#home #header-container"), k = $(".orbit-bullets-container"),
       b = ($(window).width(), $(window).height());
   a.css({
