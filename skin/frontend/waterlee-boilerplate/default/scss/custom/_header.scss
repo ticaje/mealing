@@ -14,8 +14,9 @@ HEADER SECTION
       .logo-area {
         height: 100%;
         border-right: 1px solid $white-color;
-        padding-left: 30px;
-        li.name{
+        text-align: center;
+        ul.title-area{
+          float: center;
         }
       }
       background: transparent;
@@ -47,8 +48,7 @@ HEADER SECTION
         li{
           height:$top-bar-height;
           a{
-            position: relative;
-            top: 10px;
+            line-height: $top-bar-height;
           }
         }
       }
@@ -184,16 +184,16 @@ HEADER SECTION
 }
 .site .header-container{
   .header-section {
-    border-bottom: 1px solid $grey-color;
-    position: relative;
+    border-bottom: 1px solid $grey-color;  float: center;    position: relative;
     z-index: 1;
     nav.top-bar{
       height: $top-bar-height;
       .logo-area {
         height: 100%;
         border-right: 1px solid $grey-color;
-        padding-left: 30px;
-        li.name{
+        text-align: center;
+        ul.title-area{
+          float: center;
         }
       }
       background: transparent;
@@ -237,8 +237,7 @@ HEADER SECTION
         li{
           height:$top-bar-height;
           a{
-            position: relative;
-            top: 10px;
+            line-height: $top-bar-height;
           }
         }
       }

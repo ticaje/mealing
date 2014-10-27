@@ -25,12 +25,8 @@
           <div class="recipes">
             <div class="row">
               <div class="row content">
-                <div class="left-column-container">
-                  <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_left_column.phtml')->toHtml(); ?>
-                </div>
-                <div class="main-content-container">
-                  <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_main_content.phtml')->toHtml(); ?>
-                </div>
+                <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_left_column.phtml')->toHtml(); ?>
+                <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_main_content.phtml')->toHtml(); ?>
               </div>
             </div>
           </div>
