@@ -1,0 +1,45 @@
+<?php
+/**
+* Template for Mage_Page_Block_Html
+*/
+?>
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang() ?>" class="no-js ie9"> <![endif]-->
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <html lang="<?php echo $this->getLang() ?>"> <!--<![endif]-->
+    <head>
+      <?php echo $this->getChildHtml('head') ?>
+    </head>
+    <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+      <div class="off-canvas-wrap main-content" data-offcanvas>
+        <div class="inner-wrap site">
+          <?php echo $this->getChildHtml('after_body_start') ?>
+          <?php echo $this->getChildHtml('global_notices') ?>
+          <!-- HEADER SECTION -->
+          <div id="header-container" class="header-container">
+            <?php echo $this->getChildHtml('header') ?>
+          </div>
+          <div class="recipes">
+            <div class="row">
+              <div class="row content">
+                <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_left_column.phtml')->toHtml(); ?>
+                <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_main_content.phtml')->toHtml(); ?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-super-container">
+          <div class="row parent">
+            <?php echo $this->getChildHtml('footer') ?>
+          </div>
+        </div>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+      </div>
+    </body>
+  </html>
+
+

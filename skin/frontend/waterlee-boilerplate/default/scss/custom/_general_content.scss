@@ -1,5 +1,45 @@
 .main-content{
   .row.parent{
-    width: 960px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+@mixin steps_logic{
+  overflow: hidden;
+  .step-col{
+    width: 20%;
+    span{
+      display: block;
+    }
+    .animator{
+      position: relative;
+      top: 0;
+      z-index: 1;
+      .img{
+        height: 100%;
+        pointer-events: none;
+        position: relative;
+        z-index: 1;
+        i{
+          color: $red-color;
+          font-size: 16px;
+        }
+      }
+      .info{
+        span:nth-of-type(1){
+          min-height: 45px;
+        }
+        position: relative;
+        bottom: 5px;
+      }
+      &:hover{
+        top: -160px;
+      }
+      -moz-transition: top 1s ease-in-out;
+      -ms-transition: top 1s ease-in-out;
+      -o-transition: top 1s ease-in-out;
+      -webkit-transition: top 1s ease-in-out;
+      transition: top 1s ease-in-out;
+    }
   }
 }

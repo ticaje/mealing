@@ -14,8 +14,9 @@ HEADER SECTION
       .logo-area {
         height: 100%;
         border-right: 1px solid $white-color;
-        padding-left: 30px;
-        li.name{
+        text-align: center;
+        ul.title-area{
+          float: center;
         }
       }
       background: transparent;
@@ -47,8 +48,7 @@ HEADER SECTION
         li{
           height:$top-bar-height;
           a{
-            position: relative;
-            top: 10px;
+            line-height: $top-bar-height;
           }
         }
       }
@@ -184,16 +184,16 @@ HEADER SECTION
 }
 .site .header-container{
   .header-section {
-    border-bottom: 1px solid $grey-color;
-    position: relative;
+    border-bottom: 1px solid $grey-color;  float: center;    position: relative;
     z-index: 1;
     nav.top-bar{
       height: $top-bar-height;
       .logo-area {
         height: 100%;
         border-right: 1px solid $grey-color;
-        padding-left: 30px;
-        li.name{
+        text-align: center;
+        ul.title-area{
+          float: center;
         }
       }
       background: transparent;
@@ -210,27 +210,34 @@ HEADER SECTION
             }
           }
         }
-      }
-      .top-bar-section.second-menu{
-        ul{
-          @include transparency(0.7, "transparent");
-         li{
-           border-left: 1px solid $grey-color;
-           a{
-             font-weight: bolder;
-             color: $red-color;
-           }
-           a:hover{ color: $menu-color; background: transparent; }
-         }
-         li.active a{ color: $red-color; }
+        &.first-menu{
+          ul{
+            width: 85%;
+            li{
+              float: right;
+            }
+          }
+        }
+        &.second-menu{
+          ul{
+            @include transparency(0.7, "transparent");
+            li{
+              border-left: 1px solid $grey-color;
+              a{
+                font-weight: bolder;
+                color: $red-color;
+              }
+              a:hover{ color: $menu-color; background: transparent; }
+            }
+            li.active a{ color: $red-color; }
+          }
         }
       }
       ul{
         li{
           height:$top-bar-height;
           a{
-            position: relative;
-            top: 10px;
+            line-height: $top-bar-height;
           }
         }
       }

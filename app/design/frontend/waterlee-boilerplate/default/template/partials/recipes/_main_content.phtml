@@ -1,0 +1,74 @@
+<div class="small-8 large-8 columns main-content-container">
+  <div class="row parent">
+    <div class="small-12 large-12 columns how-it-works">
+      <div id="hiw-container">
+        <span class="title">Como funciona?</span>
+        <i class="fa fa-times" title="Cerrar"></i>
+        <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/layout/_hiw_steps.phtml')->toHtml(); ?>
+      </div>
+      <div class="row recipe-content">
+        <div class="row header" id="outer-navigator">
+          <div class="small-1 large-1 columns">
+            <i class="fa fa-angle-double-left fa-2x"></i>
+          </div>
+          <div class="small-10 large-10 columns text">
+            <h4>Proxima entrega</h4>
+          </div>
+          <div class="small-1 large-1 columns">
+            <i class="fa fa-angle-double-right fa-2x"></i>
+          </div>
+        </div>
+        <div class="row contents">
+          <div class="row" id="inner-navigator">
+            <div class="small-6 large-6 columns navigate">
+              <div class="">
+                <i class="fa fa-angle-left fa-2x"></i>
+                <i class="fa fa-angle-right fa-2x"></i>
+              </div>
+            </div>
+            <div class="small-6 large-6 columns opinion">
+              <div class="row">
+                <div class="small-2 large-2 columns">
+                  <i class="fa fa-check fa-2x"></i>
+                </div>
+                <div class="small-2 large-2 columns">
+                  <i class="fa fa-thumbs-o-up fa-2x"></i>
+                </div>
+                <div class="small-2 large-2 columns">
+                  <i class="fa fa-comment-o fa-2x"></i>
+                </div>
+                <div class="small-2 large-2 columns">
+                  <i class="fa fa-check fa-2x"></i>
+                </div>
+                <div class="small-4 large-4 columns">
+                  <span>Recomendar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_recipe.phtml')->toHtml(); ?>
+          <div class="row wanna-try text-center">
+            <button type="button" title="Quiero probar" class="button tiny radius">Quiero probar</button>
+          </div>
+          <div class="row help-us-improving">
+            <h5 class="title">Nos ayudas a mejorar?</h5>
+            <p class="info">Puedes evaluar unareceta y el plato que has hecho en función de lo que esperabas</p>
+            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_poll.phtml')->toHtml(); ?>
+          </div>
+        </div>
+        <div class="row comments">
+          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/recipes/_comments.phtml')->toHtml(); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function($) {
+    $(document).ready(function(){
+      $("#hiw-container .fa-times").click(function(){
+        $("#hiw-container").slideToggle("slow");
+      });
+    });
+  })(jQuery);
+</script>

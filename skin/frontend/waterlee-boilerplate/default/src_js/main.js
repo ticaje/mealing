@@ -37,13 +37,31 @@ $(document).ready( function(){
   });
 
   /* Calling triggers on init */
-  $(document).on("ready", fixHeight);
-  $(window).on("resize", fixHeight);
+  $(document).on("ready", function(){
+      fixHeight();
+      initAccordion();
+  });
+  $(window).on("resize", function(){
+      fixHeight();
+      resizeAccordion();
+  });
+
 });
 
 /* Home page header resizer function */
 
-function fixHeight() {
+var initAccordion = function (){
+  $("#accordion").accordion({
+    icons : false,
+    fillSpace: true,
+    heightStyle: "fill"
+  });
+  resizeAccordion();
+}
+var resizeAccordion = function (){
+  $(".acc-container.ui-accordion-content").css("height", ($(window).innerHeight() - 215)+"px");
+}
+var fixHeight = function() {
   var a = $("#home #header-container"), k = $(".orbit-bullets-container"),
       b = ($(window).width(), $(window).height());
   a.css({
