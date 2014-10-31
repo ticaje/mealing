@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<config>
+     <sections>
+        <i4cancelunpaidorders translate="label" module="i4cancelunpaidorders">
+            <label>Cancel Unpaid Orders</label>
+            <tab>i4all</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <sort_order>100050</sort_order>
+            <groups>                
+                <general translate="label" module="i4cancelunpaidorders">
+                    <label>Interactiv4 Cancel Unpaid Orders</label>
+                    <comment><![CDATA[
+						<div style="margin-bottom:20px;"> 
+									<strong style="color:#EA7601;">Cancel Unpaid Orders v1.0.0 by Interactiv4</strong>
+									<br />
+						</div>]]>
+                    </comment>                    
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                         <active translate="label">
+                            <label>Active</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>       
+                        
+                        <max_age translate="label comment">
+                            <label>Cancel Unpaid Orders Older Than</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>i4cancelunpaidorders/adminhtml_system_config_source_maxage</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Select the amount of time after placing an order when it should be cancelled if it has not been paid.</comment>
+                        </max_age>
+                        
+                        <cancelled_statuses translate="label comment">                 
+                            <label>Unpaid Order Statuses</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>i4cancelunpaidorders/adminhtml_system_config_source_orderstatus</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>Unpaid orders with these statuses will be cancelled. Note that paid, invoiced, or shipped orders cannot be cancelled even if they have one of these statuses. If you do not want to cancel unpaid orders in this scope, do not select any statuses.</comment>
+                        </cancelled_statuses>
+                    
+                        <cron_syntax translate="label comment">
+                            <label>Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>i4cancelunpaidorders/adminhtml_system_config_source_frequency</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <backend_model>i4cancelunpaidorders/adminhtml_system_config_data_cronexpr</backend_model> 
+                            <comment>Choose how often you would like to check for unpaid orders</comment>
+                        </cron_syntax>
+                        
+                        <start_date translate="label comment">
+                            <label>Start Date</label>
+                            <frontend_type>text</frontend_type> 
+                            <frontend_model>i4cancelunpaidorders/adminhtml_system_config_date</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store> 
+                            <backend_model>i4cancelunpaidorders/adminhtml_system_config_data_startdate</backend_model>
+                            <comment>Only check for unpaid orders placed on or after the specified date.</comment>                            
+                        </start_date> 
+                        
+          
+                         <run_now translate="label comment">
+                            <label>Run now</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>i4cancelunpaidorders/adminhtml_system_config_button_runnow</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store> 
+                            <comment>To avoid timeouts, manual invocation using this button will only cancel up to 50 orders.</comment>
+                        </run_now>                          
+                    </fields> 
+                </general>
+             </groups>
+         </i4cancelunpaidorders>
+    </sections> 
+</config>

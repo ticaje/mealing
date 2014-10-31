@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Interactiv4_CancelUnpaidOrders>
+            <version>1.0.0</version>
+        </Interactiv4_CancelUnpaidOrders>
+    </modules>
+    <global>
+        <helpers>
+            <i4cancelunpaidorders>
+                <class>Interactiv4_CancelUnpaidOrders_Helper</class>
+            </i4cancelunpaidorders>
+        </helpers>
+        <models>
+            <i4cancelunpaidorders>
+                <class>Interactiv4_CancelUnpaidOrders_Model</class>
+            </i4cancelunpaidorders>
+        </models>
+        <blocks>
+            <i4cancelunpaidorders>
+                <class>Interactiv4_CancelUnpaidOrders_Block</class>
+            </i4cancelunpaidorders>                 
+        </blocks>
+        <resources>
+            <i4cancelunpaidorders>
+                <setup>
+                    <module>Interactiv4_CancelUnpaidOrders</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </i4cancelunpaidorders>
+            <i4cancelunpaidorders_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </i4cancelunpaidorders_write>
+            <i4cancelunpaidorders_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </i4cancelunpaidorders_read>
+        </resources>            
+    </global>
+    <crontab>
+        <jobs>
+            <i4cancelunpaidorders>
+                <run>
+                    <model>i4cancelunpaidorders/cron::cancelUnpaidOrders</model>
+                </run>
+            </i4cancelunpaidorders>        
+        </jobs>
+    </crontab>
+    <default> 
+        <i4cancelunpaidorders>
+            <general>
+                <active>0</active>
+                <cron_syntax>*/5 0 * * *</cron_syntax>
+                <max_age>30</max_age>
+            </general>
+        </i4cancelunpaidorders>
+    </default>   
+    <frontend>
+        <routers>
+            <i4cancelunpaidorders>
+                <use>standard</use>
+                <args>
+                    <module>Interactiv4_CancelUnpaidOrders</module>
+                    <frontName>i4cancelunpaidorders</frontName>
+                </args>
+            </i4cancelunpaidorders>            
+        </routers>
+        <translate>
+            <modules>
+                <Interactiv4_CancelUnpaidOrders>
+                    <files>
+                        <default>Interactiv4_CancelUnpaidOrders.csv</default>
+                    </files>
+                </Interactiv4_CancelUnpaidOrders>
+            </modules>
+        </translate>        
+    </frontend>    
+    
+    <admin>
+        <routers>
+            <i4cancelunpaidorders>
+                <use>admin</use>
+                <args>
+                    <module>Interactiv4_CancelUnpaidOrders</module>
+                    <frontName>i4cancelunpaidorders</frontName>
+                </args>
+            </i4cancelunpaidorders>
+        </routers>
+    </admin>    
+    
+    
+    <adminhtml>
+        <translate>
+            <modules>
+                <i4cancelunpaidorders>
+                    <files>
+                        <default>Interactiv4_CancelUnpaidOrders.csv</default>
+                    </files>
+                </i4cancelunpaidorders>
+            </modules>
+        </translate>          
+    </adminhtml>
+    
+    
+    
+</config>
