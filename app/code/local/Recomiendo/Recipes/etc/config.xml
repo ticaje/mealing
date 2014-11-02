@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Module configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <modules>
+    <Recomiendo_Recipes>
+      <version>1.1.0</version>
+    </Recomiendo_Recipes>
+  </modules>
+  <global>
+    <models>
+      <recomiendo_recipes>
+        <class>Recomiendo_Recipes_Model</class>
+        <resourceModel>recipes_resource</resourceModel>
+      </recomiendo_recipes>
+      <recipes_resource>
+        <class>Recomiendo_Recipes_Model_Resource</class>
+        <entities>
+
+          <!--Recipe table -->
+          <recipe>
+            <table>recomiendo_recipe</table>
+          </recipe>
+          <recipe_pstep>
+            <table>recomiendo_recipe_preparing_step</table>
+          </recipe_pstep>
+          <recipe_estep>
+            <table>recomiendo_recipe_elaboration_step</table>
+          </recipe_estep>
+          <recipe_sstep>
+            <table>recomiendo_recipe_presentation_step</table>
+          </recipe_sstep>
+          <!--Recipe table -->
+
+          <!--Codifiers tables -->
+          <codifier_ingredienttype>
+            <table>recomiendo_ingredient_type</table>
+          </codifier_ingredienttype>
+          <codifier_ingredient>
+            <table>recomiendo_ingredient</table>
+          </codifier_ingredient>
+          <codifier_zipcode>
+            <table>recomiendo_zipcode</table>
+          </codifier_zipcode>
+          <codifier_hourbelt>
+            <table>recomiendo_hour_belt</table>
+          </codifier_hourbelt>
+          <codifier_util>
+            <table>recomiendo_util</table>
+          </codifier_util>
+          <codifier_stockgroup>
+            <table>recomiendo_stock_group</table>
+          </codifier_stockgroup>
+          <codifier_socialgroup>
+            <table>recomiendo_social_group</table>
+          </codifier_socialgroup>
+          <codifier_recipetype>
+            <table>recomiendo_recipe_category</table>
+          </codifier_recipetype>
+          <codifier_provider>
+            <table>recomiendo_provider</table>
+          </codifier_provider>
+          <codifier_traceability>
+            <table>recomiendo_traceability</table>
+          </codifier_traceability>
+          <!--Codifiers tables -->
+
+          <!--Relationships tables -->
+          <relation_recipe_ingredient>
+            <table>recomiendo_recipe_ingredient</table>
+          </relation_recipe_ingredient>
+          <relation_ingredienttype_ingredient>
+            <table>recomiendo_ingredient_type_ingredient</table>
+          </relation_ingredienttype_ingredient>
+          <relation_provider_ingredient>
+            <table>recomiendo_provider_ingredient</table>
+          </relation_provider_ingredient>
+          <relation_recipe_util>
+            <table>recomiendo_recipe_util</table>
+          </relation_recipe_util>
+          <relation_recipe_recipetype>
+            <table>recomiendo_recipe_category_recipe</table>
+          </relation_recipe_recipetype>
+          <relation_recipe_socialgroup>
+            <table>recomiendo_recipe_social_group</table>
+          </relation_recipe_socialgroup>
+          <!--Relationships tables -->
+
+        </entities>
+      </recipes_resource>
+    </models>
+    <resources>
+      <recomiendo_recipes_setup>
+        <setup>
+          <module>Recomiendo_Recipes</module>
+          <class>Mage_Core_Model_Resource_Setup</class>
+        </setup>
+      </recomiendo_recipes_setup>
+    </resources>
+    <blocks>
+      <recomiendo_recipes>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes>
+    </blocks>
+    <helpers>
+      <recomiendo_recipes>
+        <class>Recomiendo_Recipes_Helper</class>
+      </recomiendo_recipes>
+    </helpers>
+  </global>
+  <admin>
+    <routers>
+      <recomiendo>
+        <use>admin</use>
+        <args>
+          <modules>
+            <recomiendo_recipes before="Mage_adminhtml">Recomiendo_Recipes_Adminhtml</recomiendo_recipes>
+          </modules>
+          <frontName>readmin</frontName>
+        </args>
+      </recomiendo>
+    </routers>
+  </admin>
+  <adminhtml>
+    <layout>
+      <updates>
+        <recomiendo_recipes>
+          <file>recomiendo_recipes.xml</file>
+        </recomiendo_recipes>
+      </updates>
+    </layout>
+  </adminhtml>
+  <default>
+    <recipes>
+      <view>
+        <enabled>1</enabled>
+        <items_per_page>20</items_per_page>
+        <days_difference>7</days_difference>
+      </view>
+    </recipes>
+  </default>
+</config>

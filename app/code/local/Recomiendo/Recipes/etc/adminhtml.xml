@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <menu>
+    <recipes translate="title" module="recomiendo_recipes">
+      <title>Codificadores</title>
+      <sort_order>65</sort_order>
+      <children>
+        <manage translate="title" module="recomiendo_recipes">
+          <title>Recetas</title>
+          <action>recomiendo/recipes</action>
+          <sort_order>30</sort_order>
+        </manage>
+        <ingredients translate="title" module="recomiendo_recipes">
+          <title>Ingredientes</title>
+          <action>recomiendo/ingredients</action>
+          <sort_order>31</sort_order>
+        </ingredients>
+        <grouping translate="title" module="recomiendo_recipes">
+          <title>Grupos sociales</title>
+          <action>recomiendo/grouping</action>
+          <sort_order>32</sort_order>
+        </grouping>
+        <stock_groups translate="title" module="recomiendo_recipes">
+          <title>Grupos de lotes</title>
+          <action>recomiendo/stock_groups</action>
+          <sort_order>33</sort_order>
+        </stock_groups>
+        <belts translate="title" module="recomiendo_recipes">
+          <title>Franjas horarias</title>
+          <action>recomiendo/hour_belts</action>
+          <sort_order>34</sort_order>
+        </belts>
+        <utils translate="title" module="recomiendo_recipes">
+          <title>Utensilios de cocina</title>
+          <action>recomiendo/utils</action>
+          <sort_order>35</sort_order>
+        </utils>
+        <provider translate="title" module="recomiendo_recipes">
+          <title>Proovedores</title>
+          <action>recomiendo/providers</action>
+          <sort_order>36</sort_order>
+        </provider>
+        <zip translate="title" module="recomiendo_recipes">
+          <title>Codigos postales</title>
+          <action>recomiendo/zip_code</action>
+          <sort_order>37</sort_order>
+        </zip>
+      </children>
+    </recipes>
+  </menu>
+  <acl>
+    <resources>
+      <admin>
+        <children>
+          <recipes translate="title" module="recomiendo_recipes">
+            <title>Recomiendo Almacen</title>
+            <sort_order>65</sort_order>
+            <children>
+              <manage translate="title">
+                <title>Recetas</title>
+                <sort_order>0</sort_order>
+                <children>
+                  <save translate="title">
+                    <title>Salvar Receta</title>
+                    <sort_order>0</sort_order>
+                  </save>
+                  <delete translate="title">
+                    <title>Borrar receta</title>
+                    <sort_order>10</sort_order>
+                  </delete>
+                </children>
+              </manage>
+            </children>
+          </recipes>
+          <system>
+            <children>
+              <config>
+                <children>
+                  <recipes translate="title" module="recomiendo_recipes">
+                    <title>Recipes Management</title>
+                  </recipes>
+                </children>
+              </config>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>
