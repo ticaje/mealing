@@ -7,7 +7,7 @@
 class Recomiendo_Recipes_Model_Resource_Recipe extends Mage_Core_Model_Resource_Db_Abstract
 {
     /**
-     * Initialize connection and define main table and primary key
+     * Initialize resource
      */
     protected function _construct()
     {
