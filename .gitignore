@@ -2,6 +2,7 @@ magento-check.php
 cleanAllCache.php
 app/etc/local.xml
 includes
+vendor
 var
 tests
 *.sh
@@ -10,6 +11,7 @@ pool
 *~
 shell
 mage
+composer.*
 
 
 # Ignore Debug module
