@@ -18,6 +18,7 @@
       <block type="recomiendo_recipes/adminhtml_recipes" name="recipes" />
     </reference>
   </recomiendo_recipes_index>
+
   <recomiendo_recipes_grid>
     <block type="recomiendo_recipes/adminhtml_recipes_grid" name="root"/>
   </recomiendo_recipes_grid>
@@ -48,6 +49,7 @@
       <block type="recomiendo_recipes_ingredients/adminhtml_ingredients" name="ingredients" />
     </reference>
   </recomiendo_ingredients_index>
+
   <recomiendo_ingredients_grid>
     <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_grid" name="root"/>
   </recomiendo_ingredients_grid>
@@ -71,4 +73,33 @@
     </reference>
   </recomiendo_ingredients_edit>
   <!--Ingredients blocks-->
+
+  <!--Ingredienttypes blocks-->
+  <recomiendo_ingredienttypes_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_ingredienttypes/adminhtml_ingredienttypes" name="ingredienttypes" />
+    </reference>
+  </recomiendo_ingredienttypes_index>
+
+  <recomiendo_ingredienttypes_new>
+    <update handle="adminhtml_ingredienttypes_edit" />
+  </recomiendo_ingredienttypes_new>
+
+  <recomiendo_ingredienttypes_grid>
+    <block type="recomiendo_recipes_ingredienttypes/adminhtml_ingredienttypes_grid" name="root"/>
+  </recomiendo_ingredienttypes_grid>
+
+  <recomiendo_ingredienttypes_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_ingredienttypes/adminhtml_ingredienttypes_edit" name="ingredienttypes_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_ingredienttypes/adminhtml_ingredienttypes_edit_tabs" name="ingredienttypes_edit_tabs">
+        <block type="recomiendo_recipes_ingredienttypes/adminhtml_ingredienttypes_edit_tab_main" name="ingredienttypes_edit_tab_main" />
+        <action method="addTab"><name>main_section</name><block>ingredienttypes_edit_tab_main</block></action>
+      </block>
+    </reference>
+  </recomiendo_ingredienttypes_edit>
+  <!--Ingredienttypes blocks-->
 </layout>

@@ -1,30 +1,30 @@
 <?php
 /*
- * Ingredients controller
+ * Ingredienttypes controller
  *
  * @author Hector Luis Barrientos Margolles
  *
  */
-class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_Controller_Action
+class Recomiendo_Recipes_Adminhtml_IngredienttypesController extends Mage_Adminhtml_Controller_Action
 {
 
   /**
    * Init actions
    *
-   * @return Recomiendo_Ingredients_Adminhtml_IngredientsController
+   * @return Recomiendo_Ingredienttypes_Adminhtml_IngredienttypesController
    */
   protected function _initAction()
   {
     // load layout, set active menu and breadcrumbs
     $this->loadLayout()
-      ->_setActiveMenu('ingredients/manage')
+      ->_setActiveMenu('ingredienttypes/manage')
       ->_addBreadcrumb(
-        Mage::helper('recomiendo_recipes')->__('Ingredients'),
-        Mage::helper('recomiendo_recipes')->__('Ingredients')
+        Mage::helper('recomiendo_recipes')->__('Ingredienttypes'),
+        Mage::helper('recomiendo_recipes')->__('Ingredienttypes')
       )
       ->_addBreadcrumb(
-        Mage::helper('recomiendo_recipes')->__('Manage Ingredients'),
-        Mage::helper('recomiendo_recipes')->__('Manage Ingredients')
+        Mage::helper('recomiendo_recipes')->__('Manage Ingredienttypes'),
+        Mage::helper('recomiendo_recipes')->__('Manage Ingredienttypes')
       )
       ;
     return $this;
@@ -35,15 +35,15 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
    */
   public function indexAction()
   {
-    $this->_title($this->__('Ingredients'))
-      ->_title($this->__('Manage Ingredients'));
+    $this->_title($this->__('Ingredienttypes'))
+      ->_title($this->__('Manage Ingredienttypes'));
 
     $this->_initAction();
     $this->renderLayout();
   }
 
   /**
-   * Create new Ingredients item
+   * Create new Ingredienttypes item
    */
   public function newAction()
   {
@@ -52,25 +52,25 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
   }
 
   /**
-   * Edit Ingredients item
+   * Edit Ingredienttypes item
    */
   public function editAction()
   {
-    $this->_title($this->__('Ingredients'))
-      ->_title($this->__('Manage Ingredients'));
+    $this->_title($this->__('Ingredienttypes'))
+      ->_title($this->__('Manage Ingredienttypes'));
 
     // 1. instance recipes model
-    /* @var $model Recomiendo_Ingredients_Model_Item */
-    $model = Mage::getModel('recomiendo_recipes/codifier_ingredient');
+    /* @var $model Recomiendo_Ingredienttypes_Model_Item */
+    $model = Mage::getModel('recomiendo_recipes/codifier_ingredienttype');
 
     // 2. if exists id, check it and load data
-    $recipeId = $this->getRequest()->getParam('id');
-    if ($recipeId) {
-      $model->load($recipeId);
+    $ingredienttypeId = $this->getRequest()->getParam('id');
+    if ($ingredienttypeId) {
+      $model->load($ingredienttypeId);
 
       if (!$model->getId()) {
         $this->_getSession()->addError(
-          Mage::helper('recomiendo_recipes')->__('Ingredients item does not exist.')
+          Mage::helper('recomiendo_recipes')->__('Ingredienttypes item does not exist.')
         );
         return $this->_redirect('*/*/');
       }
@@ -92,7 +92,7 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
     }
 
     // 4. Register model to use later in blocks
-    Mage::register('ingredients_item', $model);
+    Mage::register('ingredienttypes_item', $model);
 
     // 5. render layout
     $this->renderLayout();
@@ -111,13 +111,13 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
     if ($data) {
       $data = $this->_filterPostData($data);
       // init model and set data
-      /* @var $model Recomiendo_Ingredients_Model_Item */
-      $model = Mage::getModel('recomiendo_recipes/codifier_ingredient');
+      /* @var $model Recomiendo_Ingredienttypes_Model_Item */
+      $model = Mage::getModel('recomiendo_recipes/codifier_ingredienttype');
 
       // if recipes item exists, try to load it
-      $recipeId = $this->getRequest()->getParam('ingredient_id');
-      if ($recipeId) {
-        $model->load($recipeId);
+      $ingredienttypeId = $this->getRequest()->getParam('ingredienttype_id');
+      if ($ingredienttypeId) {
+        $model->load($ingredienttypeId);
       }
 
       $model->addData($data);
@@ -129,7 +129,7 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
 
         // display success message
         $this->_getSession()->addSuccess(
-          Mage::helper('recomiendo_recipes')->__('The ingredient item has been saved.')
+          Mage::helper('recomiendo_recipes')->__('The ingredienttype item has been saved.')
         );
 
         // check if 'Save and Continue'
@@ -143,7 +143,7 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
       } catch (Exception $e) {
         $hasError = true;
         $this->_getSession()->addException($e,
-          Mage::helper('recomiendo_recipes')->__('An error occurred while saving the ingredient item.')
+          Mage::helper('recomiendo_recipes')->__('An error occurred while saving the ingredienttype item.')
         );
       }
 
@@ -167,8 +167,8 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
     if ($itemId) {
       try {
         // init model and delete
-        /** @var $model Recomiendo_Ingredients_Model_Item */
-        $model = Mage::getModel('recomiendo_recipes/codifier_ingredient');
+        /** @var $model Recomiendo_Ingredienttypes_Model_Item */
+        $model = Mage::getModel('recomiendo_recipes/codifier_ingredienttype');
         $model->load($itemId);
         if (!$model->getId()) {
           Mage::throwException(Mage::helper('recomiendo_recipes')->__('Unable to find a recipes item.'));
@@ -177,7 +177,7 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
 
         // display success message
         $this->_getSession()->addSuccess(
-          Mage::helper('recomiendo_recipes')->__('The ingredient item has been deleted.')
+          Mage::helper('recomiendo_recipes')->__('The ingredient type item has been deleted.')
         );
       } catch (Mage_Core_Exception $e) {
         $this->_getSession()->addError($e->getMessage());
@@ -235,7 +235,7 @@ class Recomiendo_Recipes_Adminhtml_IngredientsController extends Mage_Adminhtml_
   }
 
   /**
-   * Flush Ingredients Posts Images Cache action
+   * Flush Ingredienttypes Posts Images Cache action
    */
   public function flushAction()
   {

@@ -1,10 +1,10 @@
 <?php
 /**
- * Ingredients List admin grid
+ * Ingredienttypes List admin grid
  *
  * @author Hector Luis Barrientos Margolles
  */
-Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Mage_Adminhtml_Block_Widget_Grid
+Class Recomiendo_Recipes_Block_Adminhtml_Ingredienttypes_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     /**
      * Init Grid default properties
@@ -13,7 +13,7 @@ Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Mage_Adminhtml
     public function __construct()
     {
         parent::__construct();
-        $this->setId('ingredients_list_grid');
+        $this->setId('recipes_list_grid');
         $this->setDefaultSort('created_at');
         $this->setDefaultDir('DESC');
         $this->setSaveParametersInSession(true);
@@ -27,7 +27,7 @@ Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Mage_Adminhtml
      */
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel('recomiendo_recipes/codifier_ingredient')->getResourceCollection();
+        $collection = Mage::getModel('recomiendo_recipes/codifier_ingredienttype')->getResourceCollection();
 
         $this->setCollection($collection);
         return parent::_prepareCollection();
@@ -40,38 +40,35 @@ Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Mage_Adminhtml
      */
     protected function _prepareColumns()
     {
-        $this->addColumn('ingredient_id', array(
+        $this->addColumn('ingredienttype_id', array(
             'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
             'width'     => '50px',
-            'index'     => 'ingredient_id',
+            'index'     => 'ingredienttype_id',
         ));
 
         $this->addColumn('name', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Ingrediente'),
+            'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Tipo Ingrediente'),
+            'width'     => '450px',
             'index'     => 'name',
-        ));
-
-        $this->addColumn('ingredienttype', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Tipo(s) Ingrediente'),
-            'index'     => 'ingredienttype',
-            'renderer'  => 'Recomiendo_Recipes_Block_Adminhtml_Ingredients_Renderer_Ingredienttypes',
         ));
 
         $this->addColumn('action',
             array(
                 'header'    => Mage::helper('recomiendo_recipes')->__('Acciones'),
-                'width'     => '100px',
+                'width'     => '50px',
                 'type'      => 'action',
                 'getter'    => 'getId',
-                'actions'   => array(array(
+                'actions'   => array(
+                  array(
                     'caption' => Mage::helper('recomiendo_recipes')->__('Eliminar'),
                     'url'     => array('base' => '*/*/delete'),
-                    'confirm' => Mage::helper('recomiendo_recipes')->__('Seguro?'),
-                    'field'   => 'id'
-                )),
+                    'field'   => 'id',
+                    'confirm' => Mage::helper('recomiendo_recipes')->__('Seguro?')
+                  )
+                ),
                 'filter'    => false,
                 'sortable'  => false,
-                'index'     => 'ingredients',
+                'index'     => 'ingredienttypes',
         ));
 
         return parent::_prepareColumns();

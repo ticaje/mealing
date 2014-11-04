@@ -11,7 +11,7 @@ class Recomiendo_Recipes_Model_Resource_Codifier_Ingredienttype extends Mage_Cor
      */
     protected function _construct()
     {
-        $this->_init('recomiendo_recipes/codifier_ingredienttype', 'ingredient_id');
+        $this->_init('recomiendo_recipes/codifier_ingredienttype', 'ingredienttype_id');
     }
 
 }

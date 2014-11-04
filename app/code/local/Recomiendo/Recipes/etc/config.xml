@@ -119,6 +119,9 @@
       <recomiendo_recipes_ingredients>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_ingredients>
+      <recomiendo_recipes_ingredienttypes>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_ingredienttypes>
     </blocks>
     <helpers>
       <recomiendo_recipes>

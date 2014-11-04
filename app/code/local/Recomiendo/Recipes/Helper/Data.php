@@ -33,7 +33,7 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
    *
    * @var Recomiendo_Recipes_Model_Recipes
    */
-  protected $_recipeItemInstance, $_ingredientItemInstance;
+  protected $_recipeItemInstance, $_ingredientItemInstance, $_ingredienttypeItemInstance;
 
   /**
    * Checks whether recipes can be displayed in the frontend
@@ -102,5 +102,23 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
     }
 
     return $this->_ingredientItemInstance;
+  }
+
+  /**
+   * Return current ingredient item instance from the Registry
+   *
+   * @return Recomiendo_Recipes_Model_Ingredient
+   */
+  public function getIngredienttypeItemInstance()
+  {
+    if (!$this->_ingredienttypeItemInstance) {
+      $this->_ingredienttypeItemInstance = Mage::registry('ingredienttypes_item');
+
+      if (!$this->_ingredienttypeItemInstance) {
+        Mage::throwException($this->__('Ingredient type instance does not exist in Registry'));
+      }
+    }
+
+    return $this->_ingredienttypeItemInstance;
   }
 }
