@@ -29,7 +29,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Content
      */
     protected function _prepareForm()
     {
-        $model = Mage::helper('recomiendo_recipes')->getRecipesItemInstance();
+        $model = Mage::helper('recomiendo_recipes')->getEntityItemInstance("recipeItemInstance", "recipes_item");
 
         /**
          * Checking if user have permissions to save information

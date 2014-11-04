@@ -69,61 +69,7 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
   }
 
   /**
-   * Return current recipe item instance from the Registry
-   *
-   * @return Recomiendo_Recipes_Model_Recipe
-   */
-  public function getRecipesItemInstance()
-  {
-    if (!$this->_recipeItemInstance) {
-      $this->_recipeItemInstance = Mage::registry('recipes_item');
-
-      if (!$this->_recipeItemInstance) {
-        Mage::throwException($this->__('Recipe instance does not exist in Registry'));
-      }
-    }
-
-    return $this->_recipeItemInstance;
-  }
-
-  /**
-   * Return current ingredient item instance from the Registry
-   *
-   * @return Recomiendo_Recipes_Model_Ingredient
-   */
-  public function getIngredientItemInstance()
-  {
-    if (!$this->_ingredientItemInstance) {
-      $this->_ingredientItemInstance = Mage::registry('ingredients_item');
-
-      if (!$this->_ingredientItemInstance) {
-        Mage::throwException($this->__('Ingredient instance does not exist in Registry'));
-      }
-    }
-
-    return $this->_ingredientItemInstance;
-  }
-
-  /**
-   * Return current ingredient item instance from the Registry
-   *
-   * @return Recomiendo_Recipes_Model_Ingredient
-   */
-  public function getIngredienttypeItemInstance()
-  {
-    if (!$this->_ingredienttypeItemInstance) {
-      $this->_ingredienttypeItemInstance = Mage::registry('ingredienttypes_item');
-
-      if (!$this->_ingredienttypeItemInstance) {
-        Mage::throwException($this->__('Ingredient type instance does not exist in Registry'));
-      }
-    }
-
-    return $this->_ingredienttypeItemInstance;
-  }
-
-  /**
-   * Return current ingredient item instance from the Registry
+   * Return current entity item instance from the Registry
    *
    * @return Recomiendo_Recipes_Model_%s
    */

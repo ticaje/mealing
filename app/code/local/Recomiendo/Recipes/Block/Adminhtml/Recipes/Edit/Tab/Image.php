@@ -28,7 +28,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Image
 
         $form->setHtmlIdPrefix('recipes_image_');
 
-        $model = Mage::helper('recomiendo_recipes')->getRecipesItemInstance();
+        $model = Mage::helper('recomiendo_recipes')->getEntityItemInstance("recipeItemInstance", "recipes_item");
 
 
         $fieldset = $form->addFieldset('image_fieldset', array(
