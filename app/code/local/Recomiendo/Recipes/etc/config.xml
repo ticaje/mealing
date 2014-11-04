@@ -102,10 +102,23 @@
         </setup>
       </recomiendo_recipes_setup>
     </resources>
+    <events>
+      <before_recipes_item_display>
+        <observers>
+          <recomiendo_recipes>
+            <class>recomiendo_recipes/observer</class>
+            <method>beforeNewsDisplayed</method>
+          </recomiendo_recipes>
+        </observers>
+      </before_recipes_item_display>
+    </events>
     <blocks>
       <recomiendo_recipes>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes>
+      <recomiendo_recipes_ingredients>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_ingredients>
     </blocks>
     <helpers>
       <recomiendo_recipes>
@@ -130,7 +143,7 @@
     <layout>
       <updates>
         <recomiendo_recipes>
-          <file>recomiendo_recipes.xml</file>
+          <file>recomiendo/recipes.xml</file>
         </recomiendo_recipes>
       </updates>
     </layout>

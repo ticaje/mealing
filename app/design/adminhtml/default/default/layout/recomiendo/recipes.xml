@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<layout>
+  <default>
+    <remove name="notification_security" />
+    <remove name="notification_survey" />
+  </default>
+
+  <!--Recipes blocks-->
+  <recomiendo_recipes_index>
+    <reference name="content">
+      <block type="recomiendo_recipes/adminhtml_recipes" name="recipes" />
+    </reference>
+  </recomiendo_recipes_index>
+  <recomiendo_recipes_grid>
+    <block type="recomiendo_recipes/adminhtml_recipes_grid" name="root"/>
+  </recomiendo_recipes_grid>
+  <recomiendo_recipes_new>
+    <update handle="adminhtml_recipes_edit" />
+  </recomiendo_recipes_new>
+  <recomiendo_recipes_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes/adminhtml_recipes_edit" name="recipes_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes/adminhtml_recipes_edit_tabs" name="recipes_edit_tabs">
+        <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_main" name="recipes_edit_tab_main" />
+        <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_content" name="recipes_edit_tab_content" />
+        <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_image" name="recipes_edit_tab_image" />
+        <action method="addTab"><name>main_section</name><block>recipes_edit_tab_main</block></action>
+        <action method="addTab"><name>content_section</name><block>recipes_edit_tab_content</block></action>
+        <action method="addTab"><name>image_section</name><block>recipes_edit_tab_image</block></action>
+      </block>
+    </reference>
+  </recomiendo_recipes_edit>
+  <!--Recipes blocks-->
+
+  <!--Ingredients blocks-->
+  <recomiendo_ingredients_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_ingredients/adminhtml_ingredients" name="ingredients" />
+    </reference>
+  </recomiendo_ingredients_index>
+  <recomiendo_ingredients_grid>
+    <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_grid" name="root"/>
+  </recomiendo_ingredients_grid>
+
+  <recomiendo_ingredients_new>
+    <update handle="adminhtml_ingredients_edit" />
+  </recomiendo_ingredients_new>
+
+  <recomiendo_ingredients_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_edit" name="ingredients_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_edit_tabs" name="ingredients_edit_tabs">
+        <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_edit_tab_main" name="ingredients_edit_tab_main" />
+        <block type="recomiendo_recipes_ingredients/adminhtml_ingredients_edit_tab_content" name="ingredients_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>ingredients_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>ingredients_edit_tab_content</block></action-->
+      </block>
+    </reference>
+  </recomiendo_ingredients_edit>
+  <!--Ingredients blocks-->
+</layout>
