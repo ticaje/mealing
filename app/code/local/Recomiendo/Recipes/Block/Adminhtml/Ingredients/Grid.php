@@ -4,96 +4,54 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Mage_Adminhtml_Block_Widget_Grid
+Class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid
 {
-    /**
-     * Init Grid default properties
-     *
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setId('ingredients_list_grid');
-        $this->setDefaultSort('created_at');
-        $this->setDefaultDir('DESC');
-        $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
-    }
 
-    /**
-     * Prepare collection for Grid
-     *
-     * @return Recomiendo_Recipes_Block_Adminhtml_Grid
-     */
-    protected function _prepareCollection()
-    {
-        $collection = Mage::getModel('recomiendo_recipes/codifier_ingredient')->getResourceCollection();
+  protected $_listIdString = 'ingredients_list_grid';
+  protected $_modelName    = 'recomiendo_recipes/codifier_ingredient';
 
-        $this->setCollection($collection);
-        return parent::_prepareCollection();
-    }
+  /**
+   * Prepare collection for Grid
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid
+   */
 
-    /**
-     * Prepare Grid columns
-     *
-     * @return Mage_Adminhtml_Block_Catalog_Search_Grid
-     */
-    protected function _prepareColumns()
-    {
-        $this->addColumn('ingredient_id', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
-            'width'     => '50px',
-            'index'     => 'ingredient_id',
-        ));
+  /**
+   * Prepare Grid columns
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Ingredients_Grid
+   */
+  protected function _prepareColumns()
+  {
+    $this->addColumn('ingredient_id', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
+      'width'     => '50px',
+      'index'     => 'ingredient_id',
+    ));
 
-        $this->addColumn('name', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Ingrediente'),
-            'index'     => 'name',
-        ));
+    $this->addColumn('name', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Ingrediente'),
+      'index'     => 'name',
+    ));
 
-        $this->addColumn('ingredienttype', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Tipo(s) Ingrediente'),
-            'index'     => 'ingredienttype',
-            'renderer'  => 'Recomiendo_Recipes_Block_Adminhtml_Ingredients_Renderer_Ingredienttypes',
-        ));
+    $this->addColumn('ingredienttype', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Tipo(s) Ingrediente'),
+      'index'     => 'ingredienttype',
+      'renderer'  => 'Recomiendo_Recipes_Block_Adminhtml_Ingredients_Renderer_Ingredienttypes',
+    ));
 
-        $this->addColumn('action',
-            array(
-                'header'    => Mage::helper('recomiendo_recipes')->__('Acciones'),
-                'width'     => '100px',
-                'type'      => 'action',
-                'getter'    => 'getId',
-                'actions'   => array(array(
-                    'caption' => Mage::helper('recomiendo_recipes')->__('Eliminar'),
-                    'url'     => array('base' => '*/*/delete'),
-                    'confirm' => Mage::helper('recomiendo_recipes')->__('Seguro?'),
-                    'field'   => 'id'
-                )),
-                'filter'    => false,
-                'sortable'  => false,
-                'index'     => 'ingredients',
-        ));
+    return parent::_prepareColumns();
+  }
 
-        return parent::_prepareColumns();
-    }
+  /**
+   * Return row URL for js event handlers
+   *
+   * @return string
+   */
 
-    /**
-     * Return row URL for js event handlers
-     *
-     * @return string
-     */
-    public function getRowUrl($row)
-    {
-        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
-    }
-
-    /**
-     * Grid url getter
-     *
-     * @return string current grid url
-     */
-    public function getGridUrl()
-    {
-        return $this->getUrl('*/*/grid', array('_current' => true));
-    }
+  /**
+   * Grid url getter
+   *
+   * @return string current grid url
+   */
 }

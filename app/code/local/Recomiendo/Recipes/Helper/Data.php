@@ -121,4 +121,22 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
 
     return $this->_ingredienttypeItemInstance;
   }
+
+  /**
+   * Return current ingredient item instance from the Registry
+   *
+   * @return Recomiendo_Recipes_Model_%s
+   */
+  public function getEntityItemInstance($instanceName, $registryVariable)
+  {
+    if (!$this->_{$instanceName}) {
+      $this->_{$instanceName} = Mage::registry($registryVariable);
+
+      if (!$this->_{$instanceName}) {
+        Mage::throwException($this->__('Type instance does not exist in Registry'));
+      }
+    }
+
+    return $this->_{$instanceName};
+  }
 }

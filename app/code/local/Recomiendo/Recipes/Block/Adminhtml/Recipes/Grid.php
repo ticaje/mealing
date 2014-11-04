@@ -4,105 +4,69 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid
 {
-    /**
-     * Init Grid default properties
-     *
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setId('recipes_list_grid');
-        $this->setDefaultSort('created_at');
-        $this->setDefaultDir('DESC');
-        $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
-    }
 
-    /**
-     * Prepare collection for Grid
-     *
-     * @return Recomiendo_Recipes_Block_Adminhtml_Grid
-     */
-    protected function _prepareCollection()
-    {
-        $collection = Mage::getModel('recomiendo_recipes/recipe')->getResourceCollection();
+  protected $_listIdString = 'recipe_list_grid';
+  protected $_modelName    = 'recomiendo_recipes/recipe';
 
-        $this->setCollection($collection);
-        return parent::_prepareCollection();
-    }
+  /**
+   * Init Grid default properties
+   *
+   */
 
-    /**
-     * Prepare Grid columns
-     *
-     * @return Mage_Adminhtml_Block_Catalog_Search_Grid
-     */
-    protected function _prepareColumns()
-    {
-        $this->addColumn('recipe_id', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
-            'width'     => '50px',
-            'index'     => 'recipe_id',
-        ));
+  /**
+   * Prepare collection for Grid
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid
+   */
 
-        $this->addColumn('name', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Receta'),
-            'index'     => 'name',
-        ));
+  /**
+   * Prepare Grid columns
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid
+   */
+  protected function _prepareColumns()
+  {
+    $this->addColumn('recipe_id', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
+      'width'     => '50px',
+      'index'     => 'recipe_id',
+    ));
 
-        $this->addColumn('published_at', array(
-            'header'   => Mage::helper('recomiendo_recipes')->__('Fecha publicación'),
-            'sortable' => true,
-            'width'    => '170px',
-            'index'    => 'published_at',
-            'type'     => 'date',
-        ));
+    $this->addColumn('name', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Receta'),
+      'index'     => 'name',
+    ));
 
-        $this->addColumn('created_at', array(
-            'header'   => Mage::helper('recomiendo_recipes')->__('Fecha Creación'),
-            'sortable' => true,
-            'width'    => '170px',
-            'index'    => 'created_at',
-            'type'     => 'datetime',
-        ));
+    $this->addColumn('published_at', array(
+      'header'   => Mage::helper('recomiendo_recipes')->__('Fecha publicación'),
+      'sortable' => true,
+      'width'    => '170px',
+      'index'    => 'published_at',
+      'type'     => 'date',
+    ));
 
-        $this->addColumn('action',
-            array(
-                'header'    => Mage::helper('recomiendo_recipes')->__('Acciones'),
-                'width'     => '100px',
-                'type'      => 'action',
-                'getter'    => 'getId',
-                'actions'   => array(array(
-                    'caption' => Mage::helper('recomiendo_recipes')->__('Editar'),
-                    'url'     => array('base' => '*/*/edit'),
-                    'field'   => 'id'
-                )),
-                'filter'    => false,
-                'sortable'  => false,
-                'index'     => 'recipes',
-        ));
+    $this->addColumn('created_at', array(
+      'header'   => Mage::helper('recomiendo_recipes')->__('Fecha Creación'),
+      'sortable' => true,
+      'width'    => '170px',
+      'index'    => 'created_at',
+      'type'     => 'datetime',
+    ));
 
-        return parent::_prepareColumns();
-    }
+    return parent::_prepareColumns();
+  }
 
-    /**
-     * Return row URL for js event handlers
-     *
-     * @return string
-     */
-    public function getRowUrl($row)
-    {
-        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
-    }
+  /**
+   * Return row URL for js event handlers
+   *
+   * @return string
+   */
 
-    /**
-     * Grid url getter
-     *
-     * @return string current grid url
-     */
-    public function getGridUrl()
-    {
-        return $this->getUrl('*/*/grid', array('_current' => true));
-    }
+  /**
+   * Grid url getter
+   *
+   * @return string current grid url
+   */
 }

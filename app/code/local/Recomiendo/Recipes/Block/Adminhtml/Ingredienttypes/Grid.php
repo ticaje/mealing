@@ -4,93 +4,55 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-Class Recomiendo_Recipes_Block_Adminhtml_Ingredienttypes_Grid extends Mage_Adminhtml_Block_Widget_Grid
+Class Recomiendo_Recipes_Block_Adminhtml_Ingredienttypes_Grid extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid
 {
-    /**
-     * Init Grid default properties
-     *
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->setId('recipes_list_grid');
-        $this->setDefaultSort('created_at');
-        $this->setDefaultDir('DESC');
-        $this->setSaveParametersInSession(true);
-        $this->setUseAjax(true);
-    }
 
-    /**
-     * Prepare collection for Grid
-     *
-     * @return Recomiendo_Recipes_Block_Adminhtml_Grid
-     */
-    protected function _prepareCollection()
-    {
-        $collection = Mage::getModel('recomiendo_recipes/codifier_ingredienttype')->getResourceCollection();
+  protected $_listIdString = 'ingredienttypes_list_grid';
+  protected $_modelName    = 'recomiendo_recipes/codifier_ingredienttype';
 
-        $this->setCollection($collection);
-        return parent::_prepareCollection();
-    }
+  /**
+   * Init Grid default properties
+   *
+   */
 
-    /**
-     * Prepare Grid columns
-     *
-     * @return Mage_Adminhtml_Block_Catalog_Search_Grid
-     */
-    protected function _prepareColumns()
-    {
-        $this->addColumn('ingredienttype_id', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
-            'width'     => '50px',
-            'index'     => 'ingredienttype_id',
-        ));
+  /**
+   * Prepare collection for Grid
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Ingredienttypes_Grid
+   */
 
-        $this->addColumn('name', array(
-            'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Tipo Ingrediente'),
-            'width'     => '450px',
-            'index'     => 'name',
-        ));
+  /**
+   * Prepare Grid columns
+   *
+   * @return Recomiendo_Recipes_Block_Adminhtml_Ingredienttypes_Grid
+   */
+  protected function _prepareColumns()
+  {
+    $this->addColumn('ingredienttype_id', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
+      'width'     => '50px',
+      'index'     => 'ingredienttype_id',
+    ));
 
-        $this->addColumn('action',
-            array(
-                'header'    => Mage::helper('recomiendo_recipes')->__('Acciones'),
-                'width'     => '50px',
-                'type'      => 'action',
-                'getter'    => 'getId',
-                'actions'   => array(
-                  array(
-                    'caption' => Mage::helper('recomiendo_recipes')->__('Eliminar'),
-                    'url'     => array('base' => '*/*/delete'),
-                    'field'   => 'id',
-                    'confirm' => Mage::helper('recomiendo_recipes')->__('Seguro?')
-                  )
-                ),
-                'filter'    => false,
-                'sortable'  => false,
-                'index'     => 'ingredienttypes',
-        ));
+    $this->addColumn('name', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Tipo Ingrediente'),
+      'width'     => '450px',
+      'index'     => 'name',
+    ));
 
-        return parent::_prepareColumns();
-    }
+    return parent::_prepareColumns();
+  }
 
-    /**
-     * Return row URL for js event handlers
-     *
-     * @return string
-     */
-    public function getRowUrl($row)
-    {
-        return $this->getUrl('*/*/edit', array('id' => $row->getId()));
-    }
+  /**
+   * Return row URL for js event handlers
+   *
+   * @return string
+   */
 
-    /**
-     * Grid url getter
-     *
-     * @return string current grid url
-     */
-    public function getGridUrl()
-    {
-        return $this->getUrl('*/*/grid', array('_current' => true));
-    }
+  /**
+   * Grid url getter
+   *
+   * @return string current grid url
+   */
+
 }

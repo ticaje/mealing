@@ -4,10 +4,10 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit_Tab_Main
-    extends Mage_Adminhtml_Block_Widget_Form
-    implements Mage_Adminhtml_Block_Widget_Tab_Interface
+class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit_Tab_Main extends Recomiendo_Recipes_Block_Adminhtml_Refactor_Edit_Tab_BaseMain
 {
+
+    protected $_entityLabel = "Ingredientes";
     /**
      * Prepare form elements for tab
      *
@@ -15,7 +15,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit_Tab_Main
      */
     protected function _prepareForm()
     {
-        $model = Mage::helper('recomiendo_recipes')->getIngredientItemInstance();
+        $model = Mage::helper('recomiendo_recipes')->getEntityItemInstance("ingredientItemInstance", "ingredients_item");
 
         /**
          * Checking if user have permissions to save information
@@ -73,38 +73,23 @@ class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit_Tab_Main
      *
      * @return string
      */
-    public function getTabLabel()
-    {
-        return Mage::helper('recomiendo_recipes')->__('Información de ingrediente');
-    }
 
     /**
      * Prepare title for tab
      *
      * @return string
      */
-    public function getTabTitle()
-    {
-        return Mage::helper('recomiendo_recipes')->__('Información de ingrediente');
-    }
 
     /**
      * Returns status flag about this tab can be shown or not
      *
      * @return true
      */
-    public function canShowTab()
-    {
-        return true;
-    }
 
     /**
      * Returns status flag about this tab hidden or not
      *
      * @return true
      */
-    public function isHidden()
-    {
-        return false;
-    }
+
 }
