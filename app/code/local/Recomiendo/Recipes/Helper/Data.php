@@ -94,7 +94,7 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
   public function getIngredientItemInstance()
   {
     if (!$this->_ingredientItemInstance) {
-      $this->_ingredientItemInstance = Mage::registry('ingredient_item');
+      $this->_ingredientItemInstance = Mage::registry('ingredients_item');
 
       if (!$this->_ingredientItemInstance) {
         Mage::throwException($this->__('Ingredient instance does not exist in Registry'));
