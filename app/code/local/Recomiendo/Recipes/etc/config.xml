@@ -135,7 +135,7 @@
         <use>admin</use>
         <args>
           <modules>
-            <recomiendo_recipes before="Mage_adminhtml">Recomiendo_Recipes_Adminhtml</recomiendo_recipes>
+            <recomiendo_recipes before="Mage_Adminhtml">Recomiendo_Recipes_Adminhtml</recomiendo_recipes>
           </modules>
           <frontName>readmin</frontName>
         </args>
