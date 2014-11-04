@@ -168,18 +168,7 @@ $table = $installer->getConnection()
     'primary'   => true,
   ), 'Ingredient Id')
   ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
-  ), 'Ingredient Name')
-  ->addColumn('ingredienttype_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-    'unsigned'  => true,
-    'nullable'  => false,
-    'default'   => '0',
-  ), 'Ingredient Type Id')
-  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_ingredient', array('ingredienttype_id')),
-    array('ingredienttype_id'))
-    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_ingredient', 'ingredienttype_id', 'recomiendo_recipes/codifier_ingredienttype', 'ingredienttype_id'),
-      'ingredienttype_id', $installer->getTable('recomiendo_recipes/codifier_ingredienttype'), 'ingredienttype_id',
-      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-      ->setComment('Ingredient type as foreign key');
+  ), 'Ingredient Name');
 
 $installer->getConnection()->createTable($table);
 
