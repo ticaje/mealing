@@ -11,6 +11,6 @@ class Recomiendo_Recipes_Model_Resource_Codifier_Hourbelt extends Mage_Core_Mode
      */
     protected function _construct()
     {
-        $this->_init('recomiendo_recipeshourbelthourbelt', 'hourbelt_id');
+        $this->_init('recomiendo_recipes/codifier_hourbelt', 'hourbelt_id');
     }
 }
