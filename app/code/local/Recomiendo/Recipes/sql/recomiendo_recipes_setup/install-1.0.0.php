@@ -203,10 +203,10 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'primary'   => true,
   ), 'Hour Belt Id')
-  ->addColumn('start', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
-  ), 'Starting date')
-  ->addColumn('finish', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
-  ), 'Finish date');
+  ->addColumn('start', Varien_Db_Ddl_Table::TYPE_TIME, null, array(
+  ), 'Starting Hour')
+  ->addColumn('finish', Varien_Db_Ddl_Table::TYPE_TIME, null, array(
+  ), 'Finish Hour');
 
 $installer->getConnection()->createTable($table);
 
@@ -227,10 +227,10 @@ $table = $installer->getConnection()
 $installer->getConnection()->createTable($table);
 
 /**
- * Create table 'stock_group'
+ * Create table 'sales_ship_group'
  */
 $table = $installer->getConnection()
-  ->newTable($installer->getTable('recomiendo_recipes/codifier_stockgroup'))
+  ->newTable($installer->getTable('recomiendo_recipes/codifier_stock'))
   ->addColumn('stockgroup_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
     'identity'  => true,
     'unsigned'  => true,
@@ -239,17 +239,8 @@ $table = $installer->getConnection()
   ), 'Buying Stock Group Id')
   ->addColumn('quantity', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
   ), 'Quantity')
-  ->addColumn('hourbelt_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-    'unsigned'  => true,
-    'nullable'  => false,
-    'default'   => '0',
-  ), 'Ingredient Type Id')
-  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_stockgroup', array('hourbelt_id')),
-    array('hourbelt_id'))
-    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_stockgroup', 'hourbelt_id', 'recomiendo_recipes/codifier_hourbelt', 'hourbelt_id'),
-      'hourbelt_id', $installer->getTable('recomiendo_recipes/codifier_hourbelt'), 'hourbelt_id',
-      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-      ->setComment('Hour Belt as foreign key');
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
+  ), 'Name');
 
 $installer->getConnection()->createTable($table);
 

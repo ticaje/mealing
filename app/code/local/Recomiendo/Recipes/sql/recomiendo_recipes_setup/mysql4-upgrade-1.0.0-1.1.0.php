@@ -100,6 +100,21 @@ CREATE TABLE `{$installer->getTable('recomiendo_recipes/relation_recipe_socialgr
   FOREIGN KEY (`socialgroup_id`) REFERENCES `{$installer->getTable('recomiendo_recipes/codifier_socialgroup')}` (`socialgroup_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- DROP TABLE IF EXISTS `{$installer->getTable('recomiendo_recipes/codifier_hourbelt_group')}`;
+CREATE TABLE `{$installer->getTable('recomiendo_recipes/codifier_hourbelt_group')}` (
+  `hourbelt_group_id` int(11) NOT NULL auto_increment,
+  `hourbelt_id` smallint(5) unsigned NOT NULL default '0',
+  `stockgroup_id` smallint(8) unsigned NOT NULL default '0',
+  `price` decimal(12,4) DEFAULT NULL COMMENT 'Price',
+  PRIMARY KEY  (`hourbelt_group_id`),
+  KEY `FK_{$installer->getTable('recomiendo_recipes/codifier_hourbelt')}_r_h_s` (`ingredient_id`),
+  KEY `FK_{$installer->getTable('recomiendo_recipes/codifier_stock')}_r_h_s` (`recipe_id`),
+  CONSTRAINT `FK_{$installer->getTable('recomiendo_recipes/codifier_hourbelt')}_r_h_s`
+  FOREIGN KEY (`hourbelt_id`) REFERENCES `{$installer->getTable('recomiendo_recipes/codifier_hourbelt')}` (`hourbelt_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_{$installer->getTable('recomiendo_recipes/codifier_stock')}_r_h_s`
+  FOREIGN KEY (`stockgroup_id`) REFERENCES `{$installer->getTable('recomiendo_recipes/codifier_stock')}` (`stockgroup_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ");
 
 ?>
