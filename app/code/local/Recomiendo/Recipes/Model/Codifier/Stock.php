@@ -4,14 +4,14 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Recipes_Model_Codifier_Stockgroup extends Mage_Core_Model_Abstract
+class Recomiendo_Recipes_Model_Codifier_Stock extends Mage_Core_Model_Abstract
 {
     /**
      * Define resource model
      */
     protected function _construct()
     {
-        $this->_init('recomiendo_recipes/codifier_stockgroup');
+        $this->_init('recomiendo_recipes/codifier_stock');
     }
 
 }

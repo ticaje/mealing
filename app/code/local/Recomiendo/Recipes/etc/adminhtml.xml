@@ -32,11 +32,11 @@
           <action>recomiendo/socialgroups</action>
           <sort_order>34</sort_order>
         </grouping>
-        <stock_groups translate="title" module="recomiendo_recipes">
-          <title>Grupos de lotes</title>
-          <action>recomiendo/stockgroups</action>
+        <stock translate="title" module="recomiendo_recipes">
+          <title>Grupos de compra por lotes</title>
+          <action>recomiendo/stocks</action>
           <sort_order>35</sort_order>
-        </stock_groups>
+        </stock>
         <belts translate="title" module="recomiendo_recipes">
           <title>Franjas horarias</title>
           <action>recomiendo/hourbelts</action>

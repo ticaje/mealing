@@ -33,7 +33,7 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
    *
    * @var Recomiendo_Recipes_Model_Recipes
    */
-  protected $_recipeItemInstance, $_ingredientItemInstance, $_ingredienttypeItemInstance, $_utilItemInstance, $_socialgroupItemInstance;
+  protected $_recipeItemInstance, $_ingredientItemInstance, $_ingredienttypeItemInstance, $_utilItemInstance, $_socialgroupItemInstance, $_stockItemInstance, $_hourbeltItemInstance;
 
   /**
    * Checks whether recipes can be displayed in the frontend
@@ -77,9 +77,8 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
   {
     if (!$this->_{$instanceName}) {
       $this->_{$instanceName} = Mage::registry($registryVariable);
-
       if (!$this->_{$instanceName}) {
-        Mage::throwException($this->__('Type instance does not exist in Registry'));
+        Mage::throwException($this->__('Type instance %s does not exist in Registry', $registryVariable));
       }
     }
 

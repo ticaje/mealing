@@ -53,9 +53,9 @@
           <codifier_util>
             <table>recomiendo_util</table>
           </codifier_util>
-          <codifier_stockgroup>
+          <codifier_stock>
             <table>recomiendo_stock_group</table>
-          </codifier_stockgroup>
+          </codifier_stock>
           <codifier_socialgroup>
             <table>recomiendo_social_group</table>
           </codifier_socialgroup>
@@ -128,6 +128,9 @@
       <recomiendo_recipes_socialgroups>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_socialgroups>
+      <recomiendo_recipes_stocks>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_stocks>
     </blocks>
     <helpers>
       <recomiendo_recipes>
