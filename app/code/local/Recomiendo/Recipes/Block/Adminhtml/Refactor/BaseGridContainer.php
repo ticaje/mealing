@@ -17,7 +17,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGridContainer extends Mage
     parent::__construct();
 
     if (Mage::helper('recomiendo_recipes/admin')->isActionAllowed('save')) {
-      $this->_updateButton('add', 'label', Mage::helper('recomiendo_recipes')->__('Adicionar nuevo ingrediente'));
+      $this->_updateButton('add', 'label', Mage::helper('recomiendo_recipes')->__('Adicionar nueva entidad %s', $this->_entityLabel));
     } else {
       $this->_removeButton('add');
     }

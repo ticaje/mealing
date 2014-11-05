@@ -4,9 +4,10 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit extends Recomiendo_Recipes_Block_Adminhtml_Refactor_Edit_BaseForm
+class Recomiendo_Recipes_Block_Adminhtml_Ingredients_Edit extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseEdit
 {
 
+  protected $_blockGroup   = "recomiendo_recipes_ingredients";
   protected $_controller   = "adminhtml_ingredients";
   protected $_entityLabel  = "Ingrediente";
   protected $_instanceName = "ingredientItemInstance";

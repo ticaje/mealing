@@ -10,5 +10,6 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes extends Recomiendo_Recipes_Bloc
   protected $_blockGroup = 'recomiendo_recipes';
   protected $_controller = 'adminhtml_recipes';
   protected $_headerText = 'Gestión de Recetas';
+  protected $_entityLabel = 'Receta';
 
 }
