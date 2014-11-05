@@ -29,17 +29,17 @@
         </ingredienttypes>
         <grouping translate="title" module="recomiendo_recipes">
           <title>Grupos sociales</title>
-          <action>recomiendo/grouping</action>
+          <action>recomiendo/socialgroups</action>
           <sort_order>34</sort_order>
         </grouping>
         <stock_groups translate="title" module="recomiendo_recipes">
           <title>Grupos de lotes</title>
-          <action>recomiendo/stock_groups</action>
+          <action>recomiendo/stockgroups</action>
           <sort_order>35</sort_order>
         </stock_groups>
         <belts translate="title" module="recomiendo_recipes">
           <title>Franjas horarias</title>
-          <action>recomiendo/hour_belts</action>
+          <action>recomiendo/hourbelts</action>
           <sort_order>36</sort_order>
         </belts>
         <utils translate="title" module="recomiendo_recipes">
@@ -54,7 +54,7 @@
         </provider>
         <zip translate="title" module="recomiendo_recipes">
           <title>Codigos postales</title>
-          <action>recomiendo/zip_code</action>
+          <action>recomiendo/zipcode</action>
           <sort_order>39</sort_order>
         </zip>
       </children>
