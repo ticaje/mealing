@@ -68,6 +68,9 @@
           <codifier_traceability>
             <table>recomiendo_traceability</table>
           </codifier_traceability>
+          <codifier_hourbelt_group>
+            <table>recomiendo_recipe_hourbelt_salesshippinggroup</table>
+          </codifier_hourbelt_group>
           <!--Codifiers tables -->
 
           <!--Relationships tables -->
@@ -131,6 +134,9 @@
       <recomiendo_recipes_stocks>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_stocks>
+      <recomiendo_recipes_hourbelts>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_hourbelts>
     </blocks>
     <helpers>
       <recomiendo_recipes>

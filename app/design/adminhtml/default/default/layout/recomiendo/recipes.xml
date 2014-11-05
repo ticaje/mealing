@@ -196,4 +196,35 @@
   </recomiendo_stocks_edit>
   <!--Stocks blocks-->
 
+  <!--Hourbelts blocks-->
+  <recomiendo_hourbelts_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts" name="hourbelts" />
+    </reference>
+  </recomiendo_hourbelts_index>
+
+  <recomiendo_hourbelts_grid>
+    <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_grid" name="root"/>
+  </recomiendo_hourbelts_grid>
+
+  <recomiendo_hourbelts_new>
+    <update handle="adminhtml_hourbelts_edit" />
+  </recomiendo_hourbelts_new>
+
+  <recomiendo_hourbelts_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit" name="hourbelts_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tabs" name="hourbelts_edit_tabs">
+        <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_main" name="hourbelts_edit_tab_main" />
+        <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_content" name="hourbelts_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>hourbelts_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>hourbelts_edit_tab_content</block></action-->
+      </block>
+    </reference>
+  </recomiendo_hourbelts_edit>
+  <!--Hourbelts blocks-->
+
 </layout>
