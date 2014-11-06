@@ -134,6 +134,9 @@
       <recomiendo_recipes_hourbelts>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_hourbelts>
+      <recomiendo_recipes_zipcodes>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_zipcodes>
     </blocks>
     <helpers>
       <recomiendo_recipes>

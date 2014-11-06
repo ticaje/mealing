@@ -45,12 +45,12 @@
         <provider translate="title" module="recomiendo_recipes">
           <title>Proovedores</title>
           <action>recomiendo/providers</action>
-          <sort_order>38</sort_order>
+          <sort_order>39</sort_order>
         </provider>
         <zip translate="title" module="recomiendo_recipes">
           <title>Codigos postales</title>
-          <action>recomiendo/zipcode</action>
-          <sort_order>39</sort_order>
+          <action>recomiendo/zipcodes</action>
+          <sort_order>38</sort_order>
         </zip>
       </children>
     </recipes>

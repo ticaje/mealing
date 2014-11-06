@@ -11,6 +11,6 @@ class Recomiendo_Recipes_Model_Resource_Codifier_Zipcode extends Mage_Core_Model
      */
     protected function _construct()
     {
-        $this->_init('recomiendo_recipes/codifier_zipcode', 'zipcpode_id');
+        $this->_init('recomiendo_recipes/codifier_zipcode', 'zipcode_id');
     }
 }

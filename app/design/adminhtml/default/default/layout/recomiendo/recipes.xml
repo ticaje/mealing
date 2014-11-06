@@ -196,4 +196,35 @@
   </recomiendo_hourbelts_edit>
   <!--Hourbelts blocks-->
 
+  <!--Zipcodes blocks-->
+  <recomiendo_zipcodes_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes" name="zipcodes" />
+    </reference>
+  </recomiendo_zipcodes_index>
+
+  <recomiendo_zipcodes_grid>
+    <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes_grid" name="root"/>
+  </recomiendo_zipcodes_grid>
+
+  <recomiendo_zipcodes_new>
+    <update handle="adminhtml_zipcodes_edit" />
+  </recomiendo_zipcodes_new>
+
+  <recomiendo_zipcodes_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes_edit" name="zipcodes_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes_edit_tabs" name="zipcodes_edit_tabs">
+        <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes_edit_tab_main" name="zipcodes_edit_tab_main" />
+        <block type="recomiendo_recipes_zipcodes/adminhtml_zipcodes_edit_tab_content" name="zipcodes_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>zipcodes_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>zipcodes_edit_tab_content</block></action-->
+      </block>
+    </reference>
+  </recomiendo_zipcodes_edit>
+  <!--Zipcodes blocks-->
+
 </layout>

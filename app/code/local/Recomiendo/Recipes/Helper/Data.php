@@ -38,7 +38,8 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
             $_ingredienttypeItemInstance,
             $_utilItemInstance,
             $_socialgroupItemInstance,
-            $_ruleItemInstance;
+            $_ruleItemInstance,
+            $_zipcodeItemInstance;
 
   /**
    * Checks whether recipes can be displayed in the frontend
@@ -80,6 +81,7 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
    */
   public function getEntityItemInstance($instanceName, $registryVariable)
   {
+    //die("Instancing...");
     if (!$this->_{$instanceName}) {
       $this->_{$instanceName} = Mage::registry($registryVariable);
       if (!$this->_{$instanceName}) {
