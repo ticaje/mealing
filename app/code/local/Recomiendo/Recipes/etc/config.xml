@@ -9,7 +9,7 @@
 <config>
   <modules>
     <Recomiendo_Recipes>
-      <version>1.1.0</version>
+      <version>1.2.0</version>
     </Recomiendo_Recipes>
   </modules>
   <global>
@@ -37,6 +37,15 @@
           </recipe_sstep>
           <!--Recipe table -->
 
+          <!--Shipping price rules-->
+          <hourbelt>
+            <table>recomiendo_hour_belt</table>
+          </hourbelt>
+          <hourbelt_rule>
+            <table>recomiendo_recipe_shipping_hourbelt_rule</table>
+          </hourbelt_rule>
+          <!--Shipping price rules-->
+
           <!--Codifiers tables -->
           <codifier_ingredienttype>
             <table>recomiendo_ingredient_type</table>
@@ -47,15 +56,9 @@
           <codifier_zipcode>
             <table>recomiendo_zipcode</table>
           </codifier_zipcode>
-          <codifier_hourbelt>
-            <table>recomiendo_hour_belt</table>
-          </codifier_hourbelt>
           <codifier_util>
             <table>recomiendo_util</table>
           </codifier_util>
-          <codifier_stock>
-            <table>recomiendo_stock_group</table>
-          </codifier_stock>
           <codifier_socialgroup>
             <table>recomiendo_social_group</table>
           </codifier_socialgroup>
@@ -68,9 +71,6 @@
           <codifier_traceability>
             <table>recomiendo_traceability</table>
           </codifier_traceability>
-          <codifier_hourbelt_group>
-            <table>recomiendo_recipe_hourbelt_salesshippinggroup</table>
-          </codifier_hourbelt_group>
           <!--Codifiers tables -->
 
           <!--Relationships tables -->
@@ -131,9 +131,6 @@
       <recomiendo_recipes_socialgroups>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_socialgroups>
-      <recomiendo_recipes_stocks>
-        <class>Recomiendo_Recipes_Block</class>
-      </recomiendo_recipes_stocks>
       <recomiendo_recipes_hourbelts>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_hourbelts>

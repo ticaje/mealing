@@ -4,13 +4,13 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Recipes_Model_Resource_Codifier_Hourbelt extends Mage_Core_Model_Resource_Db_Abstract
+class Recomiendo_Recipes_Model_Resource_Hourbelt extends Mage_Core_Model_Resource_Db_Abstract
 {
     /**
      * Initialize connection and define main table and primary key
      */
     protected function _construct()
     {
-        $this->_init('recomiendo_recipes/codifier_hourbelt', 'hourbelt_id');
+        $this->_init('recomiendo_recipes/hourbelt', 'hourbelt_id');
     }
 }

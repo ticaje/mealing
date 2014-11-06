@@ -43,6 +43,14 @@ class Recomiendo_Recipes_Block_Adminhtml_Hourbelts_Edit_Tab_Main extends Recomie
           $model->setData('finish', '00:00:00');
         }
 
+        $fieldset->addField('name', 'text', array(
+          'name'     => 'name',
+          'label'    => Mage::helper('recomiendo_recipes')->__('Nombre Franja'),
+          'title'    => Mage::helper('recomiendo_recipes')->__('Nombre Franja'),
+          'required' => true,
+          'disabled' => $isElementDisabled
+        ));
+
         $fieldset->addField('start', 'text', array(
           'name'     => 'start',
           'label'    => Mage::helper('recomiendo_recipes')->__('Hora inicio'),

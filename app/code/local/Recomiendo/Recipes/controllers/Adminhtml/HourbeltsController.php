@@ -10,7 +10,7 @@ class Recomiendo_Recipes_Adminhtml_HourbeltsController extends Recomiendo_Recipe
 
   /* Define general variables based on refactoring */
   protected $_currentEntity          = "Franjas horarias";
-  protected $_currentEntityModelName = "recomiendo_recipes/codifier_hourbelt";
+  protected $_currentEntityModelName = "recomiendo_recipes/hourbelt";
   protected $_titleLabel             = "Franja Horaria";
   protected $_registeringEntityName  = "hourbelts_item";
   protected $_getParamId             = "hourbelt_id";

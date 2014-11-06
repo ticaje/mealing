@@ -165,37 +165,6 @@
   </recomiendo_socialgroups_edit>
   <!--Socialgroups blocks-->
 
-  <!--Stocks blocks-->
-  <recomiendo_stocks_index>
-    <reference name="content">
-      <block type="recomiendo_recipes_stocks/adminhtml_stocks" name="stocks" />
-    </reference>
-  </recomiendo_stocks_index>
-
-  <recomiendo_stocks_grid>
-    <block type="recomiendo_recipes_stocks/adminhtml_stocks_grid" name="root"/>
-  </recomiendo_stocks_grid>
-
-  <recomiendo_stocks_new>
-    <update handle="adminhtml_stocks_edit" />
-  </recomiendo_stocks_new>
-
-  <recomiendo_stocks_edit>
-    <update handle="editor"/>
-    <reference name="content">
-      <block type="recomiendo_recipes_stocks/adminhtml_stocks_edit" name="stocks_edit" />
-    </reference>
-    <reference name="left">
-      <block type="recomiendo_recipes_stocks/adminhtml_stocks_edit_tabs" name="stocks_edit_tabs">
-        <block type="recomiendo_recipes_stocks/adminhtml_stocks_edit_tab_main" name="stocks_edit_tab_main" />
-        <block type="recomiendo_recipes_stocks/adminhtml_stocks_edit_tab_content" name="stocks_edit_tab_content" />
-        <action method="addTab"><name>main_section</name><block>stocks_edit_tab_main</block></action>
-        <!--action method="addTab"><name>content_section</name><block>stocks_edit_tab_content</block></action-->
-      </block>
-    </reference>
-  </recomiendo_stocks_edit>
-  <!--Stocks blocks-->
-
   <!--Hourbelts blocks-->
   <recomiendo_hourbelts_index>
     <reference name="content">
@@ -214,14 +183,14 @@
   <recomiendo_hourbelts_edit>
     <update handle="editor"/>
     <reference name="content">
-      <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit" name="hourbelts_edit" />
+      <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit" name="hourbelts_edit"/>
     </reference>
     <reference name="left">
       <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tabs" name="hourbelts_edit_tabs">
-        <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_main" name="hourbelts_edit_tab_main" />
-        <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_content" name="hourbelts_edit_tab_content" />
+        <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_main" name="hourbelts_edit_tab_main" template="recomiendo/hourbelts/edit/tab/form.phtml">
+          <block type="recomiendo_recipes_hourbelts/adminhtml_hourbelts_edit_tab_rules" name="hourbelts_edit_tab_rules" />
+        </block>
         <action method="addTab"><name>main_section</name><block>hourbelts_edit_tab_main</block></action>
-        <!--action method="addTab"><name>content_section</name><block>hourbelts_edit_tab_content</block></action-->
       </block>
     </reference>
   </recomiendo_hourbelts_edit>

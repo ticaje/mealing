@@ -8,7 +8,7 @@ Class Recomiendo_Recipes_Block_Adminhtml_Hourbelts_Grid extends Recomiendo_Recip
 {
 
   protected $_listIdString = 'hourbelts_list_grid';
-  protected $_modelName    = 'recomiendo_recipes/codifier_hourbelt';
+  protected $_modelName    = 'recomiendo_recipes/hourbelt';
 
   /**
    * Prepare collection for Grid
@@ -27,6 +27,11 @@ Class Recomiendo_Recipes_Block_Adminhtml_Hourbelts_Grid extends Recomiendo_Recip
       'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
       'width'     => '50px',
       'index'     => 'hourbelt_id',
+    ));
+
+    $this->addColumn('name', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Nombre Franja'),
+      'index'     => 'name',
     ));
 
     $this->addColumn('start', array(

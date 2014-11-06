@@ -33,7 +33,12 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
    *
    * @var Recomiendo_Recipes_Model_Recipes
    */
-  protected $_recipeItemInstance, $_ingredientItemInstance, $_ingredienttypeItemInstance, $_utilItemInstance, $_socialgroupItemInstance, $_stockItemInstance, $_hourbeltItemInstance;
+  protected $_recipeItemInstance,
+            $_ingredientItemInstance,
+            $_ingredienttypeItemInstance,
+            $_utilItemInstance,
+            $_socialgroupItemInstance,
+            $_ruleItemInstance;
 
   /**
    * Checks whether recipes can be displayed in the frontend

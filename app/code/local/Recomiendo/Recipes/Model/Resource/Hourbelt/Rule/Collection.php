@@ -1,0 +1,19 @@
+<?php
+/**
+ *
+ * Shipping rules per hour belt Collection
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+class Recomiendo_Recipes_Model_Resource_Hourbelt_Rule_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
+{
+
+    /**
+     * Define collection model
+     */
+    protected function _construct()
+    {
+        $this->_init('recomiendo_recipes/hourbelt_rule');
+    }
+
+}
