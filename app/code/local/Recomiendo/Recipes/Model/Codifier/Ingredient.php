@@ -31,4 +31,20 @@ class Recomiendo_Recipes_Model_Codifier_Ingredient extends Mage_Core_Model_Abstr
           ->save();
       }
     }
+
+    public function getIngredientsValuesForForm($_id)
+    {
+      $i_types = $this->getCollection();
+
+      foreach($i_types as  $item){
+        $arr['value'] =  $item->getIngredientId();
+        $arr['label'] =  ucfirst($item->getName());
+        $res[] = $arr;
+      }
+      $sel = Mage::getModel('recomiendo_recipes/relation_provider_ingredient')->getCollection();
+      $result['selected'] = $sel->getValuesSelected($_id);
+      $result['values']   = $res;
+
+      return $result;
+    }
 }

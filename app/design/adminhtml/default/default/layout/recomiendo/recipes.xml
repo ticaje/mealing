@@ -227,4 +227,35 @@
   </recomiendo_zipcodes_edit>
   <!--Zipcodes blocks-->
 
+  <!--Providers blocks-->
+  <recomiendo_providers_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_providers/adminhtml_providers" name="providers" />
+    </reference>
+  </recomiendo_providers_index>
+
+  <recomiendo_providers_grid>
+    <block type="recomiendo_recipes_providers/adminhtml_providers_grid" name="root"/>
+  </recomiendo_providers_grid>
+
+  <recomiendo_providers_new>
+    <update handle="adminhtml_providers_edit" />
+  </recomiendo_providers_new>
+
+  <recomiendo_providers_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_providers/adminhtml_providers_edit" name="providers_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_providers/adminhtml_providers_edit_tabs" name="providers_edit_tabs">
+        <block type="recomiendo_recipes_providers/adminhtml_providers_edit_tab_main" name="providers_edit_tab_main" />
+        <block type="recomiendo_recipes_providers/adminhtml_providers_edit_tab_ingredients" name="providers_edit_tab_ingredients" />
+        <action method="addTab"><name>main_section</name><block>providers_edit_tab_main</block></action>
+        <action method="addTab"><name>ingredients_section</name><block>providers_edit_tab_ingredients</block></action>
+      </block>
+    </reference>
+  </recomiendo_providers_edit>
+  <!--Providers blocks-->
+
 </layout>

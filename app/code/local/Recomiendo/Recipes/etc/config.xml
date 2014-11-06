@@ -137,6 +137,9 @@
       <recomiendo_recipes_zipcodes>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_zipcodes>
+      <recomiendo_recipes_providers>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_providers>
     </blocks>
     <helpers>
       <recomiendo_recipes>

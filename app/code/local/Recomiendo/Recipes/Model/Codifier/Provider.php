@@ -14,4 +14,22 @@ class Recomiendo_Recipes_Model_Codifier_Provider extends Mage_Core_Model_Abstrac
         $this->_init('recomiendo_recipes/codifier_provider');
     }
 
+    protected function _afterSave()
+    {
+      $_id  = $this->getProviderId();
+      $_types = $this->getIngredients();
+      //exit;
+
+      Mage::getModel('recomiendo_recipes/relation_provider_ingredient')
+        ->getCollection()
+        ->addFieldToFilter('provider_id', $_id)
+        ->walk('delete');
+
+      foreach ($_types as $InId){
+        Mage::getModel('recomiendo_recipes/relation_provider_ingredient')
+          ->setIngredientId($InId)
+          ->setProviderId($_id)
+          ->save();
+      }
+    }
 }

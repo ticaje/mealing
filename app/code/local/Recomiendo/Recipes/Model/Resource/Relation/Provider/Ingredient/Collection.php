@@ -25,4 +25,25 @@ class Recomiendo_Recipes_Model_Resource_Relation_Provider_Ingredient_Collection 
         $this->setPageSize(Mage::helper('recomiendo_recipes')->getProviderIngredientPerPage());
         return $this;
     }
+
+    public function getValuesSelected($provider_id)
+    {
+      $this->addFieldToFilter('provider_id', $provider_id);
+      foreach ($this as $item){
+        $result[] = $item->getIngredientId();
+      }
+      return $result;
+    }
+
+    public function getLabelsOfValuesSelected($provider_id)
+    {
+      $arr_of_values = $this->getValuesSelected($provider_id);
+      $sel = Mage::getModel('recomiendo_recipes/codifier_ingredient')->getCollection()
+        ->addFieldToFilter('ingredient_id', $arr_of_values);
+      $result = "";
+      foreach ($sel as $item){
+        $result .= ucfirst($item->getName())." ";
+      }
+      return $result;
+    }
 }
