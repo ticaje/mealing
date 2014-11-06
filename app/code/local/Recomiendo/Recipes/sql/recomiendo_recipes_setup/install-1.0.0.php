@@ -196,13 +196,15 @@ $installer->getConnection()->createTable($table);
  * Create table 'recomiendo_hourbelt'
  */
 $table = $installer->getConnection()
-  ->newTable($installer->getTable('recomiendo_recipes/codifier_hourbelt'))
+  ->newTable($installer->getTable('recomiendo_recipes/hourbelt'))
   ->addColumn('hourbelt_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
     'identity'  => true,
     'unsigned'  => true,
     'nullable'  => false,
     'primary'   => true,
   ), 'Hour Belt Id')
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
+  ), 'Name')
   ->addColumn('start', Varien_Db_Ddl_Table::TYPE_TIME, null, array(
   ), 'Starting Hour')
   ->addColumn('finish', Varien_Db_Ddl_Table::TYPE_TIME, null, array(
@@ -223,24 +225,6 @@ $table = $installer->getConnection()
   ), 'Util Id')
   ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
   ), 'Util Name');
-
-$installer->getConnection()->createTable($table);
-
-/**
- * Create table 'sales_ship_group'
- */
-$table = $installer->getConnection()
-  ->newTable($installer->getTable('recomiendo_recipes/codifier_stock'))
-  ->addColumn('stockgroup_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-    'identity'  => true,
-    'unsigned'  => true,
-    'nullable'  => false,
-    'primary'   => true,
-  ), 'Buying Stock Group Id')
-  ->addColumn('quantity', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-  ), 'Quantity')
-  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
-  ), 'Name');
 
 $installer->getConnection()->createTable($table);
 
