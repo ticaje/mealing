@@ -31,20 +31,35 @@ class Recomiendo_Recipes_Block_Adminhtml_Zipcodes_Edit_Tab_Main extends Recomien
         $form->setHtmlIdPrefix('zipcodes_main_');
 
         $fieldset = $form->addFieldset('base_fieldset', array(
-            'legend' => Mage::helper('recomiendo_recipes')->__('Información de utensilios')
+            'legend' => Mage::helper('recomiendo_recipes')->__('Información de código postal')
         ));
 
         if ($model->getId()) {
             $fieldset->addField('zipcode_id', 'hidden', array(
                 'name' => 'zipcode_id',
-            ));
+              ));
+            $_label = "Número";
+        }else{
+          $_label = "Número o Desde(Rango)";
         }
 
         $fieldset->addField('number', 'text', array(
           'name'     => 'number',
-          'label'    => Mage::helper('recomiendo_recipes')->__('Número'),
-          'title'    => Mage::helper('recomiendo_recipes')->__('Número'),
+          'label'    => Mage::helper('recomiendo_recipes')->__($_label),
+          'title'    => Mage::helper('recomiendo_recipes')->__($_label),
+          'style'    => 'width:50px;',
+          'class'    => 'validate-zip validate-digits',
           'required' => true,
+          'disabled' => $isElementDisabled
+        ));
+
+        $fieldset->addField('range', 'text', array(
+          'name'     => 'range',
+          'label'    => Mage::helper('recomiendo_recipes')->__('Hasta(Rango)'),
+          'title'    => Mage::helper('recomiendo_recipes')->__('Hasta'),
+          'style'     => 'width:50px;',
+          'class'    => 'validate-zip validate-digits',
+          'required' => false,
           'disabled' => $isElementDisabled
         ));
 
@@ -52,7 +67,17 @@ class Recomiendo_Recipes_Block_Adminhtml_Zipcodes_Edit_Tab_Main extends Recomien
           'name'     => 'extra_price',
           'label'    => Mage::helper('recomiendo_recipes')->__('Multiplicador'),
           'title'    => Mage::helper('recomiendo_recipes')->__('Multiplicador'),
+          'style'     => 'width:50px;',
+          'class'    => 'validate-not-negative-number validate-number',
           'required' => true,
+        ));
+
+        $fieldset->addField('comment', 'textarea', array(
+          'name'     => 'comment',
+          'label'    => Mage::helper('recomiendo_recipes')->__('Comentarios'),
+          'title'    => Mage::helper('recomiendo_recipes')->__('Comentarios'),
+          'style'     => 'width:550px;',
+          'required' => false,
         ));
 
         Mage::dispatchEvent('adminhtml_zipcodes_edit_tab_main_prepare_form', array('form' => $form));
