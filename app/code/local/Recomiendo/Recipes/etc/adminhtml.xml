@@ -42,16 +42,26 @@
           <action>recomiendo/utils</action>
           <sort_order>37</sort_order>
         </utils>
-        <provider translate="title" module="recomiendo_recipes">
-          <title>Proovedores</title>
-          <action>recomiendo/providers</action>
-          <sort_order>39</sort_order>
-        </provider>
         <zip translate="title" module="recomiendo_recipes">
           <title>Codigos postales</title>
           <action>recomiendo/zipcodes</action>
           <sort_order>38</sort_order>
         </zip>
+        <provider translate="title" module="recomiendo_recipes">
+          <title>Proovedores</title>
+          <action>recomiendo/providers</action>
+          <sort_order>39</sort_order>
+        </provider>
+        <recipe_classification translate="title" module="recomiendo_recipes">
+          <title>Clasificación Recetas</title>
+          <action>recomiendo/rclassifications</action>
+          <sort_order>40</sort_order>
+        </recipe_classification>
+        <employeerole translate="title" module="recomiendo_recipes">
+          <title>Roles de Empleados</title>
+          <action>recomiendo/employeeroles</action>
+          <sort_order>41</sort_order>
+        </employeerole>
       </children>
     </recipes>
   </menu>
