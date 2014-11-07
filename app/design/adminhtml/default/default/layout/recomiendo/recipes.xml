@@ -289,4 +289,35 @@
   </recomiendo_employeeroles_edit>
   <!--Employee Roles blocks-->
 
+  <!--Recipe Classifications blocks-->
+  <recomiendo_rclassifications_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications" name="rclassifications" />
+    </reference>
+  </recomiendo_rclassifications_index>
+
+  <recomiendo_rclassifications_grid>
+    <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_grid" name="root"/>
+  </recomiendo_rclassifications_grid>
+
+  <recomiendo_rclassifications_new>
+    <update handle="adminhtml_rclassifications_edit" />
+  </recomiendo_rclassifications_new>
+
+  <recomiendo_rclassifications_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit" name="rclassifications_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tabs" name="rclassifications_edit_tabs">
+        <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tab_main" name="rclassifications_edit_tab_main" />
+        <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tab_content" name="rclassifications_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>rclassifications_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>rclassifications_edit_tab_content</block></action-->
+      </block>
+    </reference>
+  </recomiendo_rclassifications_edit>
+  <!--Recipe Classifications blocks-->
+
 </layout>

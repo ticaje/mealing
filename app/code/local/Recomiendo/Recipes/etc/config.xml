@@ -71,9 +71,9 @@
           <codifier_traceability>
             <table>recomiendo_traceability</table>
           </codifier_traceability>
-          <codifier_recipe_classification>
+          <codifier_rclassification>
             <table>recomiendo_recipe_classification</table>
-          </codifier_recipe_classification>
+          </codifier_rclassification>
           <codifier_employeerole>
             <table>recomiendo_recipe_employee_role</table>
           </codifier_employeerole>
@@ -149,6 +149,9 @@
       <recomiendo_recipes_employeeroles>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_employeeroles>
+      <recomiendo_recipes_rclassifications>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_rclassifications>
     </blocks>
     <helpers>
       <recomiendo_recipes>

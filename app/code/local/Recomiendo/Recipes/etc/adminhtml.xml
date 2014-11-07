@@ -52,11 +52,11 @@
           <action>recomiendo/providers</action>
           <sort_order>39</sort_order>
         </provider>
-        <recipe_classification translate="title" module="recomiendo_recipes">
+        <rclassification translate="title" module="recomiendo_recipes">
           <title>Clasificación Recetas</title>
           <action>recomiendo/rclassifications</action>
           <sort_order>40</sort_order>
-        </recipe_classification>
+        </rclassification>
         <employeerole translate="title" module="recomiendo_recipes">
           <title>Roles de Empleados</title>
           <action>recomiendo/employeeroles</action>

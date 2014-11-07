@@ -20,6 +20,12 @@ class Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseEdit extends Mage_Adminhtm
 
     parent::__construct();
 
+    $this->addButton ('addNewItem', array(
+      'label'     =>  'Añadir Nueva Entidad',
+      'onclick'   => 'addNewEntity()',
+      'class'     => 'add',
+    ), 0, 100,  'header');
+
     if (Mage::helper('recomiendo_recipes/admin')->isActionAllowed('save')) {
       $this->_updateButton('save', 'label', Mage::helper('recomiendo_recipes')->__('Guardar %s', $this->_entityLabel));
       $this->_addButton('saveandcontinue', array(
@@ -48,6 +54,9 @@ class Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseEdit extends Mage_Adminhtm
 
   function saveAndContinueEdit(){
     editForm.submit($('edit_form').action+'back/edit/');
+  }
+  function addNewEntity(){
+    self.location = '".$this->getUrl('*/*/new')."'
   }
   ";
   }
