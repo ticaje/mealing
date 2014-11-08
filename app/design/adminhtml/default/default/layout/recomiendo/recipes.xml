@@ -320,4 +320,35 @@
   </recomiendo_rclassifications_edit>
   <!--Recipe Classifications blocks-->
 
+  <!--Traceabilities blocks-->
+  <recomiendo_traceabilities_index>
+    <reference name="content">
+      <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities" name="traceabilities" />
+    </reference>
+  </recomiendo_traceabilities_index>
+
+  <recomiendo_traceabilities_grid>
+    <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_grid" name="root"/>
+  </recomiendo_traceabilities_grid>
+
+  <recomiendo_traceabilities_new>
+    <update handle="adminhtml_traceabilities_edit" />
+  </recomiendo_traceabilities_new>
+
+  <recomiendo_traceabilities_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit" name="traceabilities_edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tabs" name="traceabilities_edit_tabs">
+        <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tab_main" name="traceabilities_edit_tab_main" />
+        <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tab_content" name="traceabilities_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>traceabilities_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>traceabilities_edit_tab_content</block></action-->
+      </block>
+    </reference>
+  </recomiendo_traceabilities_edit>
+  <!--Traceabilities blocks-->
+
 </layout>

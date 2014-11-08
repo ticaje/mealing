@@ -62,6 +62,11 @@
           <action>recomiendo/employeeroles</action>
           <sort_order>41</sort_order>
         </employeerole>
+        <traceability translate="title" module="recomiendo_recipes">
+          <title>Trazabilidad</title>
+          <action>recomiendo/traceabilities</action>
+          <sort_order>42</sort_order>
+        </traceability>
       </children>
     </recipes>
   </menu>

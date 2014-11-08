@@ -152,6 +152,9 @@
       <recomiendo_recipes_rclassifications>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_rclassifications>
+      <recomiendo_recipes_traceabilities>
+        <class>Recomiendo_Recipes_Block</class>
+      </recomiendo_recipes_traceabilities>
     </blocks>
     <helpers>
       <recomiendo_recipes>

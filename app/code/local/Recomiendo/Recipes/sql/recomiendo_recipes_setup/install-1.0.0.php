@@ -292,14 +292,24 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'primary'   => true,
   ), 'Traceability Id')
-  ->addColumn('provider', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
-  ), 'Provider')
-  ->addColumn('ingredient', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
-  ), 'Ingredient')
+  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('provider_id')),
+    array('recipe_id'))
+    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_traceability', 'provider_id', 'recomiendo_recipes/codifier_provider', 'provider_id'),
+      'provider_id', $installer->getTable('recomiendo_recipes/codifier_provider'), 'provider_id',
+      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+      ->setComment('Provider as foreign key');
+  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('ingredient_id')),
+    array('ingredient_id'))
+    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_traceability', 'ingredient_id', 'recomiendo_recipes/codifier_ingredient', 'ingredient_id'),
+      'ingredient_id', $installer->getTable('recomiendo_recipes/codifier_ingredient'), 'ingredient_id',
+      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+      ->setComment('Ingredient as foreign key');
   ->addColumn('stock_number', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
   ), 'Stock Number')
   ->addColumn('expires_on', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
   ), 'Expiring Date')
+  ->addColumn('adquired_on', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
+  ), 'Adquiring Date')
   ->addColumn('operations', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
   ), 'Operations')
   ->addColumn('file', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(

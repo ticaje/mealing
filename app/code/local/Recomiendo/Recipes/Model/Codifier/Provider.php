@@ -32,4 +32,15 @@ class Recomiendo_Recipes_Model_Codifier_Provider extends Mage_Core_Model_Abstrac
           ->save();
       }
     }
+
+    public function toOptionArray()
+    {
+      $array = array(
+          'value'=>0,
+          'label'=>'Please Select'
+      );
+      $result = $this->getCollection();
+      //array_unshift($result, $array);
+      return $result;
+    }
 }
