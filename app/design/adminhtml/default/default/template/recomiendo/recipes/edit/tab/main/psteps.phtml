@@ -1,0 +1,104 @@
+<?php
+/**
+ * Héctor Luis Barrientos
+ *
+ */
+?>
+
+<?php $_htmlId      = "recipe_psteps"; ?>
+<?php $_htmlName    = "recipe_steps[psteps]"; ?>
+<?php $_readonly    = false; ?>
+
+<div id="steps" class="entry-edit">
+  <div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->getTabLabel() ?></h4>
+    <div class="form-buttons"></div>
+  </div>
+  <tr>
+    <td class="label"></td>
+    <td colspan="10" class="grid prices" style="position:static;">
+      <table style="margin: 10px 0 10px 0; width:100%;" cellspacing="0" class="data" id="prices_table">
+        <thead>
+          <tr class="headings">
+          </tr>
+          <tr id="<?php echo $_htmlId ?>_add_template" class="template no-display">
+            <td>
+              <?php echo $this->createContentBlock($_htmlName) ?>
+            </td>
+            <td style="padding: 35px 0 0 0;" class="last"><input type="hidden" name="<?php echo $_htmlName ?>[__index__][delete]" class="delete" disabled="no-template" value="" /><button title="Delete Rule" class="scalable delete icon-btn delete-product-option" onclick="pstepsHandler.deleteItem(event);return false"><span>Delete</span></button></td>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="6" class="a-left"><?php echo $this->getChildHtml('add_button') ?></td>
+            <td> </td>
+          </tr>
+        </tfoot>
+        <tbody name="<?php echo $_htmlId ?>_container" id="<?php echo $_htmlId ?>_container">
+        </tbody>
+      </table>
+
+<script type="text/javascript">
+//<![CDATA[
+var pstepsHandler = {
+  template : new Template('<tr style="border: 1px red solid;">' + $('<?php echo $_htmlId ?>_add_template').innerHTML.replace(/__index__/g, '#{index}').replace(/ disabled="?no-template"?/g, '').replace(/ disabled/g, '').replace(/="'([^']*)'"/g, '="$1"') + '</tr>'),
+    itemsCount : 0,
+    deleteButton: false,
+    addItem  : function () {
+      <?php if ($_readonly): ?>
+      if (arguments.length < 5) {
+        return;
+      }
+
+      <?php endif; ?>
+      data = {};
+
+      data.index = this.itemsCount++;
+
+      if(arguments.length >= 0) {
+        data.order       = arguments[0];
+        data.name        = arguments[1];
+        data.content     = arguments[2];
+      }
+      Element.insert($('<?php echo $_htmlId ?>_container'), {'bottom':this.template.evaluate(data)});
+
+      $('psteps_row_'+data.index+'_order').setValue(data.order);
+      $('psteps_row_'+data.index+'_name').setValue(data.name);
+      $('psteps_row_'+data.index+'_content').setValue(data.content);
+
+    },
+      enableElement: function(elem) {
+        elem.disabled = false
+          elem.removeClassName('disabled');
+      },
+        deleteItem : function(event) {
+          var tr = Event.findElement(event, 'tr');
+          if (tr) {
+            tr.parentNode.removeChild(tr);
+          }
+        }
+}
+
+<?php foreach ($this->getValues() as $_item): ?>
+pstepsHandler.addItem(<?php echo json_encode($_item['order']) ?>, <?php echo json_encode($_item['name']) ?>, <?php echo json_encode($_item['content']) ?>, true);
+<?php endforeach; ?>
+<?php if ($_readonly): ?>
+$('<?php echo $_htmlId ?>_container').up('table').select('button')
+  .each(price.disableElement);
+<?php endif; ?>
+//]]>
+
+</script>
+
+    </td>
+  </tr>
+</div>
+<style>
+.steps textarea{ width: 50%; position: relative; top: 20px; }
+.steps input.order{ width: 15px; }
+.steps input.name{ width: 30%; }
+.steps span{ padding: 0 5px; }
+#steps button.add{ position: relative; top: 30px; left: 10px; }
+</style>
+
+

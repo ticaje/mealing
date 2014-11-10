@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Interactiv4_CancelUnpaidOrders>
+            <active>true</active>
+            <codePool>local</codePool> 
+            <depends>
+                <Interactiv4_All />
+            </depends>
+        </Interactiv4_CancelUnpaidOrders>
+    </modules>
+</config>

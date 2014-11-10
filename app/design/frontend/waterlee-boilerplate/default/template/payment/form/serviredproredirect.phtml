@@ -1,0 +1,10 @@
+<script type="text/javascript" src="<?php echo $this->getSkinUrl('js/serviredpro.js') ?>"></script>
+
+<?php
+	echo $this->getFormRedirect();
+?>
+<center><br /><br />
+<h3><?php echo $this->__('Al pinchar en continuar te derivaremos a la pasarela de pago de La Caixa, ning&uacute;n dato de la tarjeta se guarda en nuestros servidores, lo que hace los pagos 100% seguros.') ?></h3><br /><br />
+<input class="form-button" type="button" onclick="javascript:open_Servired_window();" value='<?php echo $this->__('Enviar') ?>' />
+<script type="text/javascript">open_Servired_window();</script><br /><br /><br /><br />
+</center>

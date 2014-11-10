@@ -1,0 +1,41 @@
+<?php
+/**
+
+ *
+ * @category    design
+ * @package     base_default
+ * @author      Interactiv4
+ */
+?>
+<?php
+/**
+ * @see Interactiv4_ServiRedPro_Block_Redirect
+ */
+?>
+
+<?php $imageUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'serviredpro/'; ?>
+<div class="servidredpro-container">
+    <?php if($img = $this->getRedirectLogo()) : ?>
+        <div class="serviredpro-logo-container">
+            <img src="<?php echo $imageUrl . $img ?>" class="servidredpro-redirect-logo" />
+        </div>
+    <?php endif; ?>
+    <p class="servidredpro-redirect-msg"><?php echo Mage::helper('serviredpro')->__($this->getRedirectMsg()) ?></p>
+    <?php
+        $img = $this->getRedirectSpinner();
+        if($img){
+            $img = $imageUrl . $img;
+        }
+        else{
+            $img = $this->getSkinUrl('images/ajax-loader-bar-1.gif');
+        }
+    ?>
+    <img src="<?php echo $img ?>" class="servidredpro-redirect-spinner" />
+</div>
+
+<?php
+
+echo $this->getPostHtml();
+echo $this->getChildHtml('script');
+
+?>
