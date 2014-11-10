@@ -262,37 +262,6 @@
   </recomiendo_providers_edit>
   <!--Providers blocks-->
 
-  <!--Employee Roles blocks-->
-  <recomiendo_employeeroles_index>
-    <reference name="content">
-      <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles" name="employeeroles" />
-    </reference>
-  </recomiendo_employeeroles_index>
-
-  <recomiendo_employeeroles_grid>
-    <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles_grid" name="root"/>
-  </recomiendo_employeeroles_grid>
-
-  <recomiendo_employeeroles_new>
-    <update handle="adminhtml_employeeroles_edit" />
-  </recomiendo_employeeroles_new>
-
-  <recomiendo_employeeroles_edit>
-    <update handle="editor"/>
-    <reference name="content">
-      <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles_edit" name="employeeroles_edit" />
-    </reference>
-    <reference name="left">
-      <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles_edit_tabs" name="employeeroles_edit_tabs">
-        <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles_edit_tab_main" name="employeeroles_edit_tab_main" />
-        <block type="recomiendo_recipes_employeeroles/adminhtml_employeeroles_edit_tab_content" name="employeeroles_edit_tab_content" />
-        <action method="addTab"><name>main_section</name><block>employeeroles_edit_tab_main</block></action>
-        <!--action method="addTab"><name>content_section</name><block>employeeroles_edit_tab_content</block></action-->
-      </block>
-    </reference>
-  </recomiendo_employeeroles_edit>
-  <!--Employee Roles blocks-->
-
   <!--Recipe Classifications blocks-->
   <recomiendo_rclassifications_index>
     <reference name="content">

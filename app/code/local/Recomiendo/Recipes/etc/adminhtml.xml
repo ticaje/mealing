@@ -57,11 +57,6 @@
           <action>recomiendo/rclassifications</action>
           <sort_order>40</sort_order>
         </rclassification>
-        <employeerole translate="title" module="recomiendo_recipes">
-          <title>Roles de Empleados</title>
-          <action>recomiendo/employeeroles</action>
-          <sort_order>41</sort_order>
-        </employeerole>
         <traceability translate="title" module="recomiendo_recipes">
           <title>Trazabilidad</title>
           <action>recomiendo/traceabilities</action>

@@ -40,7 +40,6 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
             $_socialgroupItemInstance,
             $_ruleItemInstance,
             $_zipcodeItemInstance,
-            $_employeeroleItemInstance,
             $_rclassificationItemInstance,
             $_traceabilityItemInstance;
 

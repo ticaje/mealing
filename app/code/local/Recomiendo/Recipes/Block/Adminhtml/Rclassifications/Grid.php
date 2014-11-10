@@ -23,10 +23,10 @@ Class Recomiendo_Recipes_Block_Adminhtml_Rclassifications_Grid extends Recomiend
    */
   protected function _prepareColumns()
   {
-    $this->addColumn('employee_role_id', array(
+    $this->addColumn('recipe_classification_id', array(
       'header'    => Mage::helper('recomiendo_recipes')->__('ID'),
       'width'     => '50px',
-      'index'     => 'employee_role_id',
+      'index'     => 'recipe_classification_id',
     ));
 
     $this->addColumn('name', array(
