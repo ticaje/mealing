@@ -1,6 +1,6 @@
 <?php
 /**
- * Hourbelt  Shipping Rules Content
+ * Hourbelt Rules Form
  *
  * @author Hector Luis Barrientos Margolles
  */

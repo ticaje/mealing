@@ -63,8 +63,12 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'default'   => '0',
   ), 'Recipe Id')
-  ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
-  ), 'Preparing Step Title')
+  ->addColumn('order', Varien_Db_Ddl_Table::TYPE_INTEGER, 3, array(
+  ), 'Preparing Step Order')
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
+  ), 'Preparing Step Name')
+  ->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+  ), 'Preparing Step Content')
   ->addIndex($installer->getIdxName('recomiendo_recipes/recipe_pstep', array('recipe_id')),
     array('recipe_id'))
     ->addForeignKey($installer->getFkName('recomiendo_recipes/recipe_pstep', 'recipe_id', 'recomiendo_recipes/recipe', 'recipe_id'),
@@ -90,8 +94,12 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'default'   => '0',
   ), 'Recipe Id')
-  ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
-  ), 'Elaboration Step Title')
+  ->addColumn('order', Varien_Db_Ddl_Table::TYPE_INTEGER, 3, array(
+  ), 'Elaboration Step Order')
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
+  ), 'Elaboration Step Name')
+  ->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+  ), 'Elaboration Step Content')
   ->addIndex($installer->getIdxName('recomiendo_recipes/recipe_estep', array('recipe_id')),
     array('recipe_id'))
     ->addForeignKey($installer->getFkName('recomiendo_recipes/recipe_estep', 'recipe_id', 'recomiendo_recipes/recipe', 'recipe_id'),
@@ -117,8 +125,12 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'default'   => '0',
   ), 'Recipe Id')
-  ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
-  ), 'Showing Step Title')
+  ->addColumn('order', Varien_Db_Ddl_Table::TYPE_INTEGER, 3, array(
+  ), 'Presentation Step Order')
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
+  ), 'Presentation Step Name')
+  ->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+  ), 'Presentation Step Content')
   ->addIndex($installer->getIdxName('recomiendo_recipes/recipe_sstep', array('recipe_id')),
     array('recipe_id'))
     ->addForeignKey($installer->getFkName('recomiendo_recipes/recipe_sstep', 'recipe_id', 'recomiendo_recipes/recipe', 'recipe_id'),

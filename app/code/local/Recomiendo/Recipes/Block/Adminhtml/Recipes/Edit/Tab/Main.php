@@ -7,7 +7,7 @@
 class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Main extends Recomiendo_Recipes_Block_Adminhtml_Refactor_Edit_Tab_BaseMain
 {
 
-  protected $_entityLabel = "Recetas";
+  protected $_entityLabel = "Receta";
   /**
    * Prepare form elements for tab
    *

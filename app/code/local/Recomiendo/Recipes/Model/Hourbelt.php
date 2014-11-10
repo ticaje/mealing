@@ -17,7 +17,7 @@ class Recomiendo_Recipes_Model_Hourbelt extends Mage_Core_Model_Abstract
   protected function _afterSave()
   {
     $_id = $this->getHourbeltId();
-    $_shipping_rules = $this->getShipping();;
+    $_shipping_rules = $this->getShipping();
     $_rules = (object)$_shipping_rules;
 
     array_shift($_rules->hourbelt_rules);

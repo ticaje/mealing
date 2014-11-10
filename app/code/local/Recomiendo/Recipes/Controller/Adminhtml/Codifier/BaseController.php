@@ -131,7 +131,7 @@ class Recomiendo_Recipes_Controller_Adminhtml_Codifier_BaseController extends Ma
       }
 
       $model->addData($data);
-
+      //print_r($model); exit;
       try {
         $hasError = false;
         // save the data
