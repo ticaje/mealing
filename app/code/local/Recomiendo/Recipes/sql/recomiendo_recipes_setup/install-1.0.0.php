@@ -27,6 +27,11 @@ $table = $installer->getConnection()
   ->addColumn('time', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
     'nullable' => true,
   ), 'Time in Minutes')
+  ->addColumn('user_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+    'unsigned'  => true,
+    'nullable'  => false,
+    'default'   => '0',
+  ), 'Creator Id')
   ->addColumn('published_at', Varien_Db_Ddl_Table::TYPE_DATE, null, array(
     'nullable' => true,
     'default'  => null,
@@ -35,6 +40,12 @@ $table = $installer->getConnection()
     'nullable' => true,
     'default'  => null,
   ), 'Creation Time')
+  ->addIndex($installer->getIdxName('recomiendo_recipes/recipe', array('user_id')),
+    array('user_id'))
+    ->addForeignKey($installer->getFkName('recomiendo_recipes/recipe', 'user_id', 'admin/user', 'user_id'),
+      'user_id', $installer->getTable('admin/user'), 'user_id',
+      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+      ->setComment('System\'s User as foreign key');
   ->addIndex($installer->getIdxName(
     $installer->getTable('recomiendo_recipes/recipe'),
     array('published_at'),
@@ -304,18 +315,11 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'primary'   => true,
   ), 'Traceability Id')
-  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('provider_id')),
-    array('recipe_id'))
-    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_traceability', 'provider_id', 'recomiendo_recipes/codifier_provider', 'provider_id'),
-      'provider_id', $installer->getTable('recomiendo_recipes/codifier_provider'), 'provider_id',
-      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-      ->setComment('Provider as foreign key');
-  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('ingredient_id')),
-    array('ingredient_id'))
-    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_traceability', 'ingredient_id', 'recomiendo_recipes/codifier_ingredient', 'ingredient_id'),
-      'ingredient_id', $installer->getTable('recomiendo_recipes/codifier_ingredient'), 'ingredient_id',
-      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-      ->setComment('Ingredient as foreign key');
+  ->addColumn('provider_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+    'unsigned'  => true,
+    'nullable'  => false,
+    'default'   => '0',
+  ), 'Provider Id')
   ->addColumn('stock_number', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
   ), 'Stock Number')
   ->addColumn('expires_on', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
@@ -325,6 +329,12 @@ $table = $installer->getConnection()
   ->addColumn('operations', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
   ), 'Operations')
   ->addColumn('file', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
-  ), 'Archive');
+  ), 'Archive')
+  ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('provider_id')),
+    array('recipe_id'))
+    ->addForeignKey($installer->getFkName('recomiendo_recipes/codifier_traceability', 'provider_id', 'recomiendo_recipes/codifier_provider', 'provider_id'),
+      'provider_id', $installer->getTable('recomiendo_recipes/codifier_provider'), 'provider_id',
+      Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+      ->setComment('Provider as foreign key');
 
 $installer->getConnection()->createTable($table);
