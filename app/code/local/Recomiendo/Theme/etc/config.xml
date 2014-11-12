@@ -23,6 +23,11 @@
           <template>page/html/custom/pages/recipes.phtml</template>
           <layout_handle>page_custom_layout</layout_handle>
         </recipes>
+        <cart module="page" translate="label">
+          <label>Carrito de compra</label>
+          <template>page/html/custom/pages/cart.phtml</template>
+          <layout_handle>page_custom_layout</layout_handle>
+        </cart>
       </layouts>
     </page>
     <helpers>
@@ -30,5 +35,10 @@
         <class>Recomiendo_Theme_Helper</class>
       </ceo_frontend_helper>
     </helpers>
+    <blocks>
+      <recomiendo_theme>
+        <class>Recomiendo_Theme_Block</class>
+      </recomiendo_theme>
+    </blocks>
   </global>
 </config>

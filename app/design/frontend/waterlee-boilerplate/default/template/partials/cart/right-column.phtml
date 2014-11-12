@@ -1,0 +1,150 @@
+<div class="header h">
+  <div class="medium-1 large-1 columns">
+    <i class="fa fa-shopping-cart"></i>
+  </div>
+  <div class="medium-11 large-11 columns">
+    <span class="title">Mi carrito</span>
+  </div>
+</div>
+<div class="added-products">
+  <?php for ($i=1; $i<=2; $i++) { ?>
+  <div class="row cell-container">
+    <div class="medium-2 large-2 columns">
+      <img class="r-img" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA)."product/pot.png" ?>" alt="" id="">
+    </div>
+    <div class="medium-8 large-8 columns product-info">
+      <dl>
+        <dt class="name">Aceite de oliva virgen extra (5l)</dt>
+        <dd class="price">6.00 $</dd>
+      </dl>
+    </div>
+    <div class="medium-2 large-2 columns product-controls">
+      <table>
+        <thead>
+          <tr style="text-align:center">
+            <td class="amount"><?php echo $i ?></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <i class="fa fa-minus"></i>
+            </td>
+            <td>
+              <i class="fa fa-plus"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <?php } ?>
+</div>
+<div class="home-products">
+  <div class="row cell-container">
+    <div class="medium-2 large-2 columns menu-type">
+      <i class="fa fa-sun-o fa-3x"></i>
+    </div>
+    <div class="medium-8 large-8 columns product-info">
+      <dl>
+        <dt class="name">Menú Balanced Fitness</dt>
+        <DD class="price">5 Comidas</dd>
+      </dl>
+    </div>
+    <div class="medium-2 large-2 columns product-controls">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+  <div class="row cell-container">
+    <div class="medium-2 large-2 columns menu-type">
+      <i class="fa fa-moon-o fa-3x"></i>
+    </div>
+    <div class="medium-8 large-8 columns product-info">
+      <dl>
+        <dt class="name">Menú Adelgazar</dt>
+        <dd class="price">3 Cenas</dd>
+      </dl>
+    </div>
+    <div class="medium-2 large-2 columns product-controls">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+</div>
+<div class="purchase-summary">
+  <div class="header">
+    <span class="title">Total de la compra</span>
+  </div>
+  <div class="our-menus">
+    <div class="cell-container">
+      <div class="name columns">Menú Balanced Fitness</div>
+      <div class="medium-9 large-9 columns product-info">
+        <span class="amount">5 Comidas</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>100.45 €</span>
+      </div>
+    </div>
+    <div class="cell-container">
+      <div class="name columns">Menú Adelgazar</div>
+      <div class="medium-9 large-9 columns product-info">
+        <span class="amount">3 Comidas</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>90.52 €</span>
+      </div>
+    </div>
+  </div>
+  <div class="extra-products">
+    <div class="cell-container">
+      <div class="medium-9 large-9 columns product-info">
+        <span class="">Frutas</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>10.00 €</span>
+      </div>
+    </div>
+  </div>
+  <div class="recommended-products ">
+    <div class="cell-container">
+      <div class="medium-9 large-9 columns product-info">
+        <span class="title">Recomendaciones</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>0.00 €</span>
+      </div>
+    </div>
+  </div>
+  <div class="transportation ">
+    <div class="cell-container">
+      <div class="medium-9 large-9 columns product-info">
+        <span class="">Gastos de envío</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>0.00 €</span>
+      </div>
+    </div>
+  </div>
+  <div class="iva ">
+    <div class="cell-container">
+      <div class="medium-9 large-9 columns product-info">
+        <span class="">IVA</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>0.00 €</span>
+      </div>
+    </div>
+  </div>
+  <div class="total-amount ">
+    <div class="cell-container">
+      <div class="medium-9 large-9 columns product-info">
+        <span class="title">Total a pagar</span>
+      </div>
+      <div class="medium-3 large-3 columns product-price">
+        <span>124.80 €</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="go-and-pay">
+  <button type="submit" value="Siguiente" class="button tiny radius" id="submit">Siguiente</button>
+</div>

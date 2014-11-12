@@ -20,6 +20,7 @@ $green-color: #627908;
 $top-bar-height: 60px;
 $menu-color: #8a8a8a;
 $recipe-color: #665E5E;
+$border-color: #DDDDDD;
 
 @mixin rounded-borders($size){
   -webkit-border-top-left-radius: $size+px;
@@ -90,6 +91,15 @@ $recipe-color: #665E5E;
 }
 @mixin funny-border-left($color){
   border-left:1px solid $color;
+}
+@mixin rotate-object($angle){
+  transform: rotate($angle+deg);
+  -webkit-transform: rotate($angle+deg);
+  -moz-transform: rotate($angle+deg);
+  -o-transform: rotate($angle+deg);
+  -ms-transform: rotate($angle+deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-transform: rotate($angle+deg);
 }
 
 
