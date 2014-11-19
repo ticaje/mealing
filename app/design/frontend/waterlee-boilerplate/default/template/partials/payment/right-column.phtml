@@ -1,0 +1,95 @@
+<div class="column-header">
+  <div class="medium-12 large-12 columns">
+    <span class="title">¿Cuándo quieres recibir tu cesta?</span>
+  </div>
+</div>
+<div class="calendar">
+  <div class="calendar-container">
+    <div id="calendar"></div>
+  </div>
+</div>
+<div id="frequency-container" class="r-row">
+  <div class="medium-12 large-12 columns">
+    <input type="radio" name="frequency" id="every-two-weeks"><label for="every-two-weeks">Cada dos semanas</label>
+    <input type="radio" name="frequency" id="every-week"><label for="every-week">Todas las semanas</label>
+  </div>
+</div>
+<div id="hour-belt-container" class="r-row">
+  <div class="header row">
+    <div class="medium-9 large-9 columns">
+      <label class="title">Horarios de entrega en tu ciudad</label>
+    </div>
+    <div class="medium-3 large-3 columns">
+      <label class="title premium"><span>ClubR</span></label>
+    </div>
+  </div>
+  <div class="content row">
+    <div class="medium-9 large-9 columns">
+      <label for="twelve-fourteen"><input type="radio" name="hour-belt" id="twelve-fourteen"><span class="custom radio">de 12:00h a 14:00h - Envio 15€</span></label>
+      <label for="fourteen-sixteen"><input type="radio" name="hour-belt" id="fourteen-sixteen"><span class="custom radio">de 14:00h a 16:00h -<span class="free">Gratis</span></span></label>
+      <label for="sixteen-eightteen"><input type="radio" name="hour-belt" id="sixteen-eightteen"><span class="custom radio">de 16:00h a 18:00h -<span class="free">Gratis</span></span></label>
+      <label for="eightteen-twenty"><input type="radio" name="hour-belt" id="eightteen-twenty"><span class="custom radio">de 18:00h a 20:00h - Envio 15€</span></label>
+      <label for="twenty-twentytwo"><input type="radio" name="hour-belt" id="twenty-twentytwo"><span class="custom radio">de 20:00h a 22:00h - Envio 15€</span></label>
+    </div>
+    <div class="medium-3 large-3 columns">
+      <label><span>Envio 10€</span></label>
+      <label><span class="free">Gratis</span></label>
+      <label><span class="free">Gratis</span></label>
+      <label><span class="free">Gratis</span></label>
+      <label><span>Envio 10€</span></label>
+    </div>
+  </div>
+</div>
+<div class="general-summary">
+  <div class="payment-method">
+    <div class="medium-12 large-12 columns header">
+      <span class="title">Método de Pago</span>
+    </div>
+    <select class="radius" name="payment-list">
+      <?php $menus = array("Escoge tu mejor forma de pago", "La Caixa", "Paypal", "Money Bookers"); ?>
+      <?php foreach ($menus as $i => $menu): ?>
+      <option value="menu-<?php echo $i ?>"><?php echo $menu ?></option>
+      <?php endforeach ?>
+    </select>
+  </div>
+  <div class="purchase-summary-container">
+    <?php echo $this->getLayout()->createBlock('checkout/cart')->setTemplate('partials/layout/payment-summary-box.phtml')->toHtml(); ?>
+  </div>
+  <div class="payment-methods-images row">
+    <?php $methods_images = array("ticket-restaurant", "restaurant-pass", "visa", "mastercard", "iupay", "paypal"); ?>
+    <?php foreach ($methods_images as $name) { ?>
+    <div class="medium-3 large-3 columns">
+      <img src="<?php echo $this->getSkinUrl('images/payment/methods/'.$name.'.png') ?>" alt="" id="home-service-image">
+    </div>
+    <?php } ?>
+  </div>
+</div>
+<div id="policies-container" class="r-row">
+  <div class="row">
+    <div class="medium-1 large-1 columns">
+      <input type="checkbox" name="policies" id="policies">
+    </div>
+    <div class="medium-11 large-11 columns content">
+      <label for="policies">He leido y acepto la <a href="#">Politica de privacidad</a> y los <a href="#">Terminos y condiciones</a> de este sitio Web</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-1 large-1 columns">
+      <input type="checkbox" name="newsletters" id="newsletters">
+    </div>
+    <div class="medium-11 large-11 columns content">
+      <label for="newsletters">¿Deseas recibir nuestros Newsletters?</label>
+    </div>
+  </div>
+</div>
+<div class="go-and-pay">
+  <button type="submit" value="Siguiente" class="button tiny radius common-full-button" id="submit">Seguir y guardar mis datos</button>
+</div>
+
+
+<script>
+  var Calendar = jQuery("#calendar").multiDatesPicker({
+    numberOfMonths: [1,2],
+      dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+  });
+</script>
