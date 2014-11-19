@@ -7,40 +7,16 @@
 }
 .cart
 {
-  div.row.progressbar-container{
-    background: rgb(250, 247, 247);
-    padding-top: 15px;
-    position: relative;
-    z-index: -10;
-  }
   .row.content{
     max-width: 960px;
     margin: 0 auto;
+
     .breadcrumb-bar{
-      text-align: center;
-      margin: 10px auto;
-      span.my-basket{ color: $green-color; }
-      span.shopping-cart{ color: $red-color; }
+
       .bar-container{
         position: relative;
+
         ul#progressbar{
-          .fa{
-            position: relative;
-            top: 3px;
-          }
-          li.my-basket{
-            .fa{
-              color: $green-color;
-            }
-            hr{
-              border-color: $green-color;
-            }
-          }
-          li.shopping-cart{
-            .fa{
-              color: $red-color;
-            }
-          }
         }
       }
     }

@@ -52,11 +52,13 @@
   padding: 0 0.4rem !important;
 }
 select, select:hover {
-  padding: 0 0.4rem !important;
-  height: 1.6rem;
-  padding: 0;
+  background: #fff url("../images/arrow.png") no-repeat scroll 95% center;
   color: #747474;
-  background: #fff url("../images/arrow.png") no-repeat scroll 90% center;
+  content: "\f078";
+  font-family: FontAwesome;
+  height: 1.6rem;
+  padding: 0 0.4rem !important;
+  padding: 0;
 }
 .super-header form, .super-header .top-bar {
   margin: 0.4rem;
