@@ -1,0 +1,73 @@
+<div class="billing-form-container">
+  <div id="need-billing" class="">
+    <div class="large-11 columns header">
+      <span>¿Necesitas factura?</span>
+    </div>
+    <div class="large-1 columns">
+      <i id="arrow-handler" class="fa fa-chevron-down" ></i>
+    </div>
+  </div>
+  <div id="billing-form" class="form-container">
+    <form id="co-billing-form">
+      <div class="row">
+        <div class="large-12 columns">
+          <input class="radius" type="text" placeholder="Nombre nueva direccion*" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Nombre Comercial*" />
+        </div>
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Numero NIF/CIF*" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Calle*" />
+        </div>
+        <div class="large-3 columns">
+          <input class="radius" type="text" placeholder="Numero*" />
+        </div>
+        <div class="large-3 columns">
+          <input class="radius" type="text" placeholder="Escalera*" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-3 columns">
+          <input class="radius" type="text" placeholder="Piso*" />
+        </div>
+        <div class="large-3 columns">
+          <input class="radius" type="text" placeholder="Puerta*" />
+        </div>
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Codigo Postal*" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Provincia*" />
+        </div>
+        <div class="large-6 columns">
+          <input class="radius" type="text" placeholder="Poblacion*" />
+        </div>
+      </div>
+      <div id="add-more-addresses" class="row">
+        <div class="large-11 columns header">
+          <span>Nueva dirección</span>
+        </div>
+        <div class="large-1 columns c-icon">
+          <i class="fa fa-plus" ></i>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  jQuery("#billing-form").css("display", "none");
+  jQuery("#need-billing").click(function(){
+    jQuery("#billing-form").slideToggle( "slow", function() {
+      jQuery("#arrow-handler").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
+    });
+  });
+</script>

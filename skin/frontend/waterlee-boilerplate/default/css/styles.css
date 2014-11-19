@@ -18266,11 +18266,13 @@ Cart styling
 }
 
 select, select:hover {
-  padding: 0 0.4rem !important;
-  height: 1.6rem;
-  padding: 0;
+  background: #fff url("../images/arrow.png") no-repeat scroll 95% center;
   color: #747474;
-  background: #fff url("../images/arrow.png") no-repeat scroll 90% center;
+  content: "\f078";
+  font-family: FontAwesome;
+  height: 1.6rem;
+  padding: 0 0.4rem !important;
+  padding: 0;
 }
 
 .super-header form, .super-header .top-bar {
@@ -18596,21 +18598,40 @@ select, select:hover {
 }
 
 /*progressbar*/
-.breadcrumb-bar {
-  /*progressbar connectors*/
-  /*marking active/completed steps green*/
-  /*The number of the step and the connector before it = green*/
+div.row.progressbar-container {
+  background: #faf7f7;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  position: relative;
+  z-index: -10;
 }
-.breadcrumb-bar span {
+div.row.progressbar-container .breadcrumb-bar {
+  margin: 10px auto;
+  text-align: center;
+}
+div.row.progressbar-container .breadcrumb-bar span {
   color: #DDDDDD;
   font-weight: 600;
 }
-.breadcrumb-bar #progressbar {
-  margin: 0;
-  /*CSS counters to number the steps*/
-  /*counter-reset: step;*/
+div.row.progressbar-container .breadcrumb-bar span.done {
+  color: #627908;
 }
-.breadcrumb-bar #progressbar li {
+div.row.progressbar-container .breadcrumb-bar span.next {
+  color: #ea3700;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container {
+  position: relative;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar {
+  margin: 0;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar span.done {
+  color: #627908;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar span.next {
+  color: #ea3700;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li {
   list-style-type: none;
   color: white;
   text-transform: uppercase;
@@ -18619,47 +18640,51 @@ select, select:hover {
   float: left;
   position: relative;
 }
-.breadcrumb-bar #progressbar li .fa {
-  color: #DDDDDD;
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li .fa {
   background: #fff;
+  color: #DDDDDD;
+  position: relative;
+  top: 3px;
 }
-.breadcrumb-bar #progressbar li hr {
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li hr {
   position: relative;
   bottom: 30px;
   left: 120px;
   z-index: -5;
   border: 2px solid #DDDDDD;
 }
-.breadcrumb-bar #progressbar li:before {
-  /*content: counter(step);
-  counter-increment: step;*/
-  width: 20px;
-  line-height: 20px;
-  display: block;
-  font-size: 10px;
-  color: #333;
-  background: white;
-  border-radius: 3px;
-  margin: 0 auto 5px auto;
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li.done .fa {
+  color: #627908;
 }
-.breadcrumb-bar #progressbar li:after {
-  content: '';
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li.done hr {
+  border-color: #627908;
+}
+div.row.progressbar-container .breadcrumb-bar .bar-container ul#progressbar li.next .fa {
+  color: #ea3700;
+}
+
+button.common-full-button {
+  background: #ea3700 !important;
+  -khtml-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  -ms-filter: ”alpha(opacity=100) ” !important;
+  filter: alpha(opacity=100) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 1 !important;
   width: 100%;
-  height: 2px;
-  background: white;
-  position: absolute;
-  left: -50%;
-  top: 9px;
-  z-index: -1;
-  /*put it behind the numbers*/
+  font-size: 18px;
 }
-.breadcrumb-bar #progressbar li:first-child:after {
-  /*connector not needed before the first step*/
-  content: none;
+
+button.common-empty-button {
+  border: 1px solid #ea3700;
+  background: #fff;
+  color: #ea3700;
+  width: 100%;
+  font-size: 18px;
 }
-.breadcrumb-bar #progressbar li.active:before, .breadcrumb-bar #progressbar li.active:after {
-  background: #27AE60;
-  color: white;
+button.common-empty-button:hover {
+  background: #ea3700;
+  color: #fff;
 }
 
 .panel {
@@ -19186,41 +19211,12 @@ select, select:hover {
   margin-top: 0rem;
 }
 
-.cart div.row.progressbar-container {
-  background: #faf7f7;
-  padding-top: 15px;
-  position: relative;
-  z-index: -10;
-}
 .cart .row.content {
   max-width: 960px;
   margin: 0 auto;
 }
-.cart .row.content .breadcrumb-bar {
-  text-align: center;
-  margin: 10px auto;
-}
-.cart .row.content .breadcrumb-bar span.my-basket {
-  color: #627908;
-}
-.cart .row.content .breadcrumb-bar span.shopping-cart {
-  color: #ea3700;
-}
 .cart .row.content .breadcrumb-bar .bar-container {
   position: relative;
-}
-.cart .row.content .breadcrumb-bar .bar-container ul#progressbar .fa {
-  position: relative;
-  top: 3px;
-}
-.cart .row.content .breadcrumb-bar .bar-container ul#progressbar li.my-basket .fa {
-  color: #627908;
-}
-.cart .row.content .breadcrumb-bar .bar-container ul#progressbar li.my-basket hr {
-  border-color: #627908;
-}
-.cart .row.content .breadcrumb-bar .bar-container ul#progressbar li.shopping-cart .fa {
-  color: #ea3700;
 }
 .cart .row.content .left-column {
   padding: 0;
@@ -21491,6 +21487,225 @@ select, select:hover {
 }
 .recipes .row.content .main-content-container .row.parent .recipe-inner-container .recipe-content .comments .row.c-box .columns:nth-of-type(1) i {
   color: #ea3700;
+}
+
+.payment .row.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.payment .row.content .left-column .img-container img {
+  width: 80%;
+}
+.payment .row.content .left-column .text {
+  margin: 10px auto;
+}
+.payment .row.content .left-column span {
+  display: block;
+}
+.payment .row.content .left-column .my-account .info, .payment .row.content .left-column .club-r .info {
+  padding: 0 5px;
+}
+.payment .row.content .left-column .my-account .info .title, .payment .row.content .left-column .club-r .info .title {
+  font-size: 14px;
+  font-weight: 400;
+}
+.payment .row.content .left-column .my-account .info .message, .payment .row.content .left-column .club-r .info .message {
+  font-size: 12px;
+}
+.payment .row.content .left-column .club-r {
+  margin: 15px auto;
+}
+.payment .row.content .left-column .club-r .info {
+  margin-bottom: 10px;
+}
+.payment .row.content .left-column .club-r .info .title {
+  color: #ea3700;
+  font-size: 18px;
+}
+.payment .row.content .left-column .club-r button {
+  margin: 0;
+}
+.payment .row.content .left-column .club-r .warning {
+  font-size: 12px;
+  margin: 10px auto;
+}
+.payment .row.content .left-column .client .img-container img {
+  position: relative;
+  right: 10px;
+  width: 50%;
+}
+.payment .row.content .left-column .client .title {
+  font-size: 14px;
+}
+.payment .row.content .left-column .client .message, .payment .row.content .left-column .client .warning, .payment .row.content .left-column .client .next-delivery {
+  font-size: 12px;
+  text-align: left;
+  padding-left: 15px;
+}
+.payment .row.content .left-column .client .message {
+  font-weight: 400;
+}
+.payment .row.content .left-column .client .next-delivery {
+  margin-top: 10px;
+}
+.payment .row.content .center-column .header .title {
+  font-size: 18px;
+  font-weight: 500;
+}
+.payment .row.content .center-column .shipping-form-container .gender {
+  line-height: 40px;
+}
+.payment .row.content .center-column .billing-form-container {
+  border-bottom: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  margin: 15px auto;
+}
+.payment .row.content .center-column .billing-form-container #need-billing {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px 0;
+  text-align: left;
+}
+.payment .row.content .center-column .billing-form-container #need-billing .header {
+  font-weight: 400;
+  padding: 0;
+}
+.payment .row.content .center-column .billing-form-container #billing-form {
+  margin: 25px auto;
+}
+.payment .row.content .center-column #add-more-addresses {
+  background: #ea3700;
+  color: #fff;
+  line-height: 40px;
+  margin: 0;
+}
+.payment .row.content .center-column #add-more-addresses .header {
+  text-align: left;
+}
+.payment .row.content .center-column #add-more-addresses .c-icon i {
+  position: relative;
+  right: 5px;
+}
+.payment .row.content .right-column {
+  /* Multidatepicker styles */
+}
+.payment .row.content .right-column .column-header {
+  height: 40px;
+}
+.payment .row.content .right-column .column-header .title {
+  line-height: 40px;
+  font-weight: 500;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker {
+  display: inline-flex !important;
+  width: 100% !important;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-title span {
+  font-weight: 600;
+  font-size: 12px;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+  display: none;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: none;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-year {
+  display: none;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker .ui-datepicker-group-first {
+  padding-right: 15px;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar {
+  border: none;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar thead {
+  background: none;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar thead tr th {
+  padding: 0rem 0.4rem 0.4rem;
+}
+.payment .row.content .right-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td {
+  line-height: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.payment .row.content .right-column #frequency-container {
+  text-align: left;
+  overflow: hidden;
+}
+.payment .row.content .right-column #hour-belt-container {
+  text-align: left;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.payment .row.content .right-column #hour-belt-container .header {
+  margin: 10px 0;
+}
+.payment .row.content .right-column #hour-belt-container .header .title {
+  font-weight: 700;
+}
+.payment .row.content .right-column #hour-belt-container .header .premium {
+  color: #ea3700;
+}
+.payment .row.content .right-column #hour-belt-container label input {
+  margin: 0;
+}
+.payment .row.content .right-column #hour-belt-container label span {
+  bottom: 2px;
+  left: 3px;
+  position: relative;
+}
+.payment .row.content .right-column #hour-belt-container span.free {
+  color: #ea3700;
+  text-transform: uppercase;
+}
+.payment .row.content .right-column .general-summary {
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 15px;
+}
+.payment .row.content .right-column .general-summary .payment-method .header {
+  margin-bottom: 15px;
+}
+.payment .row.content .right-column .general-summary .payment-method .header .title {
+  font-size: 18px;
+}
+.payment .row.content .right-column .general-summary .payment-method select {
+  height: 2.4rem;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container {
+  margin-bottom: 25px;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container span {
+  font-size: 14px;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container .large-9 {
+  text-align: left;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container .large-3 {
+  text-align: right;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container .discounts {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.payment .row.content .right-column .general-summary .purchase-summary-container .total-amount {
+  font-weight: 700;
+}
+.payment .row.content .right-column .general-summary .payment-methods-images {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.payment .row.content .right-column #policies-container .content {
+  float: left;
+  padding: 0;
+  text-align: left;
+  width: 80%;
+}
+.payment .row.content .right-column #policies-container .content a {
+  color: #0063ce;
 }
 
 .catalog-category-view .grid-mode .product-name {

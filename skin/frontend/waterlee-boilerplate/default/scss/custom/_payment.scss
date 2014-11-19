@@ -1,0 +1,259 @@
+.payment{
+  .row.content{
+    max-width: 960px;
+    margin: 0 auto;
+
+    .left-column{
+      .img-container{
+        img{
+          width: 80%;
+        }
+      }
+      .text{
+        margin: 10px auto;
+      }
+      span{
+        display: block;
+      }
+      .my-account, .club-r{
+        .info{
+          padding: 0 5px;
+          .title{
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .message{
+            font-size: 12px;
+          }
+        }
+      }
+      .my-account{
+
+      }
+      .club-r{
+        margin: 15px auto;
+        .info{
+          margin-bottom: 10px;
+          .title{
+            color: $red-color;
+            font-size: 18px;
+          }
+        }
+        button{
+          margin: 0;
+        }
+        .warning{
+          font-size: 12px;
+          margin: 10px auto;
+        }
+      }
+      .client{
+        .img-container{
+          img{
+            position: relative;
+            right: 10px;
+            width: 50%;
+          }
+        }
+        .title{
+          font-size: 14px;
+        }
+        .message, .warning, .next-delivery{
+          font-size: 12px;
+          text-align: left;
+          padding-left: 15px;
+        }
+        .message{
+          font-weight: 400;
+        }
+        .next-delivery{
+          margin-top: 10px;
+        }
+      }
+    }
+    .center-column{
+      .header{
+        .title{
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+      .shipping-form-container{
+        .gender{
+          line-height: 40px;
+        }
+      }
+      .billing-form-container{
+         border-bottom:1px solid $border-color;
+         border-top:1px solid $border-color;
+         margin: 15px auto;
+         #need-billing{
+           cursor: pointer;
+           overflow:hidden;
+           padding:10px 0;
+           text-align:left;
+           .header{
+             font-weight: 400;
+             padding:0;
+           }
+         }
+         #billing-form{
+           margin:25px auto;
+         }
+      }
+      #add-more-addresses{
+        background: $red-color;
+        color: $white-color;
+        line-height: 40px;
+        margin: 0;
+        .header{
+          text-align: left;
+        }
+        .c-icon i{
+          position:relative;
+          right: 5px;
+        }
+      }
+    }
+    .right-column{
+      .column-header{
+        height: 40px;
+        .title{
+          line-height: 40px;
+          font-weight: 500;
+        }
+      }
+      /* Multidatepicker styles */
+      .calendar-container{
+        #calendar{
+          .ui-datepicker {
+            display: inline-flex !important;
+            width: 100% !important;
+
+            .ui-datepicker-header{
+              .ui-datepicker-title span{
+                font-weight: 600;
+                font-size: 12px;
+              }
+              .ui-datepicker-prev{
+                display: none;
+              }
+              .ui-datepicker-next{
+                display: none;
+              }
+              .ui-datepicker-year{
+                display: none;
+              }
+            }
+            .ui-datepicker-group-first{
+              padding-right: 15px;
+            }
+            table.ui-datepicker-calendar{
+              border: none;
+              thead{
+                background: none;
+                tr{
+                  th{
+                    padding: 0rem 0.4rem 0.4rem;
+                  }
+                }
+              }
+              tr{
+                td{
+                  line-height: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #frequency-container{
+        text-align: left;
+        overflow: hidden;
+      }
+      #hour-belt-container{
+        text-align:left;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        .header{
+          margin: 10px 0;
+          .title{
+            font-weight: 700;
+          }
+          .premium{
+            color: $red-color;
+          }
+        }
+        label{
+          input{
+            margin: 0;
+          }
+          span{
+            bottom: 2px;
+            left: 3px;
+            position: relative;
+          }
+        }
+        span.free{
+          color: $red-color;
+          text-transform: uppercase;
+        }
+      }
+      .general-summary{
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 15px;
+        .payment-method{
+          .header{
+            margin-bottom: 15px;
+            .title{
+              font-size:18px;
+            }
+          }
+          select{
+            height: 2.4rem;
+            //padding: 5px inherit !important;
+          }
+        }
+        .purchase-summary-container{
+          margin-bottom: 25px;
+          span{
+            font-size: 14px;
+          }
+          .large-9{
+            text-align: left;
+          }
+          .large-3{
+            text-align: right;
+          }
+          .discounts{
+            margin-bottom: 15px;
+            margin-top: 15px;
+          }
+          .total-amount{
+            font-weight: 700;
+          }
+        }
+        .payment-methods-images{
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+      }
+      #policies-container{
+        .content{
+          float: left;
+          padding: 0;
+          text-align: left;
+          width: 80%;
+          a{
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+}
