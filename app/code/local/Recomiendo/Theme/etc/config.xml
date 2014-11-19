@@ -28,6 +28,11 @@
           <template>page/html/custom/pages/cart.phtml</template>
           <layout_handle>page_custom_layout</layout_handle>
         </cart>
+        <payment_steps module="page" translate="label">
+          <label>Datos personales pago</label>
+          <template>page/html/custom/pages/payment.phtml</template>
+          <layout_handle>page_custom_layout</layout_handle>
+        </payment_steps>
       </layouts>
     </page>
     <helpers>
