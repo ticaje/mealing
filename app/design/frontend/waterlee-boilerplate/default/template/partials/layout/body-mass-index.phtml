@@ -1,0 +1,23 @@
+<div class="body-mass-index">
+  <form id="bmi" action="">
+    <span class="title">Indice de Masa Corporal</span>
+    <div class="gender">
+      <input type="radio" name="gender" value="Red" id="male"><label for="male">Hombre</label>
+      <input type="radio" name="gender" value="Blue" id="female"><label for="female">Mujer</label>
+    </div>
+    <div class="row">
+      <div class="medium-6 large-6 columns">
+        <input class="radius" name="weight" type="text" placeholder="Peso kg">
+      </div>
+      <div class="medium-6 large-6 columns">
+        <input class="radius" name="size" type="text" placeholder="Talla cm">
+      </div>
+    </div>
+    <img src="<?php echo $this->getSkinUrl('images/general/bmi.png') ?>" alt="" id="">
+    <span class="title result">Clasificacion</span>
+    <div class="imc-submition">
+      <input class="radius" type="text" placeholder="IMC">
+      <button type="button" value="Enviar" class="button tiny radius common-empty-button">Calcular</button>
+    </div>
+  </form>
+</div>

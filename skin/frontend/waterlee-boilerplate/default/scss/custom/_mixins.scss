@@ -21,6 +21,10 @@ $top-bar-height: 60px;
 $menu-color: #8a8a8a;
 $recipe-color: #665E5E;
 $border-color: #DDDDDD;
+$font-color: #8a8a8a;
+$facebook-color: #3b5998;
+$google-color: #db4437;
+$yahoo-color: #400191;
 
 @mixin rounded-borders($size){
   -webkit-border-top-left-radius: $size+px;

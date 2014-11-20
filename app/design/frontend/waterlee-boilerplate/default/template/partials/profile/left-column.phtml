@@ -1,0 +1,58 @@
+<div class="client">
+  <div class="img-container">
+    <img src="<?php echo $this->getSkinUrl('images/checkout/cook.png') ?>" alt="" id="">
+  </div>
+  <div class="text">
+    <span class="title">Hola Pepe!</span>
+  </div>
+  <div class="social-networks-connect">
+  <?php
+    if(Mage::getStoreConfig('le_sociallogin/general/showonloginpage') == 'inloginbox'){ ?>
+    <?php
+      $block = new LitExtension_SocialLogin_Block_Button();
+      $check_show_social = Mage::helper('le_sociallogin')->checkShowSociallogin();
+      if($check_show_social == true && Mage::getSingleton('customer/session')->IsLoggedIn() == false): ?>
+        <link type="text/css" rel="stylesheet" media="screen" href="<?php echo $block->getSkinUrl('le_sociallogin/css/style.css');?>"/>
+        <script type="text/javascript" src="<?php echo $block->getSkinUrl('le_sociallogin/js/sociallogin.js');?>"></script>
+        <div class="le-socialconnect-social">
+          <?php
+            if($block->getButtons()){
+              $quantity = count($block->getButtons());
+              foreach($block->getButtons() as $i => $button){
+                ?>
+                <div class="row">
+                <?php
+                echo $button->render();
+                ?>
+                </div>
+                <?php if ((!$i == $quantity) && ($quantity > 1) ) { ?>
+                <div class="row separator">
+                 <span class="decorated"><span>O</span></span>
+                </div>
+                <?php } ?>
+                <?php
+              }
+            }
+          ?>
+        </div>
+        <?php endif;
+        }
+    ?>
+  </div>
+  <div class="a-message row">
+    <p>Vive una experiencia más intensa a la hora de recomendar tus Cestas.</p>
+  </div>
+  <div class="small-menu row">
+    <ul class="side-nav">
+      <li><a href="#">Mis Cestas</a></li>
+      <li class="active"><a href="#">Mi Perfil</a></li>
+      <li><a href="#">Cerrar session</a></li>
+    </ul>
+  </div>
+  <div class="delete-account row">
+    <ul class="side-nav">
+      <li><a href="#">Eliminar Cuenta</a></li>
+    </ul>
+  </div>
+</div>
+

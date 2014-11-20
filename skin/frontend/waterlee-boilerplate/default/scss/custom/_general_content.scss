@@ -136,3 +136,82 @@ div.row.progressbar-container{
       color: $white-color;
     }
   }
+
+  .right-bring-up-a-friend-container{
+    margin-top: 20px;
+    .bring-up-a-friend{
+      span{
+        display: block;
+      }
+      .title{
+        color: $black-color;
+      }
+      img{
+        padding: 15px 0;
+      }
+      .social-network-friends{
+        text-align: left;
+        padding-top: 10px;
+      }
+      .small-menu{
+        text-align: left;
+        ul{
+          span{
+            display: inline;
+          }
+          margin: 0;
+          img{
+            padding: 0 10px 0 0;
+          }
+          li{
+            margin: 10px 0;
+            &.facebook a{
+              color: $facebook-color;
+            }
+            &.google a{
+              color: $google-color;
+            }
+            &.yahoo a{
+              color: $yahoo-color;
+            }
+            a{
+            }
+
+          }
+        }
+      }
+      .friend-email-submition{
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 20px;
+        margin: 20px 0;
+        button{
+          border: 2px solid $red-color;
+          font-size: 15px;
+          font-weight: 500;
+          margin: 0;
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+  .right-body-mass-index-container{
+    span{
+      display: block;
+    }
+    .title{
+      color: $black-color;
+      padding-bottom: 10px;
+      &.result{
+        color: $font-color;
+        padding: 5px 0;
+        font-weight: 500;
+      }
+    }
+    button.common-empty-button{
+      border: 2px solid $red-color;
+      font-size: 15px;
+      font-weight: 500;
+      margin: 0;
+      padding: 5px 0;
+    }
+  }

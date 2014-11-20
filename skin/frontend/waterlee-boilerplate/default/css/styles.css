@@ -18687,6 +18687,79 @@ button.common-empty-button:hover {
   color: #fff;
 }
 
+.right-bring-up-a-friend-container {
+  margin-top: 20px;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend span {
+  display: block;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .title {
+  color: #000;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend img {
+  padding: 15px 0;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .social-network-friends {
+  text-align: left;
+  padding-top: 10px;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu {
+  text-align: left;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul {
+  margin: 0;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul span {
+  display: inline;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul img {
+  padding: 0 10px 0 0;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul li {
+  margin: 10px 0;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul li.facebook a {
+  color: #3b5998;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul li.google a {
+  color: #db4437;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .small-menu ul li.yahoo a {
+  color: #400191;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .friend-email-submition {
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 20px;
+  margin: 20px 0;
+}
+.right-bring-up-a-friend-container .bring-up-a-friend .friend-email-submition button {
+  border: 2px solid #ea3700;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.right-body-mass-index-container span {
+  display: block;
+}
+.right-body-mass-index-container .title {
+  color: #000;
+  padding-bottom: 10px;
+}
+.right-body-mass-index-container .title.result {
+  color: #8a8a8a;
+  padding: 5px 0;
+  font-weight: 500;
+}
+.right-body-mass-index-container button.common-empty-button {
+  border: 2px solid #ea3700;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 5px 0;
+}
+
 .panel {
   border-style: solid;
   border-width: 1px;
@@ -21706,6 +21779,320 @@ button.common-empty-button:hover {
 }
 .payment .row.content .right-column #policies-container .content a {
   color: #0063ce;
+}
+
+.profile {
+  color: #8a8a8a;
+}
+.profile .row.content {
+  max-width: 960px;
+  margin: 15px auto;
+}
+.profile .row.content .left-column {
+  padding-top: 20px;
+}
+.profile .row.content .left-column .text {
+  margin: 10px auto;
+}
+.profile .row.content .left-column span {
+  display: block;
+}
+.profile .row.content .left-column .my-account .info {
+  padding: 0 5px;
+}
+.profile .row.content .left-column .my-account .info .title {
+  font-size: 14px;
+  font-weight: 400;
+}
+.profile .row.content .left-column .my-account .info .message {
+  font-size: 12px;
+}
+.profile .row.content .left-column .client .img-container img {
+  position: relative;
+  right: 10px;
+  width: 80%;
+}
+.profile .row.content .left-column .client .title {
+  font-size: 14px;
+}
+.profile .row.content .left-column .client .message, .profile .row.content .left-column .client .warning, .profile .row.content .left-column .client .next-delivery {
+  font-size: 12px;
+  text-align: left;
+  padding-left: 15px;
+}
+.profile .row.content .left-column .client .message {
+  font-weight: 400;
+}
+.profile .row.content .left-column .client .next-delivery {
+  margin-top: 10px;
+}
+.profile .row.content .left-column .social-networks-connect {
+  margin-bottom: 10px;
+}
+.profile .row.content .left-column .social-networks-connect .separator {
+  /* headlines with lines */
+  margin: 0;
+}
+.profile .row.content .left-column .social-networks-connect .separator .decorated {
+  overflow: hidden;
+  text-align: center;
+}
+.profile .row.content .left-column .social-networks-connect .separator .decorated > span {
+  position: relative;
+  display: inline-block;
+}
+.profile .row.content .left-column .social-networks-connect .separator .decorated > span:before, .profile .row.content .left-column .social-networks-connect .separator .decorated > span:after {
+  border-bottom: 2px solid #DDDDDD;
+  content: '';
+  margin: 0 5px;
+  position: absolute;
+  top: 38%;
+  width: 160px;
+  /* half of limiter*/
+}
+.profile .row.content .left-column .social-networks-connect .separator .decorated > span:before {
+  right: 100%;
+}
+.profile .row.content .left-column .social-networks-connect .separator .decorated > span:after {
+  left: 100%;
+}
+.profile .row.content .left-column .a-message {
+  border-bottom: 2px solid #DDDDDD;
+  padding: 5px 0;
+  text-align: left;
+}
+.profile .row.content .left-column .a-message p {
+  font-size: 14px;
+  line-height: 1.4em;
+}
+.profile .row.content .left-column .small-menu {
+  text-align: left;
+  border-bottom: 2px solid #DDDDDD;
+}
+.profile .row.content .left-column .small-menu ul {
+  margin: 0;
+  padding: 5px 0;
+}
+.profile .row.content .left-column .small-menu ul li {
+  margin: 10px 0;
+}
+.profile .row.content .left-column .small-menu ul li a {
+  color: #8a8a8a;
+}
+.profile .row.content .left-column .small-menu ul li.active {
+  border-right: 3px solid #ea3700;
+}
+.profile .row.content .left-column .small-menu ul li.active a {
+  color: #ea3700;
+}
+.profile .row.content .left-column .delete-account {
+  text-align: left;
+}
+.profile .row.content .left-column .delete-account ul {
+  margin: 0;
+  padding: 10px 0;
+}
+.profile .row.content .left-column .delete-account ul li {
+  margin: 10px 0;
+}
+.profile .row.content .left-column .delete-account ul li a {
+  color: #8a8a8a;
+}
+.profile .row.content .center-column {
+  /* Multidatepicker styles */
+}
+.profile .row.content .center-column .center-column-header .title {
+  color: #ea3700;
+  font-size: 26px;
+  font-weight: 500;
+}
+.profile .row.content .center-column .sub-header span.title {
+  font-size: 18px;
+  padding: 10px 0;
+}
+.profile .row.content .center-column .column-header .title {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker {
+  display: inline-flex !important;
+  width: 100% !important;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-title span {
+  color: #000;
+  font-weight: 600;
+  font-size: 12px;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+  display: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+  display: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker .ui-datepicker-header .ui-datepicker-year {
+  display: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar {
+  border: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar thead {
+  background: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar thead tr th {
+  padding: 0rem 0.9rem 0.9rem;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td {
+  height: 25px;
+  line-height: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td.date-selectable {
+  cursor: pointer;
+  background: #ea3700 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td.date-selectable a {
+  background: none;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td.ui-state-highlight {
+  cursor: pointer;
+  background: #ea3700 !important;
+  -khtml-opacity: 0.7 !important;
+  -moz-opacity: 0.7 !important;
+  -ms-filter: ”alpha(opacity=70) ” !important;
+  filter: alpha(opacity=70) !important;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$trans) !important;
+  opacity: 0.7 !important;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td.ui-state-highlight a {
+  background: none;
+  color: #fff;
+  font-weight: 700;
+}
+.profile .row.content .center-column .calendar-container #calendar .ui-datepicker table.ui-datepicker-calendar tr td a {
+  color: #000;
+}
+.profile .row.content .center-column .shipping-form-container .gender {
+  line-height: 40px;
+}
+.profile .row.content .center-column .billing-form-container {
+  border-bottom: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  margin: 15px auto;
+}
+.profile .row.content .center-column .billing-form-container #need-billing {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 10px 0;
+  text-align: left;
+}
+.profile .row.content .center-column .billing-form-container #need-billing .header {
+  font-weight: 400;
+  padding: 0;
+}
+.profile .row.content .center-column .billing-form-container #billing-form {
+  margin: 25px auto;
+}
+.profile .row.content .center-column #add-more-addresses {
+  background: #ea3700;
+  color: #fff;
+  line-height: 40px;
+  margin: 0;
+}
+.profile .row.content .center-column #add-more-addresses .header {
+  text-align: left;
+}
+.profile .row.content .center-column #add-more-addresses .c-icon i {
+  position: relative;
+  right: 5px;
+}
+.profile .row.content .center-column #frequency-container {
+  text-align: left;
+  overflow: hidden;
+}
+.profile .row.content .center-column #hour-belt-container {
+  text-align: left;
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.profile .row.content .center-column #hour-belt-container .header {
+  margin-bottom: 10px;
+}
+.profile .row.content .center-column #hour-belt-container .header .title {
+  font-weight: 700;
+}
+.profile .row.content .center-column #hour-belt-container .header .premium {
+  color: #ea3700;
+}
+.profile .row.content .center-column #hour-belt-container label input {
+  margin: 0;
+}
+.profile .row.content .center-column #hour-belt-container label span {
+  bottom: 2px;
+  left: 3px;
+  position: relative;
+}
+.profile .row.content .center-column #hour-belt-container span.free {
+  color: #ea3700;
+  text-transform: uppercase;
+}
+.profile .row.content .center-column .payment-methods-images {
+  border-bottom: 1px solid #DDDDDD;
+  overflow: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.profile .row.content .center-column #policies-container {
+  margin-bottom: 15px;
+}
+.profile .row.content .center-column #policies-container .content {
+  float: left;
+  padding: 0;
+  text-align: left;
+  width: 80%;
+}
+.profile .row.content .center-column #policies-container .content a {
+  color: #0063ce;
+}
+.profile .row.content .right-column p {
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.3em;
+}
+.profile .row.content .right-column .club-r {
+  border-bottom: 2px solid #DDDDDD;
+  padding-bottom: 20px;
+  margin-top: 40px;
+}
+.profile .row.content .right-column .club-r span {
+  display: block;
+}
+.profile .row.content .right-column .club-r .info {
+  margin-bottom: 10px;
+}
+.profile .row.content .right-column .club-r .info .title {
+  color: #ea3700;
+  font-size: 18px;
+}
+.profile .row.content .right-column .club-r button {
+  border: 2px solid #ea3700;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 5px 0;
+}
+.profile .row.content .right-column .club-r .warning {
+  font-size: 12px;
+  margin: 10px auto;
 }
 
 .catalog-category-view .grid-mode .product-name {
