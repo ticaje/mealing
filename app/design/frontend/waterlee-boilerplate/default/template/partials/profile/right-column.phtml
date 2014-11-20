@@ -1,0 +1,13 @@
+<div class="club-r">
+  <div class="info">
+    <span class="title">ClubR</span>
+    <p class="message">Unete al ClubR y consigue descuentos permanentes y las mejores ofertas.</p>
+  </div>
+  <button type="button" value="Unete" class="button tiny radius common-empty-button">Únete al ClubR</button>
+</div>
+<div class="right-bring-up-a-friend-container">
+  <?php echo $this->getLayout()->createBlock('checkout/cart')->setTemplate('partials/layout/bring-up-a-friend.phtml')->toHtml(); ?>
+</div>
+<div class="right-body-mass-index-container">
+  <?php echo $this->getLayout()->createBlock('checkout/cart')->setTemplate('partials/layout/body-mass-index.phtml')->toHtml(); ?>
+</div>

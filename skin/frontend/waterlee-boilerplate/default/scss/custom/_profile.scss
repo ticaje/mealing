@@ -1,0 +1,333 @@
+.profile{
+  color: $font-color;
+  .row.content{
+    max-width: 960px;
+    margin: 15px auto;
+
+    .left-column{
+      padding-top: 20px;
+      .text{
+        margin: 10px auto;
+      }
+      span{
+        display: block;
+      }
+      .my-account{
+        .info{
+          padding: 0 5px;
+          .title{
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .message{
+            font-size: 12px;
+          }
+        }
+      }
+      .client{
+        .img-container{
+          img{
+            position: relative;
+            right: 10px;
+            width: 80%;
+          }
+        }
+        .title{
+          font-size: 14px;
+        }
+        .message, .warning, .next-delivery{
+          font-size: 12px;
+          text-align: left;
+          padding-left: 15px;
+        }
+        .message{
+          font-weight: 400;
+        }
+        .next-delivery{
+          margin-top: 10px;
+        }
+      }
+      .social-networks-connect{
+        margin-bottom: 10px;
+        .separator{
+          /* headlines with lines */
+          margin: 0;
+          .decorated{
+            overflow: hidden;
+            text-align: center;
+          }
+          .decorated > span{
+            position: relative;
+            display: inline-block;
+          }
+          .decorated > span:before, .decorated > span:after{
+            border-bottom: 2px solid $border-color;
+            content: '';
+            margin: 0 5px;
+            position: absolute;
+            top: 38%;
+            width: 160px; /* half of limiter*/
+          }
+          .decorated > span:before{
+            right: 100%;
+          }
+          .decorated > span:after{
+            left: 100%;
+          }
+        }
+      }
+      .a-message{
+        border-bottom: 2px solid $border-color;
+        padding: 5px 0;
+        text-align: left;
+        p{
+          font-size: 14px;
+          line-height: 1.4em;
+        }
+      }
+      .small-menu{
+        text-align: left;
+        border-bottom: 2px solid $border-color;
+        ul{
+          margin: 0;
+          padding: 5px 0;
+          li{
+            margin: 10px 0;
+            a{
+              color: $font-color;
+            }
+            &.active{
+              border-right: 3px solid $red-color;
+              a{
+                color: $red-color;
+              }
+            }
+          }
+        }
+      }
+      .delete-account{
+        text-align: left;
+        ul{
+          margin: 0;
+          padding: 10px 0;
+          li{
+            margin: 10px 0;
+            a{
+              color: $font-color;
+            }
+          }
+        }
+      }
+    }
+    .center-column{
+      .center-column-header{
+        .title{
+          color: $red-color;
+          font-size: 26px;
+          font-weight: 500;
+        }
+      }
+      .sub-header{
+        span.title{
+          font-size: 18px;
+          padding: 10px 0;
+        }
+      }
+      .column-header{
+        .title{
+          color: $black-color;
+          font-size:18px;
+          font-weight: 400;
+        }
+      }
+
+      /* Multidatepicker styles */
+      .calendar-container{
+        #calendar{
+          .ui-datepicker {
+            display: inline-flex !important;
+            width: 100% !important;
+
+            .ui-datepicker-header{
+              .ui-datepicker-title span{
+                color: $black-color;
+                font-weight: 600;
+                font-size: 12px;
+              }
+              .ui-datepicker-prev{
+                display: none;
+              }
+              .ui-datepicker-next{
+                display: none;
+              }
+              .ui-datepicker-year{
+                display: none;
+              }
+            }
+            .ui-datepicker-group-first{
+            }
+            table.ui-datepicker-calendar{
+              border: none;
+              thead{
+                background: none;
+                tr{
+                  th{
+                    padding: 0rem 0.9rem 0.9rem;
+                  }
+                }
+              }
+              tr{
+                td{
+                  height: 25px;
+                  line-height: 0;
+                  padding-left: 0;
+                  padding-right: 0;
+                  text-align: center;
+                  &.date-selectable{
+                    cursor: pointer;
+                    @include transparency(0.7, $red-color);
+                    a{
+                      background: none;
+                    }
+                  }
+                  &.ui-state-highlight{
+                    cursor: pointer;
+                    @include transparency(0.7, $red-color);
+                    a{
+                      background: none;
+                      color: $white-color;
+                      font-weight: 700;
+                    }
+                  }
+                  a{
+                    color: $black-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .shipping-form-container{
+        .gender{
+          line-height: 40px;
+        }
+      }
+      .billing-form-container{
+         border-bottom:1px solid $border-color;
+         border-top:1px solid $border-color;
+         margin: 15px auto;
+         #need-billing{
+           cursor: pointer;
+           overflow:hidden;
+           padding:10px 0;
+           text-align:left;
+           .header{
+             font-weight: 400;
+             padding:0;
+           }
+         }
+         #billing-form{
+           margin:25px auto;
+         }
+      }
+      #add-more-addresses{
+        background: $red-color;
+        color: $white-color;
+        line-height: 40px;
+        margin: 0;
+        .header{
+          text-align: left;
+        }
+        .c-icon i{
+          position:relative;
+          right: 5px;
+        }
+      }
+      #frequency-container{
+        text-align: left;
+        overflow: hidden;
+      }
+      #hour-belt-container{
+        text-align:left;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        .header{
+          margin-bottom: 10px;
+          .title{
+            font-weight: 700;
+          }
+          .premium{
+            color: $red-color;
+          }
+        }
+        label{
+          input{
+            margin: 0;
+          }
+          span{
+            bottom: 2px;
+            left: 3px;
+            position: relative;
+          }
+        }
+        span.free{
+          color: $red-color;
+          text-transform: uppercase;
+        }
+      }
+      .payment-methods-images{
+        border-bottom: 1px solid $border-color;
+        overflow: hidden;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+      #policies-container{
+        margin-bottom: 15px;
+        .content{
+          float: left;
+          padding: 0;
+          text-align: left;
+          width: 80%;
+          a{
+            color: $blue-color;
+          }
+        }
+      }
+    }
+    .right-column{
+      p{
+        font-size: 14px;
+        text-align: left;
+        line-height: 1.3em;
+      }
+      .club-r{
+        border-bottom: 2px solid $border-color;
+        padding-bottom: 20px;
+        span{
+          display: block;
+        }
+        margin-top: 40px;
+        .info{
+          margin-bottom: 10px;
+          .title{
+            color: $red-color;
+            font-size: 18px;
+          }
+        }
+        button{
+          border: 2px solid $red-color;
+          font-size: 15px;
+          font-weight: 500;
+          margin: 0;
+          padding: 5px 0;
+        }
+        .warning{
+          font-size: 12px;
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+}
