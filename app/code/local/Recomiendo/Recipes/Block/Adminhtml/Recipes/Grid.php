@@ -52,7 +52,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid extends Recomiendo_Recipes
       'sortable' => true,
       'width'    => '170px',
       'index'    => 'created_at',
-      'type'     => 'datetime',
+      'type'     => 'date',
     ));
 
     return parent::_prepareColumns();
