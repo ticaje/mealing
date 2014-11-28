@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+
+<layout>
+
+  <adminhtml_catalog_product_lunch>
+    <block type="core/text_list" name="root" output="toHtml">
+      <block type="recomiendo_menus/adminhtml_tabs_lunchmenu" name="menus.lunch"/>
+      <block type="adminhtml/widget_grid_serializer" name="lunch_grid_serializer">
+        <reference name="lunch_grid_serializer">
+          <action method="initSerializerBlock">
+            <grid_block_name>menus.lunch</grid_block_name>
+            <data_callback>getSelectedRelatedRecipes</data_callback>
+            <hidden_input_name>recipes[lunch]</hidden_input_name>
+            <reload_param_name>products_recipes</reload_param_name>
+          </action>
+          <action method="addColumnInputName">
+            <input_name>position</input_name>
+          </action>
+        </reference>
+      </block>
+    </block>
+  </adminhtml_catalog_product_lunch>
+
+  <adminhtml_catalog_product_lunchgrid>
+    <block type="core/text_list" name="root" output="toHtml">
+      <block type="recomiendo_menus/adminhtml_tabs_lunchmenu" name="menus.lunch"/>
+    </block>
+  </adminhtml_catalog_product_lunchgrid>
+
+  <adminhtml_catalog_product_dinner>
+    <block type="core/text_list" name="root" output="toHtml">
+      <block type="recomiendo_menus/adminhtml_tabs_dinnermenu" name="menus.dinner"/>
+      <block type="adminhtml/widget_grid_serializer" name="dinner_grid_serializer">
+        <reference name="dinner_grid_serializer">
+          <action method="initSerializerBlock">
+            <grid_block_name>menus.dinner</grid_block_name>
+            <data_callback>getSelectedRelatedRecipes</data_callback>
+            <hidden_input_name>recipes[dinner]</hidden_input_name>
+            <reload_param_name>products_recipes</reload_param_name>
+          </action>
+          <action method="addColumnInputName">
+            <input_name>position</input_name>
+          </action>
+        </reference>
+      </block>
+    </block>
+  </adminhtml_catalog_product_dinner>
+
+  <adminhtml_catalog_product_dinnergrid>
+    <block type="core/text_list" name="root" output="toHtml">
+      <block type="recomiendo_menus/adminhtml_tabs_dinnermenu" name="menus.dinner"/>
+    </block>
+  </adminhtml_catalog_product_dinnergrid>
+</layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <menu>
+    <recipes translate="title" module="recomiendo_recipes">
+      <title>Codificadores</title>
+      <sort_order>65</sort_order>
+      <children>
+        <manage translate="title" module="recomiendo_recipes">
+          <title>Recetas</title>
+          <action>recomiendo/recipes</action>
+          <sort_order>30</sort_order>
+        </manage>
+        <ingredients translate="title" module="recomiendo_recipes">
+          <title>Ingredientes</title>
+          <action>recomiendo/ingredients</action>
+          <sort_order>31</sort_order>
+        </ingredients>
+        <ingredienttypes translate="title" module="recomiendo_recipes">
+          <title>Tipos de Ingrediente</title>
+          <action>recomiendo/ingredienttypes</action>
+          <sort_order>32</sort_order>
+        </ingredienttypes>
+        <grouping translate="title" module="recomiendo_recipes">
+          <title>Grupos sociales</title>
+          <action>recomiendo/socialgroups</action>
+          <sort_order>34</sort_order>
+        </grouping>
+        <belts translate="title" module="recomiendo_recipes">
+          <title>Franjas horarias</title>
+          <action>recomiendo/hourbelts</action>
+          <sort_order>36</sort_order>
+        </belts>
+        <utils translate="title" module="recomiendo_recipes">
+          <title>Utensilios de cocina</title>
+          <action>recomiendo/utils</action>
+          <sort_order>37</sort_order>
+        </utils>
+        <zip translate="title" module="recomiendo_recipes">
+          <title>Codigos postales</title>
+          <action>recomiendo/zipcodes</action>
+          <sort_order>38</sort_order>
+        </zip>
+        <provider translate="title" module="recomiendo_recipes">
+          <title>Proovedores</title>
+          <action>recomiendo/providers</action>
+          <sort_order>39</sort_order>
+        </provider>
+        <rclassification translate="title" module="recomiendo_recipes">
+          <title>Clasificación Recetas</title>
+          <action>recomiendo/rclassifications</action>
+          <sort_order>40</sort_order>
+        </rclassification>
+        <traceability translate="title" module="recomiendo_recipes">
+          <title>Trazabilidad</title>
+          <action>recomiendo/traceabilities</action>
+          <sort_order>42</sort_order>
+        </traceability>
+      </children>
+    </recipes>
+  </menu>
+  <acl>
+    <resources>
+      <admin>
+        <children>
+          <recipes translate="title" module="recomiendo_recipes">
+            <title>Recomiendo Almacen</title>
+            <sort_order>65</sort_order>
+            <children>
+              <manage translate="title">
+                <title>Recetas</title>
+                <sort_order>0</sort_order>
+                <children>
+                  <save translate="title">
+                    <title>Salvar Receta</title>
+                    <sort_order>0</sort_order>
+                  </save>
+                  <delete translate="title">
+                    <title>Borrar receta</title>
+                    <sort_order>10</sort_order>
+                  </delete>
+                </children>
+              </manage>
+            </children>
+          </recipes>
+          <system>
+            <children>
+              <config>
+                <children>
+                  <recipes translate="title" module="recomiendo_recipes">
+                    <title>Recipes Management</title>
+                  </recipes>
+                </children>
+              </config>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Recomiendo_Menus>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Recomiendo_Menus>
+  </modules>
+</config>
+

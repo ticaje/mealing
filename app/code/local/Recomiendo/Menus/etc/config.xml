@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Module configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <modules>
+    <Recomiendo_Menus>
+      <version>1.0.0</version>
+    </Recomiendo_Menus>
+  </modules>
+  <global>
+    <catalog>
+      <product>
+        <type>
+          <menu translate="label" module="recomiendo_menus">
+            <label>Menu Recomiendo</label>
+            <model>recomiendo_menus/product_type_menuable</model>
+            <is_qty>0</is_qty>
+            <composite>0</composite>
+            <can_use_qty_decimals>0</can_use_qty_decimals>
+          </menu>
+        </type>
+      </product>
+    </catalog>
+    <models>
+      <recomiendo_menus>
+        <class>Recomiendo_Menus_Model</class>
+        <resourceModel>menus_resource</resourceModel>
+      </recomiendo_menus>
+      <menus_resource>
+        <class>Recomiendo_Menus_Model_Resource</class>
+        <entities>
+          <relation_menu_recipe>
+            <table>recomiendo_menu_recipe</table>
+          </relation_menu_recipe>
+          <relation_menu_recipe>
+            <table>recomiendo_menu_recipe</table>
+          </relation_menu_recipe>
+        </entities>
+      </menus_resource>
+    </models>
+    <resources>
+      <recomiendo_menus_setup>
+        <setup>
+          <module>Recomiendo_Menus</module>
+          <class>Mage_Core_Model_Resource_Setup</class>
+        </setup>
+      </recomiendo_menus_setup>
+    </resources>
+    <blocks>
+      <recomiendo_menus>
+        <class>Recomiendo_Menus_Block</class>
+      </recomiendo_menus>
+      <adminhtml>
+        <rewrite>
+          <catalog_product_edit_tabs>Recomiendo_Menus_Block_Adminhtml_Tabs</catalog_product_edit_tabs>
+        </rewrite>
+      </adminhtml>
+    </blocks>
+    <helpers>
+      <recomiendo_menus>
+        <class>Recomiendo_Menus_Helper</class>
+      </recomiendo_menus>
+    </helpers>
+  </global>
+  <adminhtml>
+    <layout>
+      <updates>
+        <recomiendo_menus>
+          <file>recomiendo/menus.xml</file>
+        </recomiendo_menus>
+      </updates>
+    </layout>
+    <events>
+      <catalog_product_save_after>
+        <observers>
+          <setlunch_observer>
+            <!--type>singleton</type-->
+            <class>recomiendo_menus/observer</class>
+            <method>setRecipesPerMenuLunch</method>
+          </setlunch_observer>
+          <setdinner_observer>
+            <type>singleton</type>
+            <class>recomiendo_menus/observer</class>
+            <method>setRecipesPerMenuDinner</method>
+          </setdinner_observer>
+        </observers>
+      </catalog_product_save_after>
+    </events>
+  </adminhtml>
+  <admin>
+    <routers>
+      <adminhtml>
+        <args>
+          <modules>
+            <Recomiendo_Menus before="Mage_Adminhtml">Recomiendo_Menus_Adminhtml</Recomiendo_Menus>
+          </modules>
+        </args>
+      </adminhtml>
+    </routers>
+  </admin>
+</config>
