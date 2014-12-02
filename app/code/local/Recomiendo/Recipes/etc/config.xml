@@ -9,7 +9,7 @@
 <config>
   <modules>
     <Recomiendo_Recipes>
-      <version>1.3.0</version>
+      <version>1.4.0</version>
     </Recomiendo_Recipes>
   </modules>
   <global>
@@ -83,6 +83,9 @@
           <relation_ingredienttype_ingredient>
             <table>recomiendo_ingredient_type_ingredient</table>
           </relation_ingredienttype_ingredient>
+          <relation_recipe_image>
+            <table>recomiendo_recipe_image</table>
+          </relation_recipe_image>
           <relation_provider_ingredient>
             <table>recomiendo_provider_ingredient</table>
           </relation_provider_ingredient>
@@ -95,6 +98,9 @@
           <relation_recipe_socialgroup>
             <table>recomiendo_recipe_social_group</table>
           </relation_recipe_socialgroup>
+          <relation_traceability_ingredient>
+            <table>recomiendo_recipe_traceability_ingredient</table>
+          </relation_traceability_ingredient>
           <!--Relationships tables -->
 
         </entities>

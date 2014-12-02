@@ -116,6 +116,24 @@ class Recomiendo_Recipes_Adminhtml_RecipesController extends Recomiendo_Recipes_
   /**
    * Flush Ingredienttypes Posts Images Cache action, defined in parent, redefine it here if necesary
    */
+
+
+  /* Upload recipes method definition */
+
+  public function uploadAction()
+  {
+    try {
+      $result = Mage::helper('recomiendo_recipes')->uploadImage();
+    } catch (Exception $e) {
+      $result = array(
+        'error' => $e->getMessage(),
+        'errorcode' => $e->getCode());
+    }
+
+    $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+  }
+
+
 }
 
 ?>

@@ -1,0 +1,91 @@
+<?php
+/**
+ * @see Mage_Adminhtml_Block_Media_Uploader
+ */
+?>
+
+<?php $_block = $this; ?>
+<?php echo $_block->helper('adminhtml/js')->includeScript('lib/flex.js') ?>
+<?php echo $_block->helper('adminhtml/js')->includeScript('mage/adminhtml/flexuploader.js') ?>
+<?php echo $_block->helper('adminhtml/js')->includeScript('lib/FABridge.js') ?>
+
+<?php $_base_url = Mage::getSingleton('recomiendo_recipes/recipe_media_config')->getBaseMediaUrl(); ?>
+<?php $_image_rows = $this->getRecipeImages(); ?>
+<div class="grid">
+<table cellspacing="0" class="data border" id="<?php $_block->getHtmlId() ?>_grid" width="100%">
+    <thead>
+        <tr class="headings" style="text-align:center;">
+            <th style="text-align:center;"><?php echo Mage::helper('catalog')->__('Imagen') ?></th>
+            <th style="text-align:center;"><?php echo Mage::helper('catalog')->__('Orden') ?></th>
+            <!--th><?php //echo Mage::helper('catalog')->__('Label') ?></th-->
+            <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Eliminar') ?></th>
+        </tr>
+    </thead>
+    <tbody id="<?php echo $_block->getHtmlId() ?>_list">
+
+      <?php foreach($_image_rows as $i => $item) { ?>
+        <tr id="<?php echo $_block->getHtmlId() ?>_template" class="template">
+          <td style="text-align:center;" class="cell-image" width="200">
+            <div class="place-holder" onmouseover="<?php echo $_block->getJsObjectName(); ?>.loadImage('__file__')">
+            </div>
+            <img src="<?php echo $_base_url.$item['image_path'] ?>" width="200" alt="" id="">
+          </td>
+          <td class="cell-position" width="10">
+            <input type="text" value="<?php echo $i+1 ?>" class="input-text validate-number"/>
+          </td>
+          <!--td class="cell-label" width="300">
+            <input type="text" name="image_label_<?php //echo $item['recipe_image_id'] ?>" value="<?php //echo $item['label'] ?>" class="input-text"/>
+          </td-->
+          <td class="cell-remove a-center last" width="30">
+            <input type="checkbox" name="deleteImages[]" value="<?php echo $item['recipe_image_id'] ?>"/>
+            <input type="hidden" name="image_path_<?php echo $item['recipe_image_id'] ?>" value="<?php echo $item['image_path'] ?>" />
+          </td>
+        </tr>
+        <?php } ?>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="100" class="last" style="padding:8px">
+          <?php //echo $_block->getUploaderHtml() ?>
+          <div id="<?php echo $_block->getHtmlId() ?>" class="uploader">
+            <div class="buttons">
+              <?php /* buttons included in flex object */ ?>
+              <?php  /*echo $_block->getBrowseButtonHtml()*/  ?>
+              <?php  /*echo $_block->getUploadButtonHtml()*/  ?>
+              <div id="<?php echo $_block->getHtmlId() ?>-install-flash" style="display:none">
+                <?php echo Mage::helper('media')->__('This content requires last version of Adobe Flash Player. <a href="%s">Get Flash</a>', 'http://www.adobe.com/go/getflash/') ?>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="no-display" id="<?php echo $_block->getHtmlId() ?>-template">
+              <div id="{{id}}" class="file-row">
+                <span class="file-info">{{name}} ({{size}})</span>
+                <span class="delete-button"><?php echo $_block->getDeleteButtonHtml() ?></span>
+                <span class="progress-text"></span>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="no-display" id="<?php echo $_block->getHtmlId() ?>-template-progress">
+              {{percent}}% {{uploaded}} / {{total}}
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var maxUploadFileSizeInBytes = <?php echo $_block->getDataMaxSizeInBytes() ?>;
+var maxUploadFileSize = '<?php echo $_block->getDataMaxSize() ?>';
+
+<?php echo $_block->getJsObjectName() ?> = new Flex.Uploader('<?php echo $_block->getHtmlId() ?>', '<?php echo $_block->getUploaderUrl('media/uploader.swf') ?>', <?php echo $_block->getConfigJson() ?>);
+
+if (varienGlobalEvents) {
+    varienGlobalEvents.attachEventHandler('tabChangeBefore', <?php echo $_block->getJsObjectName() ?>.onContainerHideBefore);
+}
+
+//]]>
+</script>

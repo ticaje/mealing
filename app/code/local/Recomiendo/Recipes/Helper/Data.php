@@ -93,4 +93,49 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
 
     return $this->_{$instanceName};
   }
+
+  public function uploadImage()
+  {
+    $uploader = new Mage_Core_Model_File_Uploader('file');
+    $uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
+    $uploader->addValidateCallback('catalog_product_image',
+      Mage::helper('catalog/image'), 'validateUploadFile');
+    $uploader->setAllowRenameFiles(true);
+    $uploader->setFilesDispersion(true);
+    $result = $uploader->save(
+      Mage::getSingleton('recomiendo_recipes/recipe_media_config')->getBaseMediaPath()
+    );
+
+    $_session_handler = Mage::getSingleton('core/session');
+    /**
+     * Workaround for prototype 1.7 methods "isJSON", "evalJSON" on Windows OS
+     */
+    $result['tmp_name'] = str_replace(DS, "/", $result['tmp_name']);
+    $result['path'] = str_replace(DS, "/", $result['path']);
+
+    $result['url'] = Mage::getSingleton('recomiendo_recipes/recipe_media_config')->getMediaUrl($result['file']);
+    $result['insertion_name'] = $result['file'];
+    $result['file'] = $result['file'] . '.tmp';
+    $result['cookie'] = array(
+      'name'     => session_name(),
+      'value'    => $_session_handler->getSessionId(),
+      'lifetime' => $_session_handler->getCookieLifetime(),
+      'path'     => $_session_handler->getCookiePath(),
+      'domain'   => $_session_handler->getCookieDomain()
+    );
+
+    $_session = $_session_handler->getRecipeImagesUploaded();
+    $_session_values = array();
+
+    if ($_session){
+      $_session_values = $_session;
+      array_push($_session_values, $result);
+    }else{
+      $_session_values[] = $result;
+    }
+
+    $_session_handler->setRecipeImagesUploaded($_session_values);
+
+    return $result;
+  }
 }

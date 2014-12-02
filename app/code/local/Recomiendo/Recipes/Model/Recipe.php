@@ -39,11 +39,20 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
     $this->saveSteps($_steps->ssteps, "sstep");
     array_shift($_steps->esteps);
     $this->saveSteps($_steps->esteps, "estep");
+
+    $_del_images_ids = Mage::app()->getRequest()->getParam('deleteImages');
+    if ($_del_images_ids){
+      $this->deleteImages($_del_images_ids);
+    }
+
+    $_images_data = Mage::getSingleton('core/session')->getRecipeImagesUploaded();
+    if ($_images_data){
+      $this->saveImages($_images_data);
+    }
   }
 
   private function saveSteps($steps, $name)
   {
-
     $_id = $this->getRecipeId();
     if (count($steps) > 0 ){
 
@@ -61,6 +70,31 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
           ->save();
       }
     }
-
   }
+
+  private function saveImages($images)
+  {
+    foreach ($images as $item){
+      Mage::getModel('recomiendo_recipes/relation_recipe_image')
+        ->setRecipeId($this->getId())
+        ->setImagePath($item['insertion_name'])
+        ->save();
+    }
+    Mage::getSingleton('core/session')->unsRecipeImagesUploaded();
+  }
+
+  private function deleteImages($toDel)
+  {
+    foreach ($toDel as $item){
+      $_param = 'image_path_'.$item;
+      $_path = Mage::app()->getRequest()->getParam($_param);
+      $_full_path = Mage::getSingleton('recomiendo_recipes/recipe_media_config')->getBaseMediaPath().$_path;
+      if (Mage::getResourceModel('recomiendo_recipes/relation_recipe_image_collection')
+        ->addFieldToFilter('recipe_image_id', $item)
+        ->walk('delete')){
+          unlink($_full_path);
+        }
+    }
+  }
+
 }
