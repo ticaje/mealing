@@ -40,6 +40,11 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
     array_shift($_steps->esteps);
     $this->saveSteps($_steps->esteps, "estep");
 
+    $this->saveRelationships();
+  }
+
+  private function saveRelationships()
+  {
     $_del_images_ids = Mage::app()->getRequest()->getParam('deleteImages');
     if ($_del_images_ids){
       $this->deleteImages($_del_images_ids);
@@ -53,6 +58,32 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
     $_ingredients = $this->getRecipeIngredients();
     array_shift($_ingredients['ingredients']);
     $this->saveIngredients($_ingredients['ingredients']);
+
+    $_utils = $this->getUtils();
+    $this->saveCodifier("util", "UtilId", $_utils);
+
+    $_groups = $this->getSocialgroups();
+    $this->saveCodifier("socialgroup", "SocialgroupId", $_groups);
+
+    $_types = $this->getRecipetypes();
+    $this->saveCodifier("recipetype", "RecipetypeId", $_types);
+  }
+
+  private function saveCodifier($entity, $field, $values)
+  {
+    $_id = $this->getRecipeId();
+    Mage::getModel('recomiendo_recipes/relation_recipe_'.$entity)
+      ->getCollection()
+      ->addFieldToFilter('recipe_id', $_id)
+      ->walk('delete');
+
+    $setter = 'set'.$field;
+    foreach ($values as $item){
+      Mage::getModel('recomiendo_recipes/relation_recipe_'.$entity)
+        ->setRecipeId($_id)
+        ->{$setter}($item)
+        ->save();
+    }
   }
 
   private function saveIngredients($ingredients)
@@ -131,4 +162,21 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
     return $sel->getData();
   }
 
+  public function getEntityValuesForForm($entityName, $entityId, $entity, $label)
+  {
+    $_entityCollection = Mage::getResourceModel('recomiendo_recipes/codifier_'.$entityName.'_collection');
+
+    $_get_entity       = 'get'.$entity;
+    $_get_entity_label = 'get'.$label;
+    foreach($_entityCollection as  $item){
+      $arr['value'] =  $item->{$_get_entity}();
+      $arr['label'] =  ucfirst($item->{$_get_entity_label}());
+      $res[]        = $arr;
+    }
+    $sel = Mage::getResourceModel('recomiendo_recipes/relation_recipe_'.$entityName.'_collection');
+    $result['selected'] = $sel->getValuesSelected($entityId);
+    $result['values']   = $res;
+
+    return $result;
+  }
 }

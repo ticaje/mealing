@@ -25,4 +25,13 @@ class Recomiendo_Recipes_Model_Resource_Relation_Recipe_Socialgroup_Collection e
         $this->setPageSize(Mage::helper('recomiendo_recipes')->getRecipeSocialgroupPerPage());
         return $this;
     }
+
+    public function getValuesSelected($recipeId)
+    {
+      $this->addFieldToFilter('recipe_id', $recipeId);
+      foreach ($this as $item){
+        $result[] = $item->getSocialgroupId();
+      }
+      return $result;
+    }
 }

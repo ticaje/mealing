@@ -38,11 +38,13 @@
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_presentation" name="recipes_edit_tab_presentation" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_preparation" name="recipes_edit_tab_preparation" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_image_container" name="recipes_edit_tab_image" />
+        <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_others" name="recipes_edit_tab_others" />
         <action method="addTab"><name>main_section</name><block>recipes_edit_tab_main</block></action>
         <action method="addTab"><name>ingredients_section</name><block>recipes_edit_tab_ingredients</block></action>
         <action method="addTab"><name>preparation_section</name><block>recipes_edit_tab_preparation</block></action>
         <action method="addTab"><name>elaboration_section</name><block>recipes_edit_tab_elaboration</block></action>
         <action method="addTab"><name>presentation_section</name><block>recipes_edit_tab_presentation</block></action>
+        <action method="addTab"><name>others_section</name><block>recipes_edit_tab_others</block></action>
         <action method="addTab"><name>image_section</name><block>recipes_edit_tab_image</block></action>
       </block>
     </reference>
@@ -265,34 +267,34 @@
   <!--Providers blocks-->
 
   <!--Recipe Classifications blocks-->
-  <recomiendo_rclassifications_index>
+  <recomiendo_recipetypes_index>
     <reference name="content">
-      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications" name="rclassifications" />
+      <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes" name="recipetypes" />
     </reference>
-  </recomiendo_rclassifications_index>
+  </recomiendo_recipetypes_index>
 
-  <recomiendo_rclassifications_grid>
-    <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_grid" name="root"/>
-  </recomiendo_rclassifications_grid>
+  <recomiendo_recipetypes_grid>
+    <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes_grid" name="root"/>
+  </recomiendo_recipetypes_grid>
 
-  <recomiendo_rclassifications_new>
-    <update handle="adminhtml_rclassifications_edit" />
-  </recomiendo_rclassifications_new>
+  <recomiendo_recipetypes_new>
+    <update handle="adminhtml_recipetypes_edit" />
+  </recomiendo_recipetypes_new>
 
-  <recomiendo_rclassifications_edit>
+  <recomiendo_recipetypes_edit>
     <update handle="editor"/>
     <reference name="content">
-      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit" name="rclassifications_edit" />
+      <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes_edit" name="recipetypes_edit" />
     </reference>
     <reference name="left">
-      <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tabs" name="rclassifications_edit_tabs">
-        <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tab_main" name="rclassifications_edit_tab_main" />
-        <block type="recomiendo_recipes_rclassifications/adminhtml_rclassifications_edit_tab_content" name="rclassifications_edit_tab_content" />
-        <action method="addTab"><name>main_section</name><block>rclassifications_edit_tab_main</block></action>
-        <!--action method="addTab"><name>content_section</name><block>rclassifications_edit_tab_content</block></action-->
+      <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes_edit_tabs" name="recipetypes_edit_tabs">
+        <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes_edit_tab_main" name="recipetypes_edit_tab_main" />
+        <block type="recomiendo_recipes_recipetypes/adminhtml_recipetypes_edit_tab_content" name="recipetypes_edit_tab_content" />
+        <action method="addTab"><name>main_section</name><block>recipetypes_edit_tab_main</block></action>
+        <!--action method="addTab"><name>content_section</name><block>recipetypes_edit_tab_content</block></action-->
       </block>
     </reference>
-  </recomiendo_rclassifications_edit>
+  </recomiendo_recipetypes_edit>
   <!--Recipe Classifications blocks-->
 
   <!--Traceabilities blocks-->

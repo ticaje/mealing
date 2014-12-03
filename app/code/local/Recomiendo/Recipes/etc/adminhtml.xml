@@ -52,15 +52,15 @@
           <action>recomiendo/providers</action>
           <sort_order>39</sort_order>
         </provider>
-        <rclassification translate="title" module="recomiendo_recipes">
+        <recipetype translate="title" module="recomiendo_recipes">
           <title>Clasificación Recetas</title>
-          <action>recomiendo/rclassifications</action>
+          <action>recomiendo/recipetypes</action>
           <sort_order>40</sort_order>
-        </rclassification>
+        </recipetype>
         <traceability translate="title" module="recomiendo_recipes">
           <title>Trazabilidad</title>
           <action>recomiendo/traceabilities</action>
-          <sort_order>42</sort_order>
+          <sort_order>41</sort_order>
         </traceability>
       </children>
     </recipes>

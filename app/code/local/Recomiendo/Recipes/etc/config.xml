@@ -71,9 +71,6 @@
           <codifier_traceability>
             <table>recomiendo_traceability</table>
           </codifier_traceability>
-          <codifier_rclassification>
-            <table>recomiendo_recipe_classification</table>
-          </codifier_rclassification>
           <!--Codifiers tables -->
 
           <!--Relationships tables -->
@@ -149,9 +146,9 @@
       <recomiendo_recipes_providers>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_providers>
-      <recomiendo_recipes_rclassifications>
+      <recomiendo_recipes_recipetypes>
         <class>Recomiendo_Recipes_Block</class>
-      </recomiendo_recipes_rclassifications>
+      </recomiendo_recipes_recipetypes>
       <recomiendo_recipes_traceabilities>
         <class>Recomiendo_Recipes_Block</class>
       </recomiendo_recipes_traceabilities>
