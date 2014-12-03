@@ -49,6 +49,33 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
     if ($_images_data){
       $this->saveImages($_images_data);
     }
+
+    $_ingredients = $this->getRecipeIngredients();
+    array_shift($_ingredients['ingredients']);
+    $this->saveIngredients($_ingredients['ingredients']);
+  }
+
+  private function saveIngredients($ingredients)
+  {
+    $_id = $this->getRecipeId();
+
+    Mage::getModel('recomiendo_recipes/relation_recipe_ingredient')
+      ->getCollection()
+      ->addFieldToFilter('recipe_id', $_id)
+      ->walk('delete');
+
+    foreach ($ingredients as $ingredient){
+      Mage::getModel('recomiendo_recipes/relation_recipe_ingredient')
+        ->setRecipeId($_id)
+        ->setIngredientId($ingredient['ingredient'])
+        ->setFrontendLabel($ingredient['frontend_label'])
+        ->setMeasureUnit($ingredient['measure_unit'])
+        ->setMeasureOnePerson($ingredient['measure_one_person'])
+        ->setMeasureTwoPersons($ingredient['measure_two_persons'])
+        ->setMeasureThreePersons($ingredient['measure_three_persons'])
+        ->setMeasureFourPersons($ingredient['measure_four_persons'])
+        ->save();
+    }
   }
 
   private function saveSteps($steps, $name)
@@ -95,6 +122,13 @@ class Recomiendo_Recipes_Model_Recipe extends Mage_Core_Model_Abstract
           unlink($_full_path);
         }
     }
+  }
+
+  public function getIngredients()
+  {
+    $sel = Mage::getResourceModel('recomiendo_recipes/relation_recipe_ingredient_collection')
+      ->addFieldToFilter('recipe_id', $this->getId());
+    return $sel->getData();
   }
 
 }

@@ -46,7 +46,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Providers_Edit_Tab_Ingredients
         ));
 
         $_id = $this->getRequest()->getParams('params')['id'];
-        $ingredients = $model->getIngredientsValuesForForm($_id);
+        $ingredients = $model->getIngredientsValuesForForm("relation_provider_ingredient", $_id);
 
         $fieldset->addField('ingredients', 'multiselect', array(
           'name'     => 'ingredients[]',

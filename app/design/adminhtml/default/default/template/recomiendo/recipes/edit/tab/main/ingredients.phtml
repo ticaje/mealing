@@ -1,0 +1,122 @@
+<?php
+/**
+ * Héctor Luis Barrientos
+ *
+ */
+?>
+
+<?php $_htmlId      = "recipe_ingredients"; ?>
+<?php $_htmlName    = "recipe_ingredients[ingredients]"; ?>
+<?php $_readonly    = false; ?>
+
+<div class="grid">
+  <table cellspacing="0" class="data border" id="<?php $_htmlId ?>_grid" width="100%">
+    <thead>
+      <tr class="headings" style="text-align:center;">
+        <th style="text-align:center;"><?php echo Mage::helper('catalog')->__('Ingrediente') ?></th>
+        <th style="text-align:center;"><?php echo Mage::helper('catalog')->__('Etiqueta Frontend') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Unidad Medida') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Cantidad 1P') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Cantidad 2P') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Cantidad 3P') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Cantidad 4P') ?></th>
+        <th style="text-align:center;" class="last"><?php echo Mage::helper('catalog')->__('Eliminar') ?></th>
+      </tr>
+      <tr id="<?php echo $_htmlId ?>_add_template" class="template no-display">
+        <?php echo $this->createContentBlock($_htmlName) ?>
+        <td style="" class="">
+          <input type="hidden" name="<?php echo $_htmlName ?>[__index__][delete]" class="delete" disabled="no-template" value="" />
+          <button title="Delete Rule" class="scalable delete icon-btn delete-product-option" onclick="ingredientsHandler.deleteItem(event);return false">
+            <span>Delete</span>
+          </button>
+        </td>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="12" class="a-left"><?php echo $this->getChildHtml('add_button') ?></td>
+      </tr>
+    </tfoot>
+    <tbody name="<?php echo $_htmlId ?>_container" id="<?php echo $_htmlId ?>_container">
+    </tbody>
+  </table>
+
+<script type="text/javascript">
+//<![CDATA[
+var ingredientsHandler = {
+  template : new Template('<tr style="border: 1px red solid;">' + $('<?php echo $_htmlId ?>_add_template').innerHTML.replace(/__index__/g, '#{index}').replace(/ disabled="?no-template"?/g, '').replace(/ disabled/g, '').replace(/="'([^']*)'"/g, '="$1"') + '</tr>'),
+    itemsCount : 0,
+    deleteButton: false,
+    addItem  : function () {
+      <?php if ($_readonly): ?>
+      if (arguments.length < 5) {
+        return;
+      }
+
+      <?php endif; ?>
+      data = {};
+
+      data.index = this.itemsCount++;
+
+      if(arguments.length >= 0) {
+        data.ingredient_id         = arguments[0];
+        data.frontend_label        = arguments[1];
+        data.measure_unit          = arguments[2];
+        data.measure_one_person    = arguments[3];
+        data.measure_two_persons   = arguments[4];
+        data.measure_three_persons = arguments[5];
+        data.measure_four_persons  = arguments[6];
+      }
+      Element.insert($('<?php echo $_htmlId ?>_container'), {'bottom':this.template.evaluate(data)});
+
+      $('ingredients_row_'+data.index+'_ingredient').setValue(data.ingredient_id);
+      $('ingredients_row_'+data.index+'_frontend_label').setValue(data.frontend_label);
+      $('ingredients_row_'+data.index+'_measure_unit').setValue(data.measure_unit);
+      $('ingredients_row_'+data.index+'_measure_one_person').setValue(data.measure_one_person);
+      $('ingredients_row_'+data.index+'_measure_two_persons').setValue(data.measure_two_persons);
+      $('ingredients_row_'+data.index+'_measure_three_persons').setValue(data.measure_three_persons);
+      $('ingredients_row_'+data.index+'_measure_four_persons').setValue(data.measure_four_persons);
+
+    },
+      enableElement: function(elem) {
+        elem.disabled = false
+          elem.removeClassName('disabled');
+      },
+        deleteItem : function(event) {
+          var tr = Event.findElement(event, 'tr');
+          if (tr) {
+            tr.parentNode.removeChild(tr);
+          }
+        }
+}
+
+<?php foreach ($this->getRecipeIngredients() as $_item): ?>
+ingredientsHandler.addItem(
+  <?php echo json_encode($_item['ingredient_id']) ?>,
+  <?php echo json_encode($_item['frontend_label']) ?>,
+  <?php echo json_encode($_item['measure_unit']) ?>,
+  <?php echo json_encode($_item['measure_one_person']) ?>,
+  <?php echo json_encode($_item['measure_two_persons']) ?>,
+  <?php echo json_encode($_item['measure_three_persons']) ?>,
+  <?php echo json_encode($_item['measure_four_persons']) ?>,
+  true
+);
+<?php endforeach; ?>
+<?php if ($_readonly): ?>
+$('<?php echo $_htmlId ?>_container').up('table').select('button')
+  .each(price.disableElement);
+<?php endif; ?>
+//]]>
+
+</script>
+
+</div>
+<style>
+.steps textarea{ width: 50%; position: relative; top: 20px; }
+.steps input.order{ width: 15px; }
+.steps input.name{ width: 30%; }
+.steps span{ padding: 0 5px; }
+#steps button.add{ position: relative; top: 30px; left: 10px; }
+</style>
+
+

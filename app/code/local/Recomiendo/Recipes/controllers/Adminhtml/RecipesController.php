@@ -11,7 +11,7 @@ class Recomiendo_Recipes_Adminhtml_RecipesController extends Recomiendo_Recipes_
   /* Define general variables based on refactoring */
   protected $_currentEntity          = "Recetas";
   protected $_currentEntityModelName = "recomiendo_recipes/recipe";
-  protected $_titleLabel             = "Rectas";
+  protected $_titleLabel             = "Recetas";
   protected $_registeringEntityName  = "recipes_item";
   protected $_getParamId             = "recipe_id";
 
@@ -77,8 +77,9 @@ class Recomiendo_Recipes_Adminhtml_RecipesController extends Recomiendo_Recipes_
         $this->_getSession()->addError($e->getMessage());
       } catch (Exception $e) {
         $hasError = true;
+
         $this->_getSession()->addException($e,
-          Mage::helper('recomiendo_recipes')->__('Ha ocurrido un error al guardar la entitdad %s',  $this->_titleLabel)
+          Mage::helper('recomiendo_recipes')->__('Ha ocurrido un error al guardar la entidad %s',  $this->_titleLabel)
         );
       }
 

@@ -33,11 +33,13 @@
     <reference name="left">
       <block type="recomiendo_recipes/adminhtml_recipes_edit_tabs" name="recipes_edit_tabs">
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_main" name="recipes_edit_tab_main" />
+        <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_ingredients" name="recipes_edit_tab_ingredients" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_elaboration" name="recipes_edit_tab_elaboration" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_presentation" name="recipes_edit_tab_presentation" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_preparation" name="recipes_edit_tab_preparation" />
         <block type="recomiendo_recipes/adminhtml_recipes_edit_tab_image_container" name="recipes_edit_tab_image" />
         <action method="addTab"><name>main_section</name><block>recipes_edit_tab_main</block></action>
+        <action method="addTab"><name>ingredients_section</name><block>recipes_edit_tab_ingredients</block></action>
         <action method="addTab"><name>preparation_section</name><block>recipes_edit_tab_preparation</block></action>
         <action method="addTab"><name>elaboration_section</name><block>recipes_edit_tab_elaboration</block></action>
         <action method="addTab"><name>presentation_section</name><block>recipes_edit_tab_presentation</block></action>
