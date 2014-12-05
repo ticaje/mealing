@@ -322,12 +322,10 @@ $table = $installer->getConnection()
   ), 'Provider Id')
   ->addColumn('stock_number', Varien_Db_Ddl_Table::TYPE_VARCHAR, 255, array(
   ), 'Stock Number')
-  ->addColumn('expires_on', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
-  ), 'Expiring Date')
+  ->addColumn('invoice_type', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+  ), 'Invoice Type')
   ->addColumn('adquired_on', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
   ), 'Adquiring Date')
-  ->addColumn('operations', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
-  ), 'Operations')
   ->addColumn('file', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
   ), 'Archive')
   ->addIndex($installer->getIdxName('recomiendo_recipes/codifier_traceability', array('provider_id')),

@@ -4,11 +4,13 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-Class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Grid extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid
+class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Grid extends Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid
 {
 
   protected $_listIdString = 'traceabilities_list_grid';
   protected $_modelName    = 'recomiendo_recipes/codifier_traceability';
+  protected $_collection_default_sort_field = "adquired_on";
+  protected $_collection_default_sort_direction = "DESC";
 
   /**
    * Prepare collection for Grid
@@ -29,24 +31,29 @@ Class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Grid extends Recomiendo_
       'index'     => 'traceability_id',
     ));
 
-    $this->addColumn('provider', array(
+    $this->addColumn('provider_id', array(
       'header'    => Mage::helper('recomiendo_recipes')->__('Proveedor'),
-      'index'     => 'provider',
+      'index'     => 'provider_id',
+      'renderer'  => new Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Providers(),
     ));
 
-    $this->addColumn('ingredient', array(
-      'header'    => Mage::helper('recomiendo_recipes')->__('Ingrediente'),
-      'index'     => 'ingredient',
+    $this->addColumn('invoice_type', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Tipo Factura'),
+      'index'     => 'invoice_type',
+      'type'      => 'options',
+      'renderer'  => new Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Invoicetypes(),
+      'options'   => Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Invoicetypes::getInvoicetypesArray(),
     ));
 
-    $this->addColumn('stock_number', array(
-      'header'    => Mage::helper('recomiendo_recipes')->__('Número de Lote'),
-      'index'     => 'stock_number',
+    $this->addColumn('invoice_number', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Número de Factura'),
+      'index'     => 'invoice_number',
     ));
 
-    $this->addColumn('expires_on', array(
-      'header'    => Mage::helper('recomiendo_recipes')->__('Fecha de caducidad'),
-      'index'     => 'expires_on',
+    $this->addColumn('adquired_on', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Fecha de Adquisición'),
+      'index'     => 'adquired_on',
+      'type'      => 'datetime',
     ));
 
     return parent::_prepareColumns();

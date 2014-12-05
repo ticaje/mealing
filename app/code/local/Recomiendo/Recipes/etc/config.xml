@@ -188,6 +188,10 @@
         <items_per_page>20</items_per_page>
         <days_difference>7</days_difference>
       </view>
+      <codifier>
+        <enabled>1</enabled>
+        <upload_allowed_extensions>pdf, jpg</upload_allowed_extensions>
+      </codifier>
     </recipes>
   </default>
 </config>

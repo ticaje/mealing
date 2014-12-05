@@ -8,6 +8,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Ingredients extends Re
 {
 
   protected $_entityLabel = "Ingredientes";
+  protected $_id;
   /**
    * Prepare form elements for tab
    *
@@ -24,13 +25,13 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Ingredients extends Re
         'onclick'   => 'ingredientsHandler.addItem()',
         'class' => 'add'
       )));
+    $this->_id = $this->getRequest()->getParams('params')['id'];
     parent::_prepareLayout();
   }
 
   protected function getIngredientsForSelect()
   {
-    $model       = Mage::helper('recomiendo_recipes')->getEntityItemInstance("recipeItemInstance", "recipes_item");
-    $ingredients = Mage::getSingleton('recomiendo_recipes/codifier_ingredient')->getIngredientsValuesForForm("relation_recipe_ingredient", $model->getId());
+    $ingredients = Mage::getSingleton('recomiendo_recipes/codifier_ingredient')->getIngredientsValuesForForm("relation_recipe_ingredient", $this->_id);
     return $ingredients;
   }
 
@@ -51,10 +52,10 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Ingredients extends Re
     $_ingredients = $this->getIngredientsForSelect();
     $values = "";
     foreach($_ingredients['values'] as $item){
-        $value    = $item['value'];
-        $label    = $item['label'];
-        $selected = in_array($item['selected'], $item['value']) ? 'selected="selected"' : '';
-        $values .= '<option value="'.$value.'" '.$selected.'>'.$label.'</option>';
+      $value    = $item['value'];
+      $label    = $item['label'];
+      $selected = in_array($item['selected'], $item['value']) ? 'selected="selected"' : '';
+      $values .= '<option value="'.$value.'" '.$selected.'>'.$label.'</option>';
     }
     $html = '
       <td>

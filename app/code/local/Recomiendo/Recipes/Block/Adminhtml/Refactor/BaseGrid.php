@@ -30,10 +30,15 @@ class Recomiendo_Recipes_Block_Adminhtml_Refactor_BaseGrid extends Mage_Adminhtm
      */
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel($this->_modelName)->getResourceCollection();
-
-        $this->setCollection($collection);
-        return parent::_prepareCollection();
+      $collection = Mage::getModel($this->_modelName)->getResourceCollection();
+      if (!empty($this->_collection_default_sort_field)){
+        $collection->setCurPage($this->getCurrentPage())
+          ->setOrder($this->_collection_default_sort_field, $this->_collection_default_sort_direction);
+      }else{
+        $collection->setCurPage($this->getCurrentPage());
+      }
+      $this->setCollection($collection);
+      return parent::_prepareCollection();
     }
 
     /**

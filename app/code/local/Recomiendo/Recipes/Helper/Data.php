@@ -138,4 +138,16 @@ class Recomiendo_Recipes_Helper_Data extends Mage_Core_Helper_Data
 
     return $result;
   }
+
+  public function uploadFile($entity, $arg, $extensions)
+  {
+    $uploader = new Mage_Core_Model_File_Uploader($arg);
+    $uploader->setAllowedExtensions($extensions);
+    $uploader->setAllowRenameFiles(true);
+    $uploader->setFilesDispersion(true);
+    $result = $uploader->save(
+      Mage::getSingleton('recomiendo_recipes/'.$entity)->getBaseMediaPath()
+    );
+    return $result;
+  }
 }

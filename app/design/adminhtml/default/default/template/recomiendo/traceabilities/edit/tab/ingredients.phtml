@@ -1,0 +1,106 @@
+<?php
+/**
+ * Héctor Luis Barrientos
+ *
+ */
+?>
+
+<?php $_htmlId      = "traceability_ingredients"; ?>
+<?php $_htmlName    = "traceability_ingredients[ingredients]"; ?>
+<?php $_readonly    = false; ?>
+
+<div class="grid">
+  <table cellspacing="0" class="data border" id="<?php $_htmlId ?>_grid" width="100%">
+    <thead>
+      <tr class="headings" style="text-align:center;">
+        <th style="text-align:center; width: 10%"><?php echo Mage::helper('catalog')->__('Ingrediente') ?></th>
+        <th style="text-align:center; width:10%"><?php echo Mage::helper('catalog')->__('Número Lote') ?></th>
+        <th style="text-align:center; width:10%" class=""><?php echo Mage::helper('catalog')->__('Fecha Caducidad') ?></th>
+        <th style="text-align:center; width:80%" class=""><?php echo Mage::helper('catalog')->__('Operaciones') ?></th>
+        <th style="text-align:center;" class=""><?php echo Mage::helper('catalog')->__('Eliminar') ?></th>
+      </tr>
+      <tr id="<?php echo $_htmlId ?>_add_template" class="template no-display">
+        <?php echo $this->createContentBlock($_htmlName) ?>
+        <td style="text-align:center;" class="">
+          <input type="hidden" name="<?php echo $_htmlName ?>[__index__][delete]" class="delete" disabled="no-template" value="" />
+          <button title="Delete Rule" class="scalable delete icon-btn delete-product-option" onclick="ingredientsHandler.deleteItem(event);return false">
+            <span>Delete</span>
+          </button>
+        </td>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td style="text-align:center;" colspan="12" class="a-left"><?php echo $this->getChildHtml('add_button') ?></td>
+      </tr>
+    </tfoot>
+    <tbody name="<?php echo $_htmlId ?>_container" id="<?php echo $_htmlId ?>_container">
+    </tbody>
+  </table>
+
+<script type="text/javascript">
+//<![CDATA[
+var ingredientsHandler = {
+  template : new Template('<tr style="border: 1px red solid;">' + $('<?php echo $_htmlId ?>_add_template').innerHTML.replace(/__index__/g, '#{index}').replace(/ disabled="?no-template"?/g, '').replace(/ disabled/g, '').replace(/="'([^']*)'"/g, '="$1"') + '</tr>'),
+    itemsCount : 0,
+    deleteButton: false,
+    addItem  : function () {
+      <?php if ($_readonly): ?>
+      if (arguments.length < 5) {
+        return;
+      }
+
+      <?php endif; ?>
+      data = {};
+
+      data.index = this.itemsCount++;
+
+      if(arguments.length >= 0) {
+        data.ingredient_id         = arguments[0];
+        data.stock_number          = arguments[1];
+        data.expires_on            = arguments[2];
+        data.operations            = arguments[3];
+      }
+      Element.insert($('<?php echo $_htmlId ?>_container'), {'bottom':this.template.evaluate(data)});
+
+      $('ingredients_row_'+data.index+'_ingredient').setValue(data.ingredient_id);
+      $('ingredients_row_'+data.index+'_stock_number').setValue(data.stock_number);
+      $('ingredients_row_'+data.index+'_expires_on').setValue(data.expires_on);
+      $('ingredients_row_'+data.index+'_operations').setValue(data.operations);
+
+    },
+      enableElement: function(elem) {
+        elem.disabled = false
+          elem.removeClassName('disabled');
+      },
+        deleteItem : function(event) {
+          var tr = Event.findElement(event, 'tr');
+          if (tr) {
+            tr.parentNode.removeChild(tr);
+          }
+        }
+}
+
+<?php foreach ($this->getTraceabilityIngredients() as $_item): ?>
+ingredientsHandler.addItem(
+  <?php echo json_encode($_item['ingredient_id']) ?>,
+  <?php echo json_encode($_item['stock_number']) ?>,
+  <?php echo json_encode($this->displayFormatedDate($_item['expires_on']))?>,
+  <?php echo json_encode($_item['operations']) ?>,
+  true
+);
+<?php endforeach; ?>
+<?php if ($_readonly): ?>
+$('<?php echo $_htmlId ?>_container').up('table').select('button')
+  .each(price.disableElement);
+<?php endif; ?>
+//]]>
+
+</script>
+
+</div>
+<style>
+#traceability_ingredients_container textarea{ width: 95%; }
+</style>
+
+

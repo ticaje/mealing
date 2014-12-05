@@ -26,7 +26,13 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Edit_Tab_Main extends Re
             $isElementDisabled = true;
         }
 
-        $form = new Varien_Data_Form();
+        //$form = new Varien_Data_Form();
+        $form = new Varien_Data_Form(
+          array(
+            'method' => 'post',
+            'enctype' => 'multipart/form-data'
+          )
+        );
 
         $form->setHtmlIdPrefix('traceabilities_main_');
 
@@ -38,11 +44,24 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Edit_Tab_Main extends Re
             $fieldset->addField('traceability_id', 'hidden', array(
                 'name' => 'traceability_id',
             ));
-            $providerId   = $model->getProviderId();
-            $ingredientId = $model->getIngredientId();
+            $data = $model->getData();
         }
-        else{
-        }
+
+        $invoicetypes = Recomiendo_Recipes_Model_Codifier_Traceability::getInvoiceTypes();
+        $fieldset->addField('invoice_type', 'select', array(
+          'label'    => Mage::helper('recomiendo_recipes')->__('Tipo de Documento'),
+          'class'    => 'required-entry validate-select',
+          'values'   => $invoicetypes,
+          'required' => true,
+          'name'     => 'invoice_type',
+        ));
+
+        $fieldset->addField('invoice_number', 'text', array(
+          'name'     => 'invoice_number',
+          'label'    => Mage::helper('recomiendo_recipes')->__('Numero de Documento'),
+          'required' => true,
+          'disabled' => $isElementDisabled
+        ));
 
         $params = array("idname" => "ProviderId", "label" => "Name");
         $n_providers = Mage::helper('recomiendo_recipes/admin')->normalizeCollectionArrayForSelect("codifier_provider", $params);
@@ -56,46 +75,6 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Edit_Tab_Main extends Re
           'name'     => 'provider_id',
         ));
 
-        $params        = array("idname" => "IngredientId", "label" => "Name");
-        $n_ingredients = Mage::helper('recomiendo_recipes/admin')->normalizeCollectionArrayForSelect("codifier_ingredient", $params);
-        $ingredients   = $n_ingredients['values'];
-        $fieldset->addField('ingredient_id', 'select', array(
-          'label'    => Mage::helper('recomiendo_recipes')->__('Ingrediente'),
-          'class'    => 'required-entry',
-          'values'   => $ingredients,
-          'required' => true,
-          'name'     => 'ingredient_id',
-        ));
-
-        $fieldset->addField('stock_number', 'text', array(
-          'name'     => 'stock_number',
-          'label'    => Mage::helper('recomiendo_recipes')->__('Numero de Lote'),
-          'required' => true,
-          'disabled' => $isElementDisabled
-        ));
-
-        $fieldset->addField('expires_on', 'date', array(
-          'name'     => 'expires_on',
-          'format'   => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM),
-          'image'    => $this->getSkinUrl('images/grid-cal.gif'),
-          'label'    => Mage::helper('recomiendo_recipes')->__('Fecha Caducidad'),
-          'required' => true
-        ));
-
-        $fieldset->addField('operations', 'textarea', array(
-          'name'     => 'operations',
-          'label'    => Mage::helper('recomiendo_recipes')->__('Operaciones'),
-          'required' => false,
-          'disabled' => $isElementDisabled
-        ));
-
-        $fieldset->addField('file', 'file', array(
-          'name'     => 'file',
-          'label'    => Mage::helper('recomiendo_recipes')->__('Archivo'),
-          'required' => false,
-          'disabled' => $isElementDisabled
-        ));
-
         $fieldset->addField('adquired_on', 'date', array(
           'name'     => 'adquired_on',
           'format'   => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM),
@@ -104,14 +83,22 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Edit_Tab_Main extends Re
           'required' => true
         ));
 
-        Mage::dispatchEvent('adminhtml_traceabilities_edit_tab_main_prepare_form', array('form' => $form));
+        $fieldset->addType('file', Mage::getConfig()->getBlockClassName('recomiendo_recipes/adminhtml_traceabilities_helper_file'));
+        $fieldset->addField('document', 'file', array(
+          'name'     => 'document',
+          'label'    => Mage::helper('recomiendo_recipes')->__('Archivo'),
+          'required' => false,
+          'showing'  => $data['invoice_number'],
+          'file'     => $data['file'],
+        ));
+        $url = Mage::getSingleton('recomiendo_recipes/codifier_traceability_media_config')->getBaseMediaUrl();
+        $data['document'] = $url.$data['file'];
 
-        $data = $model->getData();
         $form->setValues($data);
         $this->setForm($form);
 
-        $form->getElement('provider_id')->setValue($providerId);
-        $form->getElement('ingredient_id')->setValue($ingredientId);
+        $form->getElement('provider_id')->setValue($model->getProviderId());
+        $form->getElement('invoice_type')->setValue($model->getInvoiceType());
 
         return parent::_prepareForm();
     }

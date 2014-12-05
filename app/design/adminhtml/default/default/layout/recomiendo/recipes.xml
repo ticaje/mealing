@@ -320,9 +320,9 @@
     <reference name="left">
       <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tabs" name="traceabilities_edit_tabs">
         <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tab_main" name="traceabilities_edit_tab_main" />
-        <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tab_content" name="traceabilities_edit_tab_content" />
+        <block type="recomiendo_recipes_traceabilities/adminhtml_traceabilities_edit_tab_ingredients" name="traceabilities_edit_tab_ingredients" />
         <action method="addTab"><name>main_section</name><block>traceabilities_edit_tab_main</block></action>
-        <!--action method="addTab"><name>content_section</name><block>traceabilities_edit_tab_content</block></action-->
+        <action method="addTab"><name>ingredients_section</name><block>traceabilities_edit_tab_ingredients</block></action>
       </block>
     </reference>
   </recomiendo_traceabilities_edit>

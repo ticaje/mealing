@@ -62,6 +62,25 @@
             </days_difference>
           </fields>
         </view>
+        <codifier translate="label">
+          <label>Settings de los codificadores</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>11</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+            <upload_allowed_extensions translate="label">
+              <label>Extensiones permitidas al subir recursos</label>
+              <comment>Valores separados por coma.</comment>
+              <sort_order>10</sort_order>
+              <depends><enabled>1</enabled></depends>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </upload_allowed_extensions>
+          </fields>
+        </codifier>
       </groups>
     </recipes>
   </sections>
