@@ -28,4 +28,21 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Providers exten
     $arr = $collection;
     return $arr->getSize() ? $arr->getData()[0]['name'] : '';
   }
+
+  protected function _providerFilter($collection, $column)
+  {
+    if (!$value = $column->getFilter()->getValue()) {
+      return $this;
+    }
+
+    $collection
+      ->addAttributeToFilter('name', array(
+        array('like' => '% '.$value.' %'), //spaces on each side
+        array('like' => '% '.$value), //space before and ends with $needle
+        array('like' => $value.' %') // starts with needle and space after
+      ));
+
+    return $collection;
+  }
+
 }

@@ -34,7 +34,16 @@ class Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Grid extends Recomiendo_
     $this->addColumn('provider_id', array(
       'header'    => Mage::helper('recomiendo_recipes')->__('Proveedor'),
       'index'     => 'provider_id',
-      'renderer'  => new Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Providers(),
+      'renderer'  => 'Recomiendo_Recipes_Block_Adminhtml_Traceabilities_Renderer_Providers',
+      'filter'    => false,
+      //'filter_condition_callback' => array($this, '_providerFilter'),
+    ));
+
+    $this->addColumn('ingredients', array(
+      'header'    => Mage::helper('recomiendo_recipes')->__('Ingrediente(s)'),
+      'index'     => 'ingredients',
+      'renderer'  => 'Recomiendo_Recipes_Block_Adminhtml_traceabilities_Renderer_Ingredients',
+      'filter'    => false,
     ));
 
     $this->addColumn('invoice_type', array(
