@@ -25,4 +25,22 @@ class Recomiendo_Menus_Helper_Data extends Mage_Core_Helper_Data
     return Mage::getStoreConfigFlag(self::XML_PATH_ENABLED, $store);
   }
 
+  public function normalizeAfterSaveObject($object, $new)
+  {
+    $_rows = explode("&", $object);
+    foreach ($_rows as $_row){
+      $_row = explode("=", $_row);
+      if ($_row[0])
+        $result[] = $_row[0];
+    }
+    $result = empty($result) ? array() : $result;
+
+    $_new = $new ? $new : array();
+    foreach ($result as $item){
+      if (!in_array($item, $_new))
+        array_push($_new, $item);
+    }
+    return $_new;
+  }
+
 }

@@ -14,28 +14,43 @@ class Recomiendo_Menus_Model_Observer
    */
   public function setRecipesPerMenuLunch(Varien_Event_Observer $observer)
   {
-    $this->setRecipesPerMenu(true);
+    $request = Mage::app()->getFrontController()->getRequest();
+    $_post    = Mage::app()->getRequest()->getPost();
+    $_lunches = $_post['recipes']['lunch'];
+    if (!in_array("lunch", array_keys($_post['recipes'])))
+      return;
+
+    $_new_lunches        = $request->getParam('selectedLunchRecipes');
+    $_persisting_lunches = Mage::helper("recomiendo_menus")->normalizeAfterSaveObject($_lunches, $_new_lunches);
+    $this->setRecipesPerMenu(true, $_persisting_lunches);
   }
 
   public function setRecipesPerMenuDinner(Varien_Event_Observer $observer)
   {
-    $this->setRecipesPerMenu(false);
+    $request  = Mage::app()->getFrontController()->getRequest();
+    $_post    = Mage::app()->getRequest()->getPost();
+    $_dinners = $_post['recipes']['dinner'];
+    if (!in_array("dinner", array_keys($_post['recipes'])))
+      return;
+
+    $_new_dinners        = $request->getParam('selectedDinnerRecipes');
+    $_persisting_dinners = Mage::helper("recomiendo_menus")->normalizeAfterSaveObject($_dinners, $_new_dinners);
+    $this->setRecipesPerMenu(false, $_persisting_dinners);
   }
 
-  private function setRecipesPerMenu($isLunch)
+  private function setRecipesPerMenu($isLunch, $newOnes)
   {
     $request = Mage::app()->getFrontController()->getRequest();
     $_id = $request->getParam('id');
-    $_recipes = $isLunch ? $request->getParam('selectedLunchRecipes') : $request->getParam('selectedDinnerRecipes');
 
-    if ($_recipes){
+    if ($newOnes){
       Mage::getModel('recomiendo_menus/relation_menu_recipe')
         ->getCollection()
         ->addFieldToFilter('entity_id', $_id)
         ->addFieldToFilter('is_lunch', $isLunch)
         ->walk('delete');
 
-      foreach ($_recipes as $_recipe_id)
+      foreach ($newOnes as $_recipe_id)
       {
         Mage::getModel('recomiendo_menus/relation_menu_recipe')
           ->setRecipeId($_recipe_id)
