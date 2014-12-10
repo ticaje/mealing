@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <menu>
+    <menus translate="title" module="recomiendo_menus">
+      <title>Recomiendo Menus</title>
+      <sort_order>65</sort_order>
+      <children>
+        <templates translate="title" module="recomiendo_menus">
+          <title>Plantillas de recetas</title>
+          <action>recomiendo/menus_templates</action>
+          <sort_order>30</sort_order>
+        </templates>
+        <rules translate="title" module="recomiendo_menus">
+          <title>Reglas de Precio</title>
+          <action>recomiendo/menus_pricerules</action>
+          <sort_order>31</sort_order>
+        </rules>
+      </children>
+    </menus>
+  </menu>
+  <acl>
+    <resources>
+      <admin>
+        <children>
+          <menus translate="title" module="recomiendo_menus">
+            <title>Recomiendo Menu</title>
+            <sort_order>65</sort_order>
+            <children>
+              <manage translate="title">
+                <title>Reglas de precio de menus</title>
+                <sort_order>0</sort_order>
+                <children>
+                  <save translate="title">
+                    <title>Salvar regla</title>
+                    <sort_order>0</sort_order>
+                  </save>
+                  <delete translate="title">
+                    <title>Borrar regla</title>
+                    <sort_order>10</sort_order>
+                  </delete>
+                </children>
+              </manage>
+            </children>
+          </menus>
+          <system>
+            <children>
+              <config>
+                <children>
+                  <menus translate="title" module="recomiendo_menus">
+                    <title>Menus Management</title>
+                  </menus>
+                </children>
+              </config>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+</config>

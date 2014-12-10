@@ -9,7 +9,7 @@
 <config>
   <modules>
     <Recomiendo_Menus>
-      <version>1.0.0</version>
+      <version>1.1.0</version>
     </Recomiendo_Menus>
   </modules>
   <global>
@@ -37,9 +37,15 @@
           <relation_menu_recipe>
             <table>recomiendo_menu_recipe</table>
           </relation_menu_recipe>
-          <relation_menu_recipe>
-            <table>recomiendo_menu_recipe</table>
-          </relation_menu_recipe>
+          <rule_set>
+            <table>recomiendo_menu_rule_set</table>
+          </rule_set>
+          <price_group>
+            <table>recomiendo_menu_price_group</table>
+          </price_group>
+          <price_group_item>
+            <table>recomiendo_menu_price_group_item</table>
+          </price_group_item>
         </entities>
       </menus_resource>
     </models>
@@ -94,13 +100,15 @@
   </adminhtml>
   <admin>
     <routers>
-      <adminhtml>
+      <recomiendo>
+        <use>admin</use>
         <args>
           <modules>
-            <Recomiendo_Menus before="Mage_Adminhtml">Recomiendo_Menus_Adminhtml</Recomiendo_Menus>
+            <recomiendo_menus before="Mage_Adminhtml">Recomiendo_Menus_Adminhtml</recomiendo_menus>
           </modules>
+          <frontName>readmin</frontName>
         </args>
-      </adminhtml>
+      </recomiendo>
     </routers>
   </admin>
 </config>
