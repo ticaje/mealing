@@ -46,6 +46,8 @@ $table = $installer->getConnection()
     'nullable'  => false,
     'default'   => '0',
   ), 'Rule Set Id')
+  ->addColumn('name', Varien_Db_Ddl_Table::TYPE_VARCHAR, 50, array(
+  ), 'Normal Price')
   ->addColumn('price', Varien_Db_Ddl_Table::TYPE_DECIMAL, '12,2', array(
   ), 'Normal Price')
   ->addColumn('price_club', Varien_Db_Ddl_Table::TYPE_DECIMAL, '12,2', array(

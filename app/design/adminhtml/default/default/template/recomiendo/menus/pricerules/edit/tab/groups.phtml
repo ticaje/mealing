@@ -1,0 +1,106 @@
+<?php
+/**
+ * Héctor Luis Barrientos
+ *
+ */
+?>
+
+<?php $_htmlId      = "pricerules_groups"; ?>
+<?php $_htmlName    = "pricerules_groups[groups]"; ?>
+<?php $_readonly    = false; ?>
+
+<div class="grid">
+  <table cellspacing="0" class="data border" id="<?php $_htmlId ?>_grid" width="100%">
+    <thead>
+      <tr class="headings" style="text-align:center;">
+        <th style="text-align:center; width: 10%"><?php echo Mage::helper('catalog')->__('Nombre') ?></th>
+        <th style="text-align:center; width: 10%"><?php echo Mage::helper('catalog')->__('Precio') ?></th>
+        <th style="text-align:center; width:10%"><?php echo Mage::helper('catalog')->__('Precio Club Recomiendo') ?></th>
+        <th style="text-align:center; width:10%"><?php echo Mage::helper('catalog')->__('Eliminar') ?></th>
+      </tr>
+      <tr id="<?php echo $_htmlId ?>_add_template" class="template no-display">
+        <?php echo $this->createContentBlock($_htmlName) ?>
+        <td style="text-align:center;" class="">
+          <input type="hidden" name="<?php echo $_htmlName ?>[__index__][delete]" class="delete" disabled="no-template" value="" />
+          <button title="Delete Rule" class="scalable delete icon-btn delete-product-option" onclick="groupsHandler.deleteItem(event);return false">
+            <span>Delete</span>
+          </button>
+        </td>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td style="text-align:center;" colspan="12" class="a-left">
+          <?php echo $this->getChildHtml('add_button') ?>
+          <span id="save-groups"><?php echo $this->getSaveAndEditButton() ?></span>
+        </td>
+      </tr>
+    </tfoot>
+    <tbody name="<?php echo $_htmlId ?>_container" id="<?php echo $_htmlId ?>_container">
+    </tbody>
+  </table>
+
+<script type="text/javascript">
+//<![CDATA[
+var groupsHandler = {
+  template : new Template('<tr style="border: 1px red solid;">' + $('<?php echo $_htmlId ?>_add_template').innerHTML.replace(/__index__/g, '#{index}').replace(/ disabled="?no-template"?/g, '').replace(/ disabled/g, '').replace(/="'([^']*)'"/g, '="$1"') + '</tr>'),
+    itemsCount : 0,
+    deleteButton: false,
+    addItem  : function () {
+      <?php if ($_readonly): ?>
+      if (arguments.length < 5) {
+        return;
+      }
+
+      <?php endif; ?>
+      data = {};
+
+      data.index = this.itemsCount++;
+
+      if(arguments.length >= 0) {
+        data.name       = arguments[0];
+        data.price      = arguments[1];
+        data.price_club = arguments[2];
+      }
+      Element.insert($('<?php echo $_htmlId ?>_container'), {'bottom':this.template.evaluate(data)});
+
+      $('groups_row_'+data.index+'_name').setValue(data.name);
+      $('groups_row_'+data.index+'_price').setValue(data.price);
+      $('groups_row_'+data.index+'_price_club').setValue(data.price_club);
+      $('save-groups').setStyle({ display: 'initial' });
+    },
+      enableElement: function(elem) {
+        elem.disabled = false
+          elem.removeClassName('disabled');
+      },
+        deleteItem : function(event) {
+          var tr = Event.findElement(event, 'tr');
+          if (tr) {
+            tr.parentNode.removeChild(tr);
+          }
+        }
+}
+
+<?php foreach ($this->getRulesetGroups() as $_item): ?>
+groupsHandler.addItem(
+  <?php echo json_encode($_item['name']) ?>,
+  <?php echo json_encode($_item['price']) ?>,
+  <?php echo json_encode($_item['price_club']) ?>,
+  true
+);
+<?php endforeach; ?>
+<?php if ($_readonly): ?>
+$('<?php echo $_htmlId ?>_container').up('table').select('button')
+  .each(price.disableElement);
+<?php endif; ?>
+//]]>
+
+</script>
+
+</div>
+<style>
+#pricerules_groups_container textarea{ width: 95%; }
+#save-groups{ display: none; }
+</style>
+
+

@@ -61,6 +61,9 @@
       <recomiendo_menus>
         <class>Recomiendo_Menus_Block</class>
       </recomiendo_menus>
+      <recomiendo_menus_pricerules>
+        <class>Recomiendo_Menus_Block</class>
+      </recomiendo_menus_pricerules>
       <adminhtml>
         <rewrite>
           <catalog_product_edit_tabs>Recomiendo_Menus_Block_Adminhtml_Tabs</catalog_product_edit_tabs>

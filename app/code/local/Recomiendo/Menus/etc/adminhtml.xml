@@ -14,12 +14,12 @@
       <children>
         <templates translate="title" module="recomiendo_menus">
           <title>Plantillas de recetas</title>
-          <action>recomiendo/menus_templates</action>
+          <action>recomiendo/templates</action>
           <sort_order>30</sort_order>
         </templates>
         <rules translate="title" module="recomiendo_menus">
           <title>Reglas de Precio</title>
-          <action>recomiendo/menus_pricerules</action>
+          <action>recomiendo/pricerules</action>
           <sort_order>31</sort_order>
         </rules>
       </children>

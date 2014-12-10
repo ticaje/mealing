@@ -5,7 +5,7 @@
  * @author Hector Luis Barrientos Margolles
  *
  */
-class Recomiendo_Menus_Adminhtml_Menus_PricerulesController extends Mage_Adminhtml_Controller_Action
+class Recomiendo_Menus_Adminhtml_PricerulesController extends Recomiendo_Menus_Controller_Adminhtml_Codifier_BaseController
 {
 
   /* Define general variables based on refactoring */
@@ -13,11 +13,6 @@ class Recomiendo_Menus_Adminhtml_Menus_PricerulesController extends Mage_Adminht
   /**
    * Index action defined in parent, redefine it here if necesary
    */
-  public function indexAction()
-  {
-    echo "Hello World!!!";
-  }
-
 
   /**
    * Create New Ingredienttypes item, defined in parent, redefine it here if necesary

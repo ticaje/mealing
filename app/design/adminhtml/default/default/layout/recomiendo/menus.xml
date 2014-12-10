@@ -58,4 +58,36 @@
       <block type="recomiendo_menus/adminhtml_tabs_dinnermenu" name="menus.dinner"/>
     </block>
   </adminhtml_catalog_product_dinnergrid>
+
+  <!--Pricerules Sets blocks-->
+  <recomiendo_templates_index>
+    <reference name="content">
+      <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets" name="pricerules.sets" />
+    </reference>
+  </recomiendo_templates_index>
+
+  <recomiendo_templates_grid>
+    <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets_grid" />
+  </recomiendo_templates_grid>
+
+  <recomiendo_templates_new>
+    <update handle="adminhtml_sets_edit" />
+  </recomiendo_templates_new>
+
+  <recomiendo_templates_edit>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets_edit" name="pricerules.sets.edit" />
+    </reference>
+    <reference name="left">
+      <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets_edit_tabs" name="sets_edit_tabs">
+        <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets_edit_tab_main" name="sets_edit_tab_main" />
+        <block type="recomiendo_menus_pricerules/adminhtml_pricerules_sets_edit_tab_groups" name="sets_edit_tab_groups" />
+        <action method="addTab"><name>main_section</name><block>sets_edit_tab_main</block></action>
+        <action method="addTab"><name>groups_section</name><block>sets_edit_tab_groups</block></action>
+      </block>
+    </reference>
+  </recomiendo_templates_edit>
+  <!--Pricerules Sets blocks-->
+
 </layout>

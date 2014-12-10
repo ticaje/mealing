@@ -5,18 +5,20 @@
  * @author Hector Luis Barrientos Margolles
  *
  */
-class Recomiendo_Menus_Adminhtml_Menus_TemplatesController extends Mage_Adminhtml_Controller_Action
+class Recomiendo_Menus_Adminhtml_TemplatesController extends Recomiendo_Menus_Controller_Adminhtml_Codifier_BaseController
 {
 
+  /* Define general variables based on refactoring */
+  protected $_currentEntity          = "Plantillas";
+  protected $_currentEntityModelName = "recomiendo_menus/rule_set";
+  protected $_titleLabel             = "Plantilla";
+  protected $_registeringEntityName  = "sets_item";
+  protected $_getParamId             = "rule_set_id";
   /* Define general variables based on refactoring */
 
   /**
    * Index action defined in parent, redefine it here if necesary
    */
-  public function indexAction()
-  {
-  }
-
 
   /**
    * Create New Ingredienttypes item, defined in parent, redefine it here if necesary
