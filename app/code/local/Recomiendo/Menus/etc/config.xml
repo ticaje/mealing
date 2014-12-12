@@ -40,12 +40,9 @@
           <rule_set>
             <table>recomiendo_menu_rule_set</table>
           </rule_set>
-          <price_group>
+          <rule_group>
             <table>recomiendo_menu_price_group</table>
-          </price_group>
-          <price_group_item>
-            <table>recomiendo_menu_price_group_item</table>
-          </price_group_item>
+          </rule_group>
         </entities>
       </menus_resource>
     </models>
@@ -103,6 +100,13 @@
   </adminhtml>
   <admin>
     <routers>
+      <adminhtml>
+        <args>
+          <modules>
+            <Recomiendo_Menus before="Mage_Adminhtml">Recomiendo_Menus_Adminhtml</Recomiendo_Menus>
+          </modules>
+        </args>
+      </adminhtml>
       <recomiendo>
         <use>admin</use>
         <args>

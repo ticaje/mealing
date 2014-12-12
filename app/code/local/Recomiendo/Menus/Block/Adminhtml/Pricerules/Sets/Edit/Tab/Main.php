@@ -48,19 +48,29 @@ class Recomiendo_Menus_Block_Adminhtml_Pricerules_Sets_Edit_Tab_Main extends Rec
           'disabled' => $isElementDisabled
         ));
 
-        $fieldset->addField('dishes_set', 'text', array(
-          'name'     => 'dishes_set',
-          'label'    => Mage::helper('recomiendo_menus')->__('Set de recetas'),
-          'title'    => Mage::helper('recomiendo_menus')->__('Set de recetas'),
-          'note'     => "Formato requerido: 3,5,7",
+        $fieldset->addField('description', 'textarea', array(
+          'name'     => 'description',
+          'label'    => Mage::helper('recomiendo_menus')->__('Descripción'),
+          'title'    => Mage::helper('recomiendo_menus')->__('Descripción'),
+          'note'     => "Información general de este set",
           'required' => true,
           'disabled' => $isElementDisabled
+        ));
+
+        $formulas = Recomiendo_Menus_Model_Rule_set::getRuleSetFormulas();
+        $fieldset->addField('price_formula_id', 'select', array(
+          'label'    => Mage::helper('recomiendo_menus')->__('Formula a Utilizar'),
+          'class'    => 'required-entry validate-select',
+          'values'   => $formulas,
+          'required' => true,
+          'name'     => 'price_formula_id',
         ));
 
         $data = $model->getData();
         $form->setValues($data);
         $this->setForm($form);
 
+        $form->getElement('price_formula_id')->setValue($model->getPriceFormulaId());
         return parent::_prepareForm();
     }
 

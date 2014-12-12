@@ -7,7 +7,7 @@
 class Recomiendo_Menus_Block_Adminhtml_Pricerules_Sets_Edit_Tab_Groups extends Recomiendo_Menus_Block_Adminhtml_Refactor_Edit_Tab_BaseMain
 {
 
-  protected $_entityLabel = "Grupos de Precios";
+  protected $_entityLabel = "Precios por grupos de personas";
   protected $_id;
 
   protected function _prepareLayout()
@@ -19,6 +19,13 @@ class Recomiendo_Menus_Block_Adminhtml_Pricerules_Sets_Edit_Tab_Groups extends R
         'label'     => Mage::helper('catalog')->__('Adicionar Grupo'),
         'onclick'   => 'groupsHandler.addItem()',
         'class' => 'add'
+      )));
+    $this->setChild('deleterow',
+      $this->getLayout()->createBlock('adminhtml/widget_button')
+      ->setData(array(
+        'label'     => Mage::helper('catalog')->__('Eliminar'),
+        'onclick' => 'groupsHandler.deleteItem()',
+        'class' => 'delete'
       )));
     $this->setChild('saveandcontinue',
       $this->getLayout()->createBlock('adminhtml/widget_button')
@@ -36,6 +43,11 @@ class Recomiendo_Menus_Block_Adminhtml_Pricerules_Sets_Edit_Tab_Groups extends R
     return $this->getChildHtml('saveandcontinue');
   }
 
+  public function getDeleterowButton()
+  {
+    return $this->getChildHtml('deleterow');
+  }
+
   protected function getRulesetGroups()
   {
     $model = Mage::helper('recomiendo_menus')
@@ -46,17 +58,39 @@ class Recomiendo_Menus_Block_Adminhtml_Pricerules_Sets_Edit_Tab_Groups extends R
 
   public function createContentBlock($name)
   {
+    $numbers       = Recomiendo_Menus_Helper_Config::getSelectionPossibilitiesInNumbers();
+    $possibilities = Recomiendo_Menus_Helper_Config::getSelectionPossibilities();
+    $fields        = Recomiendo_Menus_Helper_Config::getSelectionFields();
+    $headers       = Recomiendo_Menus_Helper_Config::getSelectionFieldsHeaders();
     $html = '
-      <td style="text-align:center;">
-      <input class="order" type="text" id="groups_row___index___name" name="'.$name.'[__index__][name]"  value="" class="input-text require"/>
-      </td>
-      <td style="text-align:center;">
-      <input class="order" type="text" id="groups_row___index___price" name="'.$name.'[__index__][price]"  value="" class="input-text require"/>
-      </td>
-      <td style="text-align:center;">
-      <input class="order" type="text" id="groups_row___index___price_club" name="'.$name.'[__index__][price_club]"  value="" class="input-text require"/>
-      </td>
-      ';
+      <td>
+        <div style="text-align: center; padding: 20px;">
+        <span><b>Numero de personas: </b></span>
+        <input class="order required-entry" type="text" id="groups_row___index___persons" name="'.$name.'[__index__][persons]"  value="" class="input-text require"/>
+        </div>
+        <table>
+        <tr class="headings" style="text-align:center;">';
+            $_headers = '';
+            foreach ($headers as $header) {
+              $_headers .= '<th style="text-align:center; width: 10%">'.$header.'</th>';
+            }
+            $html .= $_headers.
+        '</tr>
+        <tr>';
+         $columns = '';
+         foreach ($fields as $field){
+           $columns .= '<td style="text-align:center;">';
+           $rows= '';
+           foreach ($possibilities as $i => $number){
+             $value = $field == "dishes" ? $numbers[$i] : "";
+             $rows .= '<input class="order" type="text" id="groups_row___index___'.$field.$number.'" name="'.$name.'[__index__]['.$field.$number.']"  value="'.$value.'" class="input-text require"/>';
+           }
+           $columns .= $rows.'</td>';
+         }
+         $html .= $columns;
+         $html .= '</tr>
+        </table>
+      </td>';
     return $html;
   }
 

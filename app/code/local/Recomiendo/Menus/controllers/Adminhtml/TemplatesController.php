@@ -5,7 +5,7 @@
  * @author Hector Luis Barrientos Margolles
  *
  */
-class Recomiendo_Menus_Adminhtml_TemplatesController extends Recomiendo_Menus_Controller_Adminhtml_Codifier_BaseController
+class Recomiendo_Menus_Adminhtml_TemplatesController extends Recomiendo_Menus_Controller_Adminhtml_BaseController
 {
 
   /* Define general variables based on refactoring */
@@ -14,6 +14,7 @@ class Recomiendo_Menus_Adminhtml_TemplatesController extends Recomiendo_Menus_Co
   protected $_titleLabel             = "Plantilla";
   protected $_registeringEntityName  = "sets_item";
   protected $_getParamId             = "rule_set_id";
+
   /* Define general variables based on refactoring */
 
   /**

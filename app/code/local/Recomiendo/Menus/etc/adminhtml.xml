@@ -17,11 +17,6 @@
           <action>recomiendo/templates</action>
           <sort_order>30</sort_order>
         </templates>
-        <rules translate="title" module="recomiendo_menus">
-          <title>Reglas de Precio</title>
-          <action>recomiendo/pricerules</action>
-          <sort_order>31</sort_order>
-        </rules>
       </children>
     </menus>
   </menu>

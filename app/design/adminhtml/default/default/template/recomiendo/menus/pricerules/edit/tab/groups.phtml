@@ -13,17 +13,19 @@
   <table cellspacing="0" class="data border" id="<?php $_htmlId ?>_grid" width="100%">
     <thead>
       <tr class="headings" style="text-align:center;">
-        <th style="text-align:center; width: 10%"><?php echo Mage::helper('catalog')->__('Nombre') ?></th>
-        <th style="text-align:center; width: 10%"><?php echo Mage::helper('catalog')->__('Precio') ?></th>
-        <th style="text-align:center; width:10%"><?php echo Mage::helper('catalog')->__('Precio Club Recomiendo') ?></th>
-        <th style="text-align:center; width:10%"><?php echo Mage::helper('catalog')->__('Eliminar') ?></th>
+        <th style="text-align:center; width: 10%">Datos de precios por grupos de personas</th>
+        <th style="text-align:center; width: 10%">Eliminar</th>
       </tr>
       <tr id="<?php echo $_htmlId ?>_add_template" class="template no-display">
         <?php echo $this->createContentBlock($_htmlName) ?>
-        <td style="text-align:center;" class="">
+        <td style="text-align:center; vertical-align: middle" class="">
           <input type="hidden" name="<?php echo $_htmlName ?>[__index__][delete]" class="delete" disabled="no-template" value="" />
-          <button title="Delete Rule" class="scalable delete icon-btn delete-product-option" onclick="groupsHandler.deleteItem(event);return false">
-            <span>Delete</span>
+          <button title="Delete Rule" class="scalable delete " onclick="groupsHandler.deleteItem(event);return false">
+            <span>
+              <span>
+                <span>Eliminar Grupo</span>
+              </span>
+            </span>
           </button>
         </td>
       </tr>
@@ -33,6 +35,7 @@
         <td style="text-align:center;" colspan="12" class="a-left">
           <?php echo $this->getChildHtml('add_button') ?>
           <span id="save-groups"><?php echo $this->getSaveAndEditButton() ?></span>
+          <input type="hidden" name="active_tab" value="groups_section"/>
         </td>
       </tr>
     </tfoot>
@@ -58,15 +61,43 @@ var groupsHandler = {
       data.index = this.itemsCount++;
 
       if(arguments.length >= 0) {
-        data.name       = arguments[0];
-        data.price      = arguments[1];
-        data.price_club = arguments[2];
+        data.persons         = arguments[0];
+        data.price_three         = arguments[1];
+        data.price_five         = arguments[2];
+        data.price_six         = arguments[3];
+        data.price_seven         = arguments[4];
+        data.price_eight         = arguments[5];
+        data.price_ten         = arguments[6];
+        data.price_twelve         = arguments[7];
+        data.price_fourteen         = arguments[8];
+        data.price_club_three    = arguments[9];
+        data.price_club_five    = arguments[10];
+        data.price_club_six    = arguments[11];
+        data.price_club_seven    = arguments[12];
+        data.price_club_eight    = arguments[13];
+        data.price_club_ten    = arguments[14];
+        data.price_club_twelve    = arguments[15];
+        data.price_club_fourteen    = arguments[16];
       }
       Element.insert($('<?php echo $_htmlId ?>_container'), {'bottom':this.template.evaluate(data)});
 
-      $('groups_row_'+data.index+'_name').setValue(data.name);
-      $('groups_row_'+data.index+'_price').setValue(data.price);
-      $('groups_row_'+data.index+'_price_club').setValue(data.price_club);
+      $('groups_row_'+data.index+'_persons').setValue(data.persons);
+      $('groups_row_'+data.index+'_price_recipes_three').setValue(data.price_three);
+      $('groups_row_'+data.index+'_price_recipes_five').setValue(data.price_five);
+      $('groups_row_'+data.index+'_price_recipes_six').setValue(data.price_six);
+      $('groups_row_'+data.index+'_price_recipes_seven').setValue(data.price_seven);
+      $('groups_row_'+data.index+'_price_recipes_eight').setValue(data.price_eight);
+      $('groups_row_'+data.index+'_price_recipes_ten').setValue(data.price_ten);
+      $('groups_row_'+data.index+'_price_recipes_twelve').setValue(data.price_twelve);
+      $('groups_row_'+data.index+'_price_recipes_fourteen').setValue(data.price_fourteen);
+      $('groups_row_'+data.index+'_price_club_recipes_three').setValue(data.price_club_three);
+      $('groups_row_'+data.index+'_price_club_recipes_five').setValue(data.price_club_five);
+      $('groups_row_'+data.index+'_price_club_recipes_six').setValue(data.price_club_six);
+      $('groups_row_'+data.index+'_price_club_recipes_seven').setValue(data.price_club_seven);
+      $('groups_row_'+data.index+'_price_club_recipes_eight').setValue(data.price_club_eight);
+      $('groups_row_'+data.index+'_price_club_recipes_ten').setValue(data.price_club_ten);
+      $('groups_row_'+data.index+'_price_club_recipes_twelve').setValue(data.price_club_twelve);
+      $('groups_row_'+data.index+'_price_club_recipes_fourteen').setValue(data.price_club_fourteen);
       $('save-groups').setStyle({ display: 'initial' });
     },
       enableElement: function(elem) {
@@ -83,9 +114,23 @@ var groupsHandler = {
 
 <?php foreach ($this->getRulesetGroups() as $_item): ?>
 groupsHandler.addItem(
-  <?php echo json_encode($_item['name']) ?>,
-  <?php echo json_encode($_item['price']) ?>,
-  <?php echo json_encode($_item['price_club']) ?>,
+  <?php echo json_encode($_item['persons']) ?>,
+  <?php echo json_encode($_item['price_recipes_three']) ?>,
+  <?php echo json_encode($_item['price_recipes_five']) ?>,
+  <?php echo json_encode($_item['price_recipes_six']) ?>,
+  <?php echo json_encode($_item['price_recipes_seven']) ?>,
+  <?php echo json_encode($_item['price_recipes_eight']) ?>,
+  <?php echo json_encode($_item['price_recipes_ten']) ?>,
+  <?php echo json_encode($_item['price_recipes_twelve']) ?>,
+  <?php echo json_encode($_item['price_recipes_fourteen']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_three']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_five']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_six']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_seven']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_eight']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_ten']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_twelve']) ?>,
+  <?php echo json_encode($_item['price_club_recipes_fourteen']) ?>,
   true
 );
 <?php endforeach; ?>
@@ -100,7 +145,8 @@ $('<?php echo $_htmlId ?>_container').up('table').select('button')
 </div>
 <style>
 #pricerules_groups_container textarea{ width: 95%; }
-#save-groups{ display: none; }
+#save-groups{ display: none; float: right; position: relative; right: 90px; }
+input.order { text-align: center; }
 </style>
 
 

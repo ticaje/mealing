@@ -11,6 +11,6 @@ class Recomiendo_Menus_Model_Resource_Rule_Group_Collection extends Mage_Core_Mo
    */
   protected function _construct()
   {
-    $this->_init('recomiendo_menus/price_group');
+    $this->_init('recomiendo_menus/rule_group');
   }
 }
