@@ -109,6 +109,15 @@
           </setdinner_observer>
         </observers>
       </catalog_product_save_after>
+      <adminhtml_block_html_before>
+        <observers>
+          <recomiendo_changeattributeset>
+            <type>singleton</type>
+            <class>recomiendo_menus/observer</class>
+            <method>addMassactionToProductGrid</method>
+          </recomiendo_changeattributeset>
+        </observers>
+      </adminhtml_block_html_before>
     </events>
   </adminhtml>
   <admin>
