@@ -4,7 +4,7 @@
  *
  * @author Hector Luis Barrientos Margolles
  */
-class Recomiendo_Menus_Model_Product_Type_Menuable extends Mage_Catalog_Model_Product_Type_Abstract
+class Recomiendo_Menus_Model_Product_Type_Menu extends Mage_Catalog_Model_Product_Type_Abstract
 {
   const TYPE_MENU = 'menu';
   const XML_PATH_AUTHENTICATION = 'catalog/menus/authentication';

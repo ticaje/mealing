@@ -9,7 +9,7 @@
 <config>
   <modules>
     <Recomiendo_Menus>
-      <version>1.1.0</version>
+      <version>1.2.0</version>
     </Recomiendo_Menus>
   </modules>
   <global>
@@ -18,7 +18,7 @@
         <type>
           <menu translate="label" module="recomiendo_menus">
             <label>Menu Recomiendo</label>
-            <model>recomiendo_menus/product_type_menuable</model>
+            <model>recomiendo_menus/product_type_menu</model>
             <is_qty>0</is_qty>
             <composite>0</composite>
             <can_use_qty_decimals>0</can_use_qty_decimals>
@@ -29,9 +29,9 @@
     <models>
       <recomiendo_menus>
         <class>Recomiendo_Menus_Model</class>
-        <resourceModel>menus_resource</resourceModel>
+        <resourceModel>recomiendo_menus_resource</resourceModel>
       </recomiendo_menus>
-      <menus_resource>
+      <recomiendo_menus_resource>
         <class>Recomiendo_Menus_Model_Resource</class>
         <entities>
           <relation_menu_recipe>
@@ -44,7 +44,7 @@
             <table>recomiendo_menu_price_group</table>
           </rule_group>
         </entities>
-      </menus_resource>
+      </recomiendo_menus_resource>
     </models>
     <resources>
       <recomiendo_menus_setup>
@@ -52,7 +52,20 @@
           <module>Recomiendo_Menus</module>
           <class>Mage_Core_Model_Resource_Setup</class>
         </setup>
+        <connection>
+          <use>core_setup</use>
+        </connection>
       </recomiendo_menus_setup>
+      <recomiendo_menus_write>
+        <connection>
+          <use>core_write</use>
+        </connection>
+      </recomiendo_menus_write>
+      <recomiendo_menus_read>
+        <connection>
+          <use>core_read</use>
+        </connection>
+      </recomiendo_menus_read>
     </resources>
     <blocks>
       <recomiendo_menus>

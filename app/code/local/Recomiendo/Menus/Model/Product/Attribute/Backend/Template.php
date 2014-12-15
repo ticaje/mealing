@@ -1,0 +1,6 @@
+<?php
+
+class Recomiendo_Menus_Model_Product_Attribute_Backend_Template extends Mage_Eav_Model_Entity_Attribute_Backend_Default
+{
+
+}
