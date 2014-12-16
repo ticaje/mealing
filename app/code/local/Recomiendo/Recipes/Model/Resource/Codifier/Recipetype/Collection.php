@@ -25,4 +25,5 @@ class Recomiendo_Recipes_Model_Resource_Codifier_Recipetype_Collection extends M
         $this->setPageSize(Mage::helper('recomiendo_recipes')->getRecipetypePerPage());
         return $this;
     }
+
 }

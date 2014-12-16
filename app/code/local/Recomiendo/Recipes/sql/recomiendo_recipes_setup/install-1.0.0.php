@@ -40,6 +40,9 @@ $table = $installer->getConnection()
     'nullable' => true,
     'default'  => null,
   ), 'Creation Time')
+  ->addColumn('classification', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
+    'nullable' => true,
+  ), 'Classification')
   ->addIndex($installer->getIdxName('recomiendo_recipes/recipe', array('user_id')),
     array('user_id'))
     ->addForeignKey($installer->getFkName('recomiendo_recipes/recipe', 'user_id', 'admin/user', 'user_id'),

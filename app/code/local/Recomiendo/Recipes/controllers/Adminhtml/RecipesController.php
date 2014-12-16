@@ -54,9 +54,8 @@ class Recomiendo_Recipes_Adminhtml_RecipesController extends Recomiendo_Recipes_
         $date = Mage::app()->getLocale()->date($data['published_at'], Zend_Date::DATE_SHORT);
         $data['published_at'] = $date->toString('YYYY-MM-dd HH:mm:ss');
       }
-
+      $data['classification'] = Mage::getModel("recomiendo_recipes/codifier_recipetype")->getSetOfNames($data['recipetypes']);
       $model->addData($data);
-      //print_r($model); exit;
       try {
         $hasError = false;
         // save the data

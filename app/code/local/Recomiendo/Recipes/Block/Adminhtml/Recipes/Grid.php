@@ -40,7 +40,7 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Grid extends Recomiendo_Recipes
     ));
 
     $this->addColumn('published_at', array(
-      'header'   => Mage::helper('recomiendo_recipes')->__('Fecha publicación'),
+      'header'   => Mage::helper('recomiendo_recipes')->__('Fecha de ultima publicación'),
       'sortable' => true,
       'width'    => '170px',
       'index'    => 'published_at',

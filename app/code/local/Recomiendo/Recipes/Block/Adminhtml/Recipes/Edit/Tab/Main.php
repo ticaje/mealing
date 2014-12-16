@@ -56,15 +56,6 @@ class Recomiendo_Recipes_Block_Adminhtml_Recipes_Edit_Tab_Main extends Recomiend
       'disabled' => $isElementDisabled
     ));
 
-    $fieldset->addField('published_at', 'date', array(
-      'name'     => 'published_at',
-      'format'   => Mage::app()->getLocale()->getDateFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT),
-      'image'    => $this->getSkinUrl('images/grid-cal.gif'),
-      'label'    => Mage::helper('recomiendo_recipes')->__('Publicado'),
-      'title'    => Mage::helper('recomiendo_recipes')->__('Publicado'),
-      'required' => true
-    ));
-
     Mage::dispatchEvent('adminhtml_recipes_edit_tab_main_prepare_form', array('form' => $form));
 
     $form->setValues($model->getData());
