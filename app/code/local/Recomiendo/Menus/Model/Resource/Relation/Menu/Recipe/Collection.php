@@ -30,7 +30,7 @@ class Recomiendo_Menus_Model_Resource_Relation_Menu_Recipe_Collection extends Ma
     {
       $this->addFieldToFilter('entity_id', $menu_id);
       foreach ($this as $item){
-        $result[] = $item->getRecipeId();
+        $result[] = array('id' => $item->getRecipeId(), 'position' => $item->getPosition());
       }
       return $result;
     }

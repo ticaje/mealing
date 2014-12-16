@@ -101,14 +101,39 @@ class Recomiendo_Menus_Block_Adminhtml_Tabs_Dinnermenu extends Mage_Adminhtml_Bl
       ));
     }
 
+    $this->addColumn('position', array(
+      'header'            => Mage::helper('catalog')->__('Orden en el Menu'),
+      'name'              => 'position',
+      'type'              => 'number',
+      'validate_class'    => 'validate-number',
+      'width'             => 10,
+      'editable'          => true,
+      'filter'            => false,
+      'sorteable'         => false,
+      'field_name'        => 'position[]'
+    ));
+
     $this->addColumn('name', array(
       'header'    => Mage::helper('catalog')->__('Nombre Receta'),
       'index'     => 'name'
     ));
 
-    $this->addColumn('published_at', array(
-      'header'    => Mage::helper('catalog')->__('Publicada'),
+    $this->addColumn('classification', array(
+      'header'    => Mage::helper('catalog')->__('Categoria'),
+      'index'     => 'classification'
+    ));
+
+    $this->addColumn('created_at', array(
+      'header'    => Mage::helper('catalog')->__('Fecha creación'),
+      'type'      => 'date',
       'width'     => 90,
+      'index'     => 'created_at',
+    ));
+
+    $this->addColumn('published_at', array(
+      'header'    => Mage::helper('catalog')->__('Ultima Publicación'),
+      'width'     => 90,
+      'type'      => 'date',
       'index'     => 'published_at',
     ));
 
@@ -152,8 +177,9 @@ class Recomiendo_Menus_Block_Adminhtml_Tabs_Dinnermenu extends Mage_Adminhtml_Bl
 
     $instance = $this->_getProduct()->getTypeInstance();
 
-    foreach ($instance->getRelatedRecipes(false) as $recipe_id) {
-      $recipes[$recipe_id] = array('position' => 0);
+    foreach ($instance->getRelatedRecipes(false) as $recipe) {
+      $recipes[$recipe['id']] = array('position' => 0);
+      $recipes[$recipe['id']]['position'] = $recipe['position'];
     }
     return $recipes;
   }

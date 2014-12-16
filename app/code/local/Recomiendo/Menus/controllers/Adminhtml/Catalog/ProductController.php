@@ -79,11 +79,6 @@ class Recomiendo_Menus_Adminhtml_Catalog_ProductController extends Mage_Adminhtm
       $product->setGroupedLinkData(Mage::helper('adminhtml/js')->decodeGridSerializedInput($links['grouped']));
     }
 
-    $recipes = $this->getRequest()->getPost('recipes');
-    if (isset($recipes['lunch'])) {
-      $product->setRecipesData(Mage::helper('adminhtml/js')->decodeGridSerializedInput($recipes['lunch']));
-    }
-
     /**
      * Initialize product categories
      */

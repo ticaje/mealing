@@ -21,6 +21,7 @@ CREATE TABLE `{$installer->getTable('recomiendo_menus/relation_menu_recipe')}` (
   `entity_id` smallint(8) unsigned NOT NULL default '0',
   `recipe_id` smallint(5) unsigned NOT NULL default '0',
   `is_lunch` tinyint(1) NOT NULL DEFAULT '1',
+  `position` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY  (`menu_recipe_id`),
   KEY `FK_{$installer->getTable('catalog/product')}_r_p_r` (`entity_id`),
   KEY `FK_{$installer->getTable('recomiendo_recipes/recipe')}_r_p_r` (`recipe_id`),
