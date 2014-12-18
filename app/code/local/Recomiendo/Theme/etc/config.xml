@@ -46,9 +46,9 @@
       </ceo_frontend_helper>
     </helpers>
     <blocks>
-      <recomiendo_theme>
+      <theme>
         <class>Recomiendo_Theme_Block</class>
-      </recomiendo_theme>
+      </theme>
     </blocks>
   </global>
 </config>

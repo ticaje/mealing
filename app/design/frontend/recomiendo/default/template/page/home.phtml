@@ -47,8 +47,8 @@
         <!-- HEADER SECTION -->
         <div id="header-container" class="header-container">
           <?php echo $this->getChildHtml('header') ?>
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/home/carousel.phtml')->toHtml(); ?>
-          <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/home/zip_code_bar.phtml')->toHtml(); ?>
+          <?php echo $this->getChildHtml('carousel') ?>
+          <?php echo $this->getChildHtml('zipcodebar') ?>
         </div>
         <!-- END HEADER SECTION-->
         <div id="header-fill"></div>

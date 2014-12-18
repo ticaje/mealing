@@ -1,44 +1,18 @@
 <ul data-orbit>
+	<?php foreach ($slideitems as $item) : ?>
   <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-1.png') ?>" alt="1" />
+    <img src="<?php echo $this->getMediaPath().$item->getFilename(); ?>" alt="<?php echo $this->escapeHtml($item->getTitle()); ?>"/>
     <div class="orbit-caption">
       <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
+        <h2 class="header"><?php echo $this->escapeHtml($item->getTitle()); ?></h2>
+        <span class="content"><?php echo $this->escapeHtml($item->getHeadline()); ?></span>
         <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
+        <span class="footer"><?php echo $this->escapeHtml($item->getSlogan()); ?></span>
       </div>
       <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
+        <button onclick="location.href='<?php echo $item->getSlideshowUrl() ?>'" class="button tiny radius" id="submit"><?php echo $this->escapeHtml($item->getButton()); ?></button>
       </div>
     </div>
   </li>
-  <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-2.jpg') ?>" alt="2" />
-    <div class="orbit-caption">
-      <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
-        <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
-      </div>
-      <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
-      </div>
-    </div>
-  </li>
-  <li>
-    <img src="<?php echo $this->getSkinUrl('images/carousel/slider-3.jpg') ?>" alt="3" />
-    <div class="orbit-caption">
-      <div class="first-section">
-        <h2 class="header">Cestas y recetas</h2>
-        <span class="content">Menu compuesto por comidas y cenas equilibradas y diseñadas compuestas por nuestra nutricionista</span>
-        <hr/>
-        <span class="footer">Manten una dieta sana y saludable</span>
-      </div>
-      <div class="second-section">
-        <button type="submit" value="Enviar" class="button tiny radius" id="submit">Quiero probar</button>
-      </div>
-    </div>
-  </li>
+	<?php endforeach; ?>
 </ul>

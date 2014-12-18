@@ -11,30 +11,26 @@
 
 
 <layout>
-
   <!-- Global Operations -->
   <default>
     <reference name="root">
       <reference name="after_body_start">
-        <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml"
-          before="-"/>
+        <block type="core/template" name="inchoo_global_messages" template="core/inchoo_global_messages.phtml" before="-"/>
       </reference>
+      <block type="core/text_list" name="carousel" as="carousel"></block>
+      <block type="core/text_list" name="zipcodebar" as="zipcodebar"></block>
     </reference>
     <reference name="header">
       <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
       <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
       <block type="customer/account" name="mini_account" as="mini_account" template="customer/account/mini-account.phtml"/>
-      <!--block type="checkout/cart" name="top_cart" as="top_cart" template="checkout/cart/top-cart.phtml"/-->
     </reference>
+
     <reference name="carousel">
-      <block type="page/html" as="carousel" template="page/html/custom/header-home.phtml"/>
+      <block type="theme/page_html_custom_pages_carousel" template="partials/home/carousel.phtml"/>
     </reference>
-    <reference name="home_post_header">
-      <block type="page/html_custom" name="inchoo_home_header" template="page/html/custom/zip_code_bar.phtml" />
-    </reference>
-    <reference name="home_content">
-      <block type="page/html_custom" name="inchoo_home_how_it_works" template="page/html/custom/how_it_works.phtml" />
-      <block type="page/html_custom" name="inchoo_carts_and_recipes" template="page/html/custom/carts_and_recipes.phtml" />
+    <reference name="zipcodebar">
+      <block type="theme/page_html_custom_pages_zipcodebar" template="partials/home/zip_code_bar.phtml" />
     </reference>
     <remove name="currency"/>
 
@@ -44,14 +40,8 @@
     <remove name="left.permanent.callout"/>
     <remove name="paypal.partner.right.logo"/>
     <remove name="tags_popular"/>
-    <!--<remove name="product_tag_list"/>-->
     <remove name="catalog.compare.sidebar"/>
-    <!--<remove name="checkout.cart.shipping"/>-->
-    <!--<remove name="cart_sidebar"/>-->
-    <!--<remove name="breadcrumbs"/>-->
     <remove name="left.newsletter"/>
-    <!--<remove name="catalog.leftnav"/>-->
-    <!--<remove name="catalogsearch.leftnav"/>-->
     <remove name="right.reports.product.viewed"/>
     <remove name="left.reports.product.viewed"/>
     <!-- //Remove callouts and rarely used stuff globally -->
@@ -66,34 +56,9 @@
 
       <!-- Required javascripts are concatenated into script.js / see gulpfile.js -->
       <action method="addItem"><type>skin_js</type><name>js/script.js</name><params/></action>
-
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/modernizr/modernizr.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery/dist/jquery.min.js</name><params/></action>-->
       <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.js</name><params/></action>
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/fastclick/lib/fastclick.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery.cookie/jquery.cookie.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/jquery-placeholder/jquery.placeholder.js</name><params/></action>-->
-
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.abide.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.accordion.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.alert.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.clearing.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.dropdown.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.equalizer.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.interchange.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.joyride.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.magellan.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.offcanvas.js</name><params/></action>-->
       <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.orbit.js</name><params/></action>
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.reveal.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.slider.js</name><params/></action>-->
       <action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tab.js</name><params/></action>
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.tooltip.js</name><params/></action>-->
-      <!--<action method="addItem"><type>skin_js</type><name>bower_components/foundation/js/foundation/foundation.topbar.js</name><params/></action>-->
-
-      <!--<action method="addItem"><type>skin_js</type><name>js/easyResponsiveTabs.js</name><params/></action>-->
-
-      <!--<action method="addItem"><type>skin_js</type><name>js/elevatezoom/jquery.elevatezoom.js</name><params/></action>-->
     </reference>
 
     <reference name="footer">
