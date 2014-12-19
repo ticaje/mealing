@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin configuration
+ *
+ * @author Hector Luis Barrientos Margolles
+ */
+-->
+<config>
+  <menu>
+    <cms translate="title" module="recomiendo_cms">
+      <title>Recomiendo CMS</title>
+      <sort_order>70</sort_order>
+      <children>
+        <slideshow_manager translate="title" module="recomiendo_cms">
+          <title>Carousel</title>
+          <sort_order>1</sort_order>
+          <children>
+            <items translate="title" module="recomiendo_cms">
+              <title>Gestionar Slides</title>
+              <sort_order>1</sort_order>
+              <action>recms/adminhtml_slideshow</action>
+            </items>
+            <config translate="title" module="recomiendo_cms">
+              <title>Configuracion General del Carousel</title>
+              <sort_order>2</sort_order>
+              <action>adminhtml/system_config/edit/section/slideshow_options</action>
+            </config>
+          </children>
+        </slideshow_manager>
+        <recipes_and_baskets_manager translate="title" module="recomiendo_cms">
+          <title>Cestas y Recetas</title>
+          <sort_order>2</sort_order>
+          <recipes_and_baskets translate="title" module="recomiendo_cms">
+            <title>Gestionar Cestas y Recetas</title>
+            <sort_order>1</sort_order>
+            <action>recms/adminhtml_baskets</action>
+          </recipes_and_baskets>
+        </recipes_and_baskets_manager>
+      </children>
+    </cms>
+  </menu>
+  <acl>
+    <resources>
+      <all>
+        <title>Allow Everything</title>
+      </all>
+      <admin>
+        <children>
+          <cms>
+            <title>Recomiendo CMS</title>
+            <sort_order>70</sort_order>
+            <children>
+              <slideshow_manager>
+                <title>Recomiendo CMS</title>
+                <sort_order>2</sort_order>
+                <children>
+                  <items>
+                    <title>Gestionar Slides</title>
+                    <sort_order>1</sort_order>
+                  </items>
+                  <config>
+                    <title>Configuracion General del Carousel</title>
+                    <sort_order>2</sort_order>
+                  </config>
+                </children>
+              </slideshow_manager>
+            </children>
+          </cms>
+          <system>
+            <children>
+              <config>
+                <children>
+                  <slideshow_options translate="title" module="recomiendo_cms">
+                    <title>Carousel</title>
+                  </slideshow_options>
+                </children>
+              </config>
+            </children>
+          </system>
+        </children>
+      </admin>
+    </resources>
+  </acl>
+
+</config>

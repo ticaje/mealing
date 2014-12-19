@@ -5,104 +5,20 @@
       <version>0.1.0</version>
     </Recomiendo_Cms>
   </modules>
-
   <admin>
     <routers>
-      <cms>
+      <recms>
         <use>admin</use>
         <args>
-          <module>Recomiendo_Cms</module>
-          <frontName>cms</frontName>
+          <modules>
+            <recomiendo_cms before="Mage_Adminhtml">Recomiendo_Cms</recomiendo_cms>
+          </modules>
+          <frontName>recms</frontName>
         </args>
-      </cms>
-      <adminhtml>
-        <args>
-          <cms>
-            <slideshow_options before="Mage_Adminhtml">Recomiendo_Cms_Adminhtml</slideshow_options>
-          </cms>
-        </args>
-      </adminhtml>
+      </recms>
     </routers>
   </admin>
-
   <adminhtml>
-    <menu>
-      <ma2 translate="title" module="cms">
-        <title>Recomiendo CMS</title>
-        <sort_order>70</sort_order>
-        <children>
-          <slideshow_manager translate="title" module="cms">
-            <title>Carousel</title>
-            <sort_order>1</sort_order>
-            <children>
-              <items translate="title" module="cms">
-                <title>Gestionar Slides</title>
-                <sort_order>1</sort_order>
-                <action>cms/adminhtml_slideshow</action>
-              </items>
-              <config translate="title" module="cms">
-                <title>Configuracion General del Carousel</title>
-                <sort_order>2</sort_order>
-                <action>adminhtml/system_config/edit/section/slideshow_options</action>
-              </config>
-            </children>
-          </slideshow_manager>
-          <recipes_and_baskets_manager translate="title" module="cms">
-            <title>Cestas y Recetas</title>
-            <sort_order>2</sort_order>
-            <recipes_and_baskets translate="title" module="cms">
-              <title>Gestionar Cestas y Recetas</title>
-              <sort_order>1</sort_order>
-              <action>cms/adminhtml_baskets</action>
-            </recipes_and_baskets>
-          </recipes_and_baskets_manager>
-        </children>
-      </ma2>
-    </menu>
-
-    <acl>
-      <resources>
-        <all>
-          <title>Allow Everything</title>
-        </all>
-        <admin>
-          <children>
-            <ma2>
-              <title>Recomiendo CMS</title>
-              <sort_order>70</sort_order>
-              <children>
-                <slideshow_manager>
-                  <title>Recomiendo CMS</title>
-                  <sort_order>2</sort_order>
-                  <children>
-                    <items>
-                      <title>Gestionar Slides</title>
-                      <sort_order>1</sort_order>
-                    </items>
-                    <config>
-                      <title>Configuracion General del Carousel</title>
-                      <sort_order>2</sort_order>
-                    </config>
-                  </children>
-                </slideshow_manager>
-              </children>
-            </ma2>
-            <system>
-              <children>
-                <config>
-                  <children>
-                    <slideshow_options translate="title" module="cms">
-                      <title>Carousel</title>
-                    </slideshow_options>
-                  </children>
-                </config>
-              </children>
-            </system>
-          </children>
-        </admin>
-      </resources>
-    </acl>
-
     <layout>
       <updates>
         <slideshow>
@@ -111,7 +27,6 @@
       </updates>
     </layout>
   </adminhtml>
-
   <global>
     <models>
       <slideshow>
