@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<layout version="0.1.0">
-  <recms_adminhtml_slideshow_index>
-    <reference name="content">
-      <block type="recomiendo_cms/adminhtml_slideshow" name="slideshow" />
-    </reference>
-  </recms_adminhtml_slideshow_index>
-</layout>
