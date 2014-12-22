@@ -38,8 +38,8 @@ CREATE TABLE {$this->getTable('recomiendo_slideshow')} (
   `sortorder` int(11) NOT NULL default '0',
   `content` text NOT NULL default '',
   `status` smallint(6) NOT NULL default '0',
-  `created_time` datetime NULL,
-  `update_time` datetime NULL,
+  `created_at` datetime NULL,
+  `update_at` datetime NULL,
   `params` text NULL,
   PRIMARY KEY (`slideshow_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

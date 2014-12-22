@@ -29,13 +29,9 @@
           </children>
         </slideshow_manager>
         <recipes_and_baskets_manager translate="title" module="recomiendo_cms">
-          <title>Cestas y Recetas</title>
-          <sort_order>2</sort_order>
-          <recipes_and_baskets translate="title" module="recomiendo_cms">
-            <title>Gestionar Cestas y Recetas</title>
-            <sort_order>1</sort_order>
-            <action>recms/adminhtml_baskets</action>
-          </recipes_and_baskets>
+          <title>Gestionar Cestas y Recetas</title>
+          <sort_order>1</sort_order>
+          <action>recms/adminhtml_basketcell</action>
         </recipes_and_baskets_manager>
       </children>
     </cms>

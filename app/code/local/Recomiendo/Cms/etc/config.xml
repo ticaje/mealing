@@ -2,7 +2,7 @@
 <config>
   <modules>
     <Recomiendo_Cms>
-      <version>0.1.0</version>
+      <version>0.2.0</version>
     </Recomiendo_Cms>
   </modules>
   <admin>
@@ -22,50 +22,56 @@
     <layout>
       <updates>
         <slideshow>
-          <file>recomiendo/slideshow.xml</file>
+          <file>recomiendo/cms.xml</file>
         </slideshow>
       </updates>
     </layout>
   </adminhtml>
   <global>
     <models>
-      <slideshow>
+      <recomiendo_cms>
         <class>Recomiendo_Cms_Model</class>
-        <resourceModel>slideshow_mysql4</resourceModel>
-      </slideshow>
-      <slideshow_mysql4>
-        <class>Recomiendo_Cms_Model_Mysql4</class>
+        <resourceModel>recms_resource</resourceModel>
+      </recomiendo_cms>
+      <recms_resource>
+        <class>Recomiendo_Cms_Model_Resource</class>
         <entities>
+          <basketcell>
+            <table>recomiendo_homepage_basket_cell</table>
+          </basketcell>
           <slideshow>
             <table>ma2_slideshow</table>
           </slideshow>
         </entities>
-      </slideshow_mysql4>
+      </recms_resource>
     </models>
     <resources>
-      <cms_setup>
+      <recms_setup>
         <setup>
           <module>Recomiendo_Cms</module>
         </setup>
         <connection>
           <use>core_setup</use>
         </connection>
-      </cms_setup>
-      <cms_write>
+      </recms_setup>
+      <recms_write>
         <connection>
           <use>core_write</use>
         </connection>
-      </cms_write>
-      <cms_read>
+      </recms_write>
+      <recms_read>
         <connection>
           <use>core_read</use>
         </connection>
-      </cms_read>
+      </recms_read>
     </resources>
     <blocks>
       <recomiendo_cms>
         <class>Recomiendo_Cms_Block</class>
       </recomiendo_cms>
+      <recomiendo_cms_homepage>
+        <class>Recomiendo_Cms_Block_Adminhtml_Homepage</class>
+      </recomiendo_cms_homepage>
     </blocks>
     <helpers>
       <recomiendo_cms>

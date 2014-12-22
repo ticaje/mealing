@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <widgets>
-  <slideshow_widget type="slideshow/slideshow" translate="name description" module="slideshow">
+  <slideshow_widget type="recomiendo_cms/slideshow" translate="name description" module="slideshow">
     <name>Cms Manager</name>
     <description>Cms module from MagenMarket.com. Widgets supported.</description>
     <parameters>
@@ -9,7 +9,7 @@
         <visible>1</visible>
         <required>1</required>
         <type>multiselect</type>
-        <source_model>slideshow/slideshowselect</source_model>
+        <source_model>recomiendo_cms/slideshowselect</source_model>
       </slideshow_ids>
       <template translate="label">
         <label>Frontend template</label>
@@ -18,7 +18,7 @@
         <type>select</type>
         <values>
           <default translate="label">
-            <value>recomiendo_slideshow/slideshow.phtml</value>
+            <value>recomiendo_recomiendo_cms/slideshow.phtml</value>
             <label>Default template</label>
           </default>
         </values>

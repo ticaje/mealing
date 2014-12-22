@@ -25,7 +25,7 @@ class Recomiendo_Cms_Model_Slideshowselect
     public function toOptionArray()
     {
 		$options = array();
-		$collection = Mage::getModel('slideshow/slideshow')
+		$collection = Mage::getModel('recomiendo_cms/slideshow')
 			->getCollection()
 			->addFieldToSelect('slideshow_id')
 			->addFieldToSelect('title')
