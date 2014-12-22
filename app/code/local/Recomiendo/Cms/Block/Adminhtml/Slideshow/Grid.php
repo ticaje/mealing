@@ -34,7 +34,7 @@ class Recomiendo_Cms_Block_Adminhtml_Slideshow_Grid extends Mage_Adminhtml_Block
 
   protected function _prepareCollection()
   {
-    $collection = Mage::getModel('slideshow/slideshow')->getCollection();
+    $collection = Mage::getModel('recomiendo_cms/slideshow')->getCollection();
     $this->setCollection($collection);
     return parent::_prepareCollection();
   }
@@ -61,22 +61,22 @@ class Recomiendo_Cms_Block_Adminhtml_Slideshow_Grid extends Mage_Adminhtml_Block
       'index'     => 'content',
     ));
 
-    $this->addColumn('created_time', array(
+    $this->addColumn('created_at', array(
       'header'    => Mage::helper('cms')->__('Creation Time'),
       'align'     => 'left',
       'width'     => '120px',
       'type'      => 'date',
       'default'   => '--',
-      'index'     => 'created_time',
+      'index'     => 'created_at',
     ));
 
-    $this->addColumn('update_time', array(
+    $this->addColumn('update_at', array(
       'header'    => Mage::helper('cms')->__('Update Time'),
       'align'     => 'left',
       'width'     => '120px',
       'type'      => 'date',
       'default'   => '--',
-      'index'     => 'update_time',
+      'index'     => 'update_at',
     ));
 
     $this->addColumn('status', array(
@@ -127,7 +127,7 @@ class Recomiendo_Cms_Block_Adminhtml_Slideshow_Grid extends Mage_Adminhtml_Block
       'confirm'  => Mage::helper('cms')->__('Are you sure?')
     ));
 
-    $statuses = Mage::getSingleton('slideshow/status')->getOptionArray();
+    $statuses = Mage::getSingleton('recomiendo_cms/status')->getOptionArray();
 
     array_unshift($statuses, array('label'=>'', 'value'=>''));
     $this->getMassactionBlock()->addItem('status', array(

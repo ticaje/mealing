@@ -10,7 +10,7 @@ class Recomiendo_Theme_Block_Page_Html_Custom_Pages_Carousel extends Mage_Page_B
 
   protected function _toHtml()
   {
-    $collection = Mage::getModel('slideshow/slideshow')
+    $collection = Mage::getModel('recomiendo_cms/slideshow')
       ->getCollection();
 
     $this->assign('slideitems', $collection);

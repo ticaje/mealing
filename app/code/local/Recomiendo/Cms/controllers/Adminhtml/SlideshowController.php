@@ -38,7 +38,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
 
   public function editAction() {
     $id     = $this->getRequest()->getParam('id');
-    $model  = Mage::getModel('slideshow/slideshow')->load($id);
+    $model  = Mage::getModel('recomiendo_cms/slideshow')->load($id);
 
     if ($model->getId() || $id == 0) {
       $data = Mage::getSingleton('adminhtml/session')->getFormData(true);
@@ -74,7 +74,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
   {
     if ($data = $this->getRequest()->getPost())
     {
-      $collection = Mage::getModel('slideshow/slideshow')->getCollection();
+      $collection = Mage::getModel('recomiendo_cms/slideshow')->getCollection();
       $collection->addFieldToFilter('title',$data['title']);
       if($this->getRequest()->getParam('id'))
       {
@@ -93,7 +93,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
       {
         if( $this->getRequest()->getParam('id') > 0 )
         {
-          $model = Mage::getModel('slideshow/slideshow')->load($this->getRequest()->getParam('id'));
+          $model = Mage::getModel('recomiendo_cms/slideshow')->load($this->getRequest()->getParam('id'));
           if($model->getfilename() != "")
           {
             // path of the resized image to be saved
@@ -156,7 +156,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
         $data['filename'] = $filedet['filename'].$date.'.'.$filedet['extension'];
       }
 
-      $model = Mage::getModel('slideshow/slideshow');
+      $model = Mage::getModel('recomiendo_cms/slideshow');
       $model->setData($data)->setId($this->getRequest()->getParam('id'));
 
       try
@@ -198,7 +198,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
     {
       try
       {
-        $model = Mage::getModel('slideshow/slideshow')->load($this->getRequest()->getParam('id'));
+        $model = Mage::getModel('recomiendo_cms/slideshow')->load($this->getRequest()->getParam('id'));
         if($model->getfilename() != "")
         {
           $imageUrl = Mage::getBaseDir('media').DS."recomiendoslideshow".DS.$model->getfilename();
@@ -237,7 +237,7 @@ class Recomiendo_Cms_Adminhtml_SlideshowController extends Mage_Adminhtml_Contro
     } else {
       try {
         foreach ($slideshowIds as $slideshowId) {
-          $slideshow = Mage::getModel('slideshow/slideshow')->load($slideshowId);
+          $slideshow = Mage::getModel('recomiendo_cms/slideshow')->load($slideshowId);
           $slideshow->delete();
         }
         Mage::getSingleton('adminhtml/session')->addSuccess(

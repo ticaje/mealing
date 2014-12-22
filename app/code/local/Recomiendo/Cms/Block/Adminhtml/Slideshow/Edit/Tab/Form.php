@@ -38,7 +38,7 @@ class Recomiendo_Cms_Block_Adminhtml_Slideshow_Edit_Tab_Form extends Mage_Adminh
     $this->setForm($form);
     $fieldset = $form->addFieldset('slideshow_form', array('legend'=>Mage::helper('recomiendo_cms')->__('Item information')));
 
-	  $slideshow = Mage::getModel('slideshow/slideshow')->load( $this->getRequest()->getParam('id') );
+	  $slideshow = Mage::getModel('recomiendo_cms/slideshow')->load( $this->getRequest()->getParam('id') );
     $after_html = '';
     if( $slideshow->getFilename() )
     {

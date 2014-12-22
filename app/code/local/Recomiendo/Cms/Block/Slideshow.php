@@ -26,7 +26,7 @@ class Recomiendo_Cms_Block_Cms extends Mage_Core_Block_Template implements Mage_
     {
 		$slideshow_ids = $this->getData('slideshow_ids');
 		
-		$collection = Mage::getModel('slideshow/slideshow')
+		$collection = Mage::getModel('recomiendo_cms/slideshow')
 			->getCollection()
 			->addFieldToFilter('slideshow_id', array('in' => explode(',', $slideshow_ids)));
 		
