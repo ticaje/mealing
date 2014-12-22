@@ -10,7 +10,7 @@
       <img src="<?php echo $this->getSkinUrl('images/castle.png') ?>" alt="" id="home-service-image">
     </div>
     <div class="small-7 large-7 columns">
-      <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('how_it_works_paragraph')->toHtml() ?>
+      <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId(Mage::helper('ceo_frontend_helper')->getStaticBlockIdentifier('how_it_works_paragraph'))->toHtml() ?>
     </div>
   </div>
 </div>

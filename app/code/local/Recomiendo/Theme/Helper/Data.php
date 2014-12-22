@@ -9,5 +9,13 @@ class Recomiendo_Theme_Helper_Data extends Mage_Core_Helper_Abstract
        <span>'.$text.'</span>  &#183;
        <i class="fa fa-list-alt"></i>';
   }
+
+  public function getStaticBlockIdentifier($blockId)
+  {
+    $locale = Mage::app()->getLocale()->getLocaleCode();
+    $locale = explode("_", $locale);
+    $locale = $locale[0];
+    return $blockId."_".$locale;
+  }
 }
 ?>
