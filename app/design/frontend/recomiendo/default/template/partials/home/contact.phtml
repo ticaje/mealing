@@ -38,11 +38,7 @@
         <div class="small-8 large-12 columns contact-form-container">
           <div class="contact-form">
             <div class="container">
-              <div class="contact-header">
-                <div class="title"><span>Contacto</span></div>
-                <div class="slogan-1"><span>No dude en contactar con nosotros.</span></div>
-                <div class="slogan-2"><span>Queremos ayudarte en cualquier momento!</span></div>
-              </div>
+              <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId(Mage::helper('ceo_frontend_helper')->getStaticBlockIdentifier('contact_form_header_text'))->toHtml() ?>
               <form method="post" action="">
                 <input type="text" id="name" class="radius" name="name" value="" placeholder="Nombre:" required="required" />
                 <input type="email" id="email" class="radius" name="email" value="" placeholder="Correo:" required="required" />
@@ -55,11 +51,7 @@
           </div>
           <div class="contact-form-footer">
             <div class="container">
-              <div class="contact-footer-info">
-                <div class="title"><span>Contacta con nosotros a traves del telefono</span></div>
-                <div class="phone"><span>+34 9797956685</span></div>
-                <div class="schedule"><span>Lunes - Viernes: 10:00 - 17:00</span></div>
-              </div>
+              <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId(Mage::helper('ceo_frontend_helper')->getStaticBlockIdentifier('contact_form_footer_text'))->toHtml() ?>
             </div>
           </div>
         </div>

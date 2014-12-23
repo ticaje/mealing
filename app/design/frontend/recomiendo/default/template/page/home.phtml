@@ -60,7 +60,7 @@
         </div>
         <div class="carts-recipes-container">
           <div class="row parent">
-            <?php echo $this->getLayout()->createBlock('page/html/custom')->setTemplate('partials/home/carts_and_recipes.phtml')->toHtml(); ?>
+            <?php echo $this->getChildHtml('basketcells') ?>
           </div>
         </div>
         <div class="who-are-we-container">

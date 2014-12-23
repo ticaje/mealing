@@ -19,6 +19,7 @@
       </reference>
       <block type="core/text_list" name="carousel" as="carousel"></block>
       <block type="core/text_list" name="zipcodebar" as="zipcodebar"></block>
+      <block type="core/text_list" name="basketcells" as="basketcells"></block>
     </reference>
     <reference name="header">
       <block type="directory/currency" name="store_currency_selector" template="currency/currency.phtml"/>
@@ -31,6 +32,9 @@
     </reference>
     <reference name="zipcodebar">
       <block type="theme/page_html_custom_pages_zipcodebar" template="partials/home/zip_code_bar.phtml" />
+    </reference>
+    <reference name="basketcells">
+      <block type="theme/page_html_custom_pages_basketcells" template="partials/home/carts_and_recipes.phtml" />
     </reference>
     <remove name="currency"/>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <widgets>
-  <slideshow_widget type="recomiendo_cms/slideshow" translate="name description" module="slideshow">
+  <slideshow_widget type="recomiendo_cms/slideshow" translate="name description" module="recomiendo_cms">
     <name>Cms Manager</name>
     <description>Cms module from MagenMarket.com. Widgets supported.</description>
     <parameters>

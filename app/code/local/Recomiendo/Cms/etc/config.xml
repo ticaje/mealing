@@ -69,9 +69,6 @@
       <recomiendo_cms>
         <class>Recomiendo_Cms_Block</class>
       </recomiendo_cms>
-      <recomiendo_cms_homepage>
-        <class>Recomiendo_Cms_Block_Adminhtml_Homepage</class>
-      </recomiendo_cms_homepage>
     </blocks>
     <helpers>
       <recomiendo_cms>
